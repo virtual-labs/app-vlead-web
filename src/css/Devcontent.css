@@ -1,0 +1,35 @@
+html {
+    scroll-behavior: smooth;
+    /* scroll-margin-top: 100px; */
+  }
+
+.readme-box { 
+    background-color: var(--docs);
+    border-radius: 0.5rem;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 2%;
+    /* border-color: var(--docs); */
+    /* border-style: ridge; */
+    /* padding-bottom: 2%; */
+    /* height:90%; */
+}
+.readme-box.dark {
+    background-color: var(--docs-darker);
+}
+
+.main-content {
+	width: 100vw;
+}
+
+.class1 {
+    width:20%;
+}
+
+.overall-container {
+    background: radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%);
+    padding-top: 10vh;
+}
+.overall-container.dark {
+    background: radial-gradient(circle, var(--background-dark-alt) 0%, var(--background-dark) 100%);
+}

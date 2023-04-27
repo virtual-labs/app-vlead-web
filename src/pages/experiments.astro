@@ -1,0 +1,37 @@
+---
+import JoyOrderDashboardTemplate from "../components/search_filters";
+import Base from "../layouts/Base.astro";
+import "../css/theme.css";
+---
+<script>
+    window.onload = function() {
+  setTimeout(function() { // delete the stored value 
+    sessionStorage.removeItem("search")
+    sessionStorage.removeItem("selectedCard")
+  }, 5000);
+};
+</script>
+<Base title="Experiments">
+    <main style="padding-top: 10vh;">
+        <div class="header">
+          Experiments
+        </div>
+        <JoyOrderDashboardTemplate client:only/>
+    </main>
+</Base>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+  .header {
+    width: 95%;
+    font-family: "Raleway", sans-serif;
+    font-size: 3rem;
+    padding: 5vh 0 5vh 5vw;
+  }
+  .text {
+    color: var(--black) !important;
+  }
+  .text.dark {
+    color: var(--white) !important;
+  }
+</style>

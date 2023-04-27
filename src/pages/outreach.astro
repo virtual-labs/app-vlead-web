@@ -1,0 +1,344 @@
+---
+import Base from "../layouts/Base.astro";
+import Card from "../components/Card.astro";
+import Loader from "../components/loader";
+import {Outreach_devcontent} from "../components/Devcontent";
+import "../css/theme.css";
+import "../css/faq.css"
+import Faqs from "../components/faqs";
+---
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"
+></script>
+<script>
+  import { nodal_centers, Workshops } from "../components/fetch"; 
+  const data = await nodal_centers();
+  const tbody = document.querySelector("#data-table tbody");
+
+  // adding nodal centers data to the table
+  data.forEach((row, i) => {
+    const tr = document.createElement("tr");
+    row.c.forEach((cell) => {
+      const td = document.createElement("td");
+      if (cell) {
+        td.textContent = cell.v;
+        tr.appendChild(td);
+      }
+    });
+    tbody.appendChild(tr);
+  });
+
+  //adding workshop data to the table
+  const data1 = await Workshops();
+  const tbody1 = document.querySelector("#data-table1 tbody");
+  data1.forEach((row, i) => {
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.textContent = i + 1;
+    tr.appendChild(td);
+    row.c.forEach((cell, i) => {
+      const td = document.createElement("td");
+      if (cell && i != 0) {
+        if (cell.f) {
+          td.textContent = cell.f;
+        } else {
+          td.textContent = cell.v;
+        }
+        if (td.textContent) {
+          tr.appendChild(td);
+        }
+      }
+      if (i == 4 && !cell) {
+        td.textContent = "invalid date";
+        tr.appendChild(td);
+      }
+    });
+    tbody1.appendChild(tr);
+  });
+</script>
+
+<script> // toggling between tabs
+  const nc = document.getElementById("nc"); //nodal centers
+  const NC = document.getElementById("NC");
+  const wo = document.getElementById("wo"); // workshop organised
+  const WO = document.getElementById("WO");
+  const rw = document.getElementById("rw"); // request workshop
+  const RW = document.getElementById("RW");
+  const faq = document.getElementById("faq"); // faqs
+  const FAQ = document.getElementById("FAQ");
+
+  nc.addEventListener("click", (event) => {
+    NC.style.display = "block";
+    WO.style.display = "none";
+    RW.style.display = "none";
+    FAQ.style.display = "none";
+    wo.classList.remove("is-active");
+    rw.classList.remove("is-active");
+    faq.classList.remove("is-active");
+    nc.classList.add("is-active");
+  });
+  wo.addEventListener("click", (event) => {
+    WO.style.display = "block";
+    NC.style.display = "none";
+    RW.style.display = "none";
+    FAQ.style.display = "none";
+    nc.classList.remove("is-active");
+    rw.classList.remove("is-active");
+    faq.classList.remove("is-active");
+    wo.classList.add("is-active");
+  });
+  rw.addEventListener("click", (event) => {
+    RW.style.display = "block";
+    WO.style.display = "none";
+    NC.style.display = "none";
+    FAQ.style.display = "none";
+    wo.classList.remove("is-active");
+    nc.classList.remove("is-active");
+    faq.classList.remove("is-active");
+    rw.classList.add("is-active");
+  });
+  faq.addEventListener("click", (event) => {
+    FAQ.style.display = "block";
+    WO.style.display = "none";
+    RW.style.display = "none";
+    NC.style.display = "none";
+    wo.classList.remove("is-active");
+    rw.classList.remove("is-active");
+    nc.classList.remove("is-active");
+    faq.classList.add("is-active");
+  });
+</script>
+
+<script> // fetching images
+  try{
+  const response = await fetch(
+    "https://api.github.com/repos/virtual-labs/outreach-web-pages-iiith/contents/photographs"
+  );
+  const data = await response.json();
+  const imageContainer = document.getElementById("swip-cont");
+  var i = 0;
+  for (const file of data) {
+    if (i != 0) {
+      if (file.type === "file" && file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
+        // check if the file is an image
+        const swip = document.createElement("swiper-slide");
+        const div = document.createElement("div");
+        const img = document.createElement("img");
+        img.src = file.download_url;
+        img.loading = "lazy"
+        div.appendChild(img);
+        swip.appendChild(div);
+        imageContainer.appendChild(swip);
+      }
+    }
+    else
+    {
+      if (file.type === "file" && file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
+        const first_img = document.getElementById("first_img")
+        first_img.src = file.download_url;
+      }
+    }
+    i++;
+  }
+  }
+  catch(error){
+    // console.error(error)
+  }
+</script>
+<style>
+  link {
+    color: var(--black);
+  }
+  link.dark {
+    color: var(--white);
+  }
+  /* swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+
+  /* swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  } */
+  .Nodal_Centers {
+    color: black;
+    margin-top: 2%;
+    text-align: center;
+  }
+  
+  #data-table {
+    overflow-y: scroll;
+    height: 90vh;
+    border: 2px solid black;
+    display: inline-block;
+    width: 95%;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    background-color: var(--docs)!important;
+  }
+  .workshops {
+    margin-top: 2%;
+    display: none;
+    text-align: center;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--docs);
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+  }
+
+  th{
+    background-color: var(--docs)!important;
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  #data-table1 {
+    overflow-y: scroll;
+    height: 90rem;
+    border: 2px solid black;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow-x: scroll;
+    width: 95%;
+    border-radius: 1rem;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    background-color: var(--docs)!important;
+  }
+  .hidden_ {
+    display: none;
+    background-color: black;
+  }
+  .workshops_md_file {
+    margin: 0px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    width: 95%;
+    margin: auto;
+    margin-top: 2%;
+    overflow-y: scroll;
+    height: 90rem;
+    display: none;
+    border-radius: 1rem;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+  .workshops_faq {
+    width: 95%;
+    margin: auto;
+    margin-top: 2%;
+    color: black;
+    background-color: #fff;
+    display: none;
+    /* overflow-y: scroll; */
+    /* height: 90rem; */
+    display: none;
+    border-radius: 1rem;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+  li {
+	  color: var(--white);
+  }
+</style>
+
+<Base title="Outreach">
+  <main style="margin-top: 10vh;">
+    <div class="img_box">
+      <swiper-container
+        class="mySwiper p-6"
+        navigation="true"
+        effect="coverflow"
+        space-between="30"
+        space-end="300"
+        centered-slides="true"
+        autoplay-delay="5500"
+        speed="1000"
+        slides-per-view="3"
+        autoplay-disable-on-interaction="false"
+        loop="true"
+        id="swip-cont"
+      >
+        <swiper-slide
+          ><div>
+            <img id="first_img"
+              src=""
+              alt="Image could not be displayed :/"
+            />
+          </div></swiper-slide>
+          <!-- added rest of the images using javascript -->
+      </swiper-container>
+    </div>
+
+    <div class="tabs theme is-centered is-medium">
+      <ul>
+        <li id="nc" class="is-active link"><a>Nodal Centers</a></li>
+        <li id="wo" class="link"><a>Workshops Organized</a></li>
+        <li id="rw" class="link"><a>Request a Workshop</a></li>
+        <li id="faq" class="link"><a>FAQ's</a></li>
+      </ul>
+    </div>
+    <div id="NC" class="Nodal_Centers is-centered table-container">
+      <table
+        id="data-table"
+        class="table is-bordered fit-content is-hoverable is-fullwidth"
+      >
+        <thead>
+          <tr class="is-size-5">
+            <th><b>S.No</b></th>
+            <th><b>Name</b></th>
+            <th><b>Location</b></th>
+            <th><b>Pincode</b></th>
+            <th><b>Action</b></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div id="WO" class="workshops">
+      <table
+        id="data-table1"
+        class="table is-bordered fit-content is-hoverable is-centered"
+      >
+        <thead>
+          <tr class="is-size-5">
+            <th><b>S.No</b></th>
+            <th><b>College Name</b></th>
+            <th><b>Location</b></th>
+            <th><b>Version</b></th>
+            <th><b>Date</b></th>
+            <th><b>Participants Attended</b></th>
+            <th><b>No.of Sessions</b></th>
+            <th><b>Session Duration</b></th>
+            <th><b>Usage</b></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div id="RW" class="workshops_md_file">
+      <Outreach_devcontent page={"workshop"}  client:only />
+    </div>
+    <div id="FAQ" class="workshops_faq">
+      <!-- <Outreach_devcontent page={"workshop_faq"} client:only /> -->
+      <Faqs type="outreach" client:only/>
+    </div>
+  </main>
+</Base>

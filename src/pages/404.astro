@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import About from "../components/About.astro";
+import RandomExperiment from '../components/random_experiment';
+import Navbar from '../components/Navbar.astro';
+
+---
+
+<Base title="404">
+        <main>
+        <Navbar client:only/>
+        <RandomExperiment client:only/>
+    </main>
+</Base>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;600&family=Fira+Code:wght@400;600&family=Fira+Sans:wght@300&display=swap");
+</style>

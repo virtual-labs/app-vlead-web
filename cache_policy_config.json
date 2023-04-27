@@ -1,0 +1,13 @@
+{
+    "images": 
+    {
+        "destination": "image",
+        "name": "images",
+        "lifespan": 20 
+    },
+    "default": 
+    {
+        "name": "default",
+        "lifespan": 10
+    }
+}

@@ -1,0 +1,15 @@
+/* .toc-entry-level-1{
+    margin-left: 1%;
+} */
+.toc-entry-level-2{
+    margin-left:1%;
+    /* font-size: 1.5rem; */
+}
+.toc-entry-level-3{
+    margin-left:5%;
+    /* font-size: 1.3rem; */
+}
+.toc-entry-level-4{
+    margin-left:12%;
+    /* font-size: 1.2rem; */
+}

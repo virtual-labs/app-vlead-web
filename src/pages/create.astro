@@ -1,0 +1,120 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import pages from "../../public/devprocess_docs.json";
+import { Devcontent } from "../components/Devcontent";
+import Loader from "../components/loader";
+import "../css/Devcontent.css";
+// <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+let index = 0;
+let index2 = 0;
+---
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DevHost</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+        />
+        <link rel="stylesheet" href="../src/css/theme.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+    </head>
+    <body>
+    <div>
+        <Navbar />
+        <div class="overall-container columns theme">
+            <div class="column is-narrow"></div>
+            <div class="column is-one-fifth" style="height:97vh">
+                <ul class="menu-list">
+                    {pages.map((c, i) => {
+                        return (
+                            <li>
+                                <a class="is-active" style="background-color: #0a0a0a80;">{c.heading}</a>
+                                <ul>
+                                    {c.docs.map((d, j) => {
+                                        index++;
+                                        return (
+                                            <li>
+                                                <a style="background-color: var(--white); color: var(--black)"id={"page-" + index}>
+                                                    {d.title}
+                                                </a>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
+            <div class="column is-narrow"></div>
+            <div class="column is-four-fifths" style="height:97vh;">
+                {pages.map((c, i) => {
+                    return (
+                        <div>
+                            {c.docs.map((d, j) => {
+                                index2++;
+                                return (
+                                    <div
+                                        id={
+                                            "react-dev-content-" +
+                                            index2
+                                        }
+                                        style="display:none;"
+                                        class="column">
+                                        <Devcontent
+                                            url={d.url}
+                                            client:only
+                                        />
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
+        <Footer />
+    </div>
+    </body>
+</html>
+
+<script>
+    import pages from "../../public/devprocess_docs.json";
+    let total = 0;
+    
+    for (let i = 0; i < pages.length; i++) {
+        total = total + pages[i].docs.length;
+    }
+    
+    document.getElementById("page-1").style.backgroundColor = "rgb(218,218,218)";
+    document.getElementById("react-dev-content-1").style.display = "block";
+
+    for (let i = 1; i <= total; i++) {
+        document
+            .getElementById("page-" + i)
+            .addEventListener("click", (event) => {
+
+                document.getElementById("page-" + i).style.backgroundColor ="rgb(218,218,218)";
+                document.getElementById("react-dev-content-" + i).style.display = "block";
+
+                for (let j = 1; j <= total; j++) {
+                    if (i === j) {
+                        continue;
+                    }
+                    document.getElementById("page-" + j).style.backgroundColor = "white";
+                    document.getElementById( "react-dev-content-" + j).style.display = "none";
+                }
+            });
+    }
+</script>
+
+<style>
+    
+</style>
