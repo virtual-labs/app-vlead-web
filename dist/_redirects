@@ -1,0 +1,10 @@
+/               /.netlify/functions/entry    200
+/experiments    /.netlify/functions/entry    200
+/virtual_box    /.netlify/functions/entry    200
+/analytics      /.netlify/functions/entry    200
+/faq_page       /.netlify/functions/entry    200
+/outreach       /.netlify/functions/entry    200
+/create         /.netlify/functions/entry    200
+/loader         /.netlify/functions/entry    200
+/404            /.netlify/functions/entry    200
+/*              /.netlify/functions/entry    404
