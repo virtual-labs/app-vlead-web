@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../css/Devcontent.css";
 import "../css/theme.css";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
 import rehypeRaw from "rehype-raw";
 import remarkSlug from "remark-slug";

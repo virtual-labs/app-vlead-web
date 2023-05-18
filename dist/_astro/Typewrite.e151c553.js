@@ -1,0 +1,1 @@
+import"./index.87b0c0b1.js";import t from"./_astro-entry_typewriter-effect.9f804dbd.js";import{j as r}from"./jsx-runtime.37f0d4ec.js";import"./index.50d91d22.js";function s(){return r.jsx("div",{children:r.jsx(t,{options:{strings:["Explore","Experiment","Discover"],autoStart:!0,loop:!0}})})}export{s as default};
