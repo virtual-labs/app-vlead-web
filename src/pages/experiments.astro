@@ -1,7 +1,9 @@
 ---
-import JoyOrderDashboardTemplate from "../components/search_filters";
+// import JoyOrderDashboardTemplate from "../components/search_filters";
 import Base from "../layouts/Base.astro";
 import "../css/theme.css";
+import JoyOrderDashboardTemplate from 'yatharth-super-lemon'
+import Search_filerts from '../components/search_filters'
 ---
 <script>
     window.onload = function() {
@@ -16,7 +18,7 @@ import "../css/theme.css";
         <div class="header">
           Experiments
         </div>
-        <JoyOrderDashboardTemplate client:only/>
+        <Search_filerts client:only/>
     </main>
 </Base>
 

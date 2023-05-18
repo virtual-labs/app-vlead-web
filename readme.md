@@ -1,3 +1,3 @@
-please run -> "npm i --save --legacy-peer-deps" for installing node modules and please ignore the vulnerabilities.
+please run -> "npm i" for installing node modules.
 
 https://hackmd.io/u_lihTVVQoWWmjCvlDt7wA

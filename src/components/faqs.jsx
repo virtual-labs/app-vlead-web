@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkHtml from "remark-html";
-import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import remarkSlug from "remark-slug";
 import remarkRehype from "remark-rehype/lib";
