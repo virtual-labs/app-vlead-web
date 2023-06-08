@@ -24,47 +24,47 @@
     "domains":[
         {
             "title":"Computer Science and Engineering",
-            "img":"../cards/Comp.png",
+            "img":"../../public/cards/Comp.png",
             "href":""
         },
         {
             "title":"Mechanical",
-            "img":"../cards/Mech.png",
+            "img":"../../public/cards/Mech.png",
             "href":""
         },
         {
             "title":"Chemical Engineering",
-            "img":"../cards/ChemEngg.png",
+            "img":"../../public/cards/ChemEngg.png",
             "href":""
         },
         {
             "title":"Electronics and Comm. Engineering",
-            "img":"../cards/ElCom.png",
+            "img":"../../public/cards/ElCom.png",
             "href":""
         },
         {
             "title":"Biotechnology",
-            "img":"../cards/Biotech.png",
+            "img":"../../public/cards/Biotech.png",
             "href":""
         },
         {
             "title":"Electrical Engineering",
-            "img":"../cards/Elec.png",
+            "img":"../../public/cards/Elec.png",
             "href":""
         },
         {
             "title":"Chemical Science",
-            "img":"../cards/Chem.png",
+            "img":"../../public/cards/Chem.png",
             "href":""
         },
         {
             "title":"Physical Sciences",
-            "img":"../cards/Phys.png",
+            "img":"../../public/cards/Phys.png",
             "href":""
         },
         {
             "title":"Civil Engineering",
-            "img":"../cards/Civil.png",
+            "img":"../../public/cards/Civil.png",
             "href":""
         }
     ],
@@ -72,25 +72,25 @@
         {
             "title":"Development and Hosting",
             "href":"/create",
-            "img":"../cards/development.webp",
+            "img":"../../public/cards/development.webp",
             "body":""
         },
         {
             "title":"Research",
             "href":"/research",
-            "img":"../cards/research.webp",
+            "img":"../../public/cards/research.webp",
             "body":""
         },
         {
             "title":"Virtual Box",
             "href":"/virtual_box",
-            "img":"../cards/virtualbox.webp",
+            "img":"../../public/cards/virtualbox.webp",
             "body":""
         },
         {
             "title":"FAQ's",
             "href":"/faq_page",
-            "img":"../cards/FAQs.webp",
+            "img":"../../public/cards/FAQs.webp",
             "body":""
         }
     ],

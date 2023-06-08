@@ -19,7 +19,7 @@ export default function RandomExperiment() {
                     OH NO! Looks like we lost your page : (
                     <br/>
                     Instead, let us take you on an unpredictable <a href={"https://"+experiments} style={{fontSize: "3rem"}}>adventure</a>!
-                    <div style={{marginTop:"3.2vh"}}><img src="../oswald.gif"/></div>
+                    <div style={{marginTop:"3.2vh"}}><img src="../../public/oswald.gif"/></div>
               </div>
         </div>
         </div>
