@@ -201,5 +201,5 @@ export default function Search_filter()
   useEffect(()=>{
     setflag(true)
   },[])
-  return(flag?(<JoyOrderDashboardTemplate bgcolor_dark="#FFFF00" bgcolor_light = "#00FF00"></JoyOrderDashboardTemplate>):(<p>LOADING</p>))
+  return(flag?(<JoyOrderDashboardTemplate></JoyOrderDashboardTemplate>):(<p>LOADING</p>)) //bgcolor_dark="#FFFF00" bgcolor_light = "#00FF00"
 }
