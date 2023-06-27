@@ -1,7 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import pages from "../../public/devprocess_docs.json";
+import pages from "../devprocess_docs.json";
 import { Devcontent } from "../components/Devcontent";
 import Loader from "../components/loader";
 import "../css/Devcontent.css";
@@ -86,7 +86,7 @@ let index2 = 0;
 </html>
 
 <script>
-    import pages from "../../public/devprocess_docs.json";
+    import pages from "../devprocess_docs.json";
     let total = 0;
     
     for (let i = 0; i < pages.length; i++) {
