@@ -132,7 +132,8 @@ export const ExperimentCard = ({ data }) => {
               mb: "6px",
             }}
           >
-            {JSON.parse(data["Tags"]).map((tag, i) => (
+            {console.log(data["Tags"])}
+            {(data["Tags"].split(",")).map((tag, i) => (
               <Chip key={i} size="sm" variant="outlined">
                 {tag}
               </Chip>

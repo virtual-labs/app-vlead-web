@@ -16,6 +16,7 @@ import Typography from "@mui/joy/Typography";
 import Grid from "@mui/joy/Grid";
 import CloseRounded from "@mui/icons-material/CloseRounded";
 import { ExperimentCard } from "./ExperimentCard.jsx";
+import {bulma_component} from "yatharth-super-lemon"
 // import { Icon } from "astro-icon";
 import Fuse from "fuse.js";
 import Loader from "./loader.jsx";
@@ -325,7 +326,9 @@ export default function OrderTable(props) {
                 data-aos="zoom-in-up"
                 data-aos-delay={(i % 4) * 100}
               >
+                {console.log(experiment)}
                 <ExperimentCard data={experiment} />
+                {/* <bulma_component/> */}
               </Grid>
             );
           })

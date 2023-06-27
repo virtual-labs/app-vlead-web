@@ -12,6 +12,9 @@
 		"@astrojs/react": "^2.1.3",
 		"@emotion/react": "^11.10.6",
 		"@emotion/styled": "^11.10.6",
+		"@fortawesome/fontawesome-free": "^6.4.0",
+		"@fortawesome/free-solid-svg-icons": "^6.4.0",
+		"@fortawesome/react-fontawesome": "^0.2.0",
 		"@mui/icons-material": "^5.11.16",
 		"@mui/joy": "^5.0.0-alpha.76",
 		"@mui/material": "^5.12.0",
@@ -34,7 +37,7 @@
 		"remark-slug": "^7.0.1",
 		"remark-toc": "^8.0.1",
 		"typewriter-effect": "^2.19.0",
-		"yatharth-super-lemon": "^1.1.0"
+		"yatharth-super-lemon": "^1.4.5"
 	},
 	"devDependencies": {
 		"@types/aos": "^3.0.4",

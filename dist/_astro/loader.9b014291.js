@@ -1,1 +1,0 @@
-import"./index.87b0c0b1.js";import"./load.874eb0c9.js";import{j as s}from"./jsx-runtime.37f0d4ec.js";function e(i){return s.jsx("div",{class:"inline",children:s.jsx("p",{class:"spinner",id:"spinner",children:s.jsx("i",{class:"fa fa-spinner fa-5x"})})})}export{e as L};

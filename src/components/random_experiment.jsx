@@ -15,11 +15,11 @@ export default function RandomExperiment() {
     return (
         <div style={{fontSize:"2rem", fontWeight:"600", textAlign:"center", paddingTop:"10vh", fontFamily:"Comfortaa"}}>
             <div class="columns is-centered is-vcentered">
-                <div class="column is-narrow">
+                <div class="column is-narrow has-text-centered">
                     OH NO! Looks like we lost your page : (
                     <br/>
                     Instead, let us take you on an unpredictable <a href={"https://"+experiments} style={{fontSize: "3rem"}}>adventure</a>!
-                    <div style={{marginTop:"3.2vh"}}><img src="../../public/oswald.gif"/></div>
+                    <div className="mx-auto"style={{marginTop:"3.2vh",height:"80vh",width:"80vh"}}><img src="cards/oswald.gif"/></div>
               </div>
         </div>
         </div>
