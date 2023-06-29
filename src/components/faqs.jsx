@@ -135,11 +135,11 @@ export default function Faqs(props) {
     </>
   ) : (
     loaded2 ? (
-    <div className="faq-container theme" style={{ height: "100vh" }}>
+    <div className="faq-container " style={{ height: "100vh" }}>
       <Loader />
     </div>
     ) : (
-      <div className="is-size-1 is-flex is-align-items-center theme px-5" style={{ height: "100vh"}}>
+      <div className="is-size-1 is-flex is-align-items-center  px-5" style={{ height: "100vh"}}>
           <p>
           Oops! Page could not be displayed :/
           You can still find the FAQs documented here: 

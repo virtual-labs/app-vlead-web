@@ -1,6 +1,5 @@
 import React from "react";
 import "../css/load.css"
-import { Devcontent } from "./Devcontent";
 
 export default function Loader(props) {
 return(
