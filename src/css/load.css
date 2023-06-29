@@ -14,12 +14,9 @@
 display: flex;
 justify-content: center;
 align-items: center;
-height:100%;
-}
-.center{
-flex:left;
+height:100vh;
 }
 .spinner i{
-margin-top: 10px;
-margin-left: 50px;  
+margin-top: 30px;
+margin-left: 30px;  
 }

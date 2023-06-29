@@ -46,9 +46,9 @@ export default function Vbox() {
         fetch_readme();
     }, [])
     return (
-            <div className="overall-container theme columns is-5" style={{paddingTop:'2%'}}>
+            <div className="overall-container theme columns">
                 <div className="column is-narrow"></div>
-                <div className="readme-box theme column content" style={{overflowY:"scroll",height:"100vh", paddingTop: '1%', scrollBehavior: 'smooth'}}>
+                <div className="readme-box  column content" style={{overflowY:"scroll",height:"100vh", paddingTop: '1%', scrollBehavior: 'smooth'}}>
                 <ReactMarkdown children={content} rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkSlug, remarkHtml, remarkRehype, remarkToc]} 
                 components={{
                     h2: addToTOC,

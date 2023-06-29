@@ -20,22 +20,22 @@ let index2 = 0;
             href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
         />
         <link rel="stylesheet" href="../src/css/theme.css" />
-        <link
+        <!-- <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
+        /> -->
     </head>
     <body>
-    <div>
+    <div >
         <Navbar />
-        <div class="overall-container columns theme">
-            <div class="column is-narrow"></div>
-            <div class="column is-one-fifth" style="height:97vh">
+        <div class="overall-container columns theme m-auto">
+            <!-- <div class="column is-narrow"></div> -->
+            <div class="column is-one-fifth">
                 <ul class="menu-list">
                     {pages.map((c, i) => {
                         return (
                             <li>
-                                <a class="is-active" style="background-color: #0a0a0a80;">{c.heading}</a>
+                                <a class="is-active" style="background-color: var(--black);">{c.heading}</a>
                                 <ul>
                                     {c.docs.map((d, j) => {
                                         index++;
@@ -53,8 +53,8 @@ let index2 = 0;
                     })}
                 </ul>
             </div>
-            <div class="column is-narrow"></div>
-            <div class="column is-four-fifths" style="height:97vh;">
+            <!-- <div class="column is-narrow"></div> -->
+            <div class="column is-four-fifths">
                 {pages.map((c, i) => {
                     return (
                         <div>

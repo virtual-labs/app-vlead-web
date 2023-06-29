@@ -1,5 +1,5 @@
 .header {
-    color: var(--white) !important;
+    /* color: var(--white) !important; */
 }
 .question{
     background: var(--background);
@@ -14,4 +14,7 @@
 
 .answer{
     background-color: var(--docs);
+}
+.faq-container{
+    padding-top: 70px;
 }

@@ -5,21 +5,30 @@ import Faqs from "../components/faqs.jsx";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 ---
+
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>FAQs</title>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-		<link rel="stylesheet" href="src/css/theme.css" />
-		<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-	</head>
-	<script type="text/javascript" src="../../app.js"></script>
-	<body>
-		  <Navbar /> 
+  <head>
+    <title>FAQs</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="src/css/theme.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script type="text/javascript" src="../../app.js"></script></head
+  >
+
+  <body>
+    <div class="">
+      <Navbar />
       <div id="FAQ">
-       
-      <Faqs type="vlabs" client:load />
-		</div>
-  <Footer />
-	</body>
+        <Faqs type="vlabs" client:only />
+      </div>
+      <Footer />
+    </div>
+  </body>
 </html>

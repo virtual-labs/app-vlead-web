@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/Devcontent.css";
-import "../css/theme.css";
+// import "../css/theme.css";
 import ReactMarkdown from "react-markdown";
 import remarkToc from "remark-toc";
 import rehypeRaw from "rehype-raw";
@@ -44,7 +44,7 @@ export function Devcontent(props) {
   }, [url]);
 
   return loaded ? (
-    <div className="columns">
+    <div className="columns is-centered">
       <div
         className="readme-box column is-8"
         style={{ overflowY: "scroll", height: "93vh", scrollBehavior:"smooth", scrollMarginTop:"100px" }}
@@ -66,7 +66,7 @@ export function Devcontent(props) {
       </div>
       <div className="column is-narrow"></div>
       <div
-        className="readme-box column is-3 theme"
+        className="readme-box column is-3 "
         style={{ overflowY: "scroll", height: "93vh", scrollBehavior:"smooth", scrollMarginTop:"100px" }}
       >
         <Toc toc={toc} />
@@ -75,7 +75,7 @@ export function Devcontent(props) {
   ) : (
     <div className="columns">
       <div
-        className="readme-box column is-8 theme"
+        className="readme-box column is-8 "
         style={{ overflowY: "scroll", height: "97vh", scrollBehavior:"smooth", scrollMarginTop:"100px" }}
       >
         <Loader />
@@ -136,8 +136,7 @@ export function Outreach_devcontent(props) {
     abc1();
   }, [change]);
   return loaded ? (
-    <div className="readme-box">
-      <div id="readme-text">
+    <div className="readme-box p-3">
         <div className="content">
           <ReactMarkdown
             children={content}
@@ -145,7 +144,6 @@ export function Outreach_devcontent(props) {
             remarkPlugins={[remarkSlug, remarkHtml, remarkRehype, remarkToc]}
           />
         </div>
-      </div>
     </div>
   ) : (
     <></>

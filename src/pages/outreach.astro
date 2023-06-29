@@ -287,7 +287,7 @@ import Faqs from "../components/faqs";
       </swiper-container>
     </div>
 
-    <div class="tabs theme is-centered is-medium">
+    <div class="tabs theme is-centered is-medium has-text-white">
       <ul>
         <li id="nc" class="is-active link"><a>Nodal Centers</a></li>
         <li id="wo" class="link"><a>Workshops Organized</a></li>
@@ -295,7 +295,7 @@ import Faqs from "../components/faqs";
         <li id="faq" class="link"><a>FAQ's</a></li>
       </ul>
     </div>
-    <div id="NC" class="Nodal_Centers is-centered table-container">
+    <div id="NC" class="mb-4 Nodal_Centers is-centered table-container">
       <table
         id="data-table"
         class="table is-bordered fit-content is-hoverable is-fullwidth"
@@ -312,7 +312,7 @@ import Faqs from "../components/faqs";
         <tbody></tbody>
       </table>
     </div>
-    <div id="WO" class="workshops">
+    <div id="WO" class="mb-4 workshops">
       <table
         id="data-table1"
         class="table is-bordered fit-content is-hoverable is-centered"
@@ -333,10 +333,10 @@ import Faqs from "../components/faqs";
         <tbody></tbody>
       </table>
     </div>
-    <div id="RW" class="workshops_md_file">
+    <div id="RW" class="mb-4 workshops_md_file">
       <Outreach_devcontent page={"workshop"}  client:only />
     </div>
-    <div id="FAQ" class="workshops_faq">
+    <div id="FAQ" class="mb-4 workshops_faq">
       <!-- <Outreach_devcontent page={"workshop_faq"} client:only /> -->
       <Faqs type="outreach" client:only/>
     </div>

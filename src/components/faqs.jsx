@@ -9,6 +9,7 @@ import Loader from "./loader";
 import "../css/faq.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "../css/theme.css";
 
 export default function Faqs(props) {
 
@@ -79,7 +80,7 @@ export default function Faqs(props) {
 
   return loaded ? (
     <>
-      <div className="faq-container theme mt-6 pt-6 px-6 pb-2 content">
+      <div className="faq-container theme px-6 pb-2 content">
         {repo_name === "/" ? (<h2 className="header theme">Frequently Asked Questions</h2>):( (<h2 className="header theme has-text-white">Frequently Asked Questions</h2>))}
         {Object.values(qna_).map((c, i) => {
           return (
@@ -88,7 +89,7 @@ export default function Faqs(props) {
               data-aos="fade-up"
               offset = "200"
               style={{color:"white"}}
-                className="box question theme is-size-5 mb-0 mt-2"
+                className="box question is-size-5 mb-0 mt-2"
                 id={"q-" + i}
                 onClick={() => {
                   if (c.open === false) {
@@ -112,7 +113,7 @@ export default function Faqs(props) {
                 ></ReactMarkdown>
               </button>
               <div
-                className="box answer theme"
+                className="box answer"
                 style={{ display: "none" }}
                 id={"a-" + i}
               >
@@ -138,7 +139,7 @@ export default function Faqs(props) {
       <Loader />
     </div>
     ) : (
-      <div className="is-size-1 is-flex is-align-items-center px-5" style={{ height: "100vh", color:"black"}}>
+      <div className="is-size-1 is-flex is-align-items-center theme px-5" style={{ height: "100vh"}}>
           <p>
           Oops! Page could not be displayed :/
           You can still find the FAQs documented here: 

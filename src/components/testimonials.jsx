@@ -28,13 +28,12 @@ export default function Testimonials(){
         {loaded ? (
             <>
         {Object.values(sheetdata).map((c,i)=>{
-            console.log(c[2]);
             return(
-                <div style={{marginBottom: "3rem"}}>
+                <div className="has-text-black" style={{marginBottom: "3rem"}}>
                     <span class="icon">
                         <FontAwesomeIcon icon={faQuoteLeft} />
                     </span>
-                    <span style={{paddingLeft: "2rem", paddingRight: "2rem", lineHeight:"2"}}>{c[2]}</span>
+                    <span  style={{paddingLeft: "2rem", paddingRight: "2rem", lineHeight:"2"}}>{c[2]}</span>
                     <span class="icon">
                         <FontAwesomeIcon icon={faQuoteRight} />
                     </span>
