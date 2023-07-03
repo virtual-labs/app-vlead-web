@@ -4,7 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import Loader from "./loader";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+{/* <style>
+.testi dark{
 
+}
+</style> */}
 export default function Testimonials() {
   const [sheetdata, setSheetdata] = useState({});
   const [loaded, setLoaded] = useState(false);
@@ -29,7 +33,7 @@ export default function Testimonials() {
         <>
           {Object.values(sheetdata).map((c, i) => {
             return (
-              <div className="has-text-black" style={{ marginBottom: "3rem" }}>
+              <div className="has-text-black testi" style={{ marginBottom: "3rem" , color:"black!important"}}>
                 <span class="icon">
                   <FontAwesomeIcon icon={faQuoteLeft} />
                 </span>

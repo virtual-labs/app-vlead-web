@@ -4,6 +4,8 @@ body{
 .readme-box { 
     background-color: var(--docs);
     border-radius: 0.5rem;
+    padding: 20px!important;
+    padding-right: 15px!important;
 }
 .overall-container {
     padding-top: 70px;
