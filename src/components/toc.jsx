@@ -5,7 +5,7 @@ import "../css/theme.css"
 
 export default function Toc(props) {
     return (
-        <div className="content" style={{marginTop: '5%'}}>
+        <div className="content">
             <h1>Contents</h1>
             <ul style={{listStyleType:"none", marginLeft:'8px'}}>
                 {(props.toc).map((c, i) => {

@@ -1,6 +1,5 @@
 ---
 import Base from "../layouts/Base.astro"
-import Card from "../components/Card.astro"
 import "../css/theme.css";
 import {People_Card_Component_Past, People_Card_Component_Current} from "../components/people_card";
 import '@fortawesome/fontawesome-free/css/all.min.css'
@@ -83,11 +82,11 @@ function convert_url(url)
 
 <Base title="Members">
     
-    <div class="columns">
-        <div class="column is-auto" style="padding-top:10vh; padding-bottom: 5vh;" id="cards">
+    <div class="columns py-3">
+        <div class="column is-auto" style="padding-top:90px;" id="cards">
             <div>
                 <!-- <div class="title">People</div> -->
-                <div class="tabs theme is-toggle-rounded is-toggle is-medium is-centered">
+                <div class="tabs is-toggle-rounded is-toggle is-medium is-centered">
                 <ul>
                     <li class="link is-active" id="current-tab"><a>Current</a></li>
                     <li class="link bulma-hamburger-mixin is-hidden-desktop is-pulled-right" id="testimonial-button">
@@ -96,20 +95,20 @@ function convert_url(url)
                     <li class="link" id="past-tab" ><a>Past</a></li>
                 </ul>
                 </div>
-                <div id="current">
+                <div id="current" style = "color : black!important;">
                     <People_Card_Component_Current client:only/>
                 </div>
-                <div id="past">
+                <div id="past" style = "color : black!important;">
                     <People_Card_Component_Past client:only/>
                 </div>
             </div>
         </div>
         
-        <div class="column is-one-quarter testimonial is-hidden-touch" id="testimonial" style="padding-top:15vh; padding-bottom: 5vh; padding-left: 4rem; padding-right: 4rem; font-style:italic; font-size:large;">
+        <div class="column is-one-quarter testimonial is-hidden-touch" id="testimonial" style="padding-top:90px; padding-left: 4rem; padding-right: 4rem; font-style:italic; font-size:large;">
             <button class="link is-arrow-left is-hidden-desktop is-pulled-right" id="back-button">
                 <a>Back</a>
             </button>
-            <i><center class="title is-1" style="padding-bottom: 4vh;">Testimonials</center></i>
+            <i><center class="title is-1 " style="padding-bottom: 4vh;">Testimonials</center></i>
             <Testimonials client:only/>
         </div>
     </div>

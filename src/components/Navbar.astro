@@ -293,13 +293,16 @@ import Roles from "./role";
 				<a class="navbar-item is-size-6" href="/analytics/">
 						Analytics
 				</a>
+				<a class="navbar-item is-size-6" href="/members/">
+					Our Team
+				</a>
 		<!-- </div> -->
-			<a class="navbar-item is-size-5">
+			<a class="navbar-item is-size-6 has-background-success-light has-text-black" id="user-display">
 				<strong>
 					Users: {users}
 				</strong>
 			</a>
-			<a class="navbar-item is-size-5">
+			<a class="navbar-item is-size-6 has-background-success-light has-text-black" id="views-display">
 				<strong>
 					Views: {Views}
 				</strong>
@@ -322,11 +325,13 @@ import Roles from "./role";
 </nav>
 
 <style>
-	body,
-	html {
-		margin: 0%;
-	}
 
+	#user-display:hover{
+		color:black;
+	}
+	#views-display:hover{
+		color:black;
+	}
 	/* .navbar-dropdown{
 		dropdown-item-hover-color: red;
 	} */
@@ -493,3 +498,4 @@ import Roles from "./role";
 		background-color: var(--primary-dark) !important;
 	}
 </style>
+

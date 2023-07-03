@@ -1,0 +1,42 @@
+{
+    "workshop":[
+        {
+            "name":"Workshop Data Summary",
+            "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/5fLPB"
+        },
+        {
+            "name":"Workshop Data 2023",
+            "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_9k15i6e45c"
+        },
+        {
+            "name":"Workshop Data 2022",
+            "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_q6qi63e45c"
+        },
+        {
+            "name":"Workshop Data 2021",
+            "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_233r51e45c"
+        },
+        {
+            "name":"Workshop Data 2020",
+            "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_00x3l1e45c"
+        },
+        {
+            "name":"Workshop Data 2019",
+            "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_0i1bxxe45c"
+        },
+        {
+            "name":"Workshop Data 2018",
+            "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_e13vjdxy0c"
+        }
+    ],
+    "nodalcenters":[
+        {
+            "name":"Nodal Center Data Summary",
+            "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_q6mz96i75c"
+        },
+        {
+            "name":"Nodal Center Data - 2014-2023",
+            "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_xxalppi75c"
+        }
+    ]
+}

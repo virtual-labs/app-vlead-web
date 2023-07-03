@@ -1,6 +1,5 @@
 ---
 import Base from "../layouts/Base.astro";
-import About from "../components/About.astro";
 import Card from "../components/Card.astro";
 import Role from "../components/Role.astro";
 import MyTypewriter from "../components/Typewrite.jsx";
@@ -114,6 +113,9 @@ const short_about = all.shorty;
   const swiperEl = document.querySelector("swiper-container");
   Object.assign(swiperEl, {
     breakpoints: {
+      0:{
+        slidesPerView: 3,
+      },
       600: {
         slidesPerView: 3,
       },
@@ -294,7 +296,6 @@ const short_about = all.shorty;
   .mySwiper {
     padding-top: 1rem;
   }
-
   .explore-container {
     padding-top: 7%;
   }

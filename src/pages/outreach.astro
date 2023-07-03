@@ -1,111 +1,124 @@
 ---
 import Base from "../layouts/Base.astro";
-import Card from "../components/Card.astro";
-import Loader from "../components/loader";
 import {Outreach_devcontent} from "../components/Devcontent";
 import "../css/theme.css";
 import "../css/faq.css"
 import Faqs from "../components/faqs";
+// import Outreach_analytics from "../components/Outreach_analytics.astro"
+import { Image} from '@astrojs/image/components';
+import img1 from "../../public/outreach-images/1.jpg";
+import img2 from "../../public/outreach-images/2.jpg";
+import img3 from "../../public/outreach-images/3.jpg";
+import img4 from "../../public/outreach-images/4.jpg";
+import img5 from "../../public/outreach-images/5.jpg";
+import img6 from "../../public/outreach-images/6.jpg";
+import img7 from "../../public/outreach-images/7.jpg";
+import img8 from "../../public/outreach-images/8.jpg";
+import img9 from "../../public/outreach-images/9.jpg";
+import img10 from "../../public/outreach-images/10.jpg";
+import img11 from "../../public/outreach-images/11.jpg";
+import img12 from "../../public/outreach-images/12.jpg";
+import img13 from "../../public/outreach-images/13.jpg";
+import img14 from "../../public/outreach-images/14.jpg";
+import img15 from "../../public/outreach-images/15.jpg";
+import img16 from "../../public/outreach-images/16.jpg";
+import img17 from "../../public/outreach-images/17.jpg";
+import img18 from "../../public/outreach-images/18.jpg";
+import img19 from "../../public/outreach-images/19.jpg";
+import img20 from "../../public/outreach-images/20.jpg";
+import img21 from "../../public/outreach-images/21.jpg";
+import img22 from "../../public/outreach-images/22.jpg";
+import img23 from "../../public/outreach-images/23.jpg";
+import img24 from "../../public/outreach-images/24.jpg";
+import img25 from "../../public/outreach-images/25.jpg";
+import img26 from "../../public/outreach-images/26.jpg";
+import img27 from "../../public/outreach-images/27.jpg";
+import img28 from "../../public/outreach-images/28.jpg";
+import img29 from "../../public/outreach-images/29.jpg";
+import img30 from "../../public/outreach-images/30.jpg";
+import img31 from "../../public/outreach-images/31.jpg";
+import img32 from "../../public/outreach-images/32.jpg";
+
+// import Workshops_dropdown from "../components/Workshops_dropdown";
+
+import all from "../../src/outreach.json";
+const data = all.workshop;
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"
 ></script>
-<script>
-  import { nodal_centers, Workshops } from "../components/fetch"; 
-  const data = await nodal_centers();
-  const tbody = document.querySelector("#data-table tbody");
-
-  // adding nodal centers data to the table
-  data.forEach((row, i) => {
-    const tr = document.createElement("tr");
-    row.c.forEach((cell) => {
-      const td = document.createElement("td");
-      if (cell) {
-        td.textContent = cell.v;
-        tr.appendChild(td);
-      }
-    });
-    tbody.appendChild(tr);
-  });
-
-  //adding workshop data to the table
-  const data1 = await Workshops();
-  const tbody1 = document.querySelector("#data-table1 tbody");
-  data1.forEach((row, i) => {
-    const tr = document.createElement("tr");
-    const td = document.createElement("td");
-    td.textContent = i + 1;
-    tr.appendChild(td);
-    row.c.forEach((cell, i) => {
-      const td = document.createElement("td");
-      if (cell && i != 0) {
-        if (cell.f) {
-          td.textContent = cell.f;
-        } else {
-          td.textContent = cell.v;
-        }
-        if (td.textContent) {
-          tr.appendChild(td);
-        }
-      }
-      if (i == 4 && !cell) {
-        td.textContent = "invalid date";
-        tr.appendChild(td);
-      }
-    });
-    tbody1.appendChild(tr);
-  });
-</script>
 
 <script> // toggling between tabs
-  const nc = document.getElementById("nc"); //nodal centers
-  const NC = document.getElementById("NC");
-  const wo = document.getElementById("wo"); // workshop organised
-  const WO = document.getElementById("WO");
+  const nc = document.getElementById("tabNodalcenters"); //nodal centers
+  const NAN = document.getElementById("NAN");
+  const wo = document.getElementById("tabWorkshops"); // workshop organised
+  const WAN = document.getElementById("WAN");
   const rw = document.getElementById("rw"); // request workshop
   const RW = document.getElementById("RW");
   const faq = document.getElementById("faq"); // faqs
   const FAQ = document.getElementById("FAQ");
+  const gal = document.getElementById("gal"); // gallery
+  const GAL = document.getElementById("GAL");
 
   nc.addEventListener("click", (event) => {
-    NC.style.display = "block";
-    WO.style.display = "none";
+    NAN.style.display = "block";
+    WAN.style.display = "none";
     RW.style.display = "none";
+    GAL.style.display = "none";
     FAQ.style.display = "none";
     wo.classList.remove("is-active");
     rw.classList.remove("is-active");
     faq.classList.remove("is-active");
+    gal.classList.remove("is-active");
     nc.classList.add("is-active");
   });
   wo.addEventListener("click", (event) => {
-    WO.style.display = "block";
-    NC.style.display = "none";
+    WAN.style.display = "block";
+    NAN.style.display = "none";
     RW.style.display = "none";
+    GAL.style.display = "none";
     FAQ.style.display = "none";
     nc.classList.remove("is-active");
     rw.classList.remove("is-active");
     faq.classList.remove("is-active");
+    gal.classList.remove("is-active");
     wo.classList.add("is-active");
   });
   rw.addEventListener("click", (event) => {
     RW.style.display = "block";
-    WO.style.display = "none";
-    NC.style.display = "none";
+    WAN.style.display = "none";
+    NAN.style.display = "none";
+    GAL.style.display = "none";
     FAQ.style.display = "none";
     wo.classList.remove("is-active");
     nc.classList.remove("is-active");
     faq.classList.remove("is-active");
+    gal.classList.remove("is-active");
     rw.classList.add("is-active");
   });
   faq.addEventListener("click", (event) => {
     FAQ.style.display = "block";
-    WO.style.display = "none";
+    WAN.style.display = "none";
     RW.style.display = "none";
-    NC.style.display = "none";
+    GAL.style.display = "none";
+    NAN.style.display = "none";
     wo.classList.remove("is-active");
     rw.classList.remove("is-active");
     nc.classList.remove("is-active");
+    gal.classList.remove("is-active");
     faq.classList.add("is-active");
+  });
+  gal.addEventListener("click", (event) => {
+    GAL.style.display = "block";
+    FAQ.style.display = "none";
+    WAN.style.display = "none";
+    RW.style.display = "none";
+    NAN.style.display = "none";
+    wo.classList.remove("is-active");
+    rw.classList.remove("is-active");
+    nc.classList.remove("is-active");
+    faq.classList.remove("is-active");
+    gal.classList.add("is-active");
   });
 </script>
 
@@ -115,7 +128,8 @@ import Faqs from "../components/faqs";
     "https://api.github.com/repos/virtual-labs/outreach-web-pages-iiith/contents/photographs"
   );
   const data = await response.json();
-  const imageContainer = document.getElementById("swip-cont");
+  // const imageContainer = document.getElementById("swip-cont");
+  const grid = document.getElementById("grid-gallery");
   var i = 0;
   for (const file of data) {
     if (i != 0) {
@@ -125,10 +139,16 @@ import Faqs from "../components/faqs";
         const div = document.createElement("div");
         const img = document.createElement("img");
         img.src = file.download_url;
-        img.loading = "lazy"
+        img.loading = "lazy";
+        img.style.border="7px solid #fff";
+        img.style.borderRadius="3px";
+        img.alt = "Image could not be displayed";
+        img.style.height = "360px";
+        img.style.width = "240px";
         div.appendChild(img);
         swip.appendChild(div);
-        imageContainer.appendChild(swip);
+        // imageContainer.appendChild(swip);
+        grid.appendChild(div);
       }
     }
     else
@@ -136,6 +156,10 @@ import Faqs from "../components/faqs";
       if (file.type === "file" && file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
         const first_img = document.getElementById("first_img")
         first_img.src = file.download_url;
+        first_img.style.border="7px solid #fff";
+        first_img.style.borderRadius="3px";
+        first_img.style.height = "360px";
+        first_img.style.width = "240px";
       }
     }
     i++;
@@ -145,6 +169,60 @@ import Faqs from "../components/faqs";
     // console.error(error)
   }
 </script>
+
+<!-- <script> // dropdown content
+  import all from "../../public/outreach.json";
+  const data = all.workshop;
+  console.log(data);
+
+  for(let i=0; i<data.length; i++)
+  {
+    document.getElementById("Wi"+i).addEventListener("click", ()=>{
+      // for(let j=0; j<data.length; j++)
+      // {
+      //   document.getElementById("Wi"+j).classList.remove("is-active"); 
+      // }
+      // document.getElementById("Wi"+i).classList.add("is-active"); 
+      document.getElementById("outreach_iframe").src = data[i].url;
+    }); 
+  }
+  // const select = (c, len, x) => {
+  //     document.getElementById("outreach_iframe").src = c.url;
+  //     for(let i=0; i<len; i++)
+  //     {
+  //       document.getElementById("Wi"+i).classList.remove("is-active"); 
+  //     }
+  //     document.getElementById("Wi"+x).classList.add("is-active"); 
+  //   }
+
+</script> -->
+
+<script>  // iframe selection
+
+  import all from "../../src/outreach.json";
+
+  for (let i = 0; i < all.workshop.length; i++) {
+
+    const e = document.getElementById("Wi" + i);
+    e.classList.remove("is-active");
+    
+    e.addEventListener("click", () => {
+      document.getElementById("").src = all.workshop[i].url;
+      e.classList.add("is-active");
+    });
+    
+  }
+  for (let i = 0; i < all.nodalcenters.length; i++) {
+    const e = document.getElementById("Ni" + i);
+    e.classList.remove("is-active");
+
+    e.addEventListener("click", () => {
+      document.getElementById("nodal_iframe").src = all.nodalcenters[i].url;
+      e.classList.add("is-active");
+    });
+  }
+</script>
+
 <style>
   link {
     color: var(--black);
@@ -152,75 +230,47 @@ import Faqs from "../components/faqs";
   link.dark {
     color: var(--white);
   }
-  /* swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } */
-
-  /* swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  } */
   .Nodal_Centers {
     color: black;
     margin-top: 2%;
     text-align: center;
-  }
-  
-  #data-table {
-    overflow-y: scroll;
-    height: 90vh;
-    border: 2px solid black;
-    display: inline-block;
-    width: 95%;
-    border-radius: 1rem;
-    box-sizing: border-box;
-    border-radius: 1rem;
-    background-color: var(--docs)!important;
   }
   .workshops {
     margin-top: 2%;
     display: none;
     text-align: center;
   }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: var(--docs);
+  .tabs.is-toggle li.is-active a{
+    background-color: var(--background) !important;
+    border-color: white !important;
   }
-
-  thead th {
-    position: sticky;
-    top: 0;
-    background-color: #fff;
+  .dropdown-content{
+    /* background-color: rgb(60, 59, 59) !important;*/
+    padding-bottom: 0% !important;
+    padding-top: 0% !important;
   }
-
-  th{
-    background-color: var(--docs)!important;
+  .dropdown-item{
+    padding:0%;
+    /* font-size: large; */
+    /* color: black !important; */
   }
-
-  th,
-  td {
-    padding: 0.5rem;
-    text-align: left;
-    border: 1px solid #ddd;
+  .tabs a{
+    padding: 0.8rem;
   }
-  #data-table1 {
-    overflow-y: scroll;
-    height: 90rem;
-    border: 2px solid black;
-    box-sizing: border-box;
-    display: inline-block;
-    overflow-x: scroll;
-    width: 95%;
-    border-radius: 1rem;
-    border-top-right-radius: 0%;
-    border-bottom-right-radius: 0%;
-    background-color: var(--docs)!important;
+  .tabs {
+    margin-top: 24px;
   }
+  .tabs .dropdown-trigger a{
+    color: white;
+    font-weight: 500;
+  }
+  .tabs .dropdown-trigger a:hover{
+    color:black;
+  }
+  /* .tabs .dropdown-item a {
+    padding-top: 2rem;
+    padding-left: 2rem;
+  } */
   .hidden_ {
     display: none;
     background-color: black;
@@ -254,15 +304,138 @@ import Faqs from "../components/faqs";
     border-top-right-radius: 0%;
     border-bottom-right-radius: 0%;
   }
-  li {
-	  color: var(--white);
+  .workshop_analytics {
+    display: block;
+  }
+  .nodal_analytics {
+    display:none;
+  }
+  .gallery {
+    display:none;
+    /* padding-left: 4rem; */
+    /* padding-right: 4rem; */
+  }
+  .gal-img{
+    /* padding:1rem; */
+    margin:0.5rem;
+    border: 8px solid #f3f3f3f4;
+    border-radius: 8px;
+    height: auto;
+    width:350px;
+    /* padding-left: 0%;
+    padding-right: 0% !important; */
+  }
+  #grid-gallery{
+    /* margin-top: 50px; */
+    /* text-align: center; */
   }
 </style>
 
 <Base title="Outreach">
-  <main style="margin-top: 10vh;">
-    <div class="img_box">
-      <swiper-container
+  <main style="padding-top: 10vh; padding-bottom: 5vh;">
+    <center class="title is-1" style="color:#fff;">Outreach</center>
+    
+
+    <div class="tabs theme is-boxed is-toggle is-centered is-medium" style="overflow:visible;">
+      <ul>
+        <li id="tabWorkshops" class="link is-active">
+          <div class="dropdown is-hoverable">
+            <div class="dropdown-trigger link" id="w-trigger">
+              <a aria-haspopup="true" aria-controls="dropdown-menu4">
+                <span>Workshops organised</span>
+              </a>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+              <div class="dropdown-content">
+                {data.map((c,i)=>{
+                    return(
+                        <div class="dropdown-item">
+                            <a id={"Wi"+i}>
+                              {c.name}
+                            </a>
+                        </div>
+                    );
+                })}
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="tabNodalcenters" class="link">
+          <div class="dropdown is-hoverable">
+            <div class="dropdown-trigger link" id="w-trigger">
+              <a aria-haspopup="true" aria-controls="dropdown-menu4">
+                <span>Nodal Centers</span>
+              </a>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+              <div class="dropdown-content" style="">
+                {all.nodalcenters.map((c,i)=>{
+                    return(
+                        <div class="dropdown-item">
+                            <a id={"Ni"+i}>
+                              {c.name}
+                            </a>
+                        </div>
+                    );
+                })}
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="rw" class="link dropdown-trigger"><a>Request a Workshop</a></li>
+        <li id="faq" class="link dropdown-trigger"><a>FAQ's</a></li>
+        <li id="gal" class="link dropdown-trigger"><a>Gallery</a></li>
+      </ul>
+    </div>
+    
+    <div id="WAN" class="workshop_analytics">
+        <div class="mt-6 mx-3" style="height:100vh">
+          <iframe
+            id="workshop_iframe"
+            width="100%"
+            height="100%"
+            src="https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/5fLPB"
+            allowfullscreen></iframe>
+        </div>
+      
+    </div>
+
+    <div id="NAN" class="nodal_analytics">
+      <!-- <div class="column py-0"> -->
+        <div class="mt-6 mx-3" style="height:100vh">
+          <iframe
+            id="nodal_iframe"
+            width="100%"
+            height="100%"
+            src="https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_q6mz96i75c"
+            allowfullscreen></iframe>
+        </div>
+      <!-- </div> -->
+    </div>
+    
+    <div id="RW" class="workshops_md_file mt-6 mx-auto">
+      <Outreach_devcontent page={"workshop"}  client:only />
+    </div>
+
+    <div id="FAQ" class="workshops_faq mt-6 mx-auto">
+      <Faqs type="outreach" client:only/>
+    </div>
+
+    <!-- <div id="GAL" class="gallery">
+      <img src="/images.png" class="gal-img"/>
+      <img src="/images.png" class="gal-img"/>
+      <img src="/images.png" class="gal-img"/>
+      <img src="/images.png" class="gal-img"/>
+      <img src="/images.png" class="gal-img"/>
+      <img src="/images.png" class="gal-img"/>
+      <img src="/images.png" class="gal-img"/>
+      <img src="/images.png" class="gal-img"/>
+      <img src="/images.png" class="gal-img"/>
+      <img src="/images.png" class="gal-img"/>
+      <img src="/images.png" class="gal-img"/>
+    </div> -->
+    <div class="img_box gallery mt-6" id="GAL">
+      <!-- <swiper-container
         class="mySwiper p-6"
         navigation="true"
         effect="coverflow"
@@ -283,62 +456,53 @@ import Faqs from "../components/faqs";
               alt="Image could not be displayed :/"
             />
           </div></swiper-slide>
-          <!-- added rest of the images using javascript -->
-      </swiper-container>
+      </swiper-container> -->
+      <div id="grid-gallery " class="is-flex is-justify-content-center is-flex-wrap-wrap" >
+        <!-- <img src="/images.png" class="gal-img"/>
+        <img src="/images.png" class="gal-img"/>
+        <img src="/images.png" class="gal-img"/>
+        <img src="/images.png" class="gal-img"/>
+        <img src="/images.png" class="gal-img"/>
+        <img src="/images.png" class="gal-img"/>
+        <img src="/images.png" class="gal-img"/>
+        <img src="/images.png" class="gal-img"/>
+        <img src="/images.png" class="gal-img"/>
+        <img src="/images.png" class="gal-img"/>
+        <img src="/images.png" class="gal-img"/> -->
+        <Image src={img1} alt={"Image 1"}  class="gal-img "/>
+        <Image src={img2} alt={"Image 2"}  class="gal-img "/>
+        <Image src={img3} alt={"Image 3"}  class="gal-img "/>
+        <Image src={img4} alt={"Image 4"}  class="gal-img "/>
+        <Image src={img5} alt={"Image 5"}  class="gal-img "/>
+        <Image src={img6} alt={"Image 6"}  class="gal-img "/>
+        <Image src={img7} alt={"Image 7"}  class="gal-img "/>
+        <Image src={img8} alt={"Image 8"}  class="gal-img "/>
+        <Image src={img9} alt={"Image 9"}  class="gal-img "/>
+        <Image src={img10} alt={"Image 10"}  class="gal-img " />
+        <Image src={img11} alt={"Image 11"}  class="gal-img " />
+        <Image src={img12} alt={"Image 12"}  class="gal-img " />
+        <Image src={img13} alt={"Image 13"}  class="gal-img " />
+        <Image src={img14} alt={"Image 14"}  class="gal-img " />
+        <Image src={img15} alt={"Image 15"}  class="gal-img " />
+        <Image src={img16} alt={"Image 16"}  class="gal-img " />
+        <Image src={img17} alt={"Image 17"}  class="gal-img " />
+        <Image src={img18} alt={"Image 18"}  class="gal-img " />
+        <Image src={img19} alt={"Image 19"}  class="gal-img " />
+        <Image src={img20} alt={"Image 20"}  class="gal-img " />
+        <Image src={img21} alt={"Image 21"}  class="gal-img " />
+        <Image src={img22} alt={"Image 22"}  class="gal-img " />
+        <Image src={img23} alt={"Image 23"}  class="gal-img " />
+        <Image src={img24} alt={"Image 24"}  class="gal-img " />
+        <Image src={img25} alt={"Image 25"}  class="gal-img " />
+        <Image src={img26} alt={"Image 26"}  class="gal-img " />
+        <Image src={img27} alt={"Image 27"}  class="gal-img " />
+        <Image src={img28} alt={"Image 28"}  class="gal-img " />
+        <Image src={img29} alt={"Image 29"}  class="gal-img " />
+        <Image src={img30} alt={"Image 30"}  class="gal-img " />
+        <Image src={img31} alt={"Image 31"}  class="gal-img " />
+        <!-- <Image src={img32} alt={"Image 32"}  class="gal-img column" /> -->
+      </div>
     </div>
 
-    <div class="tabs theme is-centered is-medium">
-      <ul>
-        <li id="nc" class="is-active link"><a>Nodal Centers</a></li>
-        <li id="wo" class="link"><a>Workshops Organized</a></li>
-        <li id="rw" class="link"><a>Request a Workshop</a></li>
-        <li id="faq" class="link"><a>FAQ's</a></li>
-      </ul>
-    </div>
-    <div id="NC" class="Nodal_Centers is-centered table-container">
-      <table
-        id="data-table"
-        class="table is-bordered fit-content is-hoverable is-fullwidth"
-      >
-        <thead>
-          <tr class="is-size-5">
-            <th><b>S.No</b></th>
-            <th><b>Name</b></th>
-            <th><b>Location</b></th>
-            <th><b>Pincode</b></th>
-            <th><b>Action</b></th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    <div id="WO" class="workshops">
-      <table
-        id="data-table1"
-        class="table is-bordered fit-content is-hoverable is-centered"
-      >
-        <thead>
-          <tr class="is-size-5">
-            <th><b>S.No</b></th>
-            <th><b>College Name</b></th>
-            <th><b>Location</b></th>
-            <th><b>Version</b></th>
-            <th><b>Date</b></th>
-            <th><b>Participants Attended</b></th>
-            <th><b>No.of Sessions</b></th>
-            <th><b>Session Duration</b></th>
-            <th><b>Usage</b></th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    <div id="RW" class="workshops_md_file">
-      <Outreach_devcontent page={"workshop"}  client:only />
-    </div>
-    <div id="FAQ" class="workshops_faq">
-      <!-- <Outreach_devcontent page={"workshop_faq"} client:only /> -->
-      <Faqs type="outreach" client:only/>
-    </div>
   </main>
 </Base>
