@@ -1,115 +1,129 @@
 ---
-import Base from "../layouts/Base.astro"
+import Base from "../layouts/Base.astro";
 import "../css/theme.css";
-import {People_Card_Component_Past, People_Card_Component_Current} from "../components/people_card";
-import '@fortawesome/fontawesome-free/css/all.min.css'
+import {
+  People_Card_Component_Past,
+  People_Card_Component_Current,
+} from "../components/people_card";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import Testimonials from "../components/testimonials";
 
-function convert_url(url)
-{
+function convert_url(url) {
   var id = url.split("/")[5];
   console.log(id);
   return "https://drive.google.com/uc?export=view&id=" + id;
 }
-
 ---
 
 <script>
-    document.getElementById("testimonial-button").addEventListener("click", () => {
-        const element = document.getElementById("testimonial");
+  document
+    .getElementById("testimonial-button")
+    .addEventListener("click", () => {
+      const element = document.getElementById("testimonial");
 
-        element.classList.remove("is-one-quarter");
-        element.classList.remove("is-hidden-touch");
-        element.classList.add("is-full");
+      element.classList.remove("is-one-quarter");
+      element.classList.remove("is-hidden-touch");
+      element.classList.add("is-full");
 
-        const element2 = document.getElementById("cards");
-        element2.classList.add("is-hidden");
+      const element2 = document.getElementById("cards");
+      element2.classList.add("is-hidden");
     });
 
-    document.getElementById("back-button").addEventListener("click", () => {
-        const element = document.getElementById("testimonial");
+  document.getElementById("back-button").addEventListener("click", () => {
+    const element = document.getElementById("testimonial");
 
-        element.classList.add("is-one-quarter");
-        element.classList.add("is-hidden-touch");
-        element.classList.remove("is-full");
+    element.classList.add("is-one-quarter");
+    element.classList.add("is-hidden-touch");
+    element.classList.remove("is-full");
 
-        const element2 = document.getElementById("cards");
-        element2.classList.remove("is-hidden");
-    })
+    const element2 = document.getElementById("cards");
+    element2.classList.remove("is-hidden");
+  });
 
-    document.getElementById("current-tab").addEventListener("click", ()=>{
-        document.getElementById("current").style.display = "block";
-        document.getElementById("current-tab").classList.add("is-active");
+  document.getElementById("current-tab").addEventListener("click", () => {
+    document.getElementById("current").style.display = "block";
+    document.getElementById("current-tab").classList.add("is-active");
 
-        document.getElementById("past").style.display = "none";
-        document.getElementById("past-tab").classList.remove("is-active");
-    });
-    document.getElementById("past-tab").addEventListener("click", ()=>{
-        document.getElementById("past").style.display = "block";
-        document.getElementById("past-tab").classList.add("is-active");
+    document.getElementById("past").style.display = "none";
+    document.getElementById("past-tab").classList.remove("is-active");
+  });
+  document.getElementById("past-tab").addEventListener("click", () => {
+    document.getElementById("past").style.display = "block";
+    document.getElementById("past-tab").classList.add("is-active");
 
-        document.getElementById("current").style.display = "none";
-        document.getElementById("current-tab").classList.remove("is-active");
-    });
+    document.getElementById("current").style.display = "none";
+    document.getElementById("current-tab").classList.remove("is-active");
+  });
 </script>
 
 <style>
-    link {
-        color: var(--white);
-    }
-    link.dark {
-        color: var(--black);
-    }
-    .testimonial{
-        background-color: var(--light);
-    }
-    #past{
-        display: none;
-    }
-    .tabs.is-toggle li.is-active a{
-        background-color: white  !important;
-        border-color: white  !important;
-        color: black !important;
-    }
-    .tabs a{
-        color: white !important;
-    }
-    .tabs a:hover{
-        color:black !important;
-        background-color: rgba(255, 255, 255, 0.584) !important;
-    }
+  link {
+    color: var(--white);
+  }
+  link.dark {
+    color: var(--black);
+  }
+  .testimonial {
+    background-color: var(--light);
+  }
+  #past {
+    display: none;
+  }
+  .tabs.is-toggle li.is-active a {
+    background-color: white !important;
+    border-color: white !important;
+    color: black !important;
+  }
+  .tabs a {
+    color: white !important;
+  }
+  .tabs a:hover {
+    color: black !important;
+    background-color: rgba(255, 255, 255, 0.584) !important;
+  }
 </style>
 
 <Base title="Members">
-    
-    <div class="columns py-3">
-        <div class="column is-auto" style="padding-top:90px;" id="cards">
-            <div>
-                <!-- <div class="title">People</div> -->
-                <div class="tabs is-toggle-rounded is-toggle is-medium is-centered">
-                <ul>
-                    <li class="link is-active" id="current-tab"><a>Current</a></li>
-                    <li class="link bulma-hamburger-mixin is-hidden-desktop is-pulled-right" id="testimonial-button">
-                        <a><span>Testimonials</span></a>
-                        </li>
-                    <li class="link" id="past-tab" ><a>Past</a></li>
-                </ul>
-                </div>
-                <div id="current" style = "color : black!important;">
-                    <People_Card_Component_Current client:only/>
-                </div>
-                <div id="past" style = "color : black!important;">
-                    <People_Card_Component_Past client:only/>
-                </div>
-            </div>
+  <div class="columns py-3">
+    <div class="column is-auto" style="padding-top:90px;" id="cards">
+      <div>
+        <!-- <div class="title">People</div> -->
+        <div class="tabs is-toggle-rounded is-toggle is-medium is-centered">
+          <ul>
+            <li class="link is-active" id="current-tab"><a>Current</a></li>
+            <li
+              class="link bulma-hamburger-mixin is-hidden-desktop is-pulled-right"
+              id="testimonial-button"
+            >
+              <a><span>Testimonials</span></a>
+            </li>
+            <li class="link" id="past-tab"><a>Past</a></li>
+          </ul>
         </div>
-        
-        <div class="column is-one-quarter testimonial is-hidden-touch" id="testimonial" style="padding-top:90px; padding-left: 4rem; padding-right: 4rem; font-style:italic; font-size:large;">
-            <button class="link is-arrow-left is-hidden-desktop is-pulled-right" id="back-button">
-                <a>Back</a>
-            </button>
-            <i><center class="title is-1 " style="padding-bottom: 4vh;">Testimonials</center></i>
-            <Testimonials client:only/>
+        <div id="current" style="color : black!important;">
+          <People_Card_Component_Current client:only />
         </div>
+        <div id="past" style="color : black!important;">
+          <People_Card_Component_Past client:only />
+        </div>
+      </div>
     </div>
+
+    <div
+      class="column is-one-quarter testimonial is-hidden-touch px-0"
+      id="testimonial"
+      style="padding-top:90px; padding-left: 4rem; padding-right: 4rem; font-style:italic; font-size:large;"
+    >
+      <button
+        class="link is-arrow-left is-hidden-desktop is-pulled-right"
+        id="back-button"
+      >
+        <a>Back</a>
+      </button>
+      <p class="title is-1 has-text-centered my-0" style="min-width: 17rem;">Testimonials</p>
+      <div class="section">
+        <Testimonials client:only />
+      </div>
+    </div>
+  </div>
 </Base>
