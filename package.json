@@ -39,7 +39,7 @@
 		"remark-toc": "^8.0.1",
 		"sharp": "^0.32.1",
 		"typewriter-effect": "^2.19.0",
-		"yatharth-super-lemon": "^1.4.6"
+		"yatharth-super-lemon": "^1.4.9"
 	},
 	"devDependencies": {
 		"@types/aos": "^3.0.4",
