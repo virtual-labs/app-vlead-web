@@ -184,16 +184,30 @@ export function People_Card_Component_Current () {
             {/* <People_Card UserData={data1} /> */}
             {Object.values(content).map((c,i)=>{
 
-                console.log(c["Associations"]);
                 const associations = [];
 
                 c["Associations"].map((a,j)=>{
+
+                  console.log(a["Joining(mmm-yy)"].slice(0,7));
+                  console.log(typeof(a["Joining(mmm-yy)"]));
+
                   const assoc = {
                     name: a["Association Type"],
                     joining: a["Joining(mmm-yy)"],
                     leaving: a["Leaving(mmm-yy"],
                     projects: []
                   };
+
+                  if(assoc.joining)
+                  {
+                    assoc.joining = a["Joining(mmm-yy)"].slice(0,7);
+                    assoc.joining = "a";
+                  }
+                  if(assoc.leaving)
+                  {
+                    assoc.leaving = a["Leaving(mmm-yy"].slice(0,7);
+                    assoc.leaving = "b";
+                  }
                   
                   a["Projects"].map((p,k)=>{
                     assoc.projects.push({

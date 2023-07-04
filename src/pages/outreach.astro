@@ -48,6 +48,11 @@ const data = all.workshop;
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"
 ></script>
 
+<script>
+  document.getElementById("outreach").classList.add("is-active");
+  document.getElementById("outreach").classList.add("has-text-weight-bold");
+</script>
+
 <script> // toggling between tabs
   const nc = document.getElementById("tabNodalcenters"); //nodal centers
   const NAN = document.getElementById("NAN");
@@ -263,6 +268,7 @@ const data = all.workshop;
   .tabs .dropdown-trigger a{
     color: white;
     font-weight: 500;
+    font-size: larger;
   }
   .tabs .dropdown-trigger a:hover{
     color:black;
@@ -305,23 +311,23 @@ const data = all.workshop;
     border-bottom-right-radius: 0%;
   }
   .workshop_analytics {
-    display: block;
+    display: none;
   }
   .nodal_analytics {
     display:none;
   }
   .gallery {
-    display:none;
+    display:block;
     /* padding-left: 4rem; */
     /* padding-right: 4rem; */
   }
   .gal-img{
     /* padding:1rem; */
-    margin:0.5rem;
-    border: 8px solid #f3f3f3f4;
+    margin:0.3rem;
+    border: 6px solid #f3f3f3f4;
     border-radius: 8px;
     height: auto;
-    width:350px;
+    width:450px;
     /* padding-left: 0%;
     padding-right: 0% !important; */
   }
@@ -338,11 +344,11 @@ const data = all.workshop;
 
     <div class="tabs theme is-boxed is-toggle is-centered is-medium" style="overflow:visible;">
       <ul>
-        <li id="tabWorkshops" class="link is-active">
+        <li id="tabWorkshops" class="link">
           <div class="dropdown is-hoverable">
             <div class="dropdown-trigger link" id="w-trigger">
               <a aria-haspopup="true" aria-controls="dropdown-menu4">
-                <span>Workshops organised</span>
+                <span>Workshops Organised</span>
               </a>
             </div>
             <div class="dropdown-menu" id="dropdown-menu4" role="menu">
@@ -384,7 +390,7 @@ const data = all.workshop;
         </li>
         <li id="rw" class="link dropdown-trigger"><a>Request a Workshop</a></li>
         <li id="faq" class="link dropdown-trigger"><a>FAQ's</a></li>
-        <li id="gal" class="link dropdown-trigger"><a>Gallery</a></li>
+        <li id="gal" class="link dropdown-trigger is-active"><a>Gallery</a></li>
       </ul>
     </div>
     
