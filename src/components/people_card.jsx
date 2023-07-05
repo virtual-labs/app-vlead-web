@@ -178,22 +178,56 @@ export function People_Card_Component_Current () {
       return "https://drive.google.com/uc?export=view&id=" + id;
     }
 
+    const months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
     return(
         loaded ? (
           <div class="columns is-multiline is-mobile is-centered">
             {/* <People_Card UserData={data1} /> */}
             {Object.values(content).map((c,i)=>{
 
-                console.log(c["Associations"]);
                 const associations = [];
 
                 c["Associations"].map((a,j)=>{
+
+                  // console.log(a["Joining(mmm-yy)"];
+                  console.log(typeof(a["Joining(mmm-yy)"]));
+
                   const assoc = {
                     name: a["Association Type"],
                     joining: a["Joining(mmm-yy)"],
-                    leaving: a["Leaving(mmm-yy"],
+                    leaving: a["Leaving(mmm-yy)"],
                     projects: []
                   };
+
+                  if(assoc.joining)
+                  {
+                    if(assoc.joining !== "present")
+                    {
+                      assoc.joining = a["Joining(mmm-yy)"].slice(0,7);
+                      
+                      let j = "";
+                      j += months[Number(a["Joining(mmm-yy)"].slice(5,7))];
+                      j += " ";
+                      j += assoc.joining.slice(0,4);
+
+                      assoc.joining = j;
+                    }
+                  }
+                  if(assoc.leaving)
+                  {
+                    if(assoc.leaving !== "present")
+                    {
+                      assoc.leaving = a["Leaving(mmm-yy)"].slice(0,7);
+                      
+                      let l = "";
+                      l += months[Number(a["Leaving(mmm-yy)"].slice(5,7))];
+                      l += " ";
+                      l += assoc.leaving.slice(0,4);
+
+                      assoc.leaving = l;
+                    }
+                  }
                   
                   a["Projects"].map((p,k)=>{
                     assoc.projects.push({
@@ -204,8 +238,9 @@ export function People_Card_Component_Current () {
                   })
 
                   associations.push(assoc);
-
+                  
                 })
+                console.log(associations);
 
                 return(
                     <People_Card UserData={{
