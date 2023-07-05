@@ -136,7 +136,7 @@ const short_about = all.shorty;
   <main style="margin-bottom: 2rem;">
     <div class="explore-container columns is-desktop" id="typewrite-container">
       <div class="explore column rows" id="explore">
-        <p class="typewriter row text theme is-full" id="typewriter">
+        <p class="typewriter row text theme is-full level" id="typewriter">
           <MyTypewriter client:load />
           <Typewriter
             options={{
@@ -147,9 +147,9 @@ const short_about = all.shorty;
             client:load
           />
         </p>
-        <p class = "row text theme is-full" id="short-about">
+        <div class = "row text theme is-full" id="short-about">
           {short_about}
-      </p>
+        </div>
       </div>
       <div id="divider" class="divider is-hidden-touch theme"></div>
       <div class="column" id="role">
@@ -272,8 +272,11 @@ const short_about = all.shorty;
     margin-top: 1%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
+    gap: 2rem;
+    padding: 7rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    /* max-width: 25rem; */
   }
   .next_button {
     margin-left: 5%;
@@ -303,7 +306,7 @@ const short_about = all.shorty;
     font-size: 10vmin;
     font-family: "Fira Code", monospace;
     font-weight: bold;
-    height: 50vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -331,14 +334,25 @@ const short_about = all.shorty;
     padding-bottom: 10vh;
   }
   #short-about {
-    font-size: 3vh;
-    padding-top: 10vh
+    font-size: 1.3rem;
+    padding-top:10vh;
+    padding-left: 6vh;
+    padding-right: 6vh;
+    font-family: "Fira Sans";
+    text-align: "justify";
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+  }
+  #role{
+    padding-top: 10vh;
+  }
+  #services{
   }
 
   .divider {
     display: inline-block;
     width: 2px;
-    height: 50vh;
+    height: 70vh;
     margin-bottom: 10vh;
     background-image: radial-gradient(var(--dark), transparent);
   }
