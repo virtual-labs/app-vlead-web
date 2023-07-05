@@ -83,7 +83,7 @@
         },
         {
             "title":"Virtual Box",
-            "href":"/virtual_box",
+            "href":"/virtual-box",
             "img":"cards/virtualbox.webp",
             "body":""
         },
@@ -94,5 +94,5 @@
             "body":""
         }
     ],
-    "shorty": "We are Virtual Labs."
+    "shorty": "The Virtual Labs Engineering, Architecture, and Design (VLEAD) Team at IIIT Hyderabad is a dedicated team responsible for overseeing the central platform engineering operations, engineering."
 }
