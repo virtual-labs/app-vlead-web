@@ -71,7 +71,7 @@
     "services":[
         {
             "title":"Development and Hosting",
-            "href":"/create",
+            "href":"/development",
             "img":"cards/development.webp",
             "body":""
         },
@@ -82,17 +82,11 @@
             "body":""
         },
         {
-            "title":"Virtual Box",
-            "href":"/virtual-box",
-            "img":"cards/virtualbox.webp",
-            "body":""
-        },
-        {
             "title":"FAQ's",
             "href":"/faq_page",
             "img":"cards/FAQs.webp",
             "body":""
         }
     ],
-    "shorty": "The Virtual Labs Engineering, Architecture, and Design (VLEAD) Team at IIIT Hyderabad is a dedicated team responsible for overseeing the central platform engineering operations, engineering."
+    "shorty": "The Virtual Labs Engineering, Architecture, and Design (VLEAD)  Team at IIIT Hyderabad is a dedicated group responsible for managing and optimizing the operations of  Virtual Labs. We handle various tasks, including infrastructure management, system administration, user interface design, process coordination, analytics, automation, performance and security enhancements, content authoring tool development, and technology research. Our efforts ensure efficient and improved functioning of Virtual Labs, providing users with a seamless learning experience."
 }
