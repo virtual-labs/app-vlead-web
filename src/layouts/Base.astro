@@ -1,0 +1,37 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+const { title } = Astro.props;
+
+---
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{title}</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+		<link rel="stylesheet" href="src/css/theme.css" />
+		<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	</head>
+	<script type="text/javascript" src="../../app.js"></script>
+	<body>
+		<div class="about_box theme">
+			  <Navbar />
+			  <slot />
+		  <Footer />
+		</div>
+	</body>
+</html>
+<style>
+body {
+	background: radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%);
+}
+  .about_box {
+      height: 95%;
+      color: var(--dark);
+  	/* position: relative; */
+  }
+  .about_box.dark {
+	color: var(--white);
+  }
+</style>

@@ -1,0 +1,75 @@
+---
+import all from "../footer_data.json";
+---
+
+<!-- <hr class="mb-1" /> -->
+<div class="footer-class has-text-white">
+<div class="columns is-mobile ">
+  <div class="column px-5">
+    <p class="is-size-4 has-text-centered py-0">Address</p>
+    <hr class="my-1 m-auto" style="width: 75%; " />
+    <p class="is-size-6 py-3 has-text-centered">
+      {all.address}
+    </p>
+  </div>
+  <div class="column px-5">
+    <p class="is-size-4 has-text-centered py-0">Contact</p>
+    <hr class="my-1 m-auto" style="width: 75%; " />
+    <p class="is-size-6 py-3 has-text-centered">
+      General Information : {all.contact.General_Information}<br />
+      Development/Outreach : {all.contact.DevelopmentandOutreach}<br />
+      Email: {all.contact.Email}
+    </p>
+  </div>
+  <div class="column px-5">
+    <p class="is-size-4 has-text-centered py-0">Follow Us</p>
+    <hr class="my-1 m-auto" style="width: 75%; " />
+    <div class="is-flex is-justify-content-space-evenly py-5">
+      {
+        all.Follow.map((item) => {
+          return (
+            <a href={item.link}>
+              <img
+                height="50px"
+                width="50px"
+                src={item.logo}
+                alt={item.social}
+              />
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</div>
+<div class="column px-5">
+  <p class="is-size-4 has-text-centered py-0">About Us</p>
+  <hr class="my-1 m-auto" style="width: 75%; " />
+  <p class="is-size-6 py-3 has-text-centered">
+    {all.aboutus}
+  </p>
+</div>
+</div>
+<style>
+  h3 {
+    margin-bottom: 0%;
+  }
+  .footer {
+    /* background-color: ; */
+    /* background-color: rgb(35, 4, 52); */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    /* width: 100%; */
+  }
+  .footer-heading {
+    width: 100%;
+  }
+  .row {
+    text-align: center;
+  }
+  .footer-class {
+    background-color: var(--footer);
+    color: var(--white);
+    /* margin: 0rem; */
+  }
+</style>

@@ -1,0 +1,501 @@
+---
+
+import { Icon } from "astro-icon";
+import Roles from "./role";
+
+	var id = "1tJI8OIV2F3BXFkniSODtyr3smj3SS2zQGc5Q-x5N8kI";
+	var gid = "405192847";
+	let users=0, Views=0;
+	var url =
+		"https://docs.google.com/spreadsheets/d/" +
+		id +
+		"/gviz/tq?tqx=out:json&tq&gid=" +
+		gid;
+	try{
+		const res = await fetch(url)
+		const data	= await res.text()
+		users = JSON.parse(data.substring(47).slice(0, -2)).table.rows[0].c[2].f;
+		Views = JSON.parse(data.substring(47).slice(0, -2)).table.rows[1].c[2].f;
+		}
+	catch(err){
+			// console.log(err);
+		}	
+
+	fetch('https://8kne7udek3.execute-api.ap-southeast-2.amazonaws.com/items')
+      .then(resp => resp.json())
+      .then(data => {
+    })
+---
+
+<!-- <script src="./../../public/script.js"></script> -->
+<script>
+	function detectMob() {
+		const toMatch = [
+			/Android/i,
+			/webOS/i,
+			/iPhone/i,
+			/iPad/i,
+			/iPod/i,
+			/BlackBerry/i,
+			/Windows Phone/i
+		];
+		
+		return toMatch.some((toMatchItem) => {
+			return navigator.userAgent.match(toMatchItem);
+		});
+	}
+
+	const cnv = document.createElement("canvas");
+	//Get context and screen size;
+	var ctx = cnv.getContext("2d");
+	var W = window.innerWidth;
+	var H = window.innerHeight;
+
+	//Set Canvas and Background Color;
+	cnv.width = W
+	cnv.height = H;
+	ctx.fillStyle = "#112";
+	ctx.fillRect(0, 0, W, H);
+
+	//Glow effect;
+	ctx.shadowBlur = 10;
+	ctx.shadowColor = "white";
+
+	function animate() {
+		if(localStorage.getItem("theme") != "dark")
+			return;
+
+		//Random position and size of stars;
+		let x = W * Math.random();
+		let y = H * Math.random();
+		let r = 2.5 * Math.random();
+
+		//Draw the stars;
+		ctx.beginPath();
+		ctx.fillStyle = "white";
+		ctx.arc(x, y, r, 0, Math.PI * 2);
+		ctx.fill();
+
+		var imageDataURL = cnv.toDataURL();
+		// set the dynamic image as the background
+		document.body.style.background = 
+		"transparent url('"+imageDataURL+"') repeat";
+		// document.body.style.background = "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
+		setTimeout(animate, 400);
+	}
+
+	// Find all buttons with the `alert` class on the page.
+	const buttons = document.getElementById("stats");
+
+	if (buttons != null) {
+		buttons.addEventListener("click", () => {
+		location.href =
+			"https://script.google.com/macros/s/AKfycbyFZHcRjq69aBhOJ3oa7D9WAdrNz9M1f6VFoYN0wdiqwLhR4HcYmMABRaZjh6PNRsd_/exec";
+		});
+	}
+
+	if (detectMob()) {
+		document.getElementById("search-submit").style.display = "none";
+	}
+	const search_button = document.getElementById("search-button");
+	const search_submit = document.getElementById("search-submit");
+	const search_bar = document.getElementById("search-bar-container");
+	const search_value = document.getElementById("search_value");
+  	const form = document.getElementById("form");
+	search_bar.addEventListener("mouseenter", () => {
+		search_submit.classList.add("search-open");
+		search_bar.classList.add("search-open");
+	});
+	form.addEventListener("submit",(e)=>{
+    	e.preventDefault();
+    	sessionStorage.setItem("search",search_value.value);
+    	window.location.href = "/experiments";
+  	})
+
+	const burger = document.getElementById("burger");
+	const menu = document.getElementById("navbarMain");
+	burger.addEventListener("click", () => {
+		burger.classList.toggle("is-active");
+		menu.classList.toggle("is-active");
+	});
+
+	const icon1 = document.getElementById("icon-theme-light");
+	const icon2 = document.getElementById("icon-theme-dark");
+	let toggle = (theme) => {
+		localStorage.setItem("theme", theme);
+		let list = document.getElementsByClassName("theme");
+		for(let i=0; i<list.length; i++) {
+			list[i].classList.toggle("dark");
+		}
+		if(theme == "dark") {
+			animate();
+			icon1.style.display = "none";
+			icon2.style.display = "block";
+		}
+		else {
+			document.body.style.backgroundImage = "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
+			icon2.style.display = "none";
+			icon1.style.display = "block";
+		}
+	};
+
+	let theme = localStorage.getItem("theme");
+
+	if(theme === "dark") {
+		toggle(theme);
+		animate();
+	}
+	else {
+		document.body.style.backgroundImage = "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
+		theme = "light";
+	}
+	const theme_switcher = document.getElementById("theme");
+	theme_switcher.addEventListener("click", () => {
+		theme = (theme === "dark" ? "light" : "dark");
+		toggle(theme);
+	});
+
+</script>
+
+<script>
+	const outreach = document.getElementById("outreach");
+	const create = document.getElementById("create");
+	const learning = document.getElementById("learning");
+	const role_dict = {"creator": create, "educator": outreach, "learner": learning};
+	const role = sessionStorage.getItem("role");
+	if(role)
+	{
+		document.getElementById("choose-drop").classList.remove("is-hidden");
+		role_dict[role].classList.remove("is-hidden");
+		if(role=="creator"){
+			document.getElementById("drop-creator").classList.add("active-role");
+		}
+		else if(role=="educator"){
+			document.getElementById("drop-educator").classList.add("active-role");
+		}
+		else if(role=="learner") {
+			document.getElementById("drop-learner").classList.add("active-role");
+		}
+	}
+
+	const drop_creator = document.getElementById("drop-creator");
+	drop_creator.addEventListener("click", () => {
+		outreach.classList.add("is-hidden");
+		learning.classList.add("is-hidden");
+		create.classList.remove("is-hidden");
+		document.getElementById("drop-creator").classList.add("active-role");
+		document.getElementById("drop-educator").classList.remove("active-role");
+		document.getElementById("drop-learner").classList.remove("active-role");
+		sessionStorage.setItem("role", "creator");
+	});
+	const drop_educator = document.getElementById("drop-educator");
+	drop_educator.addEventListener("click", () => {
+		create.classList.add("is-hidden");
+		learning.classList.add("is-hidden");
+		outreach.classList.remove("is-hidden");
+		document.getElementById("drop-creator").classList.remove("active-role");
+		document.getElementById("drop-educator").classList.add("active-role");
+		document.getElementById("drop-learner").classList.remove("active-role");
+		sessionStorage.setItem("role", "educator");
+	});
+	const drop_learner = document.getElementById("drop-learner");
+	drop_learner.addEventListener("click", () => {
+		create.classList.add("is-hidden");
+		outreach.classList.add("is-hidden");
+		learning.classList.remove("is-hidden");
+		document.getElementById("drop-creator").classList.remove("active-role");
+		document.getElementById("drop-educator").classList.remove("active-role");
+		document.getElementById("drop-learner").classList.add("active-role");
+		sessionStorage.setItem("role", "learner");
+	});
+</script>
+
+<!-- <head>
+	<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+		/>
+</head> -->
+<nav class="navbar theme is-fixed-top has-shadow px-0" role="navigation" aria-label="main navigation" >
+	<div class="navbar-brand">
+		<!-- <a class="navbar-item py-0 px-0 " href="https://bulma.io">
+		<img	src="https://cdn.vlabs.ac.in/logo/iiit-small.png" style="max-height:70px " class="py-2 px-2"/>
+		</a> -->
+		<a class="navbar-item py-0 px-0 ml-5" href="/">
+			<img src="https://cdn.vlabs.ac.in/logo/vlead-small.png" loading="lazy" style="max-height:70px " class="py-2 px-2"/>
+		</a>
+		<div class="navbar-item" id="theme">
+			<div class="theme-toggle">
+				<span class="icon-theme mx-auto">
+					<Icon id="icon-theme-light" name="ph:sun-bold"/>
+					<Icon id="icon-theme-dark" style="display:none;" name="ph:moon-fill"/>
+				</span>
+			</div>
+		</div>
+		<div class="navbar-item">
+			<div class="search-bar" id="search-bar-container">
+				<!-- <form>
+				<input type="search" class="input search-input is-rounded">
+				<input type="submit" class="button search-submit" value="" id="search-submit">
+				<span class="icon-search" id="search-button">
+					<Icon name="ic:outline-search"/>
+				</span>
+				</form> -->
+				<form id="form">
+					<input type="search" placeholder="Search for experiments" class="input search-input is-rounded" id="search_value">
+				<a href="/experiments" class="button search-submit" id="search-submit"></a>
+					<span class="icon-search" id="search-button">
+					<Icon name="ic:outline-search"/>
+					</span>
+					</form>
+			</div>
+		</div>
+		<a role="button" id="burger" class="navbar-burger is-left" aria-label="menu" aria-expanded="false" data-target="navbarMain">
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+		</a>
+	</div>
+	<div id="navbarMain" class="navbar-menu is-boxed">
+	<div class="navbar-start">
+	</div>
+		<div class="navbar-end">
+			<div class="navbar-item has-dropdown is-hoverable is-hidden" id="choose-drop">
+				<a class="navbar-link is-size-6">
+						Choose a Role
+				</a>
+
+				<div class="navbar-dropdown">
+					<a class="navbar-item theme" id="drop-learner">
+						Learner
+					</a>
+					<hr class="navbar-divider">
+					<a class="navbar-item theme" id="drop-educator">
+						Educator
+					</a>
+					<hr class="navbar-divider">
+					<a class="navbar-item theme" id="drop-creator">
+						Creator
+					</a>
+				</div>
+				</div>
+				<a class="navbar-item is-size-6 is-hidden" id="create" href="/create/">
+						Create Experiment
+					</a>
+					<a class="navbar-item is-size-6 is-hidden" id="outreach" href="/outreach/">
+						Outreach
+					</a>
+					<a class="navbar-item is-size-6 is-hidden" id="learning" href="/experiments">
+						Start Learning
+					</a>
+				<Roles client:only/>
+				<!-- <div class="flashing"> -->
+				<a class="navbar-item is-size-6" href="/analytics/">
+						Analytics
+				</a>
+				<a class="navbar-item is-size-6" href="/members/">
+					Our Team
+				</a>
+		<!-- </div> -->
+			<a class="navbar-item is-size-6 has-background-success-light has-text-black" id="user-display">
+				<strong>
+					Users: {users}
+				</strong>
+			</a>
+			<a class="navbar-item is-size-6 has-background-success-light has-text-black" id="views-display">
+				<strong>
+					Views: {Views}
+				</strong>
+			</a>
+			</div>
+			</div>
+	<!-- <div class="buttons-right">
+		<div class="searchBox">
+			<input class="searchText" type="text" placeholder="Search...">
+			<a href="#" class="searchBtn"><Icon name="ic:outline-search" width="35px"/></a>
+		</div> 
+		<button class="navbutton">Create Experiment</button>
+		<button class="navbutton">Teaching</button>
+		<button class="navbutton">Start Learning</button>
+		<button class="navbutton" id="stats">Analytics&nbsp&nbsp</button>
+		<p class="users_display">Users:{users}&nbsp</p>
+		<p class="users_display">Views:{Views}&nbsp</p>
+	</div> -->
+	<!-- </div> -->
+</nav>
+
+<style>
+
+	#user-display:hover{
+		color:black;
+	}
+	#views-display:hover{
+		color:black;
+	}
+	/* .navbar-dropdown{
+		dropdown-item-hover-color: red;
+	} */
+	.navbar {
+		background-color: var(--secondary);
+	}
+	.navbar.dark {
+		background-color: var(--secondary-dark);
+	}
+	.navbar-menu,
+	.navbar-brand {
+		position: relative;
+		z-index: 30;
+	}
+	.navbar-burger {
+		height: 5vh;
+		width: 5vh;
+	}
+	.navleft{
+		text-align:left;
+		margin-top: 1%;
+	}
+	img{
+		background-color:white
+	}
+	.search-bar {
+		position: relative;
+		height: 40px;
+		width: 0;
+		min-width: 40px;
+		overflow: hidden;
+		border-radius: 20px;
+
+		transition: width 0.5s ease;
+		-webkit-transition: width 0.5s ease;
+		-moz-transition: width 0.5s ease;
+	
+		-webkit-backface-visibility: hidden;
+	}
+	.search-bar.search-open {
+		width: 40vw;
+	}
+	@media screen and (max-width: 1600px) {
+		.search-bar.search-open {
+			width: 20vw;
+		}
+	}
+	@media screen and (max-width: 1023px) {
+		.search-bar.search-open {
+			width: 40vw;
+		}
+	}
+	.search-input {
+		position: relative;
+		width: 100%;
+		height: 40px;
+		z-index: 31;
+	}
+	.icon-search,
+	.search-submit	{
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 40px;
+		height: 40px;
+		padding: 5px;
+		text-align: center;
+		cursor: pointer;
+	}
+	.search-submit {
+		z-index: 29;
+		color: transparent;
+		background-color: transparent;
+		border: transparent;
+	}
+	.search-submit.search-open {
+		z-index: 40;
+	}
+	.icon-search {
+		z-index: 35;
+	}
+	.users_display {
+		display: inline;
+		background: none;
+		border: none;
+		color: white;
+		/* color: black; */
+		font-size: 25px;
+		position: relative;
+		vertical-align: auto;
+	}
+	.navbutton {
+		display: inline;
+		/* background-color: rgb(50, 29, 79); */
+		background: none;
+		border: none;
+		color: white;
+		font-size: large;
+		/* padding: 5px; */
+	}
+	.navbutton:hover {
+		font-weight: bold;
+	}
+	.buttons-right {
+		text-align: right;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.searchbar {
+		border-radius: 12px;
+		font-size: large; */
+		width: 0;
+		overflow: hidden;
+		transition: width 0.3s ease-in-out;
+	}
+	.searchbar:focus {
+		width: 100%;
+		overflow: visible;
+	}
+
+	@keyframes flashing {
+		0% {
+			background-color: white;
+			color: black;
+		}
+		25% {
+			background-color: gray;
+			color: white;
+		}
+		50% {
+			background-color: black;
+			color: white;
+		}
+		75% {
+			background-color: gray;
+			color: white;
+		}
+		100% {
+			background-color: white;
+			color: black;
+		}
+	}
+
+	.flashing {
+		animation: flashing 1s linear ;
+		animation-iteration-count: 1;
+	}
+
+	#invisible{
+		display: none;
+	}
+	.theme-toggle {
+		margin: auto;
+		width: 30px;
+		padding-top: 0.5vh;
+	}
+	.active-role {
+		background-color: var(--primary) !important;
+		color: var(--white);
+	}
+	.active-role.dark {
+		background-color: var(--primary-dark) !important;
+	}
+</style>
+
