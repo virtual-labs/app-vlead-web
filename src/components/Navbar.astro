@@ -210,6 +210,22 @@ import Roles from "./role";
 	});
 </script>
 
+<script>
+	const clickables = document.querySelectorAll(".clickable");
+
+	clickables.forEach(element => {
+		console.log(element);
+		element.addEventListener("click", ()=>{
+			clickables.forEach(e => {
+				e.classList.remove("is-active");
+				e.classList.remove("has-text-weight-bold");
+			});
+			element.classList.add("is-active");
+			element.classList.add("has-text-weight-bold");
+		})
+	});
+</script>
+
 <!-- <head>
 	<link
 			rel="stylesheet"
@@ -261,7 +277,7 @@ import Roles from "./role";
 	</div>
 		<div class="navbar-end">
 			<div class="navbar-item has-dropdown is-hoverable is-hidden" id="choose-drop">
-				<a class="navbar-link is-size-6">
+				<a class="navbar-link is-size-5">
 						Choose a Role
 				</a>
 
@@ -279,30 +295,30 @@ import Roles from "./role";
 					</a>
 				</div>
 				</div>
-				<a class="navbar-item is-size-6 is-hidden" id="create" href="/create/">
+				<a class="navbar-item is-size-5 is-hidden clickable" id="create" href="/development/">
 						Create Experiment
 					</a>
-					<a class="navbar-item is-size-6 is-hidden" id="outreach" href="/outreach/">
+					<a class="navbar-item is-size-5 is-hidden clickable" id="outreach" href="/outreach/">
 						Outreach
 					</a>
-					<a class="navbar-item is-size-6 is-hidden" id="learning" href="/experiments">
+					<a class="navbar-item is-size-5 is-hidden clickable" id="learning" href="/experiments">
 						Start Learning
 					</a>
 				<Roles client:only/>
 				<!-- <div class="flashing"> -->
-				<a class="navbar-item is-size-6" href="/analytics/">
+				<a class="navbar-item is-size-5 clickable" id="analytics" href="/analytics/">
 						Analytics
 				</a>
-				<a class="navbar-item is-size-6" href="/members/">
+				<a class="navbar-item is-size-5 clickable" id="ourteam" href="/members/">
 					Our Team
 				</a>
 		<!-- </div> -->
-			<a class="navbar-item is-size-6 has-background-success-light has-text-black" id="user-display">
+			<a class="navbar-item is-size-5 has-background-success-light has-text-black" id="user-display">
 				<strong>
 					Users: {users}
 				</strong>
 			</a>
-			<a class="navbar-item is-size-6 has-background-success-light has-text-black" id="views-display">
+			<a class="navbar-item is-size-5 has-background-success-light has-text-black" id="views-display">
 				<strong>
 					Views: {Views}
 				</strong>
@@ -444,7 +460,7 @@ import Roles from "./role";
 	}
 	.searchbar {
 		border-radius: 12px;
-		font-size: large; */
+		font-size: large;
 		width: 0;
 		overflow: hidden;
 		transition: width 0.3s ease-in-out;
@@ -496,6 +512,9 @@ import Roles from "./role";
 	}
 	.active-role.dark {
 		background-color: var(--primary-dark) !important;
+	}
+	a.navbar-item.is-active {
+		color: var(--background-dark);
 	}
 </style>
 
