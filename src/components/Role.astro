@@ -1,0 +1,135 @@
+---
+import logo from "images.png";
+import { Icon } from "astro-icon";
+---
+
+<script>
+	import all from "../home_data.json"
+	var roles = all.roles
+	const all_roles = document.getElementById("all_roles");
+	roles.forEach((item,i)=>{
+		var p = document.createElement("p")
+		p.id = item.id
+		if(i!=0)
+			p.classList.add("is-hidden")
+			p.classList.add("astro-YWONBOWH")
+		p.textContent = item.about
+		all_roles.appendChild(p)
+	})
+	const teacher_button = document.getElementById("teacher");
+	const learner_button = document.getElementById("learner");
+	const dev_button = document.getElementById("dev");
+	const default_text = document.getElementById("default");
+	const learner_text = document.getElementById("learner-text");
+	const educator_text = document.getElementById("educator-text");
+	const creator_text = document.getElementById("creator-text");
+	const mobile_text = document.getElementById("mobile-text");
+
+	let hover_func = (element) => {
+		default_text.classList.toggle("is-hidden");
+		element.classList.toggle("is-hidden");
+	};
+
+	teacher_button.addEventListener("mouseenter", () => {hover_func(educator_text);});
+	teacher_button.addEventListener("mouseleave", () => {hover_func(educator_text);});
+	learner_button.addEventListener("mouseenter", () => {hover_func(learner_text);});
+	learner_button.addEventListener("mouseleave", () => {hover_func(learner_text);});
+	dev_button.addEventListener("mouseenter", () => {hover_func(creator_text);});
+	dev_button.addEventListener("mouseleave", () => {hover_func(creator_text);});
+</script>
+
+<div class="comp-container text theme">
+	<div class="level">
+		<div class="level-item role-title my-6 mx-auto">
+			<h1 class="has-text-weight-semibold">
+			 Choose your role
+			</h1>
+		</div>
+	</div>
+	<div class="uniform columns is-centered content-container m-auto">
+		<div class="column is-6 plaintext px-5 py-0 my-2 has-text-weight-medium" id="all_roles">
+			<!-- added paragraphs using json files in script tag -->
+		</div>
+		<div id="buttons" class="column tile is-vertical is-gapless is-parent is-1">
+			<div class="tile">
+				<button id="learner" class="role-button button is-rounded theme">
+					<span class="icon-container">
+						<Icon name="mdi:learn-outline" class="role-icon"/>
+					</span>
+				</button>
+			</div>
+			<div class="tile">
+				<button id="teacher" class="role-button button is-rounded theme">
+					<span class="icon-container">
+						<Icon name="mdi:teach" class="role-icon"/>
+					</span>
+				</button>
+			</div>
+			<div class="tile">
+				<button id="dev" class="role-button button is-rounded theme">
+					<span class="icon-container">
+						<Icon name="ic:round-code" class="role-icon"/>
+					</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400&family=Raleway:wght@300;600&display=swap');	
+
+	.comp-container {
+		height: 45vh;
+		opacity: 100%;
+	}
+	.text {
+		color: var(--dark);
+	}
+	.text.dark {
+		color: var(--white);
+	}
+	.button {
+		color: var(--dark);
+		background-color: transparent;
+		border: 2px solid var(--dark);
+	}
+	.button:hover {
+		background-color: var(--dark);
+		color: var(--white);
+	}
+	.button.dark {
+		color: var(--white);
+		background-color: transparent;
+		border: 2px solid var(--white);
+	}
+	.button.dark:hover {
+		background-color: var(--white);
+		color: var(--dark);
+	}
+	.role-title {
+		font-family: "Raleway";
+		font-size: 3rem;
+	}
+	.uniform {
+		height: 25vh;
+	}
+	p {
+		font-size: 1.3rem;
+		font-family: "Fira Sans";
+		text-align: justify;
+	}
+	.role-icon {
+		height: 3vh;
+		width: 3vw;
+	}
+	@media screen and (max-width: 1023px) {
+		.comp-container {
+			font-size: 1.7rem;
+			height: 45vh;
+		}
+		.uniform {
+			height: 10vh;
+		}
+	}
+</style>

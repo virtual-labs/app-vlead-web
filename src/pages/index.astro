@@ -1,0 +1,425 @@
+---
+import Base from "../layouts/Base.astro";
+import Card from "../components/Card.astro";
+import Role from "../components/Role.astro";
+import MyTypewriter from "../components/Typewrite.jsx";
+import Typewriter from "typewriter-effect";
+import { Icon } from "astro-icon";
+import all from "../home_data.json";
+import "../css/theme.css"
+import { google } from "googleapis";
+
+const sheets = google.sheets("v4");
+const data = all.domains;
+const services = all.services;
+const short_about = all.shorty;
+---
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"
+></script>
+
+<script>
+  const domains = document.getElementById("domains");
+  const dev_button = document.getElementById("dev");
+  const teacher_button = document.getElementById("teacher");
+  const learner_button = document.getElementById("learner");
+  const role_box = document.getElementById("role");
+  const dropdown = document.getElementById("choose-drop");
+  const typewriter = document.getElementById("typewriter");
+  const outreach = document.getElementById("outreach");
+  const create = document.getElementById("create");
+  const learning = document.getElementById("learning");
+  const divider = document.getElementById("divider");
+  const chevron = document.getElementById("arrow");
+  const chevron_cont = document.getElementById("arrow-container");
+  const type_cont = document.getElementById("typewrite-container");
+  const short_abt = document.getElementById("short-about");
+  const explore = document.getElementById("explore");
+  const drop_creator = document.getElementById("drop-creator");
+  const drop_educator = document.getElementById("drop-educator");
+  const drop_learner = document.getElementById("drop-learner");
+  const exp_dict = { creator: create, educator: outreach, learner: learning };
+  const role_dict = {creator: drop_creator, educator: drop_educator, learner: drop_learner};
+
+  const role = sessionStorage.getItem("role");
+  if (role) {
+    role_box.classList.add("is-hidden");
+    chevron_cont.classList.add("is-hidden");
+    divider.classList.add("is-hidden");
+    typewriter.classList.add("typewriter-focused");
+    type_cont.style.marginTop = "0vh";
+    type_cont.style.paddingBottom = "8vh";
+    short_abt.classList.add("is-hidden");
+    explore.style.height = "20vh";
+    explore.style.paddingBottom = "0vh";
+    explore.style.paddingTop = "0vh";
+    explore.style.marginTop = "0vh";
+  }
+
+  let rearrange = (role_name) => {
+    role_box.classList.add("fade-out");
+    dropdown.classList.remove("is-hidden");
+    dropdown.classList.add("flashing");
+    document.getElementById("burger").classList.add("flashing");
+    divider.classList.add("is-hidden");
+    typewriter.classList.add("typewriter-focused");
+    chevron_cont.classList.add("fade-out");
+    type_cont.style.marginTop = "0vh";
+    type_cont.style.paddingBottom = "8vh";
+    short_abt.classList.add("is-hidden");
+    explore.style.height = "20vh";
+    explore.style.paddingBottom = "0vh";
+    explore.style.paddingTop = "0vh";
+    explore.style.marginTop = "0vh";
+    drop_creator.classList.remove("active-role");
+    drop_educator.classList.remove("active-role");
+    drop_learner.classList.remove("active-role");
+
+    var bt = exp_dict[role_name];
+    bt.classList.remove("is-hidden");
+    bt.classList.add("flashing");
+    bt = role_dict[role_name];
+    bt.classList.add("active-role"); 
+
+    sessionStorage.setItem("role", role_name);
+    setTimeout(() => {
+      role_box.classList.add("is-hidden");
+      chevron_cont.classList.add("is-hidden");
+    }, 500);
+  };
+
+  let scrollTo = (element) => {
+    window.scroll({
+      behavior: "smooth",
+      left: 0,
+      top: element.offsetTop + 100,
+    });
+  };
+
+  dev_button.addEventListener("click", () => {
+    rearrange("creator");
+  });
+  teacher_button.addEventListener("click", () => {
+    rearrange("educator");
+  });
+  learner_button.addEventListener("click", () => {
+    rearrange("learner");
+  });
+
+  chevron.addEventListener("click", () => {
+    scrollTo(chevron_cont);
+  });
+
+  const swiperEl = document.querySelector("swiper-container");
+  Object.assign(swiperEl, {
+    breakpoints: {
+      0:{
+        slidesPerView: 3,
+      },
+      600: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 4,
+      },
+    },
+  });
+  const all_domains = domains.querySelectorAll(".common_domains");
+  all_domains.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      sessionStorage.setItem("selectedCard", item.id);
+    });
+  });
+</script>
+
+<Base title="Home">
+  <main style="margin-bottom: 2rem;">
+    <div class="explore-container columns is-desktop" id="typewrite-container">
+      <div class="explore column rows" id="explore">
+        <p class="typewriter row text theme is-full" id="typewriter">
+          <MyTypewriter client:load />
+          <Typewriter
+            options={{
+              strings: ["EXPLORE", "EXPERIMENT", "DISCOVER"],
+              autoStart: true,
+              loop: true,
+            }}
+            client:load
+          />
+        </p>
+        <p class = "row text theme is-full" id="short-about">
+          {short_about}
+      </p>
+      </div>
+      <div id="divider" class="divider is-hidden-touch theme"></div>
+      <div class="column" id="role">
+        <Role />
+      </div>
+    </div>
+    <div id="arrow-container" class="columns is-centered">
+      <div class="column dummy-container is-2-desktop">
+        <span class="arrow-span text theme">
+          <Icon name="ic:round-keyboard-arrow-down" id="arrow" />
+        </span>
+      </div>
+    </div>
+
+    <p id="domains-header" class="heading-center text theme">Domains</p>
+    <swiper-container
+      class="mySwiper"
+      navigation="true"
+      pagination="true"
+      effect="coverflow"
+      grab-cursor="true"
+      centered-slides="true"
+      slides-per-view="4"
+      coverflow-effect-rotate="25"
+      coverflow-effect-stretch="0"
+      coverflow-effect-depth="50"
+      coverflow-effect-modifier="1"
+      pagination-dynamic-bullets="true"
+      keyboard="true"
+      loop="true"
+      id="domains"
+    >
+      {
+        data.map((item, i) => {
+          return (
+            <swiper-slide class="common_domains" id={item.title}>
+              <div >
+                <Card
+                  img={item.img}
+                  href="/experiments"
+                  body=""
+                  title={item.title}
+                />
+              </div>
+            </swiper-slide>
+          );
+        })
+      }
+    </swiper-container>
+    <br />
+    <p class="heading-center text theme">Support</p>
+    <div class="link-card-grid" id="services">
+      {services.map((item,i)=>{
+        return (
+        <Card
+        img={item.img}
+        href={item.href}
+        body={item.body}
+        title={item.title}
+      />
+        )
+      })}
+    </div>
+  </main>
+</Base>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;600&family=Fira+Code:wght@400;600&family=Fira+Sans:wght@300&display=swap");
+
+  .intro {
+    display: flex;
+    margin-top: 1%;
+  }
+  .landing-container {
+    position: relative;
+    z-index: 1;
+    height: 95vh;
+  }
+  .heading {
+    display: flex;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-size: 5vh;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  .abt_us {
+    display: flex;
+    padding: 5%;
+    padding-top: 0%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  .text {
+    color: var(--dark);
+  }
+  .text.dark {
+    color: var(--white);
+  }
+  .heading-center {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-size: 250%;
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 0%;
+  }
+  .about-text {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 19px;
+    margin: 0%;
+  }
+  .link-card-grid {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+  .next_button {
+    margin-left: 5%;
+    padding: 0.6% 1.2%;
+    font-size: medium;
+    font-weight: 550;
+  }
+  .next_button:hover {
+    cursor: pointer;
+  }
+  .started {
+    width: 20%;
+    margin-left: 40%;
+  }
+  .line {
+    color: var(--dark);
+    background-color: var(--dark);
+    height: 5px;
+  }
+  .mySwiper {
+    padding-top: 1rem;
+  }
+  .explore-container {
+    padding-top: 7%;
+  }
+  .explore {
+    font-size: 10vmin;
+    font-family: "Fira Code", monospace;
+    font-weight: bold;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media screen and (max-width: 1023px) {
+    .explore-container {
+      padding-top: 6%;
+    }
+    .explore {
+      margin: auto;
+      height: 33vh;
+    }
+  }
+  .typewriter-focused {
+    margin: auto;
+    height: 38vh;
+    padding-top: 7.5vh;
+    transition: margin 0.5s ease-out;
+  }
+  .rows{
+    display: flex;
+    flex-direction: column;
+  }
+  #typewrite-container{
+    padding-bottom: 10vh;
+  }
+  #short-about {
+    font-size: 3vh;
+    padding-top: 10vh
+  }
+
+  .divider {
+    display: inline-block;
+    width: 2px;
+    height: 50vh;
+    margin-bottom: 10vh;
+    background-image: radial-gradient(var(--dark), transparent);
+  }
+  .divider.dark {
+    background-image: radial-gradient(var(--white), transparent);
+  }
+
+  .typewriter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .reveal {
+    padding: 20px 20px 60px;
+    margin: 0 auto;
+  }
+  h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 200px;
+    overflow: hidden;
+    line-height: 1;
+  }
+  h1 span {
+    display: block;
+    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s;
+  }
+
+  @keyframes reveal {
+    0% {
+      transform: translate(0, 100%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+
+  .slide-up {
+    animation: slide-up 0.5s ease-out forwards;
+  }
+
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
+
+  .dummy-container {
+    content-align: center;
+  }
+  #arrow {
+    display: block;
+    height: 15vmin;
+    margin: auto;
+  }
+
+  swiper-container {
+    width: 95vw;
+    padding: 5vh 0;
+  }
+  swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 25vw;
+  }
+  swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+  :root {
+    --swiper-theme-color: var(--highlight);
+  }
+</style>
