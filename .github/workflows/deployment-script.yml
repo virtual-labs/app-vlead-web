@@ -50,9 +50,6 @@ jobs:
           # We force push the changes. This overwrites the history on the remote branch.
           force: true
           # We specify that we want to push to the 'gh-pages' branch.
-<<<<<<< HEAD
-          branch: gh-pages
-=======
           branch: gh-pages
 
 # name: Deploy to GitHub Pages
@@ -94,4 +91,3 @@ jobs:
 #       - name: Deploy to GitHub Pages
 #         id: deployment
 #         uses: actions/deploy-pages@v1
->>>>>>> 9c7bad3e648c9aabf311ba65547110f2678ad8eb
