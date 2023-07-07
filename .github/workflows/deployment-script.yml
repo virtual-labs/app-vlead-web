@@ -29,8 +29,8 @@ jobs:
           # We build our application by running 'npm run build'.
           npm run build
           # We configure Git with an email and username to associate with the commit.
-          git config --local user.email "admin@vlabs.ac.in"
-          git config --local user.name "vleadadmin"
+          git config --local user.email "guptayatharth1@gmail.com"
+          git config --local user.name "yatharth-gupta"
           # We create a new orphan branch named 'gh-pages' for GitHub Pages deployment.
           git checkout --orphan gh-pages
           # We reset the Git staging area.
@@ -46,7 +46,7 @@ jobs:
       - uses: ad-m/github-push-action@master
         with:
           # We specify the GitHub token for authentication. This token is provided by GitHub.
-          github_token: ${{ secrets.ORG_OWNER_GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           # We force push the changes. This overwrites the history on the remote branch.
           force: true
           # We specify that we want to push to the 'gh-pages' branch.
