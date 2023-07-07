@@ -80,8 +80,7 @@ export default function Faqs(props) {
 
   return loaded ? (
     <>
-      <div className="faq-container theme px-6 pb-2 content">
-        {repo_name === "/" ? (<h2 className="header theme">Frequently Asked Questions</h2>):( (<h2 className="header theme has-text-white">Frequently Asked Questions</h2>))}
+      <div className="faq-container theme px-6 mb-2 content">
         {Object.values(qna_).map((c, i) => {
           return (
             <>

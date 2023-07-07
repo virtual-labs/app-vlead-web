@@ -232,12 +232,12 @@ import Roles from "./role";
 			href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
 		/>
 </head> -->
-<nav class="navbar theme is-fixed-top has-shadow px-0" role="navigation" aria-label="main navigation" >
-	<div class="navbar-brand">
+<nav class="navbar theme is-fixed-top has-shadow px-0" style="max-height:70px;" >
+	<div class="navbar-brand" style="max-height: inherit;">
 		<!-- <a class="navbar-item py-0 px-0 " href="https://bulma.io">
 		<img	src="https://cdn.vlabs.ac.in/logo/iiit-small.png" style="max-height:70px " class="py-2 px-2"/>
 		</a> -->
-		<a class="navbar-item py-0 px-0 ml-5" href="/">
+		<a class="navbar-item py-0 px-0 ml-5" href="/app-vlead-web/">
 			<img src="https://cdn.vlabs.ac.in/logo/vlead-small.png" loading="lazy" style="max-height:70px " class="py-2 px-2"/>
 		</a>
 		<div class="navbar-item" id="theme">
@@ -259,14 +259,14 @@ import Roles from "./role";
 				</form> -->
 				<form id="form">
 					<input type="search" placeholder="Search for experiments" class="input search-input is-rounded" id="search_value">
-				<a href="/experiments" class="button search-submit" id="search-submit"></a>
+				<a href="./experiments" class="button search-submit" id="search-submit"></a>
 					<span class="icon-search" id="search-button">
 					<Icon name="ic:outline-search"/>
 					</span>
 					</form>
 			</div>
 		</div>
-		<a role="button" id="burger" class="navbar-burger is-left" aria-label="menu" aria-expanded="false" data-target="navbarMain">
+		<a role="button" id="burger" class="navbar-burger is-left" style="max-height: inherit;">
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
@@ -295,21 +295,21 @@ import Roles from "./role";
 					</a>
 				</div>
 				</div>
-				<a class="navbar-item is-size-5 is-hidden clickable" id="create" href="/development/">
+				<a class="navbar-item is-size-5 is-hidden clickable" id="create" href="/app-vlead-web/development/">
 						Create Experiment
 					</a>
-					<a class="navbar-item is-size-5 is-hidden clickable" id="outreach" href="/outreach/">
+					<a class="navbar-item is-size-5 is-hidden clickable" id="outreach" href="/app-vlead-web/outreach/">
 						Outreach
 					</a>
-					<a class="navbar-item is-size-5 is-hidden clickable" id="learning" href="/experiments">
+					<a class="navbar-item is-size-5 is-hidden clickable" id="learning" href="/app-vlead-web/experiments/">
 						Start Learning
 					</a>
 				<Roles client:only/>
 				<!-- <div class="flashing"> -->
-				<a class="navbar-item is-size-5 clickable" id="analytics" href="/analytics/">
+				<a class="navbar-item is-size-5 clickable" id="analytics" href="/app-vlead-web/analytics/">
 						Analytics
 				</a>
-				<a class="navbar-item is-size-5 clickable" id="ourteam" href="/members/">
+				<a class="navbar-item is-size-5 clickable" id="ourteam" href="/app-vlead-web/members/">
 					Our Team
 				</a>
 		<!-- </div> -->
@@ -392,7 +392,7 @@ import Roles from "./role";
 	}
 	@media screen and (max-width: 1600px) {
 		.search-bar.search-open {
-			width: 20vw;
+			width: 15vw;
 		}
 	}
 	@media screen and (max-width: 1023px) {

@@ -134,7 +134,7 @@ const short_about = all.shorty;
 
 <Base title="Home">
   <main style="margin-bottom: 2rem;">
-    <div class="explore-container columns is-desktop" id="typewrite-container">
+    <div class="explore-container columns is-desktop pb-0" id="typewrite-container">
       <div class="explore column rows" id="explore">
         <p class="typewriter row text theme is-full level" id="typewriter">
           <MyTypewriter client:load />
@@ -189,7 +189,7 @@ const short_about = all.shorty;
               <div >
                 <Card
                   img={item.img}
-                  href="/experiments"
+                  href="/app-vlead-web/experiments/"
                   body=""
                   title={item.title}
                 />
@@ -299,9 +299,6 @@ const short_about = all.shorty;
   .mySwiper {
     padding-top: 1rem;
   }
-  .explore-container {
-    padding-top: 7%;
-  }
   .explore {
     font-size: 10vmin;
     font-family: "Fira Code", monospace;
@@ -310,6 +307,7 @@ const short_about = all.shorty;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 14vh;
   }
   @media screen and (max-width: 1023px) {
     .explore-container {
@@ -335,7 +333,7 @@ const short_about = all.shorty;
   }
   #short-about {
     font-size: 1.3rem;
-    padding-top:10vh;
+    padding-top: 10vh;
     padding-left: 6vh;
     padding-right: 6vh;
     font-family: "Fira Sans";
@@ -344,11 +342,8 @@ const short_about = all.shorty;
     line-height: 1.5 !important;
   }
   #role{
-    padding-top: 10vh;
+    padding-top: 14vh;
   }
-  #services{
-  }
-
   .divider {
     display: inline-block;
     width: 2px;

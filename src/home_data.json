@@ -71,19 +71,19 @@
     "services":[
         {
             "title":"Development and Hosting",
-            "href":"/development",
+            "href":"/app-vlead-web/development/",
             "img":"cards/development.webp",
             "body":""
         },
         {
             "title":"Outreach",
-            "href":"/outreach",
+            "href":"/app-vlead-web/outreach/",
             "img":"cards/research.webp",
             "body":""
         },
         {
             "title":"FAQ's",
-            "href":"/faq_page",
+            "href":"/app-vlead-web/faq_page/",
             "img":"cards/FAQs.webp",
             "body":""
         }

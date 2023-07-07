@@ -7,9 +7,7 @@ body{
     padding: 20px!important;
     padding-right: 15px!important;
 }
-.overall-container {
-    padding-top: 70px;
-}
+
 ::-webkit-scrollbar {
     width: 7px;
     border-radius: 10px;

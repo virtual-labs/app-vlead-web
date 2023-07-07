@@ -5,5 +5,5 @@ export default ({
             host: "localhost",
             protocol: "ws",
         }
-    }
+    },
 })
