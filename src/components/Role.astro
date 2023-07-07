@@ -39,8 +39,8 @@ import { Icon } from "astro-icon";
 </script>
 
 <div class="comp-container text theme">
-	<div class="level">
-		<div class="level-item role-title my-6 mx-auto">
+	<div class="level mb-0 mt-4 role-level-heading">
+		<div class="level-item role-title mt-5 mb-5 mx-auto">
 			<h1 class="has-text-weight-semibold">
 			 Choose your role
 			</h1>
@@ -78,7 +78,9 @@ import { Icon } from "astro-icon";
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400&family=Raleway:wght@300;600&display=swap');	
-
+	.content-container{
+		padding-top: 10vh;
+	}
 	.comp-container {
 		height: 45vh;
 		opacity: 100%;
@@ -122,6 +124,11 @@ import { Icon } from "astro-icon";
 	.role-icon {
 		height: 3vh;
 		width: 3vw;
+	}
+	.role-level-heading{
+		display: flex;
+		align-items: center;
+		flex-direction: column;
 	}
 	@media screen and (max-width: 1023px) {
 		.comp-container {

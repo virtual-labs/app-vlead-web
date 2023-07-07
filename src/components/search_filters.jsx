@@ -151,21 +151,6 @@ export default function JoyOrderDashboardTemplate() {
             gap: 1
           })}
         >
-          <Box
-                sx={{
-                  display: "flex",
-                  gap: 1,
-                  "& > *": { flexGrow: 1 },
-                  marginLeft: "auto",
-                }}
-              >
-                <ColorSchemeToggle
-                  sx={{
-                    ml: "auto",
-                    display: { xs: "inline-flex", md: "inline-flex" },
-                  }}
-                />
-              </Box>
           <Box sx={{
             marginTop: { xs: '0', md: '-1vh' },
           }}>

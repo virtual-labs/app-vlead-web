@@ -1,5 +1,5 @@
 {
-	"name": "planetary-pegasi",
+	"name": "app-vlead-web",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "astro dev",
