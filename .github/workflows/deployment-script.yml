@@ -19,14 +19,8 @@ jobs:
       # We use the checkout action to checkout our repository's code onto the runner.
       - uses: actions/checkout@v2
       
-      # We set up a Node.js environment on the runner using the setup-node action.
-      - name: Setup node
-        uses: actions/setup-node@v2
-        with:
-          # We specify the version of Node.js to use.
-          node-version: '16'
-          # We check for the latest version of Node.js.
-          check-latest: true
+      - name: Install, build, and upload your site
+        uses: withastro/action@v0
       
       # We execute a series of shell commands.
       - run: |
@@ -56,6 +50,9 @@ jobs:
           # We force push the changes. This overwrites the history on the remote branch.
           force: true
           # We specify that we want to push to the 'gh-pages' branch.
+<<<<<<< HEAD
+          branch: gh-pages
+=======
           branch: gh-pages
 
 # name: Deploy to GitHub Pages
@@ -97,3 +94,4 @@ jobs:
 #       - name: Deploy to GitHub Pages
 #         id: deployment
 #         uses: actions/deploy-pages@v1
+>>>>>>> 9c7bad3e648c9aabf311ba65547110f2678ad8eb

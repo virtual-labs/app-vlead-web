@@ -109,7 +109,7 @@ import Roles from "./role";
 	form.addEventListener("submit",(e)=>{
     	e.preventDefault();
     	sessionStorage.setItem("search",search_value.value);
-    	window.location.href = "/experiments";
+    	window.location.href = "/app-vlead-web/experiments/";
   	})
 
 	const burger = document.getElementById("burger");
@@ -259,7 +259,7 @@ import Roles from "./role";
 				</form> -->
 				<form id="form">
 					<input type="search" placeholder="Search for experiments" class="input search-input is-rounded" id="search_value">
-				<a href="./experiments" class="button search-submit" id="search-submit"></a>
+				<a href="/app-vlead-web/experiments/" class="button search-submit" id="search-submit"></a>
 					<span class="icon-search" id="search-button">
 					<Icon name="ic:outline-search"/>
 					</span>

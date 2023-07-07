@@ -9,11 +9,12 @@ export default defineConfig({
     image({
       serviceEntryPoint: '@astrojs/image/sharp',
     }),],
-  site: "https://virtual-labs.github.io",
-  base: "/app-vlead-web/"
+  site: "https://yatharth-gupta.github.io",
+  base: "/app-vlead-web/",
   // output: 'static',
   // outDir: './docs',
-  // build: {
-  //   assets: 'astro'
-  // }
+  build: {
+    assets: 'astro'
+  }
 });
+
