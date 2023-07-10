@@ -8,23 +8,23 @@ import OrderTable from "./OrderTable";
 import {extendTheme} from '@mui/joy/styles'
 // import customTheme from './theme'
 // import { customTheme,makecustomtheme } from "./theme";
-const useEnhancedEffect =
-  typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect;
+// const useEnhancedEffect =
+//   typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect;
 
 export default function JoyOrderDashboardTemplate() {
-  const status = useScript(`https://unpkg.com/feather-icons`);
+  // const status = useScript(`https://unpkg.com/feather-icons`);
   const [index, setIndex] = React.useState(2);
   const [experiments, setExperiments] = React.useState([]);
   const [results, setResults] = React.useState([]);
   const [customTheme, setcustomTheme] = React.useState(extendTheme());
 
-  useEnhancedEffect(() => {
-    // @ts-ignore
-    if (typeof feather !== "undefined") {
-      // @ts-ignore
-      feather.replace();
-    }
-  }, [status]);
+  // useEnhancedEffect(() => {
+  //   // @ts-ignore
+  //   if (typeof feather !== "undefined") {
+  //     // @ts-ignore
+  //     feather.replace();
+  //   }
+  // }, [status]);
 // let customTheme
   // React.useEffect(()=>{
   //   setcustomTheme(extendTheme({
@@ -84,9 +84,7 @@ export default function JoyOrderDashboardTemplate() {
         //   },
         // }))
         // setcustomTheme(theme)
-        // {console.log(customTheme)}
         // makecustomtheme();
-        console.log(customTheme)
       setExperiments(data);
     })
   }, [customTheme]);
@@ -107,14 +105,12 @@ export default function JoyOrderDashboardTemplate() {
   }
   
   React.useEffect(() => {
-    // console.log(bgcolor_light+bgcolor_dark)
     // makecustomtheme(bgcolor_light,bgcolor_dark)
     setResults(filterData());
   }, [experiments, index]);
   
   return (
     <CssVarsProvider  theme={customTheme}> 
-    {console.log(customTheme)}
     {/* theme={customTheme} */}
       <GlobalStyles
         styles={{
