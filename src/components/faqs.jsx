@@ -18,7 +18,7 @@ export default function Faqs(props) {
   const [qna_, setQna_] = useState([]);
   const [repo_name, setRepo_name] = useState("-virtual-labs/");
   useEffect(()=>{
-    // AOS.init();
+    AOS.init();
   if (props.type === "outreach") {
     setRepo_name("/");
   }
