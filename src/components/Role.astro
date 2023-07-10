@@ -1,5 +1,4 @@
 ---
-import logo from "images.png";
 import { Icon } from "astro-icon";
 ---
 
@@ -46,11 +45,11 @@ import { Icon } from "astro-icon";
 			</h1>
 		</div>
 	</div>
-	<div class="uniform columns is-centered content-container m-auto">
-		<div class="column is-6 plaintext px-5 py-0 my-2 has-text-weight-medium" id="all_roles">
+	<div class="uniform is-flex is-flex-wrap-nowrap is-centered content-container m-auto" style="max-width: 85vw;">
+		<div class="column is-11-touch is-11-desktop plaintext px-3 py-0 my-2 has-text-weight-medium" id="all_roles">
 			<!-- added paragraphs using json files in script tag -->
 		</div>
-		<div id="buttons" class="column tile is-vertical is-gapless is-parent is-1">
+		<div id="buttons" class="column is-1-touch is-1-desktop px-0 " >
 			<div class="tile">
 				<button id="learner" class="role-button button is-rounded theme">
 					<span class="icon-container">
@@ -78,11 +77,8 @@ import { Icon } from "astro-icon";
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400&family=Raleway:wght@300;600&display=swap');	
-	.content-container{
-		padding-top: 10vh;
-	}
 	.comp-container {
-		height: 45vh;
+		/* height: 45vh; */
 		opacity: 100%;
 	}
 	.text {
@@ -113,12 +109,9 @@ import { Icon } from "astro-icon";
 		font-family: "Raleway";
 		font-size: 3rem;
 	}
-	.uniform {
-		height: 25vh;
-	}
 	p {
 		font-size: 1.3rem;
-		font-family: "Fira Sans";
+		/* font-family: "Fira Sans"; */
 		text-align: justify;
 	}
 	.role-icon {
@@ -130,13 +123,10 @@ import { Icon } from "astro-icon";
 		align-items: center;
 		flex-direction: column;
 	}
-	@media screen and (max-width: 1023px) {
-		.comp-container {
-			font-size: 1.7rem;
-			height: 45vh;
-		}
+
+	@media screen and (min-width: 1023px) {
 		.uniform {
-			height: 10vh;
+			width:40vw;
 		}
 	}
 </style>

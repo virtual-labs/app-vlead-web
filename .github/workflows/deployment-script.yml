@@ -1,93 +1,93 @@
-# Name of the workflow
-name: Continuous Deployment pipeline for Virtual Labs Website
+# # Name of the workflow
+# name: Continuous Deployment pipeline for Virtual Labs Website
 
-# We specify when the workflow should be triggered. In this case, it's on push events to the main branch.
-on:
-  push:
-    branches:
-      - main
-
-# We define the jobs that the workflow will execute. Jobs are a series of steps that execute commands, scripts, or actions.
-jobs:
-  # We define a single job named 'build'.
-  build:
-    # We specify the type of runner that the job will run on. Runners are the virtual environments where the jobs execute.
-    runs-on: ubuntu-latest
-    
-    # We define the sequence of tasks (steps) to be executed as part of the job.
-    steps:
-      # We use the checkout action to checkout our repository's code onto the runner.
-      - uses: actions/checkout@v2
-      
-      - name: Install, build, and upload your site
-        uses: withastro/action@v0
-      
-      # We execute a series of shell commands.
-      - run: |
-          # We run 'npm install' to install the dependencies specified in package.json.
-          npm install
-          # We build our application by running 'npm run build'.
-          npm run build
-          # We configure Git with an email and username to associate with the commit.
-          git config --local user.email "admin@vlabs.ac.in"
-          git config --local user.name "vleadadmin"
-          # We create a new orphan branch named 'gh-pages' for GitHub Pages deployment.
-          git checkout --orphan gh-pages
-          # We reset the Git staging area.
-          git reset
-          # We add the files in the build directory to Git.
-          git add dist/* -f
-          # We move the build files to the root directory.
-          git mv dist/* ./ -f
-          # We commit the changes with a message containing the link to the GitHub Pages site.
-          git commit -m "https://virtual-labs.github.io/${{ github.repository }} click on the link to test your code."
-      
-      # We use the github-push-action to push our changes to the 'gh-pages' branch.
-      - uses: ad-m/github-push-action@master
-        with:
-          # We specify the GitHub token for authentication. This token is provided by GitHub.
-          github_token: ${{ secrets.ORG_OWNER_GITHUB_TOKEN }}
-          # We force push the changes. This overwrites the history on the remote branch.
-          force: true
-          # We specify that we want to push to the 'gh-pages' branch.
-          branch: gh-pages
-
-# name: Deploy to GitHub Pages
-
+# # We specify when the workflow should be triggered. In this case, it's on push events to the main branch.
 # on:
-#   # Trigger the workflow every time you push to the `main` branch
-#   # Using a different branch name? Replace `main` with your branch’s name
 #   push:
-#     branches: [ main ]
-#   # Allows you to run this workflow manually from the Actions tab on GitHub.
-#   workflow_dispatch:
+#     branches:
+#       - main
 
-# # Allow this job to clone the repo and create a page deployment
-# permissions:
-#   contents: read
-#   pages: write
-#   id-token: write
-
+# # We define the jobs that the workflow will execute. Jobs are a series of steps that execute commands, scripts, or actions.
 # jobs:
+#   # We define a single job named 'build'.
 #   build:
+#     # We specify the type of runner that the job will run on. Runners are the virtual environments where the jobs execute.
 #     runs-on: ubuntu-latest
+    
+#     # We define the sequence of tasks (steps) to be executed as part of the job.
 #     steps:
-#       - name: Checkout your repository using git
-#         uses: actions/checkout@v3
+#       # We use the checkout action to checkout our repository's code onto the runner.
+#       - uses: actions/checkout@v2
+      
 #       - name: Install, build, and upload your site
 #         uses: withastro/action@v0
-#         # with:
-#             # path: . # The root location of your Astro project inside the repository. (optional)
-#             # node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
-#             # package-manager: yarn # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+      
+#       # We execute a series of shell commands.
+#       - run: |
+#           # We run 'npm install' to install the dependencies specified in package.json.
+#           npm install
+#           # We build our application by running 'npm run build'.
+#           npm run build
+#           # We configure Git with an email and username to associate with the commit.
+#           git config --local user.email "admin@vlabs.ac.in"
+#           git config --local user.name "vleadadmin"
+#           # We create a new orphan branch named 'gh-pages' for GitHub Pages deployment.
+#           git checkout --orphan gh-pages
+#           # We reset the Git staging area.
+#           git reset
+#           # We add the files in the build directory to Git.
+#           git add dist/* -f
+#           # We move the build files to the root directory.
+#           git mv dist/* ./ -f
+#           # We commit the changes with a message containing the link to the GitHub Pages site.
+#           git commit -m "https://virtual-labs.github.io/${{ github.repository }} click on the link to test your code."
+      
+#       # We use the github-push-action to push our changes to the 'gh-pages' branch.
+#       - uses: ad-m/github-push-action@master
+#         with:
+#           # We specify the GitHub token for authentication. This token is provided by GitHub.
+#           github_token: ${{ secrets.ORG_OWNER_GITHUB_TOKEN }}
+#           # We force push the changes. This overwrites the history on the remote branch.
+#           force: true
+#           # We specify that we want to push to the 'gh-pages' branch.
+#           branch: gh-pages
 
-#   deploy:
-#     needs: build
-#     runs-on: ubuntu-latest
-#     environment:
-#       name: github-pages
-#       url: ${{ steps.deployment.outputs.page_url }}
-#     steps:
-#       - name: Deploy to GitHub Pages
-#         id: deployment
-#         uses: actions/deploy-pages@v1
+name: Deploy to GitHub Pages
+
+on:
+  # Trigger the workflow every time you push to the `main` branch
+  # Using a different branch name? Replace `main` with your branch’s name
+  push:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
+  workflow_dispatch:
+
+# Allow this job to clone the repo and create a page deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v3
+      - name: Install, build, and upload your site
+        uses: withastro/action@v0
+        # with:
+            # path: . # The root location of your Astro project inside the repository. (optional)
+            # node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
+            # package-manager: yarn # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

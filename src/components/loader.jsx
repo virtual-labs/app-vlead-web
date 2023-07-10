@@ -3,7 +3,7 @@ import "../css/load.css"
 
 export default function Loader(props) {
 return(
-    <div class="inline">
-           <p class="spinner" id="spinner"><i class="fa fa-spinner fa-5x"></i></p>
+    <div className="inline">
+           <p className="spinner" id="spinner"><i className="fa fa-spinner fa-5x"></i></p>
     </div>
 );}

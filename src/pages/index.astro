@@ -2,11 +2,10 @@
 import Base from "../layouts/Base.astro";
 import Card from "../components/Card.astro";
 import Role from "../components/Role.astro";
-import MyTypewriter from "../components/Typewrite.jsx";
 import Typewriter from "typewriter-effect";
 import { Icon } from "astro-icon";
 import all from "../home_data.json";
-import "../css/theme.css"
+import "../css/theme.css";
 import { google } from "googleapis";
 
 const sheets = google.sheets("v4");
@@ -39,7 +38,11 @@ const short_about = all.shorty;
   const drop_educator = document.getElementById("drop-educator");
   const drop_learner = document.getElementById("drop-learner");
   const exp_dict = { creator: create, educator: outreach, learner: learning };
-  const role_dict = {creator: drop_creator, educator: drop_educator, learner: drop_learner};
+  const role_dict = {
+    creator: drop_creator,
+    educator: drop_educator,
+    learner: drop_learner,
+  };
 
   const role = sessionStorage.getItem("role");
   if (role) {
@@ -47,13 +50,11 @@ const short_about = all.shorty;
     chevron_cont.classList.add("is-hidden");
     divider.classList.add("is-hidden");
     typewriter.classList.add("typewriter-focused");
-    type_cont.style.marginTop = "0vh";
-    type_cont.style.paddingBottom = "8vh";
     short_abt.classList.add("is-hidden");
-    explore.style.height = "20vh";
-    explore.style.paddingBottom = "0vh";
-    explore.style.paddingTop = "0vh";
-    explore.style.marginTop = "0vh";
+    // explore.style.height = "20vh";
+    // explore.style.paddingBottom = "0vh";
+    // explore.style.paddingTop = "0vh";
+    // explore.style.marginTop = "0vh";
   }
 
   let rearrange = (role_name) => {
@@ -64,13 +65,13 @@ const short_about = all.shorty;
     divider.classList.add("is-hidden");
     typewriter.classList.add("typewriter-focused");
     chevron_cont.classList.add("fade-out");
-    type_cont.style.marginTop = "0vh";
-    type_cont.style.paddingBottom = "8vh";
+    // type_cont.style.marginTop = "0vh";
+    // type_cont.style.paddingBottom = "8vh";
     short_abt.classList.add("is-hidden");
-    explore.style.height = "20vh";
-    explore.style.paddingBottom = "0vh";
-    explore.style.paddingTop = "0vh";
-    explore.style.marginTop = "0vh";
+    // explore.style.height = "20vh";
+    // explore.style.paddingBottom = "0vh";
+    // explore.style.paddingTop = "0vh";
+    // explore.style.marginTop = "0vh";
     drop_creator.classList.remove("active-role");
     drop_educator.classList.remove("active-role");
     drop_learner.classList.remove("active-role");
@@ -79,8 +80,8 @@ const short_about = all.shorty;
     bt.classList.remove("is-hidden");
     bt.classList.add("flashing");
     bt = role_dict[role_name];
-    bt.classList.add("active-role"); 
-
+    bt.classList.add("active-role");
+    console.log(role_name)
     sessionStorage.setItem("role", role_name);
     setTimeout(() => {
       role_box.classList.add("is-hidden");
@@ -113,7 +114,7 @@ const short_about = all.shorty;
   const swiperEl = document.querySelector("swiper-container");
   Object.assign(swiperEl, {
     breakpoints: {
-      0:{
+      0: {
         slidesPerView: 3,
       },
       600: {
@@ -134,20 +135,40 @@ const short_about = all.shorty;
 
 <Base title="Home">
   <main style="margin-bottom: 2rem;">
-    <div class="explore-container columns is-desktop pb-0" id="typewrite-container">
+    <!-- <div class="explore-container columns is-desktop pb-0" id="typewrite-container">
       <div class="explore column rows" id="explore">
         <p class="typewriter row text theme is-full level" id="typewriter">
-          <MyTypewriter client:load />
           <Typewriter
             options={{
               strings: ["EXPLORE", "EXPERIMENT", "DISCOVER"],
               autoStart: true,
               loop: true,
             }}
-            client:load
+            client:only
           />
         </p>
         <div class = "row text theme is-full" id="short-about">
+          {short_about}
+        </div>
+      </div>
+    </div> -->
+    <div class="columns is-desktop" style="padding-top: 40px;">
+      <div class="column explore" id="explore">
+        <div class="level mb-0 mt-4 role-level-heading">
+          <div class="level-item role-title mb-5 mx-auto">
+            <h1 class="typewriter row  has-text-weight-semibold text theme is-full level" id="typewriter">
+              <Typewriter
+                options={{
+                  strings: ["EXPLORE", "EXPERIMENT", "DISCOVER"],
+                  autoStart: true,
+                  loop: true,
+                }}
+                client:only
+              />
+            </h1>
+          </div>
+        </div>
+        <div id="short-about" class="px-5 is-size-5 mx-auto" style="text-align: justify; max-width: 85vw; font-weight: 500;">
           {short_about}
         </div>
       </div>
@@ -156,7 +177,8 @@ const short_about = all.shorty;
         <Role />
       </div>
     </div>
-    <div id="arrow-container" class="columns is-centered">
+
+    <div id="arrow-container" class="columns is-centered is-hidden-touch">
       <div class="column dummy-container is-2-desktop">
         <span class="arrow-span text theme">
           <Icon name="ic:round-keyboard-arrow-down" id="arrow" />
@@ -186,7 +208,7 @@ const short_about = all.shorty;
         data.map((item, i) => {
           return (
             <swiper-slide class="common_domains" id={item.title}>
-              <div >
+              <div>
                 <Card
                   img={item.img}
                   href="/app-vlead-web/experiments/"
@@ -202,16 +224,18 @@ const short_about = all.shorty;
     <br />
     <p class="heading-center text theme">Support</p>
     <div class="link-card-grid" id="services">
-      {services.map((item,i)=>{
-        return (
-        <Card
-        img={item.img}
-        href={item.href}
-        body={item.body}
-        title={item.title}
-      />
-        )
-      })}
+      {
+        services.map((item, i) => {
+          return (
+            <Card
+              img={item.img}
+              href={item.href}
+              body={item.body}
+              title={item.title}
+            />
+          );
+        })
+      }
     </div>
   </main>
 </Base>
@@ -299,7 +323,7 @@ const short_about = all.shorty;
   .mySwiper {
     padding-top: 1rem;
   }
-  .explore {
+  /* .explore {
     font-size: 10vmin;
     font-family: "Fira Code", monospace;
     font-weight: bold;
@@ -317,12 +341,6 @@ const short_about = all.shorty;
       margin: auto;
       height: 33vh;
     }
-  }
-  .typewriter-focused {
-    margin: auto;
-    height: 38vh;
-    padding-top: 7.5vh;
-    transition: margin 0.5s ease-out;
   }
   .rows{
     display: flex;
@@ -344,34 +362,42 @@ const short_about = all.shorty;
   #role{
     padding-top: 14vh;
   }
+  
+  
+  .reveal {
+    padding: 20px 20px 60px;
+    margin: 0 auto;
+  } */
+  .typewriter-focused {
+    margin: auto;
+    /* height: 38vh; */
+    /* padding-top: 7.5vh; */
+    transition: margin 0.5s ease-out;
+  }
+  .typewriter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    font-family: "Fira Code", monospace;
+  }
   .divider {
     display: inline-block;
     width: 2px;
-    height: 70vh;
-    margin-bottom: 10vh;
+    height: 30rem;
+    margin-top: 5vh;
     background-image: radial-gradient(var(--dark), transparent);
   }
   .divider.dark {
     background-image: radial-gradient(var(--white), transparent);
   }
-
-  .typewriter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .reveal {
-    padding: 20px 20px 60px;
-    margin: 0 auto;
-  }
-  h1 {
+  /* h1 {
     margin: 0;
     text-align: center;
     font-size: 200px;
     overflow: hidden;
     line-height: 1;
-  }
+  } */
   h1 span {
     display: block;
     animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s;
@@ -432,7 +458,6 @@ const short_about = all.shorty;
     --swiper-theme-color: var(--highlight);
   }
 </style>
-
 
 <!-- {
   "title":"Virtual Box",

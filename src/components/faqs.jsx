@@ -18,14 +18,14 @@ export default function Faqs(props) {
   const [qna_, setQna_] = useState([]);
   const [repo_name, setRepo_name] = useState("-virtual-labs/");
   useEffect(()=>{
-    AOS.init();
+    // AOS.init();
   if (props.type === "outreach") {
     setRepo_name("/");
   }
   },[])
   useEffect(() => {
     async function getAllFilesInFolder() {
-      console.log("https://api.github.com/repos/virtual-labs/outreach-web-pages-iiith/contents/faq" + repo_name);
+      // console.log("https://api.github.com/repos/virtual-labs/outreach-web-pages-iiith/contents/faq" + repo_name);
       try {
         const res = await fetch("https://api.github.com/repos/virtual-labs/outreach-web-pages-iiith/contents/faq" + repo_name);
         const response = await res.json();
@@ -85,6 +85,7 @@ export default function Faqs(props) {
           return (
             <>
               <button
+              key={i}
               data-aos="fade-up"
               offset = "200"
               style={{color:"white"}}

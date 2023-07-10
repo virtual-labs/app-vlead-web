@@ -182,7 +182,7 @@ export function People_Card_Component_Current () {
 
     return(
         loaded ? (
-          <div class="columns is-multiline is-mobile is-centered">
+          <div className="columns is-multiline is-mobile is-centered">
             {/* <People_Card UserData={data1} /> */}
             {Object.values(content).map((c,i)=>{
 
@@ -190,8 +190,6 @@ export function People_Card_Component_Current () {
 
                 c["Associations"].map((a,j)=>{
 
-                  // console.log(a["Joining(mmm-yy)"];
-                  console.log(typeof(a["Joining(mmm-yy)"]));
 
                   const assoc = {
                     name: a["Association Type"],
@@ -240,10 +238,9 @@ export function People_Card_Component_Current () {
                   associations.push(assoc);
                   
                 })
-                console.log(associations);
 
                 return(
-                    <People_Card UserData={{
+                    <People_Card key={i} UserData={{
                         present: true,
                         display_name: c["Display Name"],
                         full_name: c["Full Name"],
@@ -354,7 +351,7 @@ export function People_Card_Component_Past () {
 
   return(
       loaded ? (
-        <div class="columns is-multiline is-mobile is-centered">
+        <div className="columns is-multiline is-mobile is-centered">
           {/* <People_Card UserData={data1} /> */}
           {Object.values(content).map((c,i)=>{
 
@@ -381,7 +378,7 @@ export function People_Card_Component_Past () {
               })
 
               return(
-                  <People_Card UserData={{
+                  <People_Card key={i} UserData={{
                       present: false,
                       display_name: c["Display Name"],
                       full_name: c["Full Name"],

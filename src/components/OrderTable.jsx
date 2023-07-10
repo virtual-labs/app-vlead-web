@@ -138,7 +138,7 @@ export default function OrderTable(props) {
 
   const [results, setResults] = React.useState([]);
 
-  const cardsPerIndex = 12;
+  const cardsPerIndex = 20;
   const [maxIndex, setMaxIndex] = React.useState(
     Math.ceil(props.experiments.length / cardsPerIndex)
   );
@@ -150,7 +150,6 @@ export default function OrderTable(props) {
 
   React.useEffect(() => {
     AOS.init();
-    console.log(sessionStorage.getItem("selectedCard"));
     sessionStorage.getItem("selectedCard") !== null
       ? setDiscipline(sessionStorage.getItem("selectedCard"))
       : setDiscipline("not available");
@@ -162,7 +161,6 @@ export default function OrderTable(props) {
   }, []);
 
   React.useEffect(() => {
-    console.log(discipline);
     setResults(experiments);
   }, [experiments]);
 
@@ -177,7 +175,6 @@ export default function OrderTable(props) {
     let newData = fuse.search(searchQuery).map((d) => d.item);
     if (!searchQuery) newData = experiments;
     let all = uniques(experiments.map((e) => e["Discipline Name"]));
-    console.log(discipline);
     if (all.includes(discipline) || discipline === "not available") {
       let filtered;
       filtered = newData
@@ -185,7 +182,6 @@ export default function OrderTable(props) {
           discipline !== "not available" ? d["Discipline Name"] === discipline : true
         )
         .filter((d) => (lab ? d["Lab Name"] === lab : true));
-      console.log(filtered);
       // @ts-ignore
       setResults(filtered);
     } else {
@@ -301,7 +297,7 @@ export default function OrderTable(props) {
         }}
       >
         <FormControl sx={{ flex: 1 }} size="sm">
-          {/* <FormLabel class="text theme" size="md">Search for Experiments</FormLabel> */}
+          {/* <FormLabel className="text theme" size="md">Search for Experiments</FormLabel> */}
           <Input
             placeholder="Search"
             value={sessionStorage.getItem("search")}
@@ -323,7 +319,6 @@ export default function OrderTable(props) {
       </Box>
 
       <Grid container spacing={2} style={{display: "flex", justifyContent: "center", alignItems: "center"  }}>
-        {console.log(paginated)}
         
         {paginated.length > 0 ?(
           // @ts-ignore
@@ -336,7 +331,6 @@ export default function OrderTable(props) {
                 data-aos="zoom-in-up"
                 data-aos-delay={(i % 4) * 100}
               >
-                {console.log(experiment)}
                 <ExperimentCard data={experiment} />
                 {/* <bulma_component/> */}
               </Grid>
@@ -363,7 +357,7 @@ export default function OrderTable(props) {
         >
           <i data-feather="arrow-left" />
         </IconButton>
-        <Typography class="text theme" level="body2" mx="auto">
+        <Typography className="text theme" level="body2" mx="auto">
           Page {pageIndex + 1} of {maxIndex}
         </Typography>
         <IconButton
@@ -416,7 +410,7 @@ export default function OrderTable(props) {
           ))
         } */}
 
-        <Typography class="text theme" level="body2" mx="auto">
+        <Typography className="text theme" level="body2" mx="auto">
           Page {pageIndex + 1} of {maxIndex}
         </Typography>
 
