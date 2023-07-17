@@ -158,8 +158,8 @@ export function People_Card_Component_Current () {
           },
         ],
     };
-
-    const url ="https://script.google.com/macros/s/AKfycbxy8YtrXLhuCoaLbYkNnjYxsVnKMoeITuCzfbIZ3h-OEAhULcNseLdamDtyrESYHvc/exec?q=current";
+    // https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec
+    const url ="https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec?q=current";
 
     useEffect(() => {
       const abc = async () => {
@@ -330,7 +330,7 @@ export function People_Card_Component_Past () {
   const [content, setContent] = useState({});
   const [loaded, setLoaded] = useState(false);
 
-  const url ="https://script.google.com/macros/s/AKfycbxy8YtrXLhuCoaLbYkNnjYxsVnKMoeITuCzfbIZ3h-OEAhULcNseLdamDtyrESYHvc/exec?q=past";
+  const url ="https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec?q=past";
 
   useEffect(() => {
     const abc = async () => {

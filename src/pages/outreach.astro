@@ -49,8 +49,8 @@ const data = all.workshop;
 ></script>
 
 <script>
-  document.getElementById("outreach").classList.add("is-active");
-  document.getElementById("outreach").classList.add("has-text-weight-bold");
+  document.getElementById("outreach")!.classList.add("is-active");
+  document.getElementById("outreach")!.classList.add("has-text-weight-bold");
 </script>
 
 <script> // toggling between tabs
@@ -58,72 +58,72 @@ const data = all.workshop;
   const NAN = document.getElementById("NAN");
   const wo = document.getElementById("tabWorkshops"); // workshop organised
   const WAN = document.getElementById("WAN");
-  const rw = document.getElementById("rw"); // request workshop
-  const RW = document.getElementById("RW");
+  // const rw = document.getElementById("rw"); // request workshop
+  // const RW = document.getElementById("RW");
   const faq = document.getElementById("faq"); // faqs
   const FAQ = document.getElementById("FAQ");
   const gal = document.getElementById("gal"); // gallery
   const GAL = document.getElementById("GAL");
 
-  nc.addEventListener("click", (event) => {
-    NAN.style.display = "block";
-    WAN.style.display = "none";
-    RW.style.display = "none";
-    GAL.style.display = "none";
-    FAQ.style.display = "none";
-    wo.classList.remove("is-active");
-    rw.classList.remove("is-active");
-    faq.classList.remove("is-active");
-    gal.classList.remove("is-active");
-    nc.classList.add("is-active");
+  nc!.addEventListener("click", (event) => {
+    NAN!.style.display = "block";
+    WAN!.style.display = "none";
+    // RW!.style.display = "none";
+    GAL!.style.display = "none";
+    FAQ!.style.display = "none";
+    wo!.classList.remove("is-active");
+    // rw!.classList.remove("is-active");
+    faq!.classList.remove("is-active");
+    gal!.classList.remove("is-active");
+    nc!.classList.add("is-active");
   });
-  wo.addEventListener("click", (event) => {
-    WAN.style.display = "block";
-    NAN.style.display = "none";
-    RW.style.display = "none";
-    GAL.style.display = "none";
-    FAQ.style.display = "none";
-    nc.classList.remove("is-active");
-    rw.classList.remove("is-active");
-    faq.classList.remove("is-active");
-    gal.classList.remove("is-active");
-    wo.classList.add("is-active");
+  wo!.addEventListener("click", (event) => {
+    WAN!.style.display = "block";
+    NAN!.style.display = "none";
+    // RW!.style.display = "none";
+    GAL!.style.display = "none";
+    FAQ!.style.display = "none";
+    nc!.classList.remove("is-active");
+    // rw!.classList.remove("is-active");
+    faq!.classList.remove("is-active");
+    gal!.classList.remove("is-active");
+    wo!.classList.add("is-active");
   });
-  rw.addEventListener("click", (event) => {
-    RW.style.display = "block";
-    WAN.style.display = "none";
-    NAN.style.display = "none";
-    GAL.style.display = "none";
-    FAQ.style.display = "none";
-    wo.classList.remove("is-active");
-    nc.classList.remove("is-active");
-    faq.classList.remove("is-active");
-    gal.classList.remove("is-active");
-    rw.classList.add("is-active");
+  // rw!.addEventListener("click", (event) => {
+  //   RW!.style.display = "block";
+  //   WAN!.style.display = "none";
+  //   NAN!.style.display = "none";
+  //   GAL!.style.display = "none";
+  //   FAQ!.style.display = "none";
+  //   wo!.classList.remove("is-active");
+  //   nc!.classList.remove("is-active");
+  //   faq!.classList.remove("is-active");
+  //   gal!.classList.remove("is-active");
+  //   rw!.classList.add("is-active");
+  // });
+  faq!.addEventListener("click", (event) => {
+    FAQ!.style.display = "block";
+    WAN!.style.display = "none";
+    // RW!.style.display = "none";
+    GAL!.style.display = "none";
+    NAN!.style.display = "none";
+    wo!.classList.remove("is-active");
+    // rw!.classList.remove("is-active");
+    nc!.classList.remove("is-active");
+    gal!.classList.remove("is-active");
+    faq!.classList.add("is-active");
   });
-  faq.addEventListener("click", (event) => {
-    FAQ.style.display = "block";
-    WAN.style.display = "none";
-    RW.style.display = "none";
-    GAL.style.display = "none";
-    NAN.style.display = "none";
-    wo.classList.remove("is-active");
-    rw.classList.remove("is-active");
-    nc.classList.remove("is-active");
-    gal.classList.remove("is-active");
-    faq.classList.add("is-active");
-  });
-  gal.addEventListener("click", (event) => {
-    GAL.style.display = "block";
-    FAQ.style.display = "none";
-    WAN.style.display = "none";
-    RW.style.display = "none";
-    NAN.style.display = "none";
-    wo.classList.remove("is-active");
-    rw.classList.remove("is-active");
-    nc.classList.remove("is-active");
-    faq.classList.remove("is-active");
-    gal.classList.add("is-active");
+  gal!.addEventListener("click", (event) => {
+    GAL!.style.display = "block";
+    FAQ!.style.display = "none";
+    WAN!.style.display = "none";
+    // RW!.style.display = "none";
+    NAN!.style.display = "none";
+    wo!.classList.remove("is-active");
+    // rw!.classList.remove("is-active");
+    nc!.classList.remove("is-active");
+    faq!.classList.remove("is-active");
+    gal!.classList.add("is-active");
   });
 </script>
 
@@ -153,18 +153,18 @@ const data = all.workshop;
         div.appendChild(img);
         swip.appendChild(div);
         // imageContainer.appendChild(swip);
-        grid.appendChild(div);
+        grid!.appendChild(div);
       }
     }
     else
     {
       if (file.type === "file" && file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
         const first_img = document.getElementById("first_img")
-        first_img.src = file.download_url;
-        first_img.style.border="7px solid #fff";
-        first_img.style.borderRadius="3px";
-        first_img.style.height = "360px";
-        first_img.style.width = "240px";
+        first_img!.src = file.download_url;
+        first_img!.style.border="7px solid #fff";
+        first_img!.style.borderRadius="3px";
+        first_img!.style.height = "360px";
+        first_img!.style.width = "240px";
       }
     }
     i++;
@@ -176,19 +176,19 @@ const data = all.workshop;
 </script>
 
 <!-- <script> // dropdown content
-  import all from "../../public/outreach.json";
+  import all from "../../src/outreach.json";
   const data = all.workshop;
   console.log(data);
 
   for(let i=0; i<data.length; i++)
   {
-    document.getElementById("Wi"+i).addEventListener("click", ()=>{
+    document.getElementById("Wi"+i)!.addEventListener("click", ()=>{
       // for(let j=0; j<data.length; j++)
       // {
       //   document.getElementById("Wi"+j).classList.remove("is-active"); 
       // }
       // document.getElementById("Wi"+i).classList.add("is-active"); 
-      document.getElementById("outreach_iframe").src = data[i].url;
+      document.getElementById("outreach_iframe")!.src = data[i].url;
     }); 
   }
   // const select = (c, len, x) => {
@@ -208,21 +208,21 @@ const data = all.workshop;
 
   for (let i = 0; i < all.workshop.length; i++) {
 
-    const e = document.getElementById("Wi" + i);
+    const e = document.getElementById("Wi" + i)!;
     e.classList.remove("is-active");
     
     e.addEventListener("click", () => {
-      document.getElementById("").src = all.workshop[i].url;
+      document.getElementById("workshop_iframe")!.src = all.workshop[i].url;
       e.classList.add("is-active");
     });
     
   }
   for (let i = 0; i < all.nodalcenters.length; i++) {
-    const e = document.getElementById("Ni" + i);
+    const e = document.getElementById("Ni" + i)!;
     e.classList.remove("is-active");
 
     e.addEventListener("click", () => {
-      document.getElementById("nodal_iframe").src = all.nodalcenters[i].url;
+      document.getElementById("nodal_iframe")!.src = all.nodalcenters[i].url;
       e.classList.add("is-active");
     });
   }
@@ -246,8 +246,9 @@ const data = all.workshop;
     text-align: center;
   }
   .tabs.is-toggle li.is-active a{
-    background-color: var(--background) !important;
-    border-color: white !important;
+    background-color: var(--white) !important;
+    color: black !important;
+    border-color: #dbdbdb !important;
   }
   .dropdown-content{
     /* background-color: rgb(60, 59, 59) !important;*/
@@ -341,13 +342,14 @@ const data = all.workshop;
   <main style=" margin-bottom:2rem;">
     <p class="title has-text-white has-text-centered is-size-2 my-0 py-5">Outreach</p>
     
-    <div class="tabs theme is-boxed is-toggle is-centered is-medium" style="overflow:visible;">
+    <div class="tabs theme is-boxed is-toggle is-toggle-rounded is-centered is-medium" style="overflow:visible;">
       <ul>
+        <li id="gal" class="link dropdown-trigger is-active"><a>Gallery</a></li>
         <li id="tabWorkshops" class="link">
           <div class="dropdown is-hoverable">
             <div class="dropdown-trigger link" id="w-trigger">
               <a aria-haspopup="true" aria-controls="dropdown-menu4">
-                <span>Workshops Organised</span>
+                <span>Workshops</span>
               </a>
             </div>
             <div class="dropdown-menu" id="dropdown-menu4" role="menu">
@@ -387,9 +389,9 @@ const data = all.workshop;
             </div>
           </div>
         </li>
-        <li id="rw" class="link dropdown-trigger"><a>Request a Workshop</a></li>
-        <li id="faq" class="link dropdown-trigger"><a>FAQ's</a></li>
-        <li id="gal" class="link dropdown-trigger is-active"><a>Gallery</a></li>
+        <!-- <li id="rw" class="link dropdown-trigger"><a>Request a Workshop</a></li> -->
+        <li id="faq" class="link dropdown-trigger"><a>FAQ</a></li>
+        
       </ul>
     </div>
     

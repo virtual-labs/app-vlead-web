@@ -13,9 +13,9 @@ import "../css/theme.css";
   var data = all.institutes 
 
   // Get the dropdown button and menu
-  const dropdownButton = document.getElementById("dropdownButton");
-  const dropdownMenu = document.getElementById("dropdown-menu");
-  const listitems = document.getElementById("listitems");
+  const dropdownButton = document.getElementById("dropdownButton")!;
+  const dropdownMenu = document.getElementById("dropdown-menu")!;
+  const listitems = document.getElementById("listitems")!;
 
   // display institutes logo (desktop-mode)
   // creating institute cards
@@ -45,16 +45,16 @@ import "../css/theme.css";
     div.appendChild(span);
     div.appendChild(div1);
     li.appendChild(div);
-    listitems.appendChild(li);
+    listitems!.appendChild(li);
   });
 
   //selecting a institute card
-  const listItem = listitems.querySelectorAll(".logo");
-  let selectedCard = null;
+  const listItem = listitems!.querySelectorAll(".logo");
+  let selectedCard = listItem[0].querySelector("span")!;
   listItem.forEach(function (item) {
     item.addEventListener("click", function (event) {
 
-      const with_span = item.querySelector("span");
+      const with_span = item.querySelector("span")!;
       if (selectedCard) {
         selectedCard.style.boxShadow = "none";
       }
@@ -68,8 +68,8 @@ import "../css/theme.css";
           foundItem = item;
         }
       });
-      const iframe = document.querySelector("iframe");
-      const new_path = foundItem.iframe_src
+      const iframe = document.querySelector("iframe")!;
+      const new_path = foundItem!.iframe_src
       if (new_path != iframe.src) {
         iframe.src = new_path;
       }
@@ -91,7 +91,7 @@ import "../css/theme.css";
   });
   div.appendChild(div1);
   dropdownMenu.appendChild(div);
-  const dropdownItems = dropdownMenu.querySelectorAll(".dropdown-item");
+  const dropdownItems = dropdownMenu.querySelectorAll(".dropdown-item")!;
 
   dropdownButton.addEventListener("click", function (event) {
     // Toggle the "is-active" class on the dropdown menu
@@ -104,13 +104,13 @@ import "../css/theme.css";
     item.addEventListener("click", function (event) {
       dropdownButton.innerHTML = item.innerHTML + "&#9660;";
       const a = item;
-      let foundItem = null;
+      let foundItem = data[0];
       data.forEach((item) => {
         if (item.heading === a.innerHTML) {
           foundItem = item;
         }
       });
-      const iframe = document.querySelector("iframe");
+      const iframe = document.querySelector("iframe")!;
       const new_path = foundItem.iframe_src
       if (new_path != iframe.src) {
         iframe.src = new_path;
@@ -121,15 +121,15 @@ import "../css/theme.css";
   });
   
   // loading iframe
-  var iframe = document.querySelector("iframe");
+  var iframe = document.querySelector("iframe")!;
   iframe.onload = function () {
     iframe.style.height = 130 + "vh";
   };
 </script>
 
 <script>
-  document.getElementById("analytics").classList.add("is-active");
-  document.getElementById("analytics").classList.add("has-text-weight-bold");
+  document.getElementById("analytics")!.classList.add("is-active");
+  document.getElementById("analytics")!.classList.add("has-text-weight-bold");
 </script>
 
 <Base title="Analytics">

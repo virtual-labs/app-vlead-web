@@ -1,9 +1,9 @@
 ---
 import { Icon } from "astro-icon";
 import Roles from "./role";
-
-var id = "1tJI8OIV2F3BXFkniSODtyr3smj3SS2zQGc5Q-x5N8kI";
-var gid = "405192847";
+// https://docs.google.com/spreadsheets/d/1x12nhpp0QvnsA6x-O1sV4IA9SAbfVsq_wiexWkutOmU/edit#gid=1573630614
+var id = "1x12nhpp0QvnsA6x-O1sV4IA9SAbfVsq_wiexWkutOmU";
+var gid = "1573630614";
 let users = 0,
   Views = 0;
 var url =
@@ -39,9 +39,9 @@ try {
     });
   }
 
-  const cnv = document.createElement("canvas");
+  const cnv = document.createElement("canvas")!;
   //Get context and screen size;
-  var ctx = cnv.getContext("2d");
+  var ctx = cnv.getContext("2d")!;
   var W = window.innerWidth;
   var H = window.innerHeight;
 
@@ -88,13 +88,17 @@ try {
   }
 
   if (detectMob()) {
-    document.getElementById("search-submit").style.display = "none";
+    document.getElementById("search-submit")!.style.display = "none";
   }
-  const search_button = document.getElementById("search-button");
-  const search_submit = document.getElementById("search-submit");
-  const search_bar = document.getElementById("search-bar-container");
-  const search_value = document.getElementById("search_value");
-  const form = document.getElementById("form");
+  const search_button = document.getElementById("search-button")!;
+  const search_submit = document.getElementById("search-submit")!;
+  const search_bar = document.getElementById("search-bar-container")!;
+  const search_value = document.getElementById("search_value")!;
+  const form = document.getElementById("form")!;
+  if(document.location.href.includes("experiments"))
+  {
+    search_bar.style.display="none"
+  }
   search_bar.addEventListener("mouseenter", () => {
     search_submit.classList.add("search-open");
     search_bar.classList.add("search-open");
@@ -105,15 +109,15 @@ try {
     window.location.href = "/app-vlead-web/experiments/";
   });
 
-  const burger = document.getElementById("burger");
-  const menu = document.getElementById("navbarMain");
+  const burger = document.getElementById("burger")!;
+  const menu = document.getElementById("navbarMain")!;
   burger.addEventListener("click", () => {
     burger.classList.toggle("is-active");
     menu.classList.toggle("is-active");
   });
 
-  const icon1 = document.getElementById("icon-theme-light");
-  const icon2 = document.getElementById("icon-theme-dark");
+  const icon1 = document.getElementById("icon-theme-light")!;
+  const icon2 = document.getElementById("icon-theme-dark")!;
   let toggle = (theme) => {
     localStorage.setItem("theme", theme);
     let list = document.getElementsByClassName("theme");
@@ -142,7 +146,7 @@ try {
       "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
     theme = "light";
   }
-  const theme_switcher = document.getElementById("theme");
+  const theme_switcher = document.getElementById("theme")!;
   theme_switcher.addEventListener("click", () => {
     theme = theme === "dark" ? "light" : "dark";
     toggle(theme);
@@ -150,51 +154,51 @@ try {
 </script>
 
 <script>
-  const outreach = document.getElementById("outreach");
-  const create = document.getElementById("create");
-  const learning = document.getElementById("learning");
+  const outreach = document.getElementById("outreach")!;
+  const create = document.getElementById("create")!;
+  const learning = document.getElementById("learning")!;
   const role_dict = { creator: create, educator: outreach, learner: learning };
   const role = sessionStorage.getItem("role");
   if (role) {
-    document.getElementById("choose-drop").classList.remove("is-hidden");
+    document.getElementById("choose-drop")!.classList.remove("is-hidden");
     role_dict[role].classList.remove("is-hidden");
     if (role == "creator") {
-      document.getElementById("drop-creator").classList.add("active-role");
+      document.getElementById("drop-creator")!.classList.add("active-role");
     } else if (role == "educator") {
-      document.getElementById("drop-educator").classList.add("active-role");
+      document.getElementById("drop-educator")!.classList.add("active-role");
     } else if (role == "learner") {
-      document.getElementById("drop-learner").classList.add("active-role");
+      document.getElementById("drop-learner")!.classList.add("active-role");
     }
   }
 
-  const drop_creator = document.getElementById("drop-creator");
+  const drop_creator = document.getElementById("drop-creator")!;
   drop_creator.addEventListener("click", () => {
     outreach.classList.add("is-hidden");
     learning.classList.add("is-hidden");
     create.classList.remove("is-hidden");
-    document.getElementById("drop-creator").classList.add("active-role");
-    document.getElementById("drop-educator").classList.remove("active-role");
-    document.getElementById("drop-learner").classList.remove("active-role");
+    document.getElementById("drop-creator")!.classList.add("active-role");
+    document.getElementById("drop-educator")!.classList.remove("active-role");
+    document.getElementById("drop-learner")!.classList.remove("active-role");
     sessionStorage.setItem("role", "creator");
   });
-  const drop_educator = document.getElementById("drop-educator");
+  const drop_educator = document.getElementById("drop-educator")!;
   drop_educator.addEventListener("click", () => {
     create.classList.add("is-hidden");
     learning.classList.add("is-hidden");
     outreach.classList.remove("is-hidden");
-    document.getElementById("drop-creator").classList.remove("active-role");
-    document.getElementById("drop-educator").classList.add("active-role");
-    document.getElementById("drop-learner").classList.remove("active-role");
+    document.getElementById("drop-creator")!.classList.remove("active-role");
+    document.getElementById("drop-educator")!.classList.add("active-role");
+    document.getElementById("drop-learner")!.classList.remove("active-role");
     sessionStorage.setItem("role", "educator");
   });
-  const drop_learner = document.getElementById("drop-learner");
+  const drop_learner = document.getElementById("drop-learner")!;
   drop_learner.addEventListener("click", () => {
     create.classList.add("is-hidden");
     outreach.classList.add("is-hidden");
     learning.classList.remove("is-hidden");
-    document.getElementById("drop-creator").classList.remove("active-role");
-    document.getElementById("drop-educator").classList.remove("active-role");
-    document.getElementById("drop-learner").classList.add("active-role");
+    document.getElementById("drop-creator")!.classList.remove("active-role");
+    document.getElementById("drop-educator")!.classList.remove("active-role");
+    document.getElementById("drop-learner")!.classList.add("active-role");
     sessionStorage.setItem("role", "learner");
   });
 </script>
@@ -227,13 +231,14 @@ try {
 		</a> -->
     <a class="navbar-item py-0 px-0 ml-2" href="/app-vlead-web/">
       <img
-        src="https://cdn.vlabs.ac.in/logo/vlead-small.png"
+        src="https://cdn.vlabs.ac.in/logo/vlabs-color-large-moe.png"
         loading="lazy"
-        style="max-height:70px;"
-        class="py-2 px-2"
+        style="max-height:70px; background:none"
+        class="py-1 px-2"
+        
       />
     </a>
-    <div class="navbar-item" id="theme">
+    <div class="navbar-item px-2" id="theme">
       <div class="theme-toggle">
         <span class="icon-theme mx-auto">
           <Icon id="icon-theme-light" name="ph:sun-bold" />
@@ -245,7 +250,7 @@ try {
         </span>
       </div>
     </div>
-    <div class="navbar-item">
+    <div class="navbar-item px-2">
       <div class="search-bar" id="search-bar-container">
         <!-- <form>
 				<input type="search" class="input search-input is-rounded">
@@ -286,35 +291,35 @@ try {
     <div class="navbar-start"></div>
     <div class="navbar-end">
       <div
-        class="navbar-item has-dropdown is-hoverable is-hidden"
+        class="navbar-item px-2 has-dropdown is-hoverable is-hidden"
         id="choose-drop"
       >
         <a class="navbar-link is-size-5"> Choose a Role</a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item theme" id="drop-learner"> Learner</a>
+          <a class="navbar-item px-2 theme" id="drop-learner"> Learner</a>
           <hr class="navbar-divider" />
-          <a class="navbar-item theme" id="drop-educator"> Educator</a>
+          <a class="navbar-item px-2 theme" id="drop-educator"> Educator</a>
           <hr class="navbar-divider" />
-          <a class="navbar-item theme" id="drop-creator"> Creator</a>
+          <a class="navbar-item px-2 theme" id="drop-creator"> Creator</a>
         </div>
       </div>
       <a
-        class="navbar-item is-size-5 is-hidden clickable"
+        class="navbar-item px-2 is-size-5 is-hidden clickable"
         id="create"
         href="/app-vlead-web/development/"
       >
         Create Experiment
       </a>
       <a
-        class="navbar-item is-size-5 is-hidden clickable"
+        class="navbar-item px-2 is-size-5 is-hidden clickable"
         id="outreach"
         href="/app-vlead-web/outreach/"
       >
         Outreach
       </a>
       <a
-        class="navbar-item is-size-5 is-hidden clickable"
+        class="navbar-item px-2 is-size-5 is-hidden clickable"
         id="learning"
         href="/app-vlead-web/experiments/"
       >
@@ -323,14 +328,14 @@ try {
       <Roles client:only />
       <!-- <div class="flashing"> -->
       <a
-        class="navbar-item is-size-5 clickable"
+        class="navbar-item px-2 is-size-5 clickable"
         id="analytics"
         href="/app-vlead-web/analytics/"
       >
         Analytics
       </a>
       <a
-        class="navbar-item is-size-5 clickable"
+        class="navbar-item px-2 is-size-5 clickable"
         id="ourteam"
         href="/app-vlead-web/members/"
       >
@@ -338,7 +343,7 @@ try {
       </a>
       <!-- </div> -->
       <a
-        class="navbar-item is-size-5 has-background-success-light has-text-black"
+        class="navbar-item px-2 is-size-5 has-background-success-light has-text-black"
         id="user-display"
       >
         <strong>
@@ -346,7 +351,7 @@ try {
         </strong>
       </a>
       <a
-        class="navbar-item is-size-5 has-background-success-light has-text-black"
+        class="navbar-item px-2 is-size-5 has-background-success-light has-text-black"
         id="views-display"
       >
         <strong>
@@ -373,9 +378,11 @@ try {
 <style>
   #user-display:hover {
     color: black;
+    cursor: default;
   }
   #views-display:hover {
     color: black;
+    cursor: default;
   }
   /* .navbar-dropdown{
 		dropdown-item-hover-color: red;

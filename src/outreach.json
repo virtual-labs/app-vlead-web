@@ -1,6 +1,10 @@
 {
     "workshop":[
         {
+            "name": "Request a Workshop",
+            "url":""
+        },
+        {
             "name":"Workshop Data Summary",
             "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/5fLPB"
         },
@@ -30,6 +34,10 @@
         }
     ],
     "nodalcenters":[
+        {
+            "name": "Become a Nodal Center",
+            "url":""
+        },
         {
             "name":"Nodal Center Data Summary",
             "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_q6mz96i75c"
