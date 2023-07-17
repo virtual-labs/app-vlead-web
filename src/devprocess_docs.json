@@ -1,13 +1,17 @@
 [
     {
-        "heading": "Create Experiment",
+        "heading": "Documentation",
         "docs": [
             {
-                "title": "Step 1 : Development",
+                "title": "Development Process",
                 "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/dev-process/README.md"
             },
             {
-                "title": "Step 2 : Hosting",
+                "title": "Best Practices",
+                "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/best-practices/README.md"
+            },
+            {
+                "title": "Hosting Process",
                 "url": "https://raw.githubusercontent.com/virtual-labs/engineers-forum/master/ph4/services/onboarding-hosting-process.md"
             }
         ]
@@ -15,13 +19,19 @@
     {
         "heading": "See Also",
         "docs": [
-            {
-                "title": "Best Practices",
-                "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/best-practices/README.md"
-            },
+            
             {
                 "title": "Virtual Box Installation",
                 "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/virtual-box/README.md"
+            }
+        ]
+    },
+    {
+        "heading": "Create Experiment",
+        "docs": [
+            {
+                "title": "User Guide",
+                "url": "https://raw.githubusercontent.com/virtual-labs/app-exp-create-web/master/docs/user-doc.md"
             }
         ]
     }
