@@ -11,10 +11,15 @@
   --blue: #3273dc;
   --green: #48c774;
   --mud: #faf5ed;
+  --mud-darker: #ffe6bf;
   --turquoise-light: #daf1ef;
+  --turquoise-dark: #018f83;
 
   --primary: var(--turquoise);
   --secondary: var(--light);
+  /* --third: rgb(98, 34, 226); */
+  --third: var(--turquoise-dark);
+  /* --third: var(--dark); */
   --highlight: var(--cyan);
   --link: var(--blue);
   --warning: var(--yellow);
@@ -50,3 +55,12 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+
+/* #ff7f50
+#ff6347
+#2bafab
+#32cd32
+
+
+#3264cd */

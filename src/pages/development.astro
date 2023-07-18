@@ -8,6 +8,7 @@ import "../css/theme.css";
 
 let index = 0;
 let index2 = 0;
+let index3 = 0;
 let virtualBoxNumber = 4;
 
 // In this page, the menu bar on the right side has document names having ids page-1, page-2 so on
@@ -47,9 +48,17 @@ let virtualBoxNumber = 4;
                                         index++;
                                         return (
                                             <li>
-                                                <a style="background-color: var(--white); color: var(--black)"id={"page-" + index}>
+                                                <a style="background-color: var(--white); color: var(--black)" id={"page-" + index}>
                                                     {d.title}
                                                 </a>
+                                            </li>
+                                        );
+                                    })}
+                                    {c.buttons.map((d,j)=>{
+                                        index3++;
+                                        return (
+                                            <li>
+                                                <a target = "_blank" id={"button-"+index3} href={d.url} class="menu-buttons">{d.title}</a>
                                             </li>
                                         );
                                     })}
@@ -58,7 +67,6 @@ let virtualBoxNumber = 4;
                         );
                     })}
                 </ul>
-                <a target = "_blank" id="create-button" href="http://virtual-labs-cms.netlify.app">Create Experiment</a>
 
             </div>
             <!-- <div class="column is-narrow"></div> -->
@@ -181,7 +189,7 @@ let virtualBoxNumber = 4;
         cursor:default;
     }
 
-    #create-button{
+    .menu-button{
         /* background-color: rgba(52, 62, 255, 0.261); */
         /* background-color: #ffe08a; */
         background-color: var(--docs);
@@ -193,6 +201,18 @@ let virtualBoxNumber = 4;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
         margin-left:1.5rem;
+    }
+
+    .menu-buttons{
+        /* background-color: rgb(98, 34, 226); */
+        /* background-color: var(--third); */
+        background-color: var(--third);
+        /* border: solid 2px var(--black); */
+        color: var(--white) !important;
+        /* color: white !important; */
+    }
+    .menu-buttons:hover{
+        color:black !important;
     }
 </style>
 
