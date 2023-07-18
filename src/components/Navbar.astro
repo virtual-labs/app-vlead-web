@@ -224,7 +224,7 @@ try {
 			href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
 		/>
 </head> -->
-<nav class="navbar theme is-fixed-top has-shadow px-0" style="max-height:70px;">
+<nav class="navbar theme is-fixed-top px-0" style="max-height:70px;">
   <div class="navbar-brand" style="max-height: inherit;">
     <!-- <a class="navbar-item py-0 px-0 " href="https://bulma.io">
 		<img	src="https://cdn.vlabs.ac.in/logo/iiit-small.png" style="max-height:70px " class="py-2 px-2"/>
@@ -343,7 +343,7 @@ try {
       </a>
       <!-- </div> -->
       <a
-        class="navbar-item px-2 is-size-5 has-background-success-light has-text-black"
+        class="navbar-item px-2 is-size-5"
         id="user-display"
       >
         <strong>
@@ -351,7 +351,7 @@ try {
         </strong>
       </a>
       <a
-        class="navbar-item px-2 is-size-5 has-background-success-light has-text-black"
+        class="navbar-item px-2 is-size-5"
         id="views-display"
       >
         <strong>
@@ -376,12 +376,18 @@ try {
 </nav>
 
 <style>
+  #user-display{
+    color: white;
+    background-color: var(--third);
+  }
   #user-display:hover {
-    color: black;
     cursor: default;
   }
+  #views-display{
+    color:white;
+    background-color: var(--third);
+  }
   #views-display:hover {
-    color: black;
     cursor: default;
   }
   /* .navbar-dropdown{
