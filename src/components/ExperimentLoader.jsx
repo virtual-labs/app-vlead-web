@@ -119,7 +119,6 @@ export default function ExperimentLoader(props) {
         props.setNav(3);
     }
     const SaveFilter = () => {
-        console.log(saved_filters);
         let a = {};
         if (saved_filters) a = JSON.parse(JSON.stringify(saved_filters))
         if (!a || !a["Filter1"]) {
@@ -157,7 +156,6 @@ export default function ExperimentLoader(props) {
         }
     }
     const ToggleSave = (exp) => {
-        console.log(exp)
         if (saved.includes(exp)) {
             let a = localStorage.getItem("saved");
             a = a.replace(exp, "")
@@ -543,9 +541,6 @@ export default function ExperimentLoader(props) {
 
                             }
                             {
-                                console.log(typeof (saved))
-                            }
-                            {
                                 saved.filter((ele) => {
                                     for (let i of Display) {
                                         if (i["Experiment Name"] === ele) {
@@ -611,7 +606,6 @@ export default function ExperimentLoader(props) {
                         </div>) : null}
                         {
                             props.pages===0?(<span>
-                                {console.log("hi")}
                                 {props.fetched ?
                                     <h1 className='has-text-black has-text-centered is-size-1'>No Results Found</h1>
                                     : <Loader />
@@ -655,7 +649,8 @@ export default function ExperimentLoader(props) {
                     </div>
                     {apply ? <>
                         <div className="field my-4 mr-0 ml-4">
-                            <label className="has-text-weight-semibold is-size-4 theme" style={{ marginTop: "50px" }}>Institutes</label>
+                            <label className="has-text-weight-semibold is-size-4 theme" >Institutes</label>
+                            <br/>
                             {
                                 Instis.map((element) => {
                                     if (SelectInstis.includes(element))
@@ -682,6 +677,7 @@ export default function ExperimentLoader(props) {
                         <div className="is-divider "></div>
                         <div className="field my-4 ml-4 mr-0">
                             <label className="has-text-weight-semibold is-size-4 theme">Discipline</label>
+                            <br/>
                             {
                                 Discipline.map((element) => {
                                     if (SelectDisciplines.includes(element))

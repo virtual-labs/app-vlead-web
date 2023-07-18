@@ -73,7 +73,6 @@ function ExpComponent() {
         fetch("https://8kne7udek3.execute-api.ap-southeast-2.amazonaws.com/items")
             .then((resp) => resp.json())
             .then((data) => {
-                console.log(data)
                 setExperiments(data);
                 setTotal(Math.ceil(data.length / 8))
                 let copy = [...data]

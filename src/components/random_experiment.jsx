@@ -19,7 +19,6 @@ export default function RandomExperiment() {
         textAlign: "center",
         paddingTop: "20px",
         fontFamily: "Comfortaa",
-        // height:"50vh"
       }}
     >
       <div>
