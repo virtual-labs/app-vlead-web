@@ -7,6 +7,7 @@ import { RxCounterClockwiseClock } from 'react-icons/rx'
 import { AiFillExperiment, AiFillStar, AiFillStepBackward, AiFillDelete, AiFillSave } from 'react-icons/ai'
 import { BsFillSave2Fill, BsFillBookmarkStarFill, BsFillBookmarkPlusFill, BsFillStickyFill } from 'react-icons/bs';
 import { BulmaComponent } from 'yatharth-super-lemon'
+import "../css/theme.css"
 import Loader from './loader';
 export default function ExperimentLoader(props) {
     const [Instis, setInstis] = useState(["option1-Insti", "option2-Insti"])
@@ -329,7 +330,7 @@ export default function ExperimentLoader(props) {
                                     })
                                 }
                             </div>
-                                <div className="is-divider is-black"></div>
+                                <div className="is-divider"></div>
                                 <div className="field mb-4 ml-4">
                                     <label className="label m-2 is-size-4 has-text-primary" style={{ textShadow: "0.15rem 0.15rem #D5F2D8" }}>Discipline</label>
                                     {
@@ -618,7 +619,7 @@ export default function ExperimentLoader(props) {
                             </span>):(null)
                         }
                 </div>
-                <div id="divider" className="is-divider-vertical is-black is-hidden-mobile is-hidden-desktop is-hidden-tablet" style={{padding:"0px"}}></div>
+                <div id="divider" className="is-divider-vertical is-hidden-mobile is-hidden-desktop is-hidden-tablet" style={{padding:"0px"}}></div>
                 <div id="filter-set" className='column is-2 is-hidden-mobile is-hidden-desktop is-hidden-tablet'>
                     <div className=" " style={{ textAlign: "center", whiteSpace: "nowrap", overflow: "auto" }}>
 
@@ -653,8 +654,8 @@ export default function ExperimentLoader(props) {
 
                     </div>
                     {apply ? <>
-                        <div className="field mb-4 ml-4">
-                            <label className="label is-size-4 has-text-black" style={{ marginTop: "50px" }}>Institutes</label>
+                        <div className="field my-4 mr-0 ml-4">
+                            <label className="has-text-weight-semibold is-size-4 theme" style={{ marginTop: "50px" }}>Institutes</label>
                             {
                                 Instis.map((element) => {
                                     if (SelectInstis.includes(element))
@@ -678,9 +679,9 @@ export default function ExperimentLoader(props) {
                                 })
                             }
                         </div>
-                        <div className="is-divider is-black"></div>
-                        <div className="field mb-4 ml-4">
-                            <label className="label m-2 is-size-4 has-text-black">Discipline</label>
+                        <div className="is-divider "></div>
+                        <div className="field my-4 ml-4 mr-0">
+                            <label className="has-text-weight-semibold is-size-4 theme">Discipline</label>
                             {
                                 Discipline.map((element) => {
                                     if (SelectDisciplines.includes(element))
@@ -704,7 +705,7 @@ export default function ExperimentLoader(props) {
                                 })
                             }
                         </div>
-                        <div className="is-divider is-black"></div>
+                        <div className="is-divider"></div>
                         <div className='has-text-centered'>
                             <button id="but-1" className='button is-info is-rounded mr-4' style={{ padding: "8px" }} onClick={ClearFilter}><AiFillDelete />Clear</button>
                             <button id="but-2" className='button is-info is-rounded' style={{ padding: "8px" }} onClick={SaveFilter}><BsFillBookmarkPlusFill />Save</button>
