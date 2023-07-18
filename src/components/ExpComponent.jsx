@@ -73,7 +73,6 @@ function ExpComponent() {
         fetch("https://8kne7udek3.execute-api.ap-southeast-2.amazonaws.com/items")
             .then((resp) => resp.json())
             .then((data) => {
-                console.log(data)
                 setExperiments(data);
                 setTotal(Math.ceil(data.length / 8))
                 let copy = [...data]
@@ -91,7 +90,7 @@ function ExpComponent() {
         }
         else {
             document.getElementById("filter-set").className = 'column is-2 is-hidden-mobile is-hidden-tablet-only mr-4';
-            document.getElementById("divider").className = 'is-divider-vertical is-black is-hidden-mobile is-hidden-tablet-only';
+            document.getElementById("divider").className = 'is-divider-vertical is-white is-hidden-mobile is-hidden-tablet-only';
         }
         document.getElementById("filter-model").className = document.getElementById("filter-model").className + " is-active"
     }
@@ -156,17 +155,17 @@ function ExpComponent() {
             <ExperimentLoader experiments={experiments} word={word} pagenum={page} setp={setPage} settp={setTotal} nav={nav} setNav={setNav} pop={Pop} pages = {totalPage} fetched={fetched}/>
             {
                 totalPage != 0 ?
-                    <footer className="" style={{ padding: "2%", marginBottom: "10px" }}>
+                    <footer className="theme" style={{ padding: "2%", marginBottom: "10px" }}>
                         <div className="content has-text-centered">
-                            <button className=' button is-dark has-text-white is-pulled-left ml-1' style={{ fontSize: '20px' }}
+                            <button className=' button is-pulled-left ml-1' style={{ fontSize: '20px' }}
                                 disabled={page === 1} onClick={PrevPage}>
                                 <AiOutlineArrowLeft />&nbsp;Previous
                             </button>
-                            <button className='button is-dark has-text-white is-pulled-right mr-1' style={{ fontSize: '20px' }}
+                            <button className='button is-pulled-right mr-1' style={{ fontSize: '20px' }}
                                 disabled={page === totalPage} onClick={NextPage}>
                                 Next&nbsp;<AiOutlineArrowRight />
                             </button>
-                            <p className='has-text-black is-size-4'>
+                            <p className='is-size-4'>
                                 Page {page} of {totalPage}
                             </p>
                         </div>

@@ -11,8 +11,8 @@ export function People_Card_Component_Current () {
     const [loaded, setLoaded] = useState(false);
 
     const data1 = {
-        display_name: "Yatharth Gupta_",
-        full_name: "Yatharth_ Middlename Gupta",
+        display_name: "First Last",
+        full_name: "first Middlename last",
         curr_position: "Employee",
         last_working_year: "present",
         about_me:

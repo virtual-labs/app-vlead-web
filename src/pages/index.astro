@@ -81,7 +81,6 @@ const short_about = all.shorty;
     bt!.classList.add("flashing");
     bt = role_dict[role_name];
     bt!.classList.add("active-role");
-    console.log(role_name)
     sessionStorage.setItem("role", role_name);
     setTimeout(() => {
       role_box!.classList.add("is-hidden");
@@ -378,8 +377,10 @@ const short_about = all.shorty;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 70px;
-    font-family: "Fira Code", monospace;
+    font-size: 80px;
+    height: 15vh;
+    /* font-family: "Fira Code", monospace; */
+    font-family: "auto";
   }
   .divider {
     display: inline-block;

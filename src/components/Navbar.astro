@@ -17,7 +17,7 @@ try {
   users = JSON.parse(data.substring(47).slice(0, -2)).table.rows[0].c[2].f;
   Views = JSON.parse(data.substring(47).slice(0, -2)).table.rows[1].c[2].f;
 } catch (err) {
-  // console.log(err);
+  console.log(err);
 }
 ---
 

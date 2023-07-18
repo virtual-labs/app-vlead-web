@@ -84,7 +84,9 @@ export default function Faqs(props) {
         const repo = "outreach-web-pages-iiith";
         const folderPath = "faq"+repo_name;
         const accessToken =
-          "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";
+          "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"; // sham
+        // const accessToken =
+        //   "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"; // vlead-public
 
         const url = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}`;
         const headers = {
@@ -191,9 +193,9 @@ export default function Faqs(props) {
       <div className="faq-container theme py-0 px-6 mb-6 content">
         {faqs.map((c, i) => {
           return (
-            <>
+            <div key={i}>
               <button
-                key={i}
+                
                 data-aos="fade-up"
                 style={{ color: "white" }}
                 className="box question is-size-5 mb-0 mt-2"
@@ -225,7 +227,7 @@ export default function Faqs(props) {
                   ]}
                 ></ReactMarkdown>
               </div>}
-            </>
+            </div>
           );
         })}
       </div>
