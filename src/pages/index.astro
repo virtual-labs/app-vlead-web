@@ -46,11 +46,11 @@ const short_about = all.shorty;
 
   const role = sessionStorage.getItem("role");
   if (role) {
-    role_box.classList.add("is-hidden");
-    chevron_cont.classList.add("is-hidden");
-    divider.classList.add("is-hidden");
-    typewriter.classList.add("typewriter-focused");
-    short_abt.classList.add("is-hidden");
+    role_box!.classList.add("is-hidden");
+    chevron_cont!.classList.add("is-hidden");
+    divider!.classList.add("is-hidden");
+    typewriter!.classList.add("typewriter-focused");
+    short_abt!.classList.add("is-hidden");
     // explore.style.height = "20vh";
     // explore.style.paddingBottom = "0vh";
     // explore.style.paddingTop = "0vh";
@@ -58,34 +58,34 @@ const short_about = all.shorty;
   }
 
   let rearrange = (role_name) => {
-    role_box.classList.add("fade-out");
-    dropdown.classList.remove("is-hidden");
-    dropdown.classList.add("flashing");
-    document.getElementById("burger").classList.add("flashing");
-    divider.classList.add("is-hidden");
-    typewriter.classList.add("typewriter-focused");
-    chevron_cont.classList.add("fade-out");
+    role_box!.classList.add("fade-out");
+    dropdown!.classList.remove("is-hidden");
+    dropdown!.classList.add("flashing");
+    document.getElementById("burger")!.classList.add("flashing");
+    divider!.classList.add("is-hidden");
+    typewriter!.classList.add("typewriter-focused");
+    chevron_cont!.classList.add("fade-out");
     // type_cont.style.marginTop = "0vh";
     // type_cont.style.paddingBottom = "8vh";
-    short_abt.classList.add("is-hidden");
+    short_abt!.classList.add("is-hidden");
     // explore.style.height = "20vh";
     // explore.style.paddingBottom = "0vh";
     // explore.style.paddingTop = "0vh";
     // explore.style.marginTop = "0vh";
-    drop_creator.classList.remove("active-role");
-    drop_educator.classList.remove("active-role");
-    drop_learner.classList.remove("active-role");
+    drop_creator!.classList.remove("active-role");
+    drop_educator!.classList.remove("active-role");
+    drop_learner!.classList.remove("active-role");
 
     var bt = exp_dict[role_name];
-    bt.classList.remove("is-hidden");
-    bt.classList.add("flashing");
+    bt!.classList.remove("is-hidden");
+    bt!.classList.add("flashing");
     bt = role_dict[role_name];
-    bt.classList.add("active-role");
+    bt!.classList.add("active-role");
     console.log(role_name)
     sessionStorage.setItem("role", role_name);
     setTimeout(() => {
-      role_box.classList.add("is-hidden");
-      chevron_cont.classList.add("is-hidden");
+      role_box!.classList.add("is-hidden");
+      chevron_cont!.classList.add("is-hidden");
     }, 500);
   };
 
@@ -97,17 +97,17 @@ const short_about = all.shorty;
     });
   };
 
-  dev_button.addEventListener("click", () => {
+  dev_button!.addEventListener("click", () => {
     rearrange("creator");
   });
-  teacher_button.addEventListener("click", () => {
+  teacher_button!.addEventListener("click", () => {
     rearrange("educator");
   });
-  learner_button.addEventListener("click", () => {
+  learner_button!.addEventListener("click", () => {
     rearrange("learner");
   });
 
-  chevron.addEventListener("click", () => {
+  chevron!.addEventListener("click", () => {
     scrollTo(chevron_cont);
   });
 
@@ -125,7 +125,7 @@ const short_about = all.shorty;
       },
     },
   });
-  const all_domains = domains.querySelectorAll(".common_domains");
+  const all_domains = domains!.querySelectorAll(".common_domains");
   all_domains.forEach((item) => {
     item.addEventListener("click", (event) => {
       sessionStorage.setItem("selectedCard", item.id);
