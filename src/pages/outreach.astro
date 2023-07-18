@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import {Outreach_devcontent} from "../components/Devcontent";
+import {Outreach_devcontent, Devcontent} from "../components/Devcontent";
 import "../css/theme.css";
 import "../css/faq.css"
 import Faqs from "../components/faqs";
@@ -58,8 +58,8 @@ const data = all.workshop;
   const NAN = document.getElementById("NAN");
   const wo = document.getElementById("tabWorkshops"); // workshop organised
   const WAN = document.getElementById("WAN");
-  // const rw = document.getElementById("rw"); // request workshop
-  // const RW = document.getElementById("RW");
+  const rw = document.getElementById("rw"); // request workshop
+  const RW = document.getElementById("RW");
   const faq = document.getElementById("faq"); // faqs
   const FAQ = document.getElementById("FAQ");
   const gal = document.getElementById("gal"); // gallery
@@ -68,7 +68,7 @@ const data = all.workshop;
   nc!.addEventListener("click", (event) => {
     NAN!.style.display = "block";
     WAN!.style.display = "none";
-    // RW!.style.display = "none";
+    RW!.style.display = "none";
     GAL!.style.display = "none";
     FAQ!.style.display = "none";
     wo!.classList.remove("is-active");
@@ -78,9 +78,9 @@ const data = all.workshop;
     nc!.classList.add("is-active");
   });
   wo!.addEventListener("click", (event) => {
-    WAN!.style.display = "block";
+    // WAN!.style.display = "none";
     NAN!.style.display = "none";
-    // RW!.style.display = "none";
+    // RW!.style.display = "block";
     GAL!.style.display = "none";
     FAQ!.style.display = "none";
     nc!.classList.remove("is-active");
@@ -88,23 +88,27 @@ const data = all.workshop;
     faq!.classList.remove("is-active");
     gal!.classList.remove("is-active");
     wo!.classList.add("is-active");
+    if(WAN!.style.display == "none")
+    {
+      RW!.style.display = "block";
+    }
   });
-  // rw!.addEventListener("click", (event) => {
-  //   RW!.style.display = "block";
-  //   WAN!.style.display = "none";
-  //   NAN!.style.display = "none";
-  //   GAL!.style.display = "none";
-  //   FAQ!.style.display = "none";
-  //   wo!.classList.remove("is-active");
-  //   nc!.classList.remove("is-active");
-  //   faq!.classList.remove("is-active");
-  //   gal!.classList.remove("is-active");
-  //   rw!.classList.add("is-active");
-  // });
+  rw!.addEventListener("click", (event) => {
+    RW!.style.display = "block";
+    WAN!.style.display = "none";
+    NAN!.style.display = "none";
+    GAL!.style.display = "none";
+    FAQ!.style.display = "none";
+    wo!.classList.remove("is-active");
+    nc!.classList.remove("is-active");
+    faq!.classList.remove("is-active");
+    gal!.classList.remove("is-active");
+    // rw!.classList.add("is-active");
+  });
   faq!.addEventListener("click", (event) => {
     FAQ!.style.display = "block";
     WAN!.style.display = "none";
-    // RW!.style.display = "none";
+    RW!.style.display = "none";
     GAL!.style.display = "none";
     NAN!.style.display = "none";
     wo!.classList.remove("is-active");
@@ -117,7 +121,7 @@ const data = all.workshop;
     GAL!.style.display = "block";
     FAQ!.style.display = "none";
     WAN!.style.display = "none";
-    // RW!.style.display = "none";
+    RW!.style.display = "none";
     NAN!.style.display = "none";
     wo!.classList.remove("is-active");
     // rw!.classList.remove("is-active");
@@ -208,15 +212,38 @@ const data = all.workshop;
 
   for (let i = 0; i < all.workshop.length; i++) {
 
+    if( all.workshop[i].type=="markdown" )
+      continue;
+
     const e = document.getElementById("Wi" + i)!;
     e.classList.remove("is-active");
     
     e.addEventListener("click", () => {
+      console.log("ihi");
+      document.getElementById("RW")!.style.display = "none";
+      document.getElementById("WAN")!.style.display = "block";
+      document.getElementById("workshop_iframe")!.style.display = "block";
       document.getElementById("workshop_iframe")!.src = all.workshop[i].url;
       e.classList.add("is-active");
     });
     
   }
+  // const e = document.getElementById("rw")!;
+  //   e.classList.remove("is-active");
+    
+  //   e.addEventListener("click", () => {
+  //     // document.getElementById("workshop_iframe")!.src = all.workshop[i].url;
+  //     e.classList.add("is-active");
+  //     // document.getElementById("RW")!.style.display = "block";
+  //     // document.getElementById("workshop_iframe")!.style.display = "none";
+  //     for (let i = 0; i < all.workshop.length; i++) 
+  //     {
+  //       const e = document.getElementById("Wi" + i)!;
+  //       e.classList.remove("is-active");
+  //     }
+
+  //   });
+
   for (let i = 0; i < all.nodalcenters.length; i++) {
     const e = document.getElementById("Ni" + i)!;
     e.classList.remove("is-active");
@@ -234,6 +261,9 @@ const data = all.workshop;
   }
   link.dark {
     color: var(--white);
+  }
+  #workshop_iframe{
+    display:none;
   }
   .Nodal_Centers {
     color: black;
@@ -355,6 +385,16 @@ const data = all.workshop;
             <div class="dropdown-menu" id="dropdown-menu4" role="menu">
               <div class="dropdown-content">
                 {data.map((c,i)=>{
+                  if(c.type == "markdown")
+                  {
+                    return(
+                        <div class="dropdown-item">
+                            <a id="rw">
+                              {c.name}
+                            </a>
+                        </div>
+                    );
+                  }
                     return(
                         <div class="dropdown-item">
                             <a id={"Wi"+i}>
