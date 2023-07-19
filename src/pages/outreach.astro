@@ -41,8 +41,23 @@ import img32 from "../../public/outreach-images/32.jpg";
 
 // import Workshops_dropdown from "../components/Workshops_dropdown";
 
-import all from "../../src/outreach.json";
+import all from "../outreach.json";
 const data = all.workshop;
+
+// export function getStaticPaths() {
+//   return [
+//     {params: {tab: undefined}},
+//     {params: {tab: 'gallery'}},
+//     {params: {tab: 'request-a-workshop'}},
+//     {params: {tab: 'become-a-nodalcenter'}},
+//     {params: {tab: 'workshop-analytics'}},
+//     {params: {tab: 'nodalcenter-analytics'}},
+//     {params: {tab: 'faq'}}
+//   ];
+// }
+
+// const {tab} = Astro.params;
+// document.getElementById("gallery")!.style.display = "none";
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"
@@ -53,8 +68,9 @@ const data = all.workshop;
   document.getElementById("outreach")!.classList.add("has-text-weight-bold");
 </script>
 
+
 <script> // toggling between tabs
-  const nc = document.getElementById("tabNodalcenters"); //nodal centers
+  const nc = document.getElementById("tabNodalcenters"); // nodal centers
   const NAN = document.getElementById("NAN");
   const wo = document.getElementById("tabWorkshops"); // workshop organised
   const WAN = document.getElementById("WAN");
@@ -64,6 +80,49 @@ const data = all.workshop;
   const FAQ = document.getElementById("FAQ");
   const gal = document.getElementById("gal"); // gallery
   const GAL = document.getElementById("GAL");
+  const bn = document.getElementById("bn"); // become a nodal center
+  const BN = document.getElementById("BN");
+  const tab_w = document.getElementById("tab-workshop-link");
+  const tab_n = document.getElementById("tab-nodalcenter-link");
+
+  // const {tab} = Astro.params;
+  // console.log(tab);
+  
+  // document.location.href.includes("workshops")
+  if(document.location.href.includes("workshops"))
+  {
+    WAN!.style.display = "block";
+    wo!.classList.add("is-active");
+    RW!.style.display = "none";
+    document.getElementById("workshop_iframe")!.style.display = "block";
+  }
+  else if(document.location.href.includes("nodalcenters"))
+  {
+    NAN!.style.display = "block";
+    nc!.classList.add("is-active");
+    BN!.style.display = "none";
+    document.getElementById("nodal_iframe")!.style.display = "block";
+  }
+  else if(document.location.href.includes("request-a-workshop"))
+  {
+    WAN!.style.display = "block";
+    wo!.classList.add("is-active");
+  }
+  else if(document.location.href.includes("become-a-nodalcenter"))
+  {
+    NAN!.style.display = "block";
+    nc!.classList.add("is-active");
+  }
+  else if(document.location.href.includes("FAQ"))
+  {
+    FAQ!.style.display = "block";
+    faq!.classList.add("is-active");
+  }
+  else
+  {
+    GAL!.style.display = "block";
+    gal!.classList.add("is-active");
+  }
 
   nc!.addEventListener("click", (event) => {
     NAN!.style.display = "block";
@@ -78,7 +137,7 @@ const data = all.workshop;
     nc!.classList.add("is-active");
   });
   wo!.addEventListener("click", (event) => {
-    // WAN!.style.display = "none";
+    WAN!.style.display = "block";
     NAN!.style.display = "none";
     // RW!.style.display = "block";
     GAL!.style.display = "none";
@@ -88,22 +147,31 @@ const data = all.workshop;
     faq!.classList.remove("is-active");
     gal!.classList.remove("is-active");
     wo!.classList.add("is-active");
-    if(WAN!.style.display == "none")
-    {
-      RW!.style.display = "block";
-    }
   });
   rw!.addEventListener("click", (event) => {
     RW!.style.display = "block";
-    WAN!.style.display = "none";
+    WAN!.style.display = "block";
     NAN!.style.display = "none";
     GAL!.style.display = "none";
     FAQ!.style.display = "none";
-    wo!.classList.remove("is-active");
+    wo!.classList.add("is-active");
     nc!.classList.remove("is-active");
     faq!.classList.remove("is-active");
     gal!.classList.remove("is-active");
+    document.getElementById("workshop_iframe")!.style.display = "none";
     // rw!.classList.add("is-active");
+  });
+  bn!.addEventListener("click", (event) => {
+    BN!.style.display = "block";
+    NAN!.style.display = "block";
+    WAN!.style.display = "none";
+    GAL!.style.display = "none";
+    FAQ!.style.display = "none";
+    wo!.classList.remove("is-active");
+    nc!.classList.add("is-active");
+    faq!.classList.remove("is-active");
+    gal!.classList.remove("is-active");
+    document.getElementById("nodal_iframe")!.style.display = "none";
   });
   faq!.addEventListener("click", (event) => {
     FAQ!.style.display = "block";
@@ -129,6 +197,15 @@ const data = all.workshop;
     faq!.classList.remove("is-active");
     gal!.classList.add("is-active");
   });
+  tab_w!.addEventListener("click", (event) => {
+    console.log("yo");
+    RW!.style.display = "block";
+    document.getElementById("workshop_iframe")!.style.display = "none";
+  })
+  tab_n!.addEventListener("click", (event) => {
+    BN!.style.display = "block";
+    document.getElementById("nodal_iframe")!.style.display = "none";
+  })
 </script>
 
 <script> // fetching images
@@ -221,7 +298,6 @@ const data = all.workshop;
     e.addEventListener("click", () => {
       console.log("ihi");
       document.getElementById("RW")!.style.display = "none";
-      document.getElementById("WAN")!.style.display = "block";
       document.getElementById("workshop_iframe")!.style.display = "block";
       document.getElementById("workshop_iframe")!.src = all.workshop[i].url;
       e.classList.add("is-active");
@@ -245,10 +321,16 @@ const data = all.workshop;
   //   });
 
   for (let i = 0; i < all.nodalcenters.length; i++) {
+
+    if( all.nodalcenters[i].type=="markdown" )
+      continue;
+
     const e = document.getElementById("Ni" + i)!;
     e.classList.remove("is-active");
 
     e.addEventListener("click", () => {
+      document.getElementById("BN")!.style.display = "none";
+      document.getElementById("nodal_iframe")!.style.display = "block";
       document.getElementById("nodal_iframe")!.src = all.nodalcenters[i].url;
       e.classList.add("is-active");
     });
@@ -263,6 +345,18 @@ const data = all.workshop;
     color: var(--white);
   }
   #workshop_iframe{
+    display:none;
+  }
+  #nodal_iframe{
+    display:none;
+  }
+  #RW{
+    display:block;
+  }
+  #BN{
+    display:block;
+  }
+  #GAL{
     display:none;
   }
   .Nodal_Centers {
@@ -304,10 +398,6 @@ const data = all.workshop;
   .tabs .dropdown-trigger a:hover{
     color:black;
   }
-  /* .tabs .dropdown-item a {
-    padding-top: 2rem;
-    padding-left: 2rem;
-  } */
   .hidden_ {
     display: none;
     background-color: black;
@@ -347,24 +437,12 @@ const data = all.workshop;
   .nodal_analytics {
     display:none;
   }
-  .gallery {
-    display:block;
-    /* padding-left: 4rem; */
-    /* padding-right: 4rem; */
-  }
   .gal-img{
-    /* padding:1rem; */
     margin:0.3rem;
     border: 6px solid #f3f3f3f4;
     border-radius: 8px;
     height: auto;
     width:450px;
-    /* padding-left: 0%;
-    padding-right: 0% !important; */
-  }
-  #grid-gallery{
-    /* margin-top: 50px; */
-    /* text-align: center; */
   }
 </style>
 
@@ -374,11 +452,11 @@ const data = all.workshop;
     
     <div class="tabs theme is-boxed is-toggle is-toggle-rounded is-centered is-medium" style="overflow:visible;">
       <ul>
-        <li id="gal" class="link dropdown-trigger is-active"><a>Gallery</a></li>
+        <li id="gal" class="link dropdown-trigger"><a href="#gallery">Gallery</a></li>
         <li id="tabWorkshops" class="link">
           <div class="dropdown is-hoverable">
             <div class="dropdown-trigger link" id="w-trigger">
-              <a aria-haspopup="true" aria-controls="dropdown-menu4">
+              <a aria-haspopup="true" aria-controls="dropdown-menu4" href="#request-a-workshop" id="tab-workshop-link">
                 <span>Workshops</span>
               </a>
             </div>
@@ -389,7 +467,7 @@ const data = all.workshop;
                   {
                     return(
                         <div class="dropdown-item">
-                            <a id="rw">
+                            <a id="rw" href="#request-a-workshop">
                               {c.name}
                             </a>
                         </div>
@@ -397,7 +475,7 @@ const data = all.workshop;
                   }
                     return(
                         <div class="dropdown-item">
-                            <a id={"Wi"+i}>
+                            <a id={"Wi"+i} href="#workshops">
                               {c.name}
                             </a>
                         </div>
@@ -410,16 +488,26 @@ const data = all.workshop;
         <li id="tabNodalcenters" class="link">
           <div class="dropdown is-hoverable">
             <div class="dropdown-trigger link" id="w-trigger">
-              <a aria-haspopup="true" aria-controls="dropdown-menu4">
+              <a aria-haspopup="true" aria-controls="dropdown-menu4" href="#become-a-nodalcenter" id="tab-nodalcenter-link" >
                 <span>Nodal Centers</span>
               </a>
             </div>
             <div class="dropdown-menu" id="dropdown-menu4" role="menu">
               <div class="dropdown-content" style="">
                 {all.nodalcenters.map((c,i)=>{
+                  if(c.type == "markdown")
+                  {
                     return(
                         <div class="dropdown-item">
-                            <a id={"Ni"+i}>
+                            <a id="bn" href="#become-a-nodalcenter">
+                              {c.name}
+                            </a>
+                        </div>
+                    );
+                  }
+                    return(
+                        <div class="dropdown-item">
+                            <a id={"Ni"+i} href="#nodalcenters">
                               {c.name}
                             </a>
                         </div>
@@ -430,39 +518,39 @@ const data = all.workshop;
           </div>
         </li>
         <!-- <li id="rw" class="link dropdown-trigger"><a>Request a Workshop</a></li> -->
-        <li id="faq" class="link dropdown-trigger"><a>FAQ</a></li>
+        <li id="faq" class="link dropdown-trigger"><a href="#FAQ">FAQ</a></li>
         
       </ul>
     </div>
     
-    <div id="WAN" class="workshop_analytics">
-        <div class="mt-6 mx-3" style="height:100vh">
-          <iframe
-            id="workshop_iframe"
-            width="100%"
-            height="100%"
-            src="https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/5fLPB"
-            allowfullscreen></iframe>
-        </div>
+    <div id="WAN" class="workshop_analytics mt-6 mx-3" style="height:100vh">
+        
+      <iframe
+        id="workshop_iframe"
+        width="100%"
+        height="100%"
+        src="https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/5fLPB"
+        allowfullscreen>
+      </iframe>
       
+      <div id="RW" class="workshops_md_file mt-6 mx-auto" style="height:100vh">
+        <Outreach_devcontent page={"workshop"}  client:only />
+      </div>
     </div>
 
-    <div id="NAN" class="nodal_analytics">
-      <!-- <div class="column py-0"> -->
-        <div class="mt-6 mx-3" style="height:100vh">
+    <div id="NAN" class="nodal_analytics mt-6 mx-3" style="height:100vh">
           <iframe
             id="nodal_iframe"
             width="100%"
             height="100%"
             src="https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_q6mz96i75c"
             allowfullscreen></iframe>
+        <div id="BN" class="workshops_md_file mt-6 mx-auto" style="height:100vh">
+          <Devcontent url="https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/nodal-centre-process/nodal-centre-process.md"  client:only />
         </div>
-      <!-- </div> -->
     </div>
     
-    <div id="RW" class="workshops_md_file mt-6 mx-auto">
-      <Outreach_devcontent page={"workshop"}  client:only />
-    </div>
+    
 
     <div id="FAQ" class="workshops_faq mt-6 mx-auto">
       <p class="title has-text-black has-text-centered is-size-2 my-0 py-5">Frequently Asked Questions</p>

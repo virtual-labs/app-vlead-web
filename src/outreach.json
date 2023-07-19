@@ -3,7 +3,7 @@
         {
             "name": "Request a Workshop",
             "type": "markdown",
-            "url":""
+            "url":"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/workshop-process/workshop-process.md"
         },
         {
             "name":"Workshop Data Summary",
@@ -45,7 +45,7 @@
         {
             "name": "Become a Nodal Center",
             "type": "markdown",
-            "url":""
+            "url":"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/nodal-centre-process/nodal-centre-process.md"
         },
         {
             "name":"Nodal Center Data Summary",
