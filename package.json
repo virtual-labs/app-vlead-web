@@ -30,7 +30,7 @@
 		"font-awesome": "^4.7.0",
 		"fuse.js": "^6.6.2",
 		"googleapis": "^118.0.0",
-		"pwa-vlabs": "^1.0.3",
+		"pwa-vlabs": "^1.0.4",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-icons": "^4.10.1",
