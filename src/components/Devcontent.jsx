@@ -84,7 +84,11 @@ export function Devcontent(props) {
   );
 }
 
+
+// use this function for document without contents menu
 export function Outreach_devcontent(props) {
+
+  // pass "page" as a prop - either "workshop", or "workshop_faq", or pass the required raw github content url 
   const [content, setContent] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [change, setchange] = useState(false);
@@ -102,17 +106,21 @@ export function Outreach_devcontent(props) {
         `https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/workshop-process/workshop-process.md`
       );
     }
+    else{
+      setUrl(props.page);
+      console.log(props.page);
+    }
     setchange(true);
   }, []);
 
   useEffect(() => {
     const abc1 = async () => {
       if (change) {
-        if (props.page === "workshop") {
+        if (props.page !== "workshop_faq") {
           const response = await fetch(url);
           const text = await response.text();
           setContent(text);
-        } else {
+        } else{
           let new_text = "\n";
           for (let i = 1; i < 14; i++) {
             const new_url = url + i + "/index.mdx";
