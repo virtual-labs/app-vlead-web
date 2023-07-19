@@ -82,13 +82,16 @@ export default function Faqs(props) {
       try {
         const owner = "virtual-labs";
         const repo = "outreach-web-pages-iiith";
-        const folderPath = "faq"+repo_name;
+        const folderPath = "faq" + repo_name;
+        const ref = "main";
         // const accessToken =
         //   "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"; // sham
         // const accessToken =
         //   "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"; // vlead-public
 
-        const url = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}`;
+        // const url = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}`;
+        const url = `https://api.github.com/repos/${owner}/${repo}/git/trees/main?recursive=1`;
+        // const url = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}`;
         // const headers = {
         //   Authorization: `Bearer ${accessToken}`,
         // };
@@ -99,85 +102,155 @@ export default function Faqs(props) {
         // });
 
         if (!response.ok) {
+          setLoaded2(false);
           throw new Error("Failed to fetch folders");
         }
 
         const contents = await response.json();
-        const fetchFilesAndExtractFaqs = async (folderName) => {
-          const folderUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}/${folderName}`;
-          const folderResponse = await fetch(folderUrl);
-          // const folderResponse = await fetch(folderUrl, {
-          //   headers: headers,
-          // });
+        const mdxFiles = contents.tree.filter((item) =>
+          item.path.endsWith(".mdx")
+        );
+        console.log(mdxFiles);
+        const mdxFilesInSubfolder = mdxFiles.filter(
+          (item) =>
+            item.path.startsWith(folderPath) && item.path.endsWith(".mdx")
+        );
+        mdxFilesInSubfolder.sort((a, b) => {
+          const nameA = a.path;
+          const nameB = b.path;
 
-          if (!folderResponse.ok) {
-            setLoaded2(false)
-            throw new Error("Failed to fetch files");
+          const [, numberA] = nameA.match(/Q(\d+)/);
+          const [, numberB] = nameB.match(/Q(\d+)/);
+
+          return Number(numberA) - Number(numberB);
+        });
+        console.log(mdxFilesInSubfolder);
+        const generateDownloadUrl = async (owner, repo, ref, filePath) => {
+        
+          const url = `https://github.com/${owner}/${repo}/raw/main/${filePath}`;
+        
+          const response = await fetch(url);
+        
+          if (!response.ok) {
+            setLoaded2(false);
+            throw new Error('Failed to generate download URL');
           }
-
-          const folderContents = await folderResponse.json();
-
-          const mdFiles = folderContents.filter(
-            (item) => item.type === "file" && item.name.endsWith(".mdx")
-          );
-          const extractFaqs = (file) => {
-            const fetchFileContent = async () => {
-              const fileContentUrl = file.download_url;
-              const fileContentResponse = await fetch(fileContentUrl);
-
-              if (!fileContentResponse.ok) {
-                setLoaded2(false)
-                throw new Error(
-                  `Failed to fetch content of file: ${file.name}`
-                );
-              }
-
-              const fileContent = await fileContentResponse.text();
-
-              const contentRegex = /^---\s*title:\s*(.*?)\s*(?:excerpt:\s*(.*?))?\s*---\s*(.*)$/s;
-
-              const match = fileContent.match(contentRegex);
-              // if (match) {
-                const title = match[1].trim();
-                const excerpt = match[2] ? match[2].trim() : "";
-                const content = match[3].trim();
-              // }
-
-              return {
-                title,
-                content,
-              };
-            };
-
-            return fetchFileContent();
-          };
-
-          const faqsFromFolder = await Promise.all(
-            mdFiles.map((file) => extractFaqs(file))
-          );
-
-          return faqsFromFolder.flat();
+        
+          const data = await response.json();
+        
+          return data.download_url;
         };
+        const fetchMdxFileContent = async (downloadUrl) => {
+          const response = await fetch(downloadUrl);
+        
+          if (!response.ok) {
+            setLoaded2(false);
+            throw new Error('Failed to fetch file content');
+          }
+        
+          const contents = await response.text();
+          const contentRegex = /^---\s*title:\s*(.*?)\s*(?:excerpt:\s*(.*?))?\s*---\s*(.*)$/s;
 
-        const allFaqs = await Promise.all(
-          contents.map((item) => {
-            if (item.type === "dir") {
-              return fetchFilesAndExtractFaqs(item.name);
-            }
-            return [];
+          const match = contents.match(contentRegex);
+          // if (match) {
+            const title = match[1].trim();
+            const excerpt = match[2] ? match[2].trim() : "";
+            const content = match[3].trim();
+          // }
+
+          return {
+            title,
+            content,
+          };
+        };
+        const mdxFileContents = await Promise.all(
+          mdxFilesInSubfolder.map(async (mdxFile) => {
+            const downloadUrl = await generateDownloadUrl(owner, repo, ref, mdxFile.path);
+            const {title,content} = await fetchMdxFileContent(downloadUrl);
+    
+            return {
+              filePath: mdxFile.path,
+              title: title,
+              content: content,
+            };
           })
         );
-          allFaqs.sort((a, b) => {
-            const nameA = a[0].title?.toLowerCase();
-            const nameB = b[0].title?.toLowerCase();
-            
-            return nameA.localeCompare(nameB, undefined, { numeric: true, sensitivity: 'base' });
-          });
-        setFaqs(allFaqs.flat());
+        console.log(mdxFileContents);
+        // const fetchFilesAndExtractFaqs = async (folderName) => {
+        //   const folderUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}/${folderName}`;
+        //   const folderResponse = await fetch(folderUrl);
+        //   // const folderResponse = await fetch(folderUrl, {
+        //   //   headers: headers,
+        //   // });
+
+        //   if (!folderResponse.ok) {
+        //     setLoaded2(false)
+        //     throw new Error("Failed to fetch files");
+        //   }
+
+        //   const folderContents = await folderResponse.json();
+
+        //   const mdFiles = folderContents.filter(
+        //     (item) => item.type === "file" && item.name.endsWith(".mdx")
+        //   );
+        //   const extractFaqs = (file) => {
+        //     const fetchFileContent = async () => {
+        //       const fileContentUrl = file.download_url;
+        //       const fileContentResponse = await fetch(fileContentUrl);
+
+        //       if (!fileContentResponse.ok) {
+        //         setLoaded2(false)
+        //         throw new Error(
+        //           `Failed to fetch content of file: ${file.name}`
+        //         );
+        //       }
+
+        //       const fileContent = await fileContentResponse.text();
+
+              // const contentRegex = /^---\s*title:\s*(.*?)\s*(?:excerpt:\s*(.*?))?\s*---\s*(.*)$/s;
+
+              // const match = fileContent.match(contentRegex);
+              // // if (match) {
+              //   const title = match[1].trim();
+              //   const excerpt = match[2] ? match[2].trim() : "";
+              //   const content = match[3].trim();
+              // // }
+
+              // return {
+              //   title,
+              //   content,
+              // };
+        //     };
+
+        //     return fetchFileContent();
+        //   };
+
+        //   const faqsFromFolder = await Promise.all(
+        //     mdFiles.map((file) => extractFaqs(file))
+        //   );
+
+        //   return faqsFromFolder.flat();
+        // };
+
+        // const allFaqs = await Promise.all(
+        //   contents.map((item) => {
+        //     if (item.type === "dir") {
+        //       return fetchFilesAndExtractFaqs(item.name);
+        //     }
+        //     return [];
+        //   })
+        // );
+        // allFaqs.sort((a, b) => {
+        //   const nameA = a[0].title?.toLowerCase();
+        //   const nameB = b[0].title?.toLowerCase();
+
+        //   return nameA.localeCompare(nameB, undefined, { numeric: true, sensitivity: 'base' });
+        // });
+        setFaqs(mdxFileContents.flat());
         setLoaded(true)
       } catch (error) {
-        setLoaded2(false)
-        console.error(error)
+        setLoaded2(false);
+        console.error(error);
       }
     };
 
@@ -197,7 +270,6 @@ export default function Faqs(props) {
           return (
             <div key={i}>
               <button
-                
                 data-aos="fade-up"
                 style={{ color: "white" }}
                 className="box question is-size-5 mb-0 mt-2"
@@ -214,21 +286,20 @@ export default function Faqs(props) {
                   ]}
                 ></ReactMarkdown>
               </button>
-              {c.collapsed && 
-              <div
-                className="box answer"
-              >
-                <ReactMarkdown
-                  children={c.content}
-                  rehypePlugins={[rehypeRaw]}
-                  remarkPlugins={[
-                    remarkSlug,
-                    remarkHtml,
-                    remarkRehype,
-                    remarkToc,
-                  ]}
-                ></ReactMarkdown>
-              </div>}
+              {c.collapsed && (
+                <div className="box answer">
+                  <ReactMarkdown
+                    children={c.content}
+                    rehypePlugins={[rehypeRaw]}
+                    remarkPlugins={[
+                      remarkSlug,
+                      remarkHtml,
+                      remarkRehype,
+                      remarkToc,
+                    ]}
+                  ></ReactMarkdown>
+                </div>
+              )}
             </div>
           );
         })}

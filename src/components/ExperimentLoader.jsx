@@ -7,6 +7,7 @@ import { RxCounterClockwiseClock } from 'react-icons/rx'
 import { AiFillExperiment, AiFillStar, AiFillStepBackward, AiFillDelete, AiFillSave } from 'react-icons/ai'
 import { BsFillSave2Fill, BsFillBookmarkStarFill, BsFillBookmarkPlusFill, BsFillStickyFill } from 'react-icons/bs';
 import { BulmaComponent } from 'yatharth-super-lemon'
+import { Bulmacomponent} from "exp-people"
 import "../css/theme.css"
 import Loader from './loader';
 export default function ExperimentLoader(props) {
@@ -462,7 +463,7 @@ export default function ExperimentLoader(props) {
                                     Display.slice((props.pagenum - 1) * 8, (props.pagenum) * 8).map((exp) => {
                                         return (
                                             <div className='column is-one-quarter-desktop' key={Math.random()} >
-                                                <BulmaComponent onclickinglink={() => { OpenLink(exp["Experiment URL"]) }} onValueChange={() => { ToggleSave(exp["Experiment Name"]) }} UserData={{
+                                                <Bulmacomponent onclickinglink={() => { OpenLink(exp["Experiment URL"]) }} onValueChange={() => { ToggleSave(exp["Experiment Name"]) }} UserData={{
                                                     exp_name: exp["Experiment Name"],
                                                     institute: exp["Insitute Name"],
                                                     exp_link: exp["Experiment URL"],
@@ -510,7 +511,7 @@ export default function ExperimentLoader(props) {
                                         }
                                         return (
                                             <div className='column is-one-quarter-desktop' key={Math.random()}>
-                                                <BulmaComponent onclickinglink={() => { OpenLink(a["Experiment URL"]) }} onValueChange={() => { ToggleSave(a["Experiment Name"]) }} UserData={{
+                                                <Bulmacomponent onclickinglink={() => { OpenLink(a["Experiment URL"]) }} onValueChange={() => { ToggleSave(a["Experiment Name"]) }} UserData={{
                                                     exp_name: a["Experiment Name"],
                                                     institute: a["Insitute Name"],
                                                     exp_link: a["Experiment URL"],
@@ -558,7 +559,7 @@ export default function ExperimentLoader(props) {
                                     }
                                     return (
                                         <div className='column is-one-quarter-desktop' key={Math.random()}>
-                                            <BulmaComponent onclickinglink={() => { OpenLink(a["Experiment URL"]) }} onValueChange={() => { ToggleSave(a["Experiment Name"]) }} UserData={{
+                                            <Bulmacomponent onclickinglink={() => { OpenLink(a["Experiment URL"]) }} onValueChange={() => { ToggleSave(a["Experiment Name"]) }} UserData={{
                                                 exp_name: a["Experiment Name"],
                                                 institute: a["Insitute Name"],
                                                 exp_link: a["Experiment URL"],
@@ -587,7 +588,7 @@ export default function ExperimentLoader(props) {
                                 }).slice(0, 8).slice((props.pagenum - 1) * 8, (props.pagenum) * 8).map((exp) => {
                                     return (
                                         <div className='column is-one-quarter-desktop' key={Math.random()}>
-                                            <BulmaComponent onclickinglink={() => { OpenLink(exp["Experiment URL"]) }} onValueChange={() => { ToggleSave(exp["Experiment Name"]) }} UserData={{
+                                            <Bulmacomponent onclickinglink={() => { OpenLink(exp["Experiment URL"]) }} onValueChange={() => { ToggleSave(exp["Experiment Name"]) }} UserData={{
                                                 exp_name: exp["Experiment Name"],
                                                 institute: exp["Insitute Name"],
                                                 exp_link: exp["Experiment URL"],
