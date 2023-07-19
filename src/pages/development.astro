@@ -57,8 +57,8 @@ const tab = Astro.params;
                                     {c.buttons.map((d,j)=>{
                                         index3++;
                                         return (
-                                            <li>
-                                                <a target = "_blank" id={"button-"+index3} href={d.url} class="menu-buttons">{d.title}</a>
+                                            <li style="font-weight: bolder;">
+                                                <a target = "_blank" id={"button-"+index3} href={d.url} class="menu-buttons is-underlined">{d.title}</a>
                                             </li>
                                         );
                                     })}
@@ -185,20 +185,6 @@ const tab = Astro.params;
 <style>
     a.menu-headings {
         cursor:default;
-    }
-
-    .menu-button{
-        /* background-color: rgba(52, 62, 255, 0.261); */
-        /* background-color: #ffe08a; */
-        background-color: var(--docs);
-        /* border: solid 1px; */
-        /* border-color: black; */
-        border-radius: 2em;
-        color: var(--black);
-        padding: 2em;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-        margin-left:1.5rem;
     }
 
     .menu-buttons{

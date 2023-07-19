@@ -83,10 +83,10 @@ export default function Faqs(props) {
         const owner = "virtual-labs";
         const repo = "outreach-web-pages-iiith";
         const folderPath = "faq"+repo_name;
-        const accessToken =
-          "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"; // sham
         // const accessToken =
-        //   "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"; // vlead-public
+        //   "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"; // sham
+        const accessToken =
+          "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"; // vlead-public
 
         const url = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}`;
         const headers = {

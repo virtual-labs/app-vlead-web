@@ -15,47 +15,47 @@ function convert_url(url) {
 ---
 
 <script>
-  document.getElementById("ourteam").classList.add("is-active");
-  document.getElementById("ourteam").classList.add("has-text-weight-bold");
+  document.getElementById("ourteam")!.classList.add("is-active");
+  document.getElementById("ourteam")!.classList.add("has-text-weight-bold");
 </script>
 <script>
   document
-    .getElementById("testimonial-button")
+    .getElementById("testimonial-button")!
     .addEventListener("click", () => {
       const element = document.getElementById("testimonial");
 
-      element.classList.remove("is-one-quarter");
-      element.classList.remove("is-hidden-touch");
-      element.classList.add("is-full");
+      element!.classList.remove("is-one-quarter");
+      element!.classList.remove("is-hidden-touch");
+      element!.classList.add("is-full");
 
       const element2 = document.getElementById("cards");
-      element2.classList.add("is-hidden");
+      element2!.classList.add("is-hidden");
     });
 
-  document.getElementById("back-button").addEventListener("click", () => {
+  document.getElementById("back-button")!.addEventListener("click", () => {
     const element = document.getElementById("testimonial");
 
-    element.classList.add("is-one-quarter");
-    element.classList.add("is-hidden-touch");
-    element.classList.remove("is-full");
+    element!.classList.add("is-one-quarter");
+    element!.classList.add("is-hidden-touch");
+    element!.classList.remove("is-full");
 
     const element2 = document.getElementById("cards");
-    element2.classList.remove("is-hidden");
+    element2!.classList.remove("is-hidden");
   });
 
-  document.getElementById("current-tab").addEventListener("click", () => {
-    document.getElementById("current").style.display = "block";
-    document.getElementById("current-tab").classList.add("is-active");
+  document.getElementById("current-tab")!.addEventListener("click", () => {
+    document.getElementById("current")!.style.display = "block";
+    document.getElementById("current-tab")!.classList.add("is-active");
 
-    document.getElementById("past").style.display = "none";
-    document.getElementById("past-tab").classList.remove("is-active");
+    document.getElementById("past")!.style.display = "none";
+    document.getElementById("past-tab")!.classList.remove("is-active");
   });
-  document.getElementById("past-tab").addEventListener("click", () => {
-    document.getElementById("past").style.display = "block";
-    document.getElementById("past-tab").classList.add("is-active");
+  document.getElementById("past-tab")!.addEventListener("click", () => {
+    document.getElementById("past")!.style.display = "block";
+    document.getElementById("past-tab")!.classList.add("is-active");
 
-    document.getElementById("current").style.display = "none";
-    document.getElementById("current-tab").classList.remove("is-active");
+    document.getElementById("current")!.style.display = "none";
+    document.getElementById("current-tab")!.classList.remove("is-active");
   });
 </script>
 
@@ -92,18 +92,19 @@ function convert_url(url) {
   <div class="columns py-3">
     <div class="column is-auto" id="cards">
       <div>
-        <center class="title is-1" style="color:#fff;">Virtual Labs, IIIT-H Team</center>
+        <!-- <center class="title is-1" style="color:#fff;"></center> -->
+        <p class="title has-text-white has-text-centered is-size-1 my-0 py-5">Virtual Labs, IIIT-H Team</p>
         <!-- <div class="title">People</div> -->
-        <div class="tabs is-toggle-rounded is-toggle is-medium is-centered">
+        <div class="tabs is-toggle-rounded is-toggle is-large is-centered">
           <ul>
-            <li class="link is-active" id="current-tab"><a>Current</a></li>
+            <li class="link is-active has-text-weight-medium" id="current-tab"><a>Current</a></li>
             <li
               class="link bulma-hamburger-mixin is-hidden-desktop is-pulled-right"
               id="testimonial-button"
             >
               <a><span>Testimonials</span></a>
             </li>
-            <li class="link" id="past-tab"><a>Past</a></li>
+            <li class="link has-text-weight-medium" id="past-tab"><a>Past</a></li>
           </ul>
         </div>
         <div id="current" style="color : black!important;">
