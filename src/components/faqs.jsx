@@ -85,17 +85,18 @@ export default function Faqs(props) {
         const folderPath = "faq"+repo_name;
         // const accessToken =
         //   "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"; // sham
-        const accessToken =
-          "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"; // vlead-public
+        // const accessToken =
+        //   "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"; // vlead-public
 
         const url = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}`;
-        const headers = {
-          Authorization: `Bearer ${accessToken}`,
-        };
+        // const headers = {
+        //   Authorization: `Bearer ${accessToken}`,
+        // };
 
-        const response = await fetch(url, {
-          headers: headers,
-        });
+        const response = await fetch(url);
+        // const response = await fetch(url, {
+        //   headers: headers,
+        // });
 
         if (!response.ok) {
           throw new Error("Failed to fetch folders");
@@ -104,9 +105,10 @@ export default function Faqs(props) {
         const contents = await response.json();
         const fetchFilesAndExtractFaqs = async (folderName) => {
           const folderUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}/${folderName}`;
-          const folderResponse = await fetch(folderUrl, {
-            headers: headers,
-          });
+          const folderResponse = await fetch(folderUrl);
+          // const folderResponse = await fetch(folderUrl, {
+          //   headers: headers,
+          // });
 
           if (!folderResponse.ok) {
             setLoaded2(false)

@@ -4,13 +4,13 @@ import Base from "../layouts/Base.astro";
 import "../css/theme.css";
 // import Search_filerts from '../components/search_filters'
 // import ExpComponent from "vlabs-app"
-// import Pwa from "../components/exp";
-import ExpComponent from "../components/ExpComponent.jsx"
+import Pwa from "../components/exp";
+// import ExpComponent from "../components/ExpComponent.jsx"
 ---
 <Base title="Experiments">
     <main style="margin-bottom: 10px;">
       <p class="title has-text-white has-text-centered is-size-1 my-0 py-5">Experiments</p>
-        <ExpComponent client:only/>
+        <Pwa client:only/>
     </main>
 </Base>
 
