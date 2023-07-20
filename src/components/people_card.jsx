@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { People_Card, Bulma_component } from "yatharth-super-lemon";
+import { PeopleCard } from "exp-people";
 import Loader from "./loader.jsx";
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
@@ -240,7 +241,7 @@ export function People_Card_Component_Current () {
                 })
 
                 return(
-                    <People_Card key={i} UserData={{
+                    <PeopleCard UserData={{
                         present: true,
                         display_name: c["Display Name"],
                         full_name: c["Full Name"],
@@ -378,7 +379,7 @@ export function People_Card_Component_Past () {
               })
 
               return(
-                  <People_Card key={i} UserData={{
+                  <PeopleCard key={i} UserData={{
                       present: false,
                       display_name: c["Display Name"],
                       full_name: c["Full Name"],

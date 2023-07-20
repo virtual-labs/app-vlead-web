@@ -108,7 +108,6 @@ export function Outreach_devcontent(props) {
     }
     else{
       setUrl(props.page);
-      console.log(props.page);
     }
     setchange(true);
   }, []);
