@@ -84,6 +84,8 @@ const data = all.workshop;
   const BN = document.getElementById("BN");
   const tab_w = document.getElementById("tab-workshop-link");
   const tab_n = document.getElementById("tab-nodalcenter-link");
+  const tm = document.getElementById("tm"); // outreach testimonials
+  const TM = document.getElementById("TM");
 
   // const {tab} = Astro.params;
   // console.log(tab);
@@ -103,7 +105,7 @@ const data = all.workshop;
     BN!.style.display = "none";
     document.getElementById("nodal_iframe")!.style.display = "block";
   }
-  else if(document.location.href.includes("request-a-workshop"))
+  else if(document.location.href.includes("request-workshop"))
   {
     WAN!.style.display = "block";
     wo!.classList.add("is-active");
@@ -118,6 +120,11 @@ const data = all.workshop;
     FAQ!.style.display = "block";
     faq!.classList.add("is-active");
   }
+  else if(document.location.href.includes("testimonials"))
+  {
+    TM!.style.display = "block";
+    tm!.classList.add("is-active");
+  }
   else
   {
     GAL!.style.display = "block";
@@ -130,6 +137,8 @@ const data = all.workshop;
     RW!.style.display = "none";
     GAL!.style.display = "none";
     FAQ!.style.display = "none";
+    TM!.style.display = "none";
+    tm!.classList.remove("is-active");
     wo!.classList.remove("is-active");
     // rw!.classList.remove("is-active");
     faq!.classList.remove("is-active");
@@ -142,6 +151,8 @@ const data = all.workshop;
     // RW!.style.display = "block";
     GAL!.style.display = "none";
     FAQ!.style.display = "none";
+    TM!.style.display = "none";
+    tm!.classList.remove("is-active");
     nc!.classList.remove("is-active");
     // rw!.classList.remove("is-active");
     faq!.classList.remove("is-active");
@@ -154,6 +165,8 @@ const data = all.workshop;
     NAN!.style.display = "none";
     GAL!.style.display = "none";
     FAQ!.style.display = "none";
+    TM!.style.display = "none";
+    tm!.classList.remove("is-active");
     wo!.classList.add("is-active");
     nc!.classList.remove("is-active");
     faq!.classList.remove("is-active");
@@ -167,6 +180,8 @@ const data = all.workshop;
     WAN!.style.display = "none";
     GAL!.style.display = "none";
     FAQ!.style.display = "none";
+    TM!.style.display = "none";
+    tm!.classList.remove("is-active");
     wo!.classList.remove("is-active");
     nc!.classList.add("is-active");
     faq!.classList.remove("is-active");
@@ -179,6 +194,8 @@ const data = all.workshop;
     RW!.style.display = "none";
     GAL!.style.display = "none";
     NAN!.style.display = "none";
+    TM!.style.display = "none";
+    tm!.classList.remove("is-active");
     wo!.classList.remove("is-active");
     // rw!.classList.remove("is-active");
     nc!.classList.remove("is-active");
@@ -191,11 +208,27 @@ const data = all.workshop;
     WAN!.style.display = "none";
     RW!.style.display = "none";
     NAN!.style.display = "none";
+    TM!.style.display = "none";
+    tm!.classList.remove("is-active");
     wo!.classList.remove("is-active");
     // rw!.classList.remove("is-active");
     nc!.classList.remove("is-active");
     faq!.classList.remove("is-active");
     gal!.classList.add("is-active");
+  });
+  tm!.addEventListener("click", (event) => {
+    GAL!.style.display = "none";
+    FAQ!.style.display = "none";
+    WAN!.style.display = "none";
+    RW!.style.display = "none";
+    NAN!.style.display = "none";
+    TM!.style.display = "block";
+    tm!.classList.add("is-active");
+    wo!.classList.remove("is-active");
+    // rw!.classList.remove("is-active");
+    nc!.classList.remove("is-active");
+    faq!.classList.remove("is-active");
+    gal!.classList.remove("is-active");
   });
   tab_w!.addEventListener("click", (event) => {
     console.log("yo");
@@ -456,7 +489,7 @@ const data = all.workshop;
         <li id="tabWorkshops" class="link">
           <div class="dropdown is-hoverable">
             <div class="dropdown-trigger link" id="w-trigger">
-              <a aria-haspopup="true" aria-controls="dropdown-menu4" href="#request-a-workshop" id="tab-workshop-link">
+              <a aria-haspopup="true" aria-controls="dropdown-menu4" href="#request-workshop" id="tab-workshop-link">
                 <span>Workshops</span>
               </a>
             </div>
@@ -467,7 +500,7 @@ const data = all.workshop;
                   {
                     return(
                         <div class="dropdown-item">
-                            <a id="rw" href="#request-a-workshop">
+                            <a id="rw" href="#request-workshop">
                               {c.name}
                             </a>
                         </div>
@@ -517,8 +550,8 @@ const data = all.workshop;
             </div>
           </div>
         </li>
-        <!-- <li id="rw" class="link dropdown-trigger"><a>Request a Workshop</a></li> -->
         <li id="faq" class="link dropdown-trigger"><a href="#FAQ">FAQ</a></li>
+        <li id="tm" class="link dropdown-trigger"><a href="#testimonials">Testimonials</a></li>
         
       </ul>
     </div>
@@ -555,6 +588,10 @@ const data = all.workshop;
     <div id="FAQ" class="workshops_faq mt-6 mx-auto">
       <p class="title has-text-black has-text-centered is-size-2 my-0 py-5">Frequently Asked Questions</p>
       <Faqs type="outreach" client:only/>
+    </div>
+
+    <div id="TM" class="workshops_md_file mt-6 mx-auto" style="height:100vh">
+      <Outreach_devcontent page="https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/testimonials/outreach-testimonials.md" client:only />
     </div>
 
     <div class="img_box gallery mt-6" id="GAL">

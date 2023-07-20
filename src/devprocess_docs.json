@@ -33,6 +33,20 @@
         "buttons":[]
     },
     {
+        "heading": "Progressive Web Application",
+        "docs": [
+            {
+                "title": "User Guide",
+                "url": "https://raw.githubusercontent.com/virtual-labs/app-vlabs-pwa/main/docs/user_manual.md"
+            },
+            {
+                "title": "Content Creator Guide",
+                "url": "https://raw.githubusercontent.com/virtual-labs/app-vlabs-pwa/main/docs/content_creator_manual.md"
+            }
+        ],
+        "buttons":[]
+    },
+    {
         "heading": "See Also",
         "docs": [
             
