@@ -14,249 +14,104 @@ import "../css/theme.css";
 export default function Faqs(props) {
   const [loaded, setLoaded] = useState(false);
   const [loaded2, setLoaded2] = useState(true);
-  const [qna_, setQna_] = useState([]);
-  const [repo_name, setRepo_name] = useState("-virtual-labs");
+  const [repo_name, setRepo_name] = useState("initial");
   useEffect(() => {
     AOS.init();
     if (props.type === "outreach") {
       setRepo_name("");
+    } else {
+      setRepo_name("-virtual-labs");
     }
   }, []);
-  // useEffect(() => {
-  //   async function getAllFilesInFolder() {
-  //     try {
-  //       const res = await fetch("https://api.github.com/repos/virtual-labs/outreach-web-pages-iiith/contents/faq" + repo_name);
-  //       const response = await res.json();
-  //       const files = [];
-  //       if(response.length === undefined){
-  //         setLoaded2(false);
-  //         return 0;
-  //       }
-  //       for (let i = 0; i < response.length; i++) {
-  //         if (response[i].type === "dir") {
-  //           const fileResponse = await fetch(
-  //             "https://api.github.com/repos/virtual-labs/outreach-web-pages-iiith/contents/" +
-  //               response[i].path +
-  //               "/index.mdx"
-  //           );
-  //           const data = await fileResponse.json();
-  //           const content = window?.atob(data.content);
-  //           if(content === undefined){
-  //             setLoaded2(false);
-  //             return 0;
-  //           }
-  //           files.push(content);
-  //         }
-  //       }
-  //       const qna = [];
-  //       for (let i = 1; i <= files.length; i++) {
-  //         let text = files[i - 1];
-  //         const match = text.match(
-  //           /^---\s*\n(?:.+\n)*title:\s*(?<title>.+)\s*\n(?:.+\n)*---\s*\n/m
-  //         );
-  //         text = text.replace(
-  //           /^---\s*\n(?:.+\n)*title:\s*(?<title>.+)\s*\n(?:.+\n)*---\s*\n/m,
-  //           ""
-  //         );
-  //         let question = match.groups.title;
-  //         qna.push({ q: question, a: text, open: false });
-  //       }
-  //       // qna.sort()
-  //       qna.sort((a, b) => (a.q > b.q ? 1 : -1));
-  //       setQna_(qna);
-  //       setLoaded(true);
-
-  //     }
-  //     catch (error) {
-
-  //       setLoaded2(false)
-  //     }
-  //   }
-  //   getAllFilesInFolder();
-  // }, [repo_name]);
 
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
-    const fetchFaqs = async () => {
-      try {
-        const owner = "virtual-labs";
-        const repo = "outreach-web-pages-iiith";
-        const folderPath = "faq" + repo_name;
-        const ref = "main";
-        // const accessToken =
-        //   "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"; // sham
-        // const accessToken =
-        //   "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"; // vlead-public
+    if (repo_name !== "initial") {
+      const fetchFaqs = async () => {
+        try {
+          const owner = "virtual-labs";
+          const repo = "outreach-web-pages-iiith";
+          const folderPath = "faq" + repo_name;
+          const ref = "main";
+          const url = `https://api.github.com/repos/${owner}/${repo}/git/trees/main?recursive=1`; // git tree API
 
-        // const url = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}`;
-        const url = `https://api.github.com/repos/${owner}/${repo}/git/trees/main?recursive=1`;
-        // const url = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}`;
-        // const headers = {
-        //   Authorization: `Bearer ${accessToken}`,
-        // };
-
-        const response = await fetch(url);
-        // const response = await fetch(url, {
-        //   headers: headers,
-        // });
-
-        if (!response.ok) {
-          setLoaded2(false);
-          throw new Error("Failed to fetch folders");
-        }
-
-        const contents = await response.json();
-        const mdxFiles = contents.tree.filter((item) =>
-          item.path.endsWith(".mdx")
-        );
-        console.log(mdxFiles);
-        const mdxFilesInSubfolder = mdxFiles.filter(
-          (item) =>
-            item.path.startsWith(folderPath) && item.path.endsWith(".mdx")
-        );
-        mdxFilesInSubfolder.sort((a, b) => {
-          const nameA = a.path;
-          const nameB = b.path;
-
-          const [, numberA] = nameA.match(/Q(\d+)/);
-          const [, numberB] = nameB.match(/Q(\d+)/);
-
-          return Number(numberA) - Number(numberB);
-        });
-        console.log(mdxFilesInSubfolder);
-        const generateDownloadUrl = async (owner, repo, ref, filePath) => {
-        
-          const url = `https://github.com/${owner}/${repo}/raw/main/${filePath}`;
-        
           const response = await fetch(url);
-        
-          if (!response.ok) {
-            setLoaded2(false);
-            throw new Error('Failed to generate download URL');
-          }
-        
-          const data = await response.json();
-        
-          return data.download_url;
-        };
-        const fetchMdxFileContent = async (downloadUrl) => {
-          const response = await fetch(downloadUrl);
-        
-          if (!response.ok) {
-            setLoaded2(false);
-            throw new Error('Failed to fetch file content');
-          }
-        
-          const contents = await response.text();
-          const contentRegex = /^---\s*title:\s*(.*?)\s*(?:excerpt:\s*(.*?))?\s*---\s*(.*)$/s;
 
-          const match = contents.match(contentRegex);
-          // if (match) {
+          if (!response.ok) {
+            setLoaded2(false);
+            throw new Error("Failed to fetch folders");
+          }
+
+          const contents = await response.json();
+
+          const mdxFiles = contents.tree.filter((item) => // filter for mdx files
+            item.path.endsWith(".mdx")
+          );
+
+          const mdxFilesInSubfolder = mdxFiles.filter( // filter for mdx files in subfolders (faq or faq-virtual-labs)
+            (item) =>
+              item.path.startsWith(folderPath + "/") &&
+              item.path.endsWith(".mdx")
+          );
+
+          mdxFilesInSubfolder.sort((a, b) => { // sort mdx files in subfolders by question number
+            const nameA = a.path;
+            const nameB = b.path;
+
+            const [, numberA] = nameA.match(/Q(\d+)/);
+            const [, numberB] = nameB.match(/Q(\d+)/);
+
+            return Number(numberA) - Number(numberB);
+          });
+
+          const fetchMdxFileContent = async (downloadUrl) => { // fetch mdx file content
+            const response = await fetch(downloadUrl);
+
+            if (!response.ok) {
+              setLoaded2(false);
+              throw new Error("Failed to fetch file content");
+            }
+
+            const contents = await response.text();
+
+            const contentRegex =
+              /^---\s*title:\s*(.*?)\s*(?:excerpt:\s*(.*?))?\s*---\s*(.*)$/s; // regex to extract title, excerpt and content from mdx file
+
+            const match = contents.match(contentRegex);
             const title = match[1].trim();
             const excerpt = match[2] ? match[2].trim() : "";
             const content = match[3].trim();
-          // }
-
-          return {
-            title,
-            content,
-          };
-        };
-        const mdxFileContents = await Promise.all(
-          mdxFilesInSubfolder.map(async (mdxFile) => {
-            const downloadUrl = await generateDownloadUrl(owner, repo, ref, mdxFile.path);
-            const {title,content} = await fetchMdxFileContent(downloadUrl);
-    
-            return {
-              filePath: mdxFile.path,
-              title: title,
-              content: content,
+            return { // return object with title, content
+              title,
+              content,
             };
-          })
-        );
-        console.log(mdxFileContents);
-        // const fetchFilesAndExtractFaqs = async (folderName) => {
-        //   const folderUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${folderPath}/${folderName}`;
-        //   const folderResponse = await fetch(folderUrl);
-        //   // const folderResponse = await fetch(folderUrl, {
-        //   //   headers: headers,
-        //   // });
+          };
 
-        //   if (!folderResponse.ok) {
-        //     setLoaded2(false)
-        //     throw new Error("Failed to fetch files");
-        //   }
+          const mdxFileContents = await Promise.all( // fetch mdx file content for each mdx file in subfolder
+            mdxFilesInSubfolder.map(async (mdxFile) => {
+              const downloadUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${ref}/${mdxFile.path}`; // download url for mdx file
+              const { title, content } = await fetchMdxFileContent(downloadUrl);
 
-        //   const folderContents = await folderResponse.json();
+              return {
+                title: title,
+                content: content,
+              };
+            })
+          );
+          
+          setFaqs(mdxFileContents.flat()); // flatten mdx file content array
+          setLoaded(true);
+        } catch (error) {
+          setLoaded2(false);
+          console.error(error);
+        }
+      };
 
-        //   const mdFiles = folderContents.filter(
-        //     (item) => item.type === "file" && item.name.endsWith(".mdx")
-        //   );
-        //   const extractFaqs = (file) => {
-        //     const fetchFileContent = async () => {
-        //       const fileContentUrl = file.download_url;
-        //       const fileContentResponse = await fetch(fileContentUrl);
-
-        //       if (!fileContentResponse.ok) {
-        //         setLoaded2(false)
-        //         throw new Error(
-        //           `Failed to fetch content of file: ${file.name}`
-        //         );
-        //       }
-
-        //       const fileContent = await fileContentResponse.text();
-
-              // const contentRegex = /^---\s*title:\s*(.*?)\s*(?:excerpt:\s*(.*?))?\s*---\s*(.*)$/s;
-
-              // const match = fileContent.match(contentRegex);
-              // // if (match) {
-              //   const title = match[1].trim();
-              //   const excerpt = match[2] ? match[2].trim() : "";
-              //   const content = match[3].trim();
-              // // }
-
-              // return {
-              //   title,
-              //   content,
-              // };
-        //     };
-
-        //     return fetchFileContent();
-        //   };
-
-        //   const faqsFromFolder = await Promise.all(
-        //     mdFiles.map((file) => extractFaqs(file))
-        //   );
-
-        //   return faqsFromFolder.flat();
-        // };
-
-        // const allFaqs = await Promise.all(
-        //   contents.map((item) => {
-        //     if (item.type === "dir") {
-        //       return fetchFilesAndExtractFaqs(item.name);
-        //     }
-        //     return [];
-        //   })
-        // );
-        // allFaqs.sort((a, b) => {
-        //   const nameA = a[0].title?.toLowerCase();
-        //   const nameB = b[0].title?.toLowerCase();
-
-        //   return nameA.localeCompare(nameB, undefined, { numeric: true, sensitivity: 'base' });
-        // });
-        setFaqs(mdxFileContents.flat());
-        setLoaded(true)
-      } catch (error) {
-        setLoaded2(false);
-        console.error(error);
-      }
-    };
-
-    fetchFaqs();
+      fetchFaqs();
+    }
   }, [repo_name]);
-  const toggleCollapse = (index) => {
+  const toggleCollapse = (index) => { // toggle collapse for each question
     setFaqs((prevFaqs) => {
       const updatedFaqs = [...prevFaqs];
       updatedFaqs[index].collapsed = !updatedFaqs[index].collapsed;
@@ -314,7 +169,7 @@ export default function Faqs(props) {
       className="is-size-1 is-flex is-align-items-center  px-5"
       style={{ height: "100vh" }}
     >
-      <p>
+      <p className="theme">
         Oops! Page could not be displayed :/ You can still find the FAQs
         documented here:
         <a
