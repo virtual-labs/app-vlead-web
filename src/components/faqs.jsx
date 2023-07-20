@@ -127,7 +127,7 @@ export default function Faqs(props) {
               <button
                 data-aos="fade-up"
                 style={{ color: "white" }}
-                className="box question is-size-5 mb-0 mt-2"
+                className="box question is-size-5 mb-0 mt-2 has-text-weight-semibold"
                 onClick={() => toggleCollapse(i)}
               >
                 <ReactMarkdown
