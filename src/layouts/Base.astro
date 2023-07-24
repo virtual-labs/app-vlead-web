@@ -17,34 +17,35 @@ const { title } = Astro.props;
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script type="text/javascript" src="../../app.js"></script></head
-  >
+    <script type="text/javascript" src="../../app.js"></script>
+    <link rel="icon" type="image/x-icon" href="https://cdn.vlabs.ac.in/logo/vlabs-large-moe.png">
+    </head>
 
   <body>
+    <Navbar />
     <div class="about_box theme">
-      <Navbar />
       <slot />
     </div>
-	<Footer />
+    <Footer />
   </body>
 </html>
 <style>
   html {
-    min-height: 100vh!important;
-}
-body {
-	background: radial-gradient(
-		circle,
-		var(--background-alt) 0%,
-		var(--background) 100%
-		);
-		min-height: 100vh!important;
-		display: block!important;;
+    min-height: 100vh !important;
+  }
+  body {
+    background: radial-gradient(
+      circle,
+      var(--background-alt) 0%,
+      var(--background) 100%
+    );
+    min-height: 100vh !important;
+    display: block !important;
   }
   .about_box {
     min-height: 80vh;
     color: var(--dark);
-	/* overflow-y: auto; */
+    /* overflow-y: auto; */
     /* position: relative; */
   }
   .about_box.dark {

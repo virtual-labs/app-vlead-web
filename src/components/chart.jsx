@@ -35,7 +35,7 @@ export const Pageviews_per_month = () => {
     const offset = 15; 
     return (
       <text
-        x={-130}
+        x={-120}
         y={offset}
         textAnchor="middle"
         dominantBaseline="hanging"
@@ -104,7 +104,7 @@ export const Cummalative_pageviews_all_collages = () => {
     const offset = 15; 
     return (
       <text
-        x={-100}
+        x={-120}
         y={offset}
         textAnchor="middle"
         dominantBaseline="hanging"
@@ -181,7 +181,7 @@ export const Top5_Labs = () => {
     const offset = 15;
     return (
       <text
-        x={-100}
+        x={-120}
         y={offset}
         textAnchor="middle"
         dominantBaseline="hanging"
@@ -298,10 +298,10 @@ export const Cummalative_pageviews_for_domains = () => {
     return null;
   };
   const CustomYAxisLabel = ({ value }) => {
-    const offset = -2; 
+    const offset = 0; 
     return (
       <text
-        x={-100}
+        x={-120}
         y={offset}
         textAnchor="middle"
         dominantBaseline="hanging"
@@ -314,13 +314,13 @@ export const Cummalative_pageviews_for_domains = () => {
   };
   const CustomizedAxisTick = ({ x, y, payload }) => (
     <text x={x} y={y} dy={5} fontSize={14} textAnchor="end">
-      {payload.value.length > 10
-        ? `${payload.value.substring(0, 10)}...`
+      {payload.value.length > 7
+        ? `${payload.value.substring(0, 7)}...`
         : payload.value}
     </text>
   );
   return (
-    <BarChart width={350} height={300} layout="vertical" data={data1}>
+    <BarChart width={360} height={300} layout="vertical" data={data1}>
       <XAxis
         interval={0}
         tick={false}
