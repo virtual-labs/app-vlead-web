@@ -13,7 +13,7 @@ import { Icon } from "astro-icon";
 			p.classList.add("is-hidden")
 			p.classList.add("astro-YWONBOWH")
 		p.textContent = item.about
-		all_roles.appendChild(p)
+		all_roles!.appendChild(p)
 	})
 	const teacher_button = document.getElementById("teacher");
 	const learner_button = document.getElementById("learner");
@@ -25,27 +25,27 @@ import { Icon } from "astro-icon";
 	const mobile_text = document.getElementById("mobile-text");
 
 	let hover_func = (element) => {
-		default_text.classList.toggle("is-hidden");
+		default_text!.classList.toggle("is-hidden");
 		element.classList.toggle("is-hidden");
 	};
 
-	teacher_button.addEventListener("mouseenter", () => {hover_func(educator_text);});
-	teacher_button.addEventListener("mouseleave", () => {hover_func(educator_text);});
-	learner_button.addEventListener("mouseenter", () => {hover_func(learner_text);});
-	learner_button.addEventListener("mouseleave", () => {hover_func(learner_text);});
-	dev_button.addEventListener("mouseenter", () => {hover_func(creator_text);});
-	dev_button.addEventListener("mouseleave", () => {hover_func(creator_text);});
+	teacher_button!.addEventListener("mouseenter", () => {hover_func(educator_text);});
+	teacher_button!.addEventListener("mouseleave", () => {hover_func(educator_text);});
+	learner_button!.addEventListener("mouseenter", () => {hover_func(learner_text);});
+	learner_button!.addEventListener("mouseleave", () => {hover_func(learner_text);});
+	dev_button!.addEventListener("mouseenter", () => {hover_func(creator_text);});
+	dev_button!.addEventListener("mouseleave", () => {hover_func(creator_text);});
 </script>
 
 <div class="comp-container text theme">
 	<div class="level mb-0 mt-4 role-level-heading">
 		<div class="level-item role-title mt-5 mb-5 mx-auto">
 			<h1 class="has-text-weight-semibold">
-			 Choose your role
+			 Choose Your Role
 			</h1>
 		</div>
 	</div>
-	<div class="uniform is-flex is-flex-wrap-nowrap is-centered content-container m-auto" style="max-width: 85vw;">
+	<div class="uniform is-flex is-flex-wrap-nowrap is-centered content-container" style="max-width: 85vw; margin-left: 2.5rem;">
 		<div class="column is-11-touch is-11-desktop plaintext px-3 py-0 my-2 has-text-weight-medium" id="all_roles">
 			<!-- added paragraphs using json files in script tag -->
 		</div>
@@ -106,8 +106,9 @@ import { Icon } from "astro-icon";
 		color: var(--dark);
 	}
 	.role-title {
-		font-family: "Raleway";
-		font-size: 3rem;
+		font-family: "auto";
+		/* font-family: "Raleway"; */
+		font-size: 3.5rem;
 	}
 	p {
 		font-size: 1.3rem;

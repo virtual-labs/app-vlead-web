@@ -2,21 +2,16 @@
 // import JoyOrderDashboardTemplate from "../components/search_filters";
 import Base from "../layouts/Base.astro";
 import "../css/theme.css";
-import JoyOrderDashboardTemplate from 'yatharth-super-lemon'
-import Search_filerts from '../components/search_filters'
+// import Search_filerts from '../components/search_filters'
+// import ExpComponent from "vlabs-app"
+import Pwa from "../components/exp";
+import ExpComponent from "../components/ExpComponent.jsx"
+import '@fortawesome/fontawesome-free/css/all.min.css'
 ---
-<script>
-    window.onload = function() {
-  setTimeout(function() { // delete the stored value 
-    sessionStorage.removeItem("search")
-    sessionStorage.removeItem("selectedCard")
-  }, 6000);
-};
-</script>
 <Base title="Experiments">
-    <main>
-      <p class="title has-text-white has-text-centered is-size-2 my-0 pt-5">Experiments</p>
-        <Search_filerts client:only/>
+    <main style="margin-bottom: 10px;">
+      <p class="title has-text-white has-text-centered is-size-1 my-0 py-5">Experiments</p>
+        <Pwa client:only/>
     </main>
 </Base>
 

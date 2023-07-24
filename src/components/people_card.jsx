@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { People_Card, Bulma_component } from "yatharth-super-lemon";
+import { PeopleCard } from "exp-people";
 import Loader from "./loader.jsx";
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
@@ -11,8 +12,8 @@ export function People_Card_Component_Current () {
     const [loaded, setLoaded] = useState(false);
 
     const data1 = {
-        display_name: "Yatharth Gupta_",
-        full_name: "Yatharth_ Middlename Gupta",
+        display_name: "First Last",
+        full_name: "first Middlename last",
         curr_position: "Employee",
         last_working_year: "present",
         about_me:
@@ -158,8 +159,8 @@ export function People_Card_Component_Current () {
           },
         ],
     };
-
-    const url ="https://script.google.com/macros/s/AKfycbxy8YtrXLhuCoaLbYkNnjYxsVnKMoeITuCzfbIZ3h-OEAhULcNseLdamDtyrESYHvc/exec?q=current";
+    // https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec
+    const url ="https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec?q=current";
 
     useEffect(() => {
       const abc = async () => {
@@ -198,34 +199,35 @@ export function People_Card_Component_Current () {
                     projects: []
                   };
 
-                  if(assoc.joining)
-                  {
-                    if(assoc.joining !== "present")
-                    {
-                      assoc.joining = a["Joining(mmm-yy)"].slice(0,7);
-                      
-                      let j = "";
-                      j += months[Number(a["Joining(mmm-yy)"].slice(5,7))];
-                      j += " ";
-                      j += assoc.joining.slice(0,4);
+                  // if(assoc.joining)
+                  // {
+                  //   if(assoc.joining !== "present")
+                  //   {
+                  //     assoc.joining = a["Joining(mmm-yy)"].slice(0,7);
+                  //     console.log("1: ", assoc.joining);
+                  //     let j = "";
+                  //     j += months[Number(a["Joining(mmm-yy)"].slice(5,7))];
+                  //     j += " ";
+                  //     j += assoc.joining.slice(0,4);
 
-                      assoc.joining = j;
-                    }
-                  }
-                  if(assoc.leaving)
-                  {
-                    if(assoc.leaving !== "present")
-                    {
-                      assoc.leaving = a["Leaving(mmm-yy)"].slice(0,7);
+                  //     assoc.joining = j;
+                  //     console.log("2. ", assoc.joining);
+                  //   }
+                  // }
+                  // if(assoc.leaving)
+                  // {
+                  //   if(assoc.leaving !== "present")
+                  //   {
+                  //     assoc.leaving = a["Leaving(mmm-yy)"].slice(0,7);
                       
-                      let l = "";
-                      l += months[Number(a["Leaving(mmm-yy)"].slice(5,7))];
-                      l += " ";
-                      l += assoc.leaving.slice(0,4);
+                  //     let l = "";
+                  //     l += months[Number(a["Leaving(mmm-yy)"].slice(5,7))];
+                  //     l += " ";
+                  //     l += assoc.leaving.slice(0,4);
 
-                      assoc.leaving = l;
-                    }
-                  }
+                  //     assoc.leaving = l;
+                  //   }
+                  // }
                   
                   a["Projects"].map((p,k)=>{
                     assoc.projects.push({
@@ -240,7 +242,7 @@ export function People_Card_Component_Current () {
                 })
 
                 return(
-                    <People_Card key={i} UserData={{
+                    <PeopleCard UserData={{
                         present: true,
                         display_name: c["Display Name"],
                         full_name: c["Full Name"],
@@ -330,7 +332,7 @@ export function People_Card_Component_Past () {
   const [content, setContent] = useState({});
   const [loaded, setLoaded] = useState(false);
 
-  const url ="https://script.google.com/macros/s/AKfycbxy8YtrXLhuCoaLbYkNnjYxsVnKMoeITuCzfbIZ3h-OEAhULcNseLdamDtyrESYHvc/exec?q=past";
+  const url ="https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec?q=past";
 
   useEffect(() => {
     const abc = async () => {
@@ -378,7 +380,7 @@ export function People_Card_Component_Past () {
               })
 
               return(
-                  <People_Card key={i} UserData={{
+                  <PeopleCard key={i} UserData={{
                       present: false,
                       display_name: c["Display Name"],
                       full_name: c["Full Name"],
