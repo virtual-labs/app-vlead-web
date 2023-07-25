@@ -166,6 +166,7 @@ export function People_Card_Component_Current () {
         const response = await fetch(url);
         const text = await response.json();
         const data = text.data.data;
+        console.log("data: ", data);
         setContent(data);
         setLoaded(true);
       };
@@ -338,6 +339,7 @@ export function People_Card_Component_Past () {
       const response = await fetch(url);
       const text = await response.json();
       const data = text.data.data;
+      console.log(data);
       setContent(data);
       setLoaded(true);
     };
