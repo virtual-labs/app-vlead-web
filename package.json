@@ -27,7 +27,7 @@
 		"astro-icon": "^0.8.0",
 		"bulma-divider": "^0.2.0",
 		"bulma-switch": "^2.0.4",
-		"exp-people": "^1.0.9",
+		"cmp-exp-browser": "^1.0.4",
 		"font-awesome": "^4.7.0",
 		"fuse.js": "^6.6.2",
 		"googleapis": "^118.0.0",
@@ -44,8 +44,7 @@
 		"remark-slug": "^7.0.1",
 		"remark-toc": "^8.0.1",
 		"sharp": "^0.32.1",
-		"typewriter-effect": "^2.20.1",
-		"yatharth-super-lemon": "^1.6.0"
+		"typewriter-effect": "^2.20.1"
 	},
 	"devDependencies": {
 		"@types/aos": "^3.0.4",

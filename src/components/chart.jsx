@@ -21,7 +21,6 @@ import React, { useEffect, useState } from "react";
 export const Pageviews_per_month = () => {
   const [isRegistered, setIsRegistered] = useState(false);
   const [data1, setdata1] = useState({});
-
   useEffect(() => {
     const abcd = async () => {
       setdata1(await pageviews_per_month_data());
@@ -30,12 +29,18 @@ export const Pageviews_per_month = () => {
     abcd();
   }, []);
 
-  if (!isRegistered) return <></>;
-  const CustomYAxisLabel = ({value }) => {
-    const offset = 15; 
+  if (!isRegistered) return (
+    <LineChart
+      width={400}
+      height={380}
+      data={data1}
+      margin={{ top: 10, right: 30, left: 20, bottom: 20 }}
+    ></LineChart>);
+  const CustomYAxisLabel = ({ value }) => {
+    const offset = 15;
     return (
       <text
-        x={-130}
+        x={-120}
         y={offset}
         textAnchor="middle"
         dominantBaseline="hanging"
@@ -60,20 +65,15 @@ export const Pageviews_per_month = () => {
   return (
     <LineChart
       width={400}
-      height={300}
+      height={310}
       data={data1}
       margin={{ top: 10, right: 30, left: 20, bottom: 20 }}
     >
-      <XAxis
-        dataKey="name"
-        interval={51}
-      />
+      <XAxis dataKey="name" interval={51} />
       <YAxis
         dy={5}
         tickFormatter={DataFormater}
-        label={
-          <CustomYAxisLabel value={"Users"} />
-        }
+        label={<CustomYAxisLabel value={"Users"} />}
       />
       <Tooltip contentStyle={{ backgroundColor: "black", color: "white" }} />
       <Line
@@ -100,11 +100,11 @@ export const Cummalative_pageviews_all_collages = () => {
 
   if (!isRegistered) return <></>;
 
-  const CustomYAxisLabel = ({value}) => {
-    const offset = 15; 
+  const CustomYAxisLabel = ({ value }) => {
+    const offset = 15;
     return (
       <text
-        x={-100}
+        x={-120}
         y={offset}
         textAnchor="middle"
         dominantBaseline="hanging"
@@ -134,20 +134,14 @@ export const Cummalative_pageviews_all_collages = () => {
       data={data1}
       margin={{ top: 10, right: 30, left: 20, bottom: 20 }}
     >
-      <XAxis
-        dataKey="name"
-        interval={51}
-      />
+      <XAxis dataKey="name" interval={51} />
       <YAxis
         tickFormatter={DataFormater}
         type="number"
         domain={[0, 20000000]}
         name="sdchb"
-        label={
-          <CustomYAxisLabel value={"Pageviews"} />
-        }
-      >
-      </YAxis>
+        label={<CustomYAxisLabel value={"Pageviews"} />}
+      ></YAxis>
       <Tooltip contentStyle={{ backgroundColor: "black", color: "white" }} />
       <Legend wrapperStyle={{ fontSize: 15, color: "white", marginLeft: 40 }} />
       <Line type="monotone" dataKey="AMRT" stroke="#8884d8" dot={false} />
@@ -177,11 +171,11 @@ export const Top5_Labs = () => {
   }, []);
 
   if (!isRegistered) return <></>;
-  const CustomYAxisLabel = ({value }) => {
+  const CustomYAxisLabel = ({ value }) => {
     const offset = 15;
     return (
       <text
-        x={-100}
+        x={-120}
         y={offset}
         textAnchor="middle"
         dominantBaseline="hanging"
@@ -244,13 +238,9 @@ export const Top5_Labs = () => {
       <YAxis
         tickFormatter={DataFormater}
         type="number"
-        label={
-          <CustomYAxisLabel value={"Pageviews"} />
-        }
+        label={<CustomYAxisLabel value={"Pageviews"} />}
       />
-      <Tooltip
-        contentStyle={{ backgroundColor: "black", color: "white" }}
-      />
+      <Tooltip contentStyle={{ backgroundColor: "black", color: "white" }} />
       <Bar
         dataKey="pageviews"
         fill="#8884d8"
@@ -269,7 +259,7 @@ export const Top5_Labs = () => {
 export const Cummalative_pageviews_for_domains = () => {
   const [isRegistered, setIsRegistered] = useState(false);
   const [data1, setdata1] = useState({});
-  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042","#9F2B68"];
+  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#9F2B68"];
   useEffect(() => {
     const abcd = async () => {
       setdata1(await Cummalative_pageviews_for_domains_data());
@@ -298,10 +288,10 @@ export const Cummalative_pageviews_for_domains = () => {
     return null;
   };
   const CustomYAxisLabel = ({ value }) => {
-    const offset = -2; 
+    const offset = 0;
     return (
       <text
-        x={-100}
+        x={-120}
         y={offset}
         textAnchor="middle"
         dominantBaseline="hanging"
@@ -314,13 +304,13 @@ export const Cummalative_pageviews_for_domains = () => {
   };
   const CustomizedAxisTick = ({ x, y, payload }) => (
     <text x={x} y={y} dy={5} fontSize={14} textAnchor="end">
-      {payload.value.length > 10
-        ? `${payload.value.substring(0, 10)}...`
+      {payload.value.length > 7
+        ? `${payload.value.substring(0, 7)}...`
         : payload.value}
     </text>
   );
   return (
-    <BarChart width={350} height={300} layout="vertical" data={data1}>
+    <BarChart width={360} height={300} layout="vertical" data={data1}>
       <XAxis
         interval={0}
         tick={false}
@@ -337,17 +327,11 @@ export const Cummalative_pageviews_for_domains = () => {
         dataKey="name"
         interval={0}
         type="category"
-        label={
-          <CustomYAxisLabel value={"Domains"} />
-        }
+        label={<CustomYAxisLabel value={"Domains"} />}
         tick={<CustomizedAxisTick />}
       />
-      <Bar
-        color="#9F2B68"
-        dataKey="Percentage"
-        nameKey="name"
-      >
-        {data1.map((entry,index) => (
+      <Bar color="#9F2B68" dataKey="Percentage" nameKey="name">
+        {data1.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
       </Bar>
