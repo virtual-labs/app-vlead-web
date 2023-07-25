@@ -10,154 +10,154 @@ export function People_Card_Component_Current () {
     const [content, setContent] = useState({});
     const [loaded, setLoaded] = useState(false);
 
-    const data1 = {
-        display_name: "First Last",
-        full_name: "first Middlename last",
-        curr_position: "Employee",
-        last_working_year: "present",
-        about_me:
-          "Lorem ipsum sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris. ",
-        institute: "IIIT-H",
-        profile_img: "https://picsum.photos/96/96",
-        impact_score: "4.5",
-        linkedin: "https://www.linkedin.com/",
-        email: "example@gamil.com",
-        associations: [
-          {
-            name: "DASS",
-            joining: "Jan-23",
-            leaving: "Apr-23",
-            projects: [
-              {
-                link: "https://github.com/",
-                title: "title",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
-              },
-              {
-                link: "https://github.com/",
-                title: "title1",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-            ],
-          },
-          {
-            name: "Summer Intern",
-            joining: "May-23",
-            leaving: "present",
-            projects: [
-              {
-                link: "null11",
-                title: "title11",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-              {
-                link: "null12",
-                title: "title12",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-            ],
-          },
-          {
-            name: "RA",
-            joining: "May-23",
-            leaving: "present",
-            projects: [
-              {
-                link: "null11",
-                title: "title11",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-              {
-                link: "null12",
-                title: "title12",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-            ],
-          },
-          {
-            name: "RA",
-            joining: "May-23",
-            leaving: "present",
-            projects: [
-              {
-                link: "null11",
-                title: "title11",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-              {
-                link: "null12",
-                title: "title12",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-            ],
-          },
-          {
-            name: "RA",
-            joining: "May-23",
-            leaving: "present",
-            projects: [
-              {
-                link: "null11",
-                title: "title11",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-              {
-                link: "null12",
-                title: "title12",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-            ],
-          },
-          {
-            name: "RA",
-            joining: "May-23",
-            leaving: "present",
-            projects: [
-              {
-                link: "null11",
-                title: "title11",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-              {
-                link: "null12",
-                title: "title12",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-            ],
-          },
-          {
-            name: "RA",
-            joining: "May-23",
-            leaving: "present",
-            projects: [
-              {
-                link: "null11",
-                title: "title11",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-              {
-                link: "null12",
-                title: "title12",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-            ],
-          },
-        ],
-    };
+    // const data1 = {
+    //     display_name: "First Last",
+    //     full_name: "first Middlename last",
+    //     curr_position: "Employee",
+    //     last_working_year: "present",
+    //     about_me:
+    //       "Lorem ipsum sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris. ",
+    //     institute: "IIIT-H",
+    //     profile_img: "https://picsum.photos/96/96",
+    //     impact_score: "4.5",
+    //     linkedin: "https://www.linkedin.com/",
+    //     email: "example@gamil.com",
+    //     associations: [
+    //       {
+    //         name: "DASS",
+    //         joining: "Jan-23",
+    //         leaving: "Apr-23",
+    //         projects: [
+    //           {
+    //             link: "https://github.com/",
+    //             title: "title",
+    //             contribution:
+    //               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
+    //           },
+    //           {
+    //             link: "https://github.com/",
+    //             title: "title1",
+    //             contribution:
+    //               "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
+    //           },
+    //         ],
+    //       },
+    //       {
+    //         name: "Summer Intern",
+    //         joining: "May-23",
+    //         leaving: "present",
+    //         projects: [
+    //           {
+    //             link: "null11",
+    //             title: "title11",
+    //             contribution:
+    //               "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
+    //           },
+    //           {
+    //             link: "null12",
+    //             title: "title12",
+    //             contribution:
+    //               "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
+    //           },
+    //         ],
+    //       },
+    //       {
+    //         name: "RA",
+    //         joining: "May-23",
+    //         leaving: "present",
+    //         projects: [
+    //           {
+    //             link: "null11",
+    //             title: "title11",
+    //             contribution:
+    //               "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
+    //           },
+    //           {
+    //             link: "null12",
+    //             title: "title12",
+    //             contribution:
+    //               "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
+    //           },
+    //         ],
+    //       },
+    //       {
+    //         name: "RA",
+    //         joining: "May-23",
+    //         leaving: "present",
+    //         projects: [
+    //           {
+    //             link: "null11",
+    //             title: "title11",
+    //             contribution:
+    //               "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
+    //           },
+    //           {
+    //             link: "null12",
+    //             title: "title12",
+    //             contribution:
+    //               "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
+    //           },
+    //         ],
+    //       },
+    //       {
+    //         name: "RA",
+    //         joining: "May-23",
+    //         leaving: "present",
+    //         projects: [
+    //           {
+    //             link: "null11",
+    //             title: "title11",
+    //             contribution:
+    //               "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
+    //           },
+    //           {
+    //             link: "null12",
+    //             title: "title12",
+    //             contribution:
+    //               "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
+    //           },
+    //         ],
+    //       },
+    //       {
+    //         name: "RA",
+    //         joining: "May-23",
+    //         leaving: "present",
+    //         projects: [
+    //           {
+    //             link: "null11",
+    //             title: "title11",
+    //             contribution:
+    //               "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
+    //           },
+    //           {
+    //             link: "null12",
+    //             title: "title12",
+    //             contribution:
+    //               "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
+    //           },
+    //         ],
+    //       },
+    //       {
+    //         name: "RA",
+    //         joining: "May-23",
+    //         leaving: "present",
+    //         projects: [
+    //           {
+    //             link: "null11",
+    //             title: "title11",
+    //             contribution:
+    //               "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
+    //           },
+    //           {
+    //             link: "null12",
+    //             title: "title12",
+    //             contribution:
+    //               "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
+    //           },
+    //         ],
+    //       },
+    //     ],
+    // };
     // https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec
     const url ="https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec?q=current";
 
@@ -364,7 +364,7 @@ export function People_Card_Component_Past () {
                 const assoc = {
                   name: a["Association Type"],
                   joining: a["Joining(mmm-yy)"],
-                  leaving: a["Leaving(mmm-yy"],
+                  leaving: a["Leaving(mmm-yy)"],
                   projects: []
                 };
 
