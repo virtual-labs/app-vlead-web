@@ -1,3 +1,5 @@
+// not in use
+
 import 'bulma/css/bulma.min.css';
 import { FcSearch } from 'react-icons/fc';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'

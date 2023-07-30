@@ -1,4 +1,4 @@
-// deprecated, not using
+// not in use
 
 import * as React from "react";
 import { CssVarsProvider } from "@mui/joy/styles";
