@@ -27,7 +27,7 @@
 		"astro-icon": "^0.8.0",
 		"bulma-divider": "^0.2.0",
 		"bulma-switch": "^2.0.4",
-		"cmp-exp-browser": "^1.0.4",
+		"cmp-exp-browser": "^1.0.5",
 		"font-awesome": "^4.7.0",
 		"fuse.js": "^6.6.2",
 		"googleapis": "^118.0.0",
