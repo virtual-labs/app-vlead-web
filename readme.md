@@ -121,6 +121,7 @@ The *public* folder contains the images for the website.
 2. In Outreach page Gallery, enlarge images upon click. Fetch the images from the github repo mentioned above at build time. So everytime a new image is added, the website has to be built again. Do this for other github content wherver API limit is causing issues.
 3. In Outreach page, make the list of tabs into an editable json file and import it into the webpage code so that the list can be edited easily without effecting the code.
 4. Currently the implementation of colour themes is as follows - default is the light mode, and a dark class is defined for every element that changes colour in dark mode. So upon clicking on dark mode, the dark class is added. There is a single theme.css that has both tones defined for every colour. But only two themes can be implemented this way. Condsider implementing a multi-theme extensible system and create a theme.css for each theme, and only change the theme.css file in effect when the theme is changed.
+5. In the Our Team page, make the testimonials and the remaining page scroll separately so that the testimonials section does not show an empty place when too many cards are there.
     
 ## Troubleshooting
 1. If any member card does not show up in the Our Team page, please check the latest Team Member Details sheet. Make sure that all entries are filled, and there are no stray cells filled anywhere.
