@@ -46,7 +46,7 @@ In the future, the client team may want to add more features based on what the S
 
 **The FAQ page** can be accessed through the Support section on Homepage. It has some frequently asked questions related to virtual labs. Each question answer pair is collapsible, i.e, opens on clicking.
 
-**The Virtual Box page** can be accessed through the Support section on Homepage. It has documentation for guiding the installation of virtual box.
+**The Our Team page** can be accessed through the navbar. It contains the profiles and testimonials of all VLEAD employees and student associates - interns, RAs, etc.
 
 **The Research page** can be accessed through the Support section on Homepage. As of now it does not contain any data, but simply a research.astro file can be created if required.
 
@@ -121,9 +121,13 @@ The *public* folder contains the images for the website.
 2. In Outreach page Gallery, enlarge images upon click. Fetch the images from the github repo mentioned above at build time. So everytime a new image is added, the website has to be built again. Do this for other github content wherver API limit is causing issues.
 3. In Outreach page, make the list of tabs into an editable json file and import it into the webpage code so that the list can be edited easily without effecting the code.
 4. Currently the implementation of colour themes is as follows - default is the light mode, and a dark class is defined for every element that changes colour in dark mode. So upon clicking on dark mode, the dark class is added. There is a single theme.css that has both tones defined for every colour. But only two themes can be implemented this way. Condsider implementing a multi-theme extensible system and create a theme.css for each theme, and only change the theme.css file in effect when the theme is changed.
+5. In the Our Team page, make the testimonials and the remaining page scroll separately so that the testimonials section does not show an empty place when too many cards are there.
+6. In all pages, background is applied as a circular gradient. Instead, make the gradient section wise. Refer to astro homepage for reference of the idea.
+7. Add analytics iframes for other data as well.
     
 ## Troubleshooting
 1. If any member card does not show up in the Our Team page, please check the latest Team Member Details sheet. Make sure that all entries are filled, and there are no stray cells filled anywhere.
+2. On slow network, raw github content may not work, i.e., documents might not be displayed.
 ## Appendix
 
 1. Astro framework analysis ![](https://i.imgur.com/C3r8osR.png)

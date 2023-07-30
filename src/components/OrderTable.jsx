@@ -18,7 +18,7 @@ import Typography from "@mui/joy/Typography";
 import Grid from "@mui/joy/Grid";
 import CloseRounded from "@mui/icons-material/CloseRounded";
 import { ExperimentCard } from "./ExperimentCard.jsx";
-import { bulma_component } from "yatharth-super-lemon";
+// import { bulma_component } from "yatharth-super-lemon";
 // import { Icon } from "astro-icon";
 import Fuse from "fuse.js";
 import Loader from "./loader.jsx";
