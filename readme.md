@@ -124,10 +124,12 @@ The *public* folder contains the images for the website.
 5. In the Our Team page, make the testimonials and the remaining page scroll separately so that the testimonials section does not show an empty place when too many cards are there.
 6. In all pages, background is applied as a circular gradient. Instead, make the gradient section wise. Refer to astro homepage for reference of the idea.
 7. Add analytics iframes for other data as well.
+8. Fetch all the md docs (mainly faqs due to rate limit) at the build time using some astro pulgin. 
     
 ## Troubleshooting
 1. If any member card does not show up in the Our Team page, please check the latest Team Member Details sheet. Make sure that all entries are filled, and there are no stray cells filled anywhere.
 2. On slow network, raw github content may not work, i.e., documents might not be displayed.
+3. FAQs will not load if rate limit api is reached which is 60/hr.
 ## Appendix
 
 1. Astro framework analysis ![](https://i.imgur.com/C3r8osR.png)
