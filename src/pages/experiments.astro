@@ -8,12 +8,19 @@ import Pwa from "../components/exp";
 import ExpComponent from "../components/ExpComponent.jsx"
 import '@fortawesome/fontawesome-free/css/all.min.css'
 ---
+<script>
+  document.getElementById("learning")!.classList.add("is-active");
+  document.getElementById("learning")!.classList.add("has-text-weight-bold");
+</script>
+
 <Base title="Experiments">
     <main style="margin-bottom: 10px;">
       <p class="title has-text-white has-text-centered is-size-1 my-0 py-5">Experiments</p>
         <Pwa client:only/>
     </main>
 </Base>
+
+
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
