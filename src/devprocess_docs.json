@@ -5,10 +5,6 @@
             {
                 "title": "User Guide",
                 "url": "https://raw.githubusercontent.com/virtual-labs/app-exp-create-web/master/docs/user-doc.md"
-            },
-            {
-                "title": "Authoring Environment",
-                "url": "https://raw.githubusercontent.com/virtual-labs/tool-vscode-plugin/main/README.md"
             }
         ],
         "buttons":[
@@ -24,6 +20,10 @@
             {
                 "title": "Development Process",
                 "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/dev-process/README.md"
+            },
+            {
+                "title": "Authoring Environment",
+                "url": "https://raw.githubusercontent.com/virtual-labs/tool-vscode-plugin/main/README.md"
             },
             {
                 "title": "Best Practices",
