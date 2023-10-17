@@ -12,6 +12,12 @@
                 "title": "Develop Online",
                 "url": "http://virtual-labs-cms.netlify.app"
             }
+        ],
+        "docs": [
+            {
+                "title": "Develop With Experiment Authoring Environment",
+                "url": "https://raw.githubusercontent.com/virtual-labs/tool-vscode-plugin/master/readme.md"
+            }
         ]
     },
     {
