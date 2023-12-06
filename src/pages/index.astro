@@ -78,6 +78,7 @@ const short_about = all.shorty;
 
     var bt = exp_dict[role_name];
     bt!.classList.remove("is-hidden");
+    bt!.classList.add("active-role");
     bt!.classList.add("flashing");
     bt = role_dict[role_name];
     bt!.classList.add("active-role");
@@ -98,12 +99,16 @@ const short_about = all.shorty;
 
   dev_button!.addEventListener("click", () => {
     rearrange("creator");
+    window.location.href = "/app-vlead-web/development/";
   });
   teacher_button!.addEventListener("click", () => {
-    rearrange("educator");
+    rearrange("educator")
+    window.location.href =  "/app-vlead-web/outreach/";
+
   });
   learner_button!.addEventListener("click", () => {
-    rearrange("learner");
+    rearrange("learner")
+    window.location.href =  "/app-vlead-web/experiments/";
   });
 
   chevron!.addEventListener("click", () => {
