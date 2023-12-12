@@ -90,7 +90,7 @@ function convert_url(url) {
 
   
   <div class="columns py-3">
-    <div class="column is-auto mb-4" id="cards">
+    <div class="column is-auto mb-4" id="cards" style="max-height: 100vh; overflow-y: scroll">
       <div>
         <!-- <center class="title is-1" style="color:#fff;"></center> -->
         <p class="title has-text-white has-text-centered is-size-1 my-0 py-5">Virtual Labs, IIIT-H Team</p>
@@ -107,10 +107,10 @@ function convert_url(url) {
             <li class="link has-text-weight-medium" id="past-tab"><a>Past</a></li>
           </ul>
         </div>
-        <div id="current" style="color : black!important;">
+        <div id="current" style="color : black!important">
           <People_Card_Component_Current client:only />
         </div>
-        <div id="past" style="color : black!important;">
+        <div id="past" style="color : black!important">
           <People_Card_Component_Past client:only />
         </div>
       </div>
@@ -119,7 +119,7 @@ function convert_url(url) {
     <div
       class="column is-one-quarter testimonial is-hidden-touch px-0 mx-2"
       id="testimonial"
-      style=" padding-left: 4rem; padding-right: 4rem; font-style:italic; font-size:large;"
+      style="max-height: 100vh; padding-left: 4rem; padding-right: 4rem; font-style:italic; font-size:large; overflow-y: scroll"
     >
     <p class="title is-1 has-text-centered my-0" style="min-width: 17rem; margin-left: -5px; ">Testimonials</p>
     <button

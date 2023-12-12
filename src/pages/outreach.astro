@@ -250,6 +250,17 @@ const data = all.workshop;
   // const imageContainer = document.getElementById("swip-cont");
   const grid = document.getElementById("grid-gallery");
   var i = 0;
+  for (let file of data) {
+    // check if the file is an image
+    console.log(file)
+    if (file.type === "file" && file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
+        console.log(i)
+        const img = document.createElement("Image");
+        console.log(grid)
+        grid!.appendChild(img)
+    }
+    i++
+  }
   for (const file of data) {
     if (i != 0) {
       if (file.type === "file" && file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
@@ -257,7 +268,7 @@ const data = all.workshop;
         const swip = document.createElement("swiper-slide");
         const div = document.createElement("div");
         const img = document.createElement("img");
-        img.src = file.download_url;
+        img.src = file.url;
         img.loading = "lazy";
         img.style.border="7px solid #fff";
         img.style.borderRadius="3px";
@@ -617,7 +628,7 @@ const data = all.workshop;
             />
           </div></swiper-slide>
       </swiper-container> -->
-      <div id="grid-gallery " class="is-flex is-justify-content-center is-flex-wrap-wrap" >
+      <!-- <div id="grid-gallery " class="is-flex is-justify-content-center is-flex-wrap-wrap" >
         <Image src={img1} alt={"Image 1"}  class="gal-img "/>
         <Image src={img2} alt={"Image 2"}  class="gal-img "/>
         <Image src={img3} alt={"Image 3"}  class="gal-img "/>
@@ -650,6 +661,8 @@ const data = all.workshop;
         <Image src={img30} alt={"Image 30"}  class="gal-img " />
         <Image src={img31} alt={"Image 31"}  class="gal-img " />
         <Image src={img32} alt={"Image 32"}  class="gal-img " />
+      </div>-->
+      <div id="grid-gallery" class="is-flex is-justify-content-center is-flex-wrap-wrap" >
       </div>
     </div>
 
