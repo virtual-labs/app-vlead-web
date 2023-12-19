@@ -7,6 +7,10 @@ import { Icon } from "astro-icon";
 import all from "../home_data.json";
 import "../css/theme.css";
 import { google } from "googleapis";
+import Card1 from '../components/landing-card1-image.jsx'
+import Card2 from '../components/landing-card2.jsx'
+import Card3 from '../components/landing-card3.jsx'
+import Gears from '../components/gears.jsx'
 
 const sheets = google.sheets("v4");
 const data = all.domains;
@@ -156,7 +160,7 @@ const short_about = all.shorty;
         </div>
       </div>
     </div> -->
-    <div class="columns is-desktop" style="padding-top: 40px;">
+    <!-- <div class="columns is-desktop" style="padding-top: 40px;">
       <div class="column explore" id="explore">
         <div class="level mb-0 mt-4 role-level-heading">
           <div class="level-item role-title mb-5 mx-auto">
@@ -177,70 +181,18 @@ const short_about = all.shorty;
         </div>
       </div>
       <div id="divider" class="divider is-hidden-touch theme"></div>
-      <div class="column" id="role">
-        <Role />
-      </div>
-    </div>
-
-    <div id="arrow-container" class="columns is-centered is-hidden-touch">
-      <div class="column dummy-container is-2-desktop">
-        <span class="arrow-span text theme">
-          <Icon name="ic:round-keyboard-arrow-down" id="arrow" />
-        </span>
-      </div>
-    </div>
-
-    <p id="domains-header" class="heading-center text theme">Domains</p>
-    <swiper-container
-      class="mySwiper"
-      navigation="true"
-      pagination="true"
-      effect="coverflow"
-      grab-cursor="true"
-      centered-slides="true"
-      slides-per-view="4"
-      coverflow-effect-rotate="25"
-      coverflow-effect-stretch="0"
-      coverflow-effect-depth="50"
-      coverflow-effect-modifier="1"
-      pagination-dynamic-bullets="true"
-      keyboard="true"
-      loop="true"
-      id="domains"
+    </div> -->
+    <div class="landing-cards-container"
+      style="display: flex; 
+      flex-direction: column;
+      row-gap: 5rem;
+      padding-top: 5rem"
     >
-      {
-        data.map((item, i) => {
-          return (
-            <swiper-slide class="common_domains" id={item.title}>
-              <div>
-                <Card
-                  img={item.img}
-                  href="/app-vlead-web/experiments/"
-                  body=""
-                  title={item.title}
-                />
-              </div>
-            </swiper-slide>
-          );
-        })
-      }
-    </swiper-container>
-    <br />
-    <p class="heading-center text theme">Support</p>
-    <div class="link-card-grid" id="services">
-      {
-        services.map((item, i) => {
-          return (
-            <Card
-              img={item.img}
-              href={item.href}
-              body={item.body}
-              title={item.title}
-            />
-          );
-        })
-      }
+      <Card1 />
+      <Card2 />
+      <Card3 />
     </div>
+    
   </main>
 </Base>
 <style>
@@ -365,6 +317,10 @@ const short_about = all.shorty;
   }
   #role{
     padding-top: 14vh;
+  }
+
+  .landing-cards-container {
+    display: flex
   }
   
   
