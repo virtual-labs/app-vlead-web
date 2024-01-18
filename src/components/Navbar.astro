@@ -132,7 +132,7 @@ try {
       icon2.style.display = "block";
     } else {
       document.body.style.backgroundImage =
-        "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
+      "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
       icon2.style.display = "none";
       icon1.style.display = "block";
     }
@@ -145,7 +145,7 @@ try {
     animate();
   } else {
     document.body.style.backgroundImage =
-      "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
+    "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
     theme = "light";
   }
   const theme_switcher = document.getElementById("theme")!;
@@ -175,9 +175,6 @@ try {
 
   const drop_creator = document.getElementById("drop-creator")!;
   drop_creator.addEventListener("click", () => {
-    outreach.classList.add("is-hidden");
-    learning.classList.add("is-hidden");
-    create.classList.remove("is-hidden");
     document.getElementById("drop-creator")!.classList.add("active-role");
     document.getElementById("drop-educator")!.classList.remove("active-role");
     document.getElementById("drop-learner")!.classList.remove("active-role");
@@ -185,9 +182,6 @@ try {
   });
   const drop_educator = document.getElementById("drop-educator")!;
   drop_educator.addEventListener("click", () => {
-    create.classList.add("is-hidden");
-    learning.classList.add("is-hidden");
-    outreach.classList.remove("is-hidden");
     document.getElementById("drop-creator")!.classList.remove("active-role");
     document.getElementById("drop-educator")!.classList.add("active-role");
     document.getElementById("drop-learner")!.classList.remove("active-role");
@@ -195,9 +189,6 @@ try {
   });
   const drop_learner = document.getElementById("drop-learner")!;
   drop_learner.addEventListener("click", () => {
-    create.classList.add("is-hidden");
-    outreach.classList.add("is-hidden");
-    learning.classList.remove("is-hidden");
     document.getElementById("drop-creator")!.classList.remove("active-role");
     document.getElementById("drop-educator")!.classList.remove("active-role");
     document.getElementById("drop-learner")!.classList.add("active-role");
@@ -293,10 +284,10 @@ try {
     <div class="navbar-start"></div>
     <div class="navbar-end">
       <div
-        class="navbar-item px-2 has-dropdown is-hoverable is-hidden"
+        class="navbar-item px-2 has-dropdown is-hoverable"
         id="choose-drop"
       >
-        <a class="navbar-link is-size-5"> Choose a Role</a>
+        <a class="navbar-link is-size-5"> I am</a>
 
         <div class="navbar-dropdown">
           <a class="navbar-item px-2 theme" id="drop-learner"> Learner</a>
@@ -306,27 +297,39 @@ try {
           <a class="navbar-item px-2 theme" id="drop-creator"> Creator</a>
         </div>
       </div>
-      <a
-        class="navbar-item px-2 is-size-5 is-hidden clickable"
-        id="create"
-        href="/app-vlead-web/development/"
+      <div
+        class="navbar-item px-2 has-dropdown is-hoverable"
+        id="choose-drops"
       >
-        Create Experiment
-      </a>
-      <a
-        class="navbar-item px-2 is-size-5 is-hidden clickable"
-        id="outreach"
-        href="/app-vlead-web/outreach/"
-      >
-        Outreach
-      </a>
-      <a
-        class="navbar-item px-2 is-size-5 is-hidden clickable"
-        id="learning"
-        href="/app-vlead-web/experiments/"
-      >
-        Start Learning
-      </a>
+        <a class="navbar-link is-size-5"> I want to </a>
+
+        <div class="navbar-dropdown">
+          <a
+            class="navbar-item px-2"
+            id="create"
+            href="/app-vlead-web/development/"
+          >
+            Create Experiment
+          </a>
+          <hr class="navbar-divider" />
+          <a
+            class="navbar-item px-2"
+            id="outreach"
+            href="/app-vlead-web/outreach/"
+          >
+            Outreach
+          </a>
+          <hr class="navbar-divider" />
+          <a
+            class="navbar-item px-2"
+            id="learning"
+            href="/app-vlead-web/experiments/"
+          >
+            Start Learning
+          </a>
+        </div>
+      </div>
+      
       <Roles client:only />
       <!-- <div class="flashing"> -->
       <a

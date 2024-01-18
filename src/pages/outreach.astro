@@ -4,6 +4,7 @@ import {Outreach_devcontent, Devcontent} from "../components/Devcontent";
 import "../css/theme.css";
 import "../css/faq.css"
 import Faqs from "../components/faqs";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 // import Outreach_analytics from "../components/Outreach_analytics.astro"
 import { Image} from '@astrojs/image/components';
 import img1 from "../../public/outreach-images/1.jpg";
@@ -86,6 +87,41 @@ const data = all.workshop;
   const tab_n = document.getElementById("tab-nodalcenter-link");
   const tm = document.getElementById("tm"); // outreach testimonials
   const TM = document.getElementById("TM");
+  const imgs = document.querySelectorAll('.gal-img');
+  const modalClose = document.querySelectorAll('.modalclose')
+  const sliderLeft = document.getElementById('slider-left')
+  const sliderRight = document.getElementById('slider-right')
+  console.log(imgs)
+
+  imgs.forEach((img,idx) => {
+    img.addEventListener('click', (e) => {
+      document.getElementById("enlarged-image").src = img.src
+      document.getElementById("enlarged-image").setAttribute("key", idx)
+      document.getElementById("ImageModal").classList.add("is-active")
+
+    })
+  })
+
+  modalClose.forEach(close => {
+      close.addEventListener('click', () => {
+        document.getElementById("ImageModal").classList.remove("is-active")
+      })
+  })
+
+  sliderLeft.addEventListener('click', (e) => {
+    const key = document.getElementById("enlarged-image").getAttribute("key")
+    const updated_key = (Number(key)-1+imgs.length) % imgs.length
+    document.getElementById("enlarged-image").setAttribute("key", updated_key)
+    document.getElementById("enlarged-image").src = imgs[updated_key].src
+  })
+
+  sliderRight.addEventListener('click', (e) => {
+    const key = document.getElementById("enlarged-image").getAttribute("key")
+    const updated_key = (Number(key)+1+imgs.length) % imgs.length
+    document.getElementById("enlarged-image").setAttribute("key", updated_key)
+    document.getElementById("enlarged-image").src = imgs[updated_key].src
+  })
+  
 
   // const {tab} = Astro.params;
   // console.log(tab);
@@ -249,7 +285,6 @@ const data = all.workshop;
   const data = await response.json();
   // const imageContainer = document.getElementById("swip-cont");
   const grid = document.getElementById("grid-gallery");
-  var i = 0;
   for (const file of data) {
     if (i != 0) {
       if (file.type === "file" && file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
@@ -257,7 +292,7 @@ const data = all.workshop;
         const swip = document.createElement("swiper-slide");
         const div = document.createElement("div");
         const img = document.createElement("img");
-        img.src = file.download_url;
+        img.src = file.url;
         img.loading = "lazy";
         img.style.border="7px solid #fff";
         img.style.borderRadius="3px";
@@ -617,8 +652,8 @@ const data = all.workshop;
             />
           </div></swiper-slide>
       </swiper-container> -->
-      <div id="grid-gallery " class="is-flex is-justify-content-center is-flex-wrap-wrap" >
-        <Image src={img1} alt={"Image 1"}  class="gal-img "/>
+        <div id="grid-gallery " class="is-flex is-justify-content-center is-flex-wrap-wrap" >
+        <Image src={img1} alt={"Image 1"}  class="gal-img " />
         <Image src={img2} alt={"Image 2"}  class="gal-img "/>
         <Image src={img3} alt={"Image 3"}  class="gal-img "/>
         <Image src={img4} alt={"Image 4"}  class="gal-img "/>
@@ -650,6 +685,17 @@ const data = all.workshop;
         <Image src={img30} alt={"Image 30"}  class="gal-img " />
         <Image src={img31} alt={"Image 31"}  class="gal-img " />
         <Image src={img32} alt={"Image 32"}  class="gal-img " />
+      </div>
+      <div class="modal" id="ImageModal">
+        <div class="modal-background modalclose"></div>
+        <div class="modal-content is-flex is-flex-direction-row">
+          <i class="fa-solid fa-caret-left fa-2x is-align-self-center" id="slider-left" style="z-index: 100; color: red"></i>
+          <div class="image is-4by3 is-flex-grow-5">
+            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="" id="enlarged-image">
+          </div>
+          <i class="fa-solid fa-caret-right fa-2x is-align-self-center" id="slider-right" style="z-index: 100; color: red"></i>
+        </div>
+        <button class="modal-close is-large modalclose" aria-label="close" id="modal-close"></button>
       </div>
     </div>
 
