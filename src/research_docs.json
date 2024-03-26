@@ -1,0 +1,15 @@
+[
+    {
+        "heading": "Research",
+        "docs": [
+            {
+                "title": "Open Problems",
+                "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-research-docs/main/docs/open-problems.md"
+            },
+            {
+                "title": "Publications",
+                "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-research-docs/main/docs/publications.md"
+            }
+        ]
+    }
+]
