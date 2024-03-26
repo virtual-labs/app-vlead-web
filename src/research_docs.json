@@ -1,0 +1,15 @@
+[
+    {
+        "heading": "Research",
+        "docs": [
+            {
+                "title": "Open Problems",
+                "url": "https://raw.githubusercontent.com/virtual-labs/app-exp-create-web/master/docs/user-doc.md"
+            },
+            {
+                "title": "Publications",
+                "url": "http://virtual-labs-cms.netlify.app"
+            }
+        ]
+    }
+]
