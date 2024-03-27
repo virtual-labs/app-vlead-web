@@ -9,7 +9,6 @@ import "../css/theme.css";
 let index = 0;
 let index2 = 0;
 let index3 = 0; // for buttons
-let virtualBoxNumber = 4;
 
 // In this page, the menu bar on the right side has document names having ids page-1, page-2 so on
 // The document divs themselves have ids react-dev-content-1 and so on, 
@@ -82,22 +81,6 @@ const tab = Astro.params;
                         <div>
                             {c.docs.map((d, j) => {
                                 index2++;
-                                if(index2 === virtualBoxNumber)
-                                {
-                                    return (
-                                    <div
-                                        id={
-                                            "virtual-box"
-                                        }
-                                        style="display:none;"
-                                        class="column">
-                                        <Devcontent
-                                            url={d.url}
-                                            client:only
-                                        />
-                                    </div>    
-                                    );
-                                }
                                 return (
                                     <div
                                         id={
@@ -132,28 +115,20 @@ const tab = Astro.params;
         total = total + pages[i].docs.length;
     }
 
-    if(document.location.href.includes("virtual-box"))
-    {
-        document.getElementById("page-4")!.style.backgroundColor = "rgb(218,218,218)";
-        document.getElementById("virtual-box")!.style.display = "block";
-    }
-    
-    else
-    {
-        document.getElementById("page-1")!.style.backgroundColor = "rgb(218,218,218)";
-        document.getElementById("react-dev-content-1")!.style.display = "block";
-    }
+    document.getElementById("page-1")!.style.backgroundColor = "rgb(218,218,218)";
+    document.getElementById("react-dev-content-1")!.style.display = "block";
 
     for (let i = 1; i <= total; i++) {
 
-        if(i === virtualBoxNumber )
-        {
-            document
+        document
             .getElementById("page-" + i)!
             .addEventListener("click", (event) => {
 
                 document.getElementById("page-" + i)!.style.backgroundColor ="rgb(218,218,218)";
-                document.getElementById("virtual-box")!.style.display = "block";
+                document.getElementById("react-dev-content-" + i)!.style.display = "block";
+
+                document.getElementById("page-" + virtualBoxNumber)!.style.backgroundColor ="white";
+                document.getElementById("virtual-box")!.style.display = "none";
 
                 for (let j = 1; j <= total; j++) {
                     if (i === j || j===virtualBoxNumber) {
@@ -163,28 +138,6 @@ const tab = Astro.params;
                     document.getElementById( "react-dev-content-" + j)!.style.display = "none";
                 }
             });
-        }
-        else
-        {
-            document
-                .getElementById("page-" + i)!
-                .addEventListener("click", (event) => {
-    
-                    document.getElementById("page-" + i)!.style.backgroundColor ="rgb(218,218,218)";
-                    document.getElementById("react-dev-content-" + i)!.style.display = "block";
-
-                    document.getElementById("page-" + virtualBoxNumber)!.style.backgroundColor ="white";
-                    document.getElementById("virtual-box")!.style.display = "none";
-    
-                    for (let j = 1; j <= total; j++) {
-                        if (i === j || j===virtualBoxNumber) {
-                            continue;
-                        }
-                        document.getElementById("page-" + j)!.style.backgroundColor = "white";
-                        document.getElementById( "react-dev-content-" + j)!.style.display = "none";
-                    }
-                });
-        }
     }
 </script>
 
