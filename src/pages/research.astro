@@ -11,8 +11,7 @@ let index2 = 0;
 let index3 = 0; // for buttons
 
 // In this page, the menu bar on the right side has document names having ids page-1, page-2 so on
-// The document divs themselves have ids react-dev-content-1 and so on, 
-// except number 4, which is the virtual box page and has id virtual-box
+// The document divs themselves have ids react-dev-content-1 and so on
 
 const tab = Astro.params;
 ---
@@ -25,7 +24,7 @@ const tab = Astro.params;
 <!DOCTYPE html>
 <html style="padding-top: 70px;">
     <head>
-        <title>Development</title>
+        <title>Research</title>
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
@@ -41,7 +40,6 @@ const tab = Astro.params;
     <div >
         <Navbar />
         <div class="overall-container columns theme pt-5 ml-2">
-            <!-- <div class="column is-narrow"></div> -->
             <div class="column is-one-fifth">
                 <ul class="menu-list">
                     {pages.map((c, i) => {
@@ -74,7 +72,6 @@ const tab = Astro.params;
                 </ul>
 
             </div>
-            <!-- <div class="column is-narrow"></div> -->
             <div class="column is-four-fifths">
                 {pages.map((c, i) => {
                     return (
@@ -109,7 +106,6 @@ const tab = Astro.params;
 <script>
     import pages from "../research_docs.json";
     let total = 0;
-    let virtualBoxNumber = 4;
     
     for (let i = 0; i < pages.length; i++) {
         total = total + pages[i].docs.length;
@@ -127,11 +123,8 @@ const tab = Astro.params;
                 document.getElementById("page-" + i)!.style.backgroundColor ="rgb(218,218,218)";
                 document.getElementById("react-dev-content-" + i)!.style.display = "block";
 
-                document.getElementById("page-" + virtualBoxNumber)!.style.backgroundColor ="white";
-                document.getElementById("virtual-box")!.style.display = "none";
-
                 for (let j = 1; j <= total; j++) {
-                    if (i === j || j===virtualBoxNumber) {
+                    if (i === j) {
                         continue;
                     }
                     document.getElementById("page-" + j)!.style.backgroundColor = "white";
