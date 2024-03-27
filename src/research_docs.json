@@ -9,7 +9,25 @@
             {
                 "title": "Publications",
                 "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-research-docs/main/docs/publications.md"
+            },
+            {
+                "title": "Talks",
+                "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-research-docs/main/docs/talks.md"
+            }
+        ]
+    },
+    {
+        "heading": "About Us",
+        "docs": [
+            {
+                "title": "Virtual Labs",
+                "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-research-docs/main/docs/virtual-labs.md"
+            },
+            {
+                "title": "VLEAD",
+                "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-research-docs/main/docs/vlead.md"
             }
         ]
     }
 ]
+        
