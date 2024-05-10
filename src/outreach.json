@@ -7,7 +7,7 @@
         }, 
         {
             "name": "Report a Workshop",
-            "type": "iframe,
+            "type": "iframe",
             "url":"https://raw.githubusercontent.com/virtual-labs/app-outreach-tracker-web/main/docs/user-doc.md"
         },
         {
