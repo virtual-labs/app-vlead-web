@@ -1,9 +1,9 @@
 {
     "workshop":[
         {
-            "name": "Report a Workshop",
+            "name": "Request a Workshop",
             "type": "markdown",
-            "url":"https://raw.githubusercontent.com/virtual-labs/app-outreach-tracker-web/main/docs/user-doc.md"
+            "url":"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/workshop-process/workshop-process.md"
         }, 
         {
             "name":"Workshop Data Summary",
