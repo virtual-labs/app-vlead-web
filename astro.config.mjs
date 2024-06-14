@@ -8,5 +8,13 @@ export default defineConfig({
   integrations: [react(),
     image({
       serviceEntryPoint: '@astrojs/image/sharp',
-    }),]
+    }),],
+  site: "https://virtual-labs.github.io",
+  base: "/app-vlead-web/",
+  // output: 'static',
+  // outDir: './docs',
+  build: {
+    assets: 'astro'
+  }
 });
+
