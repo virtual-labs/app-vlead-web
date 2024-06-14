@@ -1,3 +1,5 @@
+// not in use
+
 import * as React from "react";
 import Box from "@mui/joy/Box";
 import AspectRatio from "@mui/joy/AspectRatio";
@@ -132,7 +134,6 @@ export const ExperimentCard = ({ data }) => {
               mb: "6px",
             }}
           >
-            {console.log(data["Tags"])}
             {(data["Tags"].split(",")).map((tag, i) => (
               <Chip key={i} size="sm" variant="outlined">
                 {tag}

@@ -1,0 +1,150 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import pages from "../research_docs.json";
+import { Devcontent } from "../components/Devcontent";
+import "../css/Devcontent.css";
+import "../css/theme.css";
+
+let index = 0;
+let index2 = 0;
+let index3 = 0; // for buttons
+
+// In this page, the menu bar on the right side has document names having ids page-1, page-2 so on
+// The document divs themselves have ids react-dev-content-1 and so on
+
+const tab = Astro.params;
+---
+
+<script>
+    document.getElementById("create")!.classList.add("is-active");
+    document.getElementById("create")!.classList.add("has-text-weight-bold");
+</script>
+
+<!DOCTYPE html>
+<html style="padding-top: 70px;">
+    <head>
+        <title>Research</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+            />
+            <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            />
+            <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+            <link rel="icon" type="image/x-icon" href="https://cdn.vlabs.ac.in/logo/vlabs-large-moe.png">
+    </head>
+    <body>
+    <div >
+        <Navbar />
+        <div class="overall-container columns theme pt-5 ml-2">
+            <div class="column is-one-fifth">
+                <ul class="menu-list">
+                    {pages.map((c, i) => {
+                        return (
+                            <li>
+                                <a class="is-active menu-headings" style="background-color: var(--black);">{c.heading}</a>
+                                <ul>
+                                    {c.docs.map((d, j) => {
+                                        index++;
+                                        return (
+                                            <li>
+                                                <a style="background-color: var(--white); color: var(--black)" id={"page-" + index}>
+                                                    {d.title}
+                                                </a>
+                                            </li>
+                                        );
+                                    })}
+                                    {c.buttons?.map((d,j)=>{
+                                        index3++;
+                                        return (
+                                            <li style="font-weight: bolder;">
+                                                <a target = "_blank" id={"button-"+index3} href={d.url} class="menu-buttons is-underlined">{d.title}</a>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </li>
+                        );
+                    })}
+                </ul>
+
+            </div>
+            <div class="column is-four-fifths">
+                {pages.map((c, i) => {
+                    return (
+                        <div>
+                            {c.docs.map((d, j) => {
+                                index2++;
+                                return (
+                                    <div
+                                        id={
+                                            "react-dev-content-" +
+                                            index2
+                                        }
+                                        style="display:none;"
+                                        class="column">
+                                        <Devcontent
+                                            url={d.url}
+                                            client:only
+                                        />
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
+        <Footer />
+    </div>
+    </body>
+</html>
+
+<script>
+    import pages from "../research_docs.json";
+    let total = 0;
+    
+    for (let i = 0; i < pages.length; i++) {
+        total = total + pages[i].docs.length;
+    }
+
+    document.getElementById("page-1")!.style.backgroundColor = "rgb(218,218,218)";
+    document.getElementById("react-dev-content-1")!.style.display = "block";
+
+    for (let i = 1; i <= total; i++) {
+
+        document
+            .getElementById("page-" + i)!
+            .addEventListener("click", (event) => {
+
+                document.getElementById("page-" + i)!.style.backgroundColor ="rgb(218,218,218)";
+                document.getElementById("react-dev-content-" + i)!.style.display = "block";
+
+                for (let j = 1; j <= total; j++) {
+                    if (i === j) {
+                        continue;
+                    }
+                    document.getElementById("page-" + j)!.style.backgroundColor = "white";
+                    document.getElementById( "react-dev-content-" + j)!.style.display = "none";
+                }
+            });
+    }
+</script>
+
+<style>
+    a.menu-headings {
+        cursor:default;
+    }
+
+    .menu-buttons{
+        background-color: var(--third);
+        color: var(--white) !important;
+    }
+    .menu-buttons:hover{
+        color:black !important;
+    }
+</style>
+

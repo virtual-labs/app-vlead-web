@@ -1,31 +1,32 @@
+// not in use
+
 import * as React from "react";
 import { CssVarsProvider } from "@mui/joy/styles";
 import GlobalStyles from "@mui/joy/GlobalStyles";
 import CssBaseline from "@mui/joy/CssBaseline";
 import Box from "@mui/joy/Box";
-import ColorSchemeToggle from "./ColorSchemeToggle";
 import useScript from "./useScript";
 import OrderTable from "./OrderTable";
 import {extendTheme} from '@mui/joy/styles'
 // import customTheme from './theme'
 // import { customTheme,makecustomtheme } from "./theme";
-const useEnhancedEffect =
-  typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect;
+// const useEnhancedEffect =
+//   typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect;
 
 export default function JoyOrderDashboardTemplate() {
-  const status = useScript(`https://unpkg.com/feather-icons`);
+  // const status = useScript(`https://unpkg.com/feather-icons`);
   const [index, setIndex] = React.useState(2);
   const [experiments, setExperiments] = React.useState([]);
   const [results, setResults] = React.useState([]);
   const [customTheme, setcustomTheme] = React.useState(extendTheme());
 
-  useEnhancedEffect(() => {
-    // @ts-ignore
-    if (typeof feather !== "undefined") {
-      // @ts-ignore
-      feather.replace();
-    }
-  }, [status]);
+  // useEnhancedEffect(() => {
+  //   // @ts-ignore
+  //   if (typeof feather !== "undefined") {
+  //     // @ts-ignore
+  //     feather.replace();
+  //   }
+  // }, [status]);
 // let customTheme
   // React.useEffect(()=>{
   //   setcustomTheme(extendTheme({
@@ -85,9 +86,7 @@ export default function JoyOrderDashboardTemplate() {
         //   },
         // }))
         // setcustomTheme(theme)
-        // {console.log(customTheme)}
         // makecustomtheme();
-        console.log(customTheme)
       setExperiments(data);
     })
   }, [customTheme]);
@@ -108,14 +107,12 @@ export default function JoyOrderDashboardTemplate() {
   }
   
   React.useEffect(() => {
-    // console.log(bgcolor_light+bgcolor_dark)
     // makecustomtheme(bgcolor_light,bgcolor_dark)
     setResults(filterData());
   }, [experiments, index]);
   
   return (
     <CssVarsProvider  theme={customTheme}> 
-    {console.log(customTheme)}
     {/* theme={customTheme} */}
       <GlobalStyles
         styles={{
@@ -151,21 +148,6 @@ export default function JoyOrderDashboardTemplate() {
             gap: 1
           })}
         >
-          <Box
-                sx={{
-                  display: "flex",
-                  gap: 1,
-                  "& > *": { flexGrow: 1 },
-                  marginLeft: "auto",
-                }}
-              >
-                <ColorSchemeToggle
-                  sx={{
-                    ml: "auto",
-                    display: { xs: "inline-flex", md: "inline-flex" },
-                  }}
-                />
-              </Box>
           <Box sx={{
             marginTop: { xs: '0', md: '-1vh' },
           }}>

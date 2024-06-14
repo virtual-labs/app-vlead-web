@@ -1,0 +1,41 @@
+{
+    "vlabs": {
+        "title": "Virtual Labs",
+        "description": "Making Engineering Education Engaging, Enjoyable, Immersive and Online",
+        "content": "The Virtual Labs project, which was established in 2009, represents a significant initiative of the Ministry of Education, Government of India. This innovative program, poised to drive a meaningful change in education and research in India, provides a platform for interactive learning through experiments.\n\nAmong the key groups targeted are students and faculty members of science and engineering colleges, who may lack access to high-quality laboratory facilities and equipment. Additionally, high school students are encouraged to explore their curiosity through the program, potentially inspiring them to pursue further studies in these fields.\n\nThe Virtual Labs project also seeks to create a network of researchers across different institutes, who can collaborate and share resources, thereby promoting the exchange of knowledge and ideas. Importantly, the project's content and teaching resources are designed to benefit engineering colleges and other institutions, making it a highly inclusive and impactful initiative.\n"
+    },
+    "vlead": {
+        "title": "Virtual Labs Engineering and Architecture Design",
+        "description": "A Platform for Hands-On Learning in Engineering and Architecture",
+        "content": "The Virtual Labs Engineering and Architecture Design (VLEAD) project is an extension of the Virtual Labs initiative, aimed at providing a platform for hands-on learning in engineering and architecture. This project, which was launched in 2019, seeks to enhance the practical skills and knowledge of students and faculty members in these disciplines.\n\nVLEAD offers a range of virtual experiments and simulations in various engineering and architecture domains, allowing users to explore and understand complex concepts through interactive modules. The project covers a wide spectrum of topics, including civil engineering, mechanical engineering, electrical engineering, and architecture, among others.\n\nBy providing a virtual environment for experimentation and learning, VLEAD enables users to engage with real-world scenarios and challenges, thereby enhancing their problem-solving abilities and critical thinking skills. The project also aims to foster collaboration and knowledge sharing among students, faculty members, and researchers, creating a vibrant community of learners in the engineering and architecture domains.\n"
+    },
+    "stats": {
+        "time": "Jan 2020 - Feb 2024",
+        "labs": 176,
+        "disciplines": 15,
+        "pageviews": "93.5 million",
+        "users": "14.6 million"
+    },
+    "phases": [
+        {
+            "phase": "Phase-1",
+            "years": "2009 - 2013",
+            "description": "Development of 27 Labs\n260 experiments across 4 domains\nOutreach Workshops"
+        },
+        {
+            "phase": "Phase-2",
+            "years": "2014 - 2017",
+            "description": "Virtual Labs Platform on Open edX\nFOSS Conversion Methodology\nCentralized Integration Platform\nLab Hosting on Central Cloud\nPerformance Enhancements\nVersion Control on GitHub\nSecurity Enhancements\nIntegration Workshops\nLab Development Kits\nMaintenance of Labs\nOutreach Portal"
+        },
+        {
+            "phase": "Phase-3",
+            "years": "2018 - 2020",
+            "description": "Centralized Analytics Reporting\nDevelopment of 2 CS Labs - 23 Data Structures experiments\nFOSS Conversion of 26 Labs\nAutomated Network Clusters\nPerformance Enhancements\nSecurity Enhancements\nPilot Translation of 2 Labs - Translated into Hindi & Telugu\nSummer/Winter/Remote Internships\nUniform UI across labs\nDeveloper Workshops\nMaintenance of Labs"
+        },
+        {
+            "phase": "Ext-Phase-3",
+            "years": "2021 - 2026",
+            "description": "Development of 16 Labs - Year 1 & 2\n140 experiments across 4 domains\nAutomated Lab Deployment Tool\nEnhanced Cloud Architecture\nCommon Developer Tools\nVirtual Labs Mobile App"
+        }
+    ]
+}

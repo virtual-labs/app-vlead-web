@@ -2,25 +2,25 @@
 // import JoyOrderDashboardTemplate from "../components/search_filters";
 import Base from "../layouts/Base.astro";
 import "../css/theme.css";
-import JoyOrderDashboardTemplate from 'yatharth-super-lemon'
-import Search_filerts from '../components/search_filters'
+// import Search_filerts from '../components/search_filters'
+// import ExpComponent from "vlabs-app"
+import Pwa from "../components/exp";
+import ExpComponent from "../components/ExpComponent.jsx"
+import '@fortawesome/fontawesome-free/css/all.min.css'
 ---
 <script>
-    window.onload = function() {
-  setTimeout(function() { // delete the stored value 
-    sessionStorage.removeItem("search")
-    sessionStorage.removeItem("selectedCard")
-  }, 5000);
-};
+  document.getElementById("learning")!.classList.add("is-active");
+  document.getElementById("learning")!.classList.add("has-text-weight-bold");
 </script>
+
 <Base title="Experiments">
-    <main style="padding-top: 10vh;">
-        <div class="header">
-          Experiments
-        </div>
-        <Search_filerts client:only/>
+    <main style="margin-bottom: 10px;">
+      <p class="title has-text-white has-text-centered is-size-1 my-0 py-5">Experiments</p>
+        <Pwa client:only/>
     </main>
 </Base>
+
+
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');

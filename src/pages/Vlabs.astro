@@ -1,0 +1,93 @@
+---
+import Base from "../layouts/Base.astro";
+import "../css/theme.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import data from "../about_data.json";
+---
+
+<script>
+  document.getElementById("ourteam")!.classList.add("is-active");
+  document.getElementById("ourteam")!.classList.add("has-text-weight-bold");
+
+  document.getElementById("current-tab")!.addEventListener("click", () => {
+    document.getElementById("current")!.style.display = "block";
+    document.getElementById("current-tab")!.classList.add("is-active");
+
+    document.getElementById("past")!.style.display = "none";
+    document.getElementById("past-tab")!.classList.remove("is-active");
+  });
+  document.getElementById("past-tab")!.addEventListener("click", () => {
+    document.getElementById("past")!.style.display = "block";
+    document.getElementById("past-tab")!.classList.add("is-active");
+
+    document.getElementById("current")!.style.display = "none";
+    document.getElementById("current-tab")!.classList.remove("is-active");
+  });
+</script>
+
+<style>
+  link {
+    color: var(--white);
+  }
+  link.dark {
+    color: var(--black);
+  }
+  .testimonial {
+    background-color: var(--light);
+  }
+  #past {
+    display: none;
+  }
+  .tabs.is-toggle li.is-active a {
+    background-color: white !important;
+    border-color: white !important;
+    color: black !important;
+  }
+  .tabs a {
+    color: white !important;
+  }
+  .tabs a:hover {
+    color: black !important;
+    background-color: rgba(255, 255, 255, 0.584) !important;
+  }
+</style>
+
+<Base title="About">
+  <div class="py-3" style="color: white;">
+    <div style="background-color: #34a0a4; padding: 2rem; margin-top: -25px;">
+      <h1 style="font-size: 2.5rem;">
+        <strong style="color: white;">About Us</strong>
+      </h1>
+      <br />
+      Virtual Labs, a mission mode MHRD project under NMEICT, provides free, laboratory
+      learning experience to students through remote experimentation. Free Workshops,
+      are conducted and nodal centers are setup to partner with institutes of the
+      Virtual Labs consortium for the adoption of Virtual Labs. To keep in pace with
+      growing needs of students, experiments across domains are conceptualized, aligned
+      and built using cutting-edge open source technologies. State of the art digital
+      classroom is available for streaming video lectures to complement Virtual Lab
+      experiments.
+    </div>
+    <div style="text-align: center;">
+      <div
+        style="background-color: #1a759f; padding: 2rem; display: inline-block; border-radius: 10px; position: relative; margin-top: -25px;"
+      >
+        <h1 style="font-size: 1.5rem;">
+          {data.stats.labs} Labs | {data.stats.disciplines} Disciplines | {
+            data.stats.users
+          } Users | {data.stats.pageviews} Views
+        </h1>
+      </div>
+    </div>
+    <div style="background-color: #34a0a4; padding: 2rem; margin-top: -25px;">
+      <h1 style="font-size: 2.5rem;">
+        <strong style="color: white;">Virtual Labs</strong>
+      </h1>
+      <h1 style="font-size: 1.5rem;">
+        <strong style="color: white;">{data.vlabs.description}</strong>
+      </h1>
+      <br />
+      {data.vlabs.content}
+    </div>
+  </div>
+</Base>

@@ -8,7 +8,7 @@ import "../css/theme.css";
 ---
 
 <!DOCTYPE html>
-<html>
+<html style="padding-top: 70px;">
   <head>
     <title>FAQs</title>
     <link
@@ -19,16 +19,17 @@ import "../css/theme.css";
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script type="text/javascript" src="../../app.js"></script></head
+    <script type="text/javascript" src="../../app.js"></script>
+    <link rel="icon" type="image/x-icon" href="https://cdn.vlabs.ac.in/logo/vlabs-large-moe.png">
+    </head
   >
 
   <body>
-    <div class="">
       <Navbar />
       <div id="FAQ">
+        <p class="title has-text-white has-text-centered is-size-1 my-0 py-5">Frequently Asked Questions</p>
         <Faqs type="vlabs" client:only />
       </div>
       <Footer />
-    </div>
   </body>
 </html>

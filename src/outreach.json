@@ -1,41 +1,65 @@
 {
     "workshop":[
         {
+            "name": "Request a Workshop",
+            "type": "markdown",
+            "url":"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/workshop-process/workshop-process.md"
+        }, 
+        {
             "name":"Workshop Data Summary",
+            "type": "iframe",
             "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/5fLPB"
         },
         {
+            "name":"Workshop Data 2024",
+            "type": "iframe",
+            "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_0eol3lwhgd"
+        },
+        {
             "name":"Workshop Data 2023",
+            "type": "iframe",
             "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_9k15i6e45c"
         },
         {
             "name":"Workshop Data 2022",
+            "type": "iframe",
             "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_q6qi63e45c"
         },
         {
             "name":"Workshop Data 2021",
+            "type": "iframe",
             "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_233r51e45c"
         },
         {
             "name":"Workshop Data 2020",
+            "type": "iframe",
             "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_00x3l1e45c"
         },
         {
             "name":"Workshop Data 2019",
+            "type": "iframe",
             "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_0i1bxxe45c"
         },
         {
             "name":"Workshop Data 2018",
+            "type": "iframe",
             "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_e13vjdxy0c"
         }
     ],
     "nodalcenters":[
         {
+            "name": "Become a Nodal Center",
+            "type": "markdown",
+            "url":"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/nodal-centre-process/nodal-centre-process.md"
+        },
+        {
             "name":"Nodal Center Data Summary",
+            "type": "iframe",
             "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_q6mz96i75c"
         },
         {
             "name":"Nodal Center Data - 2014-2023",
+            "type": "iframe",
             "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_xxalppi75c"
         }
     ]

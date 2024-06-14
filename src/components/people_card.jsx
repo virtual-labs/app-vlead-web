@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { People_Card, Bulma_component } from "yatharth-super-lemon";
+import {PeopleCard} from 'cmp-exp-browser'
 import Loader from "./loader.jsx";
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
@@ -9,163 +9,14 @@ export function People_Card_Component_Current () {
     
     const [content, setContent] = useState({});
     const [loaded, setLoaded] = useState(false);
-
-    const data1 = {
-        display_name: "Yatharth Gupta_",
-        full_name: "Yatharth_ Middlename Gupta",
-        curr_position: "Employee",
-        last_working_year: "present",
-        about_me:
-          "Lorem ipsum sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris. ",
-        institute: "IIIT-H",
-        profile_img: "https://picsum.photos/96/96",
-        impact_score: "4.5",
-        linkedin: "https://www.linkedin.com/",
-        email: "example@gamil.com",
-        associations: [
-          {
-            name: "DASS",
-            joining: "Jan-23",
-            leaving: "Apr-23",
-            projects: [
-              {
-                link: "https://github.com/",
-                title: "title",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
-              },
-              {
-                link: "https://github.com/",
-                title: "title1",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-            ],
-          },
-          {
-            name: "Summer Intern",
-            joining: "May-23",
-            leaving: "present",
-            projects: [
-              {
-                link: "null11",
-                title: "title11",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-              {
-                link: "null12",
-                title: "title12",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-            ],
-          },
-          {
-            name: "RA",
-            joining: "May-23",
-            leaving: "present",
-            projects: [
-              {
-                link: "null11",
-                title: "title11",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-              {
-                link: "null12",
-                title: "title12",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-            ],
-          },
-          {
-            name: "RA",
-            joining: "May-23",
-            leaving: "present",
-            projects: [
-              {
-                link: "null11",
-                title: "title11",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-              {
-                link: "null12",
-                title: "title12",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-            ],
-          },
-          {
-            name: "RA",
-            joining: "May-23",
-            leaving: "present",
-            projects: [
-              {
-                link: "null11",
-                title: "title11",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-              {
-                link: "null12",
-                title: "title12",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-            ],
-          },
-          {
-            name: "RA",
-            joining: "May-23",
-            leaving: "present",
-            projects: [
-              {
-                link: "null11",
-                title: "title11",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-              {
-                link: "null12",
-                title: "title12",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-            ],
-          },
-          {
-            name: "RA",
-            joining: "May-23",
-            leaving: "present",
-            projects: [
-              {
-                link: "null11",
-                title: "title11",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-              {
-                link: "null12",
-                title: "title12",
-                contribution:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-              },
-            ],
-          },
-        ],
-    };
-
-    const url ="https://script.google.com/macros/s/AKfycbxy8YtrXLhuCoaLbYkNnjYxsVnKMoeITuCzfbIZ3h-OEAhULcNseLdamDtyrESYHvc/exec?q=current";
+    const url ="https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec?q=current";
 
     useEffect(() => {
       const abc = async () => {
         const response = await fetch(url);
         const text = await response.json();
         const data = text.data.data;
+        console.log("data: ", data);
         setContent(data);
         setLoaded(true);
       };
@@ -175,23 +26,28 @@ export function People_Card_Component_Current () {
     function convert_url(url)
     {
       var id = url.split("/")[5];
+      // return "https://drive.google.com/thumbnail?id=" + id + "&sz=w1000-h1000";
+      // return "https://drive.google.com/file/d/" + id + "/view";
       return "https://drive.google.com/uc?export=view&id=" + id;
     }
 
+    // const months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
     return(
         loaded ? (
-          <div class="columns is-multiline is-mobile is-centered">
+          <div className="columns is-multiline is-mobile is-centered">
             {/* <People_Card UserData={data1} /> */}
             {Object.values(content).map((c,i)=>{
 
-                console.log(c["Associations"]);
                 const associations = [];
 
                 c["Associations"].map((a,j)=>{
+
+
                   const assoc = {
                     name: a["Association Type"],
                     joining: a["Joining(mmm-yy)"],
-                    leaving: a["Leaving(mmm-yy"],
+                    leaving: a["Leaving(mmm-yy)"],
                     projects: []
                   };
                   
@@ -204,11 +60,11 @@ export function People_Card_Component_Current () {
                   })
 
                   associations.push(assoc);
-
+                  
                 })
 
                 return(
-                    <People_Card UserData={{
+                    <PeopleCard key={i} UserData={{
                         present: true,
                         display_name: c["Display Name"],
                         full_name: c["Full Name"],
@@ -222,65 +78,6 @@ export function People_Card_Component_Current () {
                         linkedin: c["Linkedin Profile Link URL"],
                         email: c["Personal Mail ID"],
                         associations : associations
-                        // associations: [
-                        //   {
-                        //     name: "DASS",
-                        //     joining: "Jan-23",
-                        //     leaving: "Apr-23",
-                        //     projects: [
-                        //       {
-                        //         link: "https://github.com/",
-                        //         title: "title",
-                        //         contribution:
-                        //           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
-                        //       },
-                        //       {
-                        //         link: "https://github.com/",
-                        //         title: "title1",
-                        //         contribution:
-                        //           "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-                        //       },
-                        //     ],
-                        //   },
-                        //   {
-                        //     name: "Summer Intern",
-                        //     joining: "May-23",
-                        //     leaving: "present",
-                        //     projects: [
-                        //       {
-                        //         link: "null11",
-                        //         title: "title11",
-                        //         contribution:
-                        //           "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-                        //       },
-                        //       {
-                        //         link: "null12",
-                        //         title: "title12",
-                        //         contribution:
-                        //           "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-                        //       },
-                        //     ],
-                        //   },
-                        //   {
-                        //     name: "RA",
-                        //     joining: "May-23",
-                        //     leaving: "present",
-                        //     projects: [
-                        //       {
-                        //         link: "null11",
-                        //         title: "title11",
-                        //         contribution:
-                        //           "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-                        //       },
-                        //       {
-                        //         link: "null12",
-                        //         title: "title12",
-                        //         contribution:
-                        //           "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec iaculis mauris.",
-                        //       },
-                        //     ],
-                        //   },
-                        // ],
                     }}/>
                 );
             })}
@@ -298,13 +95,14 @@ export function People_Card_Component_Past () {
   const [content, setContent] = useState({});
   const [loaded, setLoaded] = useState(false);
 
-  const url ="https://script.google.com/macros/s/AKfycbxy8YtrXLhuCoaLbYkNnjYxsVnKMoeITuCzfbIZ3h-OEAhULcNseLdamDtyrESYHvc/exec?q=past";
+  const url ="https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec?q=past";
 
   useEffect(() => {
     const abc = async () => {
       const response = await fetch(url);
       const text = await response.json();
       const data = text.data.data;
+      console.log(data);
       setContent(data);
       setLoaded(true);
     };
@@ -319,7 +117,7 @@ export function People_Card_Component_Past () {
 
   return(
       loaded ? (
-        <div class="columns is-multiline is-mobile is-centered">
+        <div className="columns is-multiline is-mobile is-centered">
           {/* <People_Card UserData={data1} /> */}
           {Object.values(content).map((c,i)=>{
 
@@ -329,7 +127,7 @@ export function People_Card_Component_Past () {
                 const assoc = {
                   name: a["Association Type"],
                   joining: a["Joining(mmm-yy)"],
-                  leaving: a["Leaving(mmm-yy"],
+                  leaving: a["Leaving(mmm-yy)"],
                   projects: []
                 };
 
@@ -346,7 +144,7 @@ export function People_Card_Component_Past () {
               })
 
               return(
-                  <People_Card UserData={{
+                  <PeopleCard key={i} UserData={{
                       present: false,
                       display_name: c["Display Name"],
                       full_name: c["Full Name"],

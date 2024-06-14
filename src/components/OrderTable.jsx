@@ -1,3 +1,5 @@
+// not in use
+
 import * as React from "react";
 import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
@@ -16,7 +18,7 @@ import Typography from "@mui/joy/Typography";
 import Grid from "@mui/joy/Grid";
 import CloseRounded from "@mui/icons-material/CloseRounded";
 import { ExperimentCard } from "./ExperimentCard.jsx";
-import {bulma_component} from "yatharth-super-lemon"
+// import { bulma_component } from "yatharth-super-lemon";
 // import { Icon } from "astro-icon";
 import Fuse from "fuse.js";
 import Loader from "./loader.jsx";
@@ -60,7 +62,7 @@ const RenderFilters = ({
                   }}
                   onClick={() => {
                     setCategoryValue(null);
-                    setDiscipline(null);
+                    setDiscipline("not available");
                   }}
                 >
                   <CloseRounded />
@@ -125,7 +127,6 @@ const RenderFilters = ({
           </Select>
         </Box>
       </FormControl>
-
     </React.Fragment>
   );
 };
@@ -135,11 +136,11 @@ export default function OrderTable(props) {
   const [experiments, setExperiments] = React.useState([]);
   const [discipline, setDiscipline] = React.useState(null);
   const [lab, setLab] = React.useState(null);
-  const [loaded1,setLoaded1] = React.useState(false);
+  const [loaded1, setLoaded1] = React.useState(false);
 
   const [results, setResults] = React.useState([]);
 
-  const cardsPerIndex = 12;
+  const cardsPerIndex = 20;
   const [maxIndex, setMaxIndex] = React.useState(
     Math.ceil(props.experiments.length / cardsPerIndex)
   );
@@ -151,10 +152,9 @@ export default function OrderTable(props) {
 
   React.useEffect(() => {
     AOS.init();
-
-    sessionStorage.getItem("selectedCard")
+    sessionStorage.getItem("selectedCard") !== null
       ? setDiscipline(sessionStorage.getItem("selectedCard"))
-      : setDiscipline("");
+      : setDiscipline("not available");
     if (sessionStorage.getItem("search") === null) {
     } else {
       setSearchQuery(sessionStorage?.getItem("search"));
@@ -176,13 +176,19 @@ export default function OrderTable(props) {
   React.useEffect(() => {
     let newData = fuse.search(searchQuery).map((d) => d.item);
     if (!searchQuery) newData = experiments;
-
-    const filtered = newData
-      .filter((d) => (discipline ? d["Discipline Name"] === discipline : true))
-      .filter((d) => (lab ? d["Lab Name"] === lab : true));
-
-    // @ts-ignore
-    setResults(filtered);
+    let all = uniques(experiments.map((e) => e["Discipline Name"]));
+    if (all.includes(discipline) || discipline === "not available") {
+      let filtered;
+      filtered = newData
+        .filter((d) =>
+          discipline !== "not available" ? d["Discipline Name"] === discipline : true
+        )
+        .filter((d) => (lab ? d["Lab Name"] === lab : true));
+      // @ts-ignore
+      setResults(filtered);
+    } else {
+      setResults([]);
+    }
   }, [searchQuery, discipline, lab]);
 
   function nextIndex() {
@@ -213,10 +219,10 @@ export default function OrderTable(props) {
     setPaginated((p) =>
       results.slice(pageIndex * cardsPerIndex, (pageIndex + 1) * cardsPerIndex)
     );
-    setLoaded1(true)
+    setLoaded1(true);
   }, [results, pageIndex]);
 
-  return loaded1?(
+  return loaded1 ? (
     <React.Fragment>
       <Sheet
         className="SearchAndFilters-mobile"
@@ -293,7 +299,7 @@ export default function OrderTable(props) {
         }}
       >
         <FormControl sx={{ flex: 1 }} size="sm">
-          {/* <FormLabel class="text theme" size="md">Search for Experiments</FormLabel> */}
+          {/* <FormLabel className="text theme" size="md">Search for Experiments</FormLabel> */}
           <Input
             placeholder="Search"
             value={sessionStorage.getItem("search")}
@@ -314,8 +320,9 @@ export default function OrderTable(props) {
         />
       </Box>
 
-      <Grid container spacing={2}>
-        {
+      <Grid container spacing={2} style={{display: "flex", justifyContent: "center", alignItems: "center"  }}>
+        
+        {paginated.length > 0 ?(
           // @ts-ignore
           paginated.map((experiment, i) => {
             return (
@@ -326,13 +333,16 @@ export default function OrderTable(props) {
                 data-aos="zoom-in-up"
                 data-aos-delay={(i % 4) * 100}
               >
-                {console.log(experiment)}
                 <ExperimentCard data={experiment} />
                 {/* <bulma_component/> */}
               </Grid>
             );
           })
-        }
+        ):(
+          discipline !== "not available" ? (
+        <div style={{ height: "100vh", display:"flex", justifyContent: "center", alignItems: "center"}}>
+        <h1 style={{fontSize: "3rem"}}> <b>No Results Found</b></h1>
+      </div>):(<></>))}
       </Grid>
 
       <Box
@@ -349,7 +359,7 @@ export default function OrderTable(props) {
         >
           <i data-feather="arrow-left" />
         </IconButton>
-        <Typography class="text theme" level="body2" mx="auto">
+        <Typography className="text theme" level="body2" mx="auto">
           Page {pageIndex + 1} of {maxIndex}
         </Typography>
         <IconButton
@@ -402,7 +412,7 @@ export default function OrderTable(props) {
           ))
         } */}
 
-        <Typography class="text theme"level="body2" mx="auto">
+        <Typography className="text theme" level="body2" mx="auto">
           Page {pageIndex + 1} of {maxIndex}
         </Typography>
 
@@ -420,7 +430,16 @@ export default function OrderTable(props) {
         </Button>
       </Box>
     </React.Fragment>
-  ):(<div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"100vh"}}>
-    <Loader/>
-  </div>)
+  ) : (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <Loader />
+    </div>
+  );
 }

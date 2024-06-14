@@ -4,11 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import Loader from "./loader";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-{/* <style>
-.testi dark{
 
-}
-</style> */}
 export default function Testimonials() {
   const [sheetdata, setSheetdata] = useState({});
   const [loaded, setLoaded] = useState(false);
@@ -20,7 +16,6 @@ export default function Testimonials() {
       const response = await fetch(url);
       const info = await response.json();
       const data = info.data.data;
-      console.log(data);
       setSheetdata(data);
       setLoaded(true);
     };
@@ -33,8 +28,8 @@ export default function Testimonials() {
         <>
           {Object.values(sheetdata).map((c, i) => {
             return (
-              <div className="has-text-black testi" style={{ marginBottom: "3rem" , color:"black!important"}}>
-                <span class="icon">
+              <div key={i} className="has-text-black testi" style={{ marginBottom: "3rem" , color:"black!important"}}>
+                <span className="icon">
                   <FontAwesomeIcon icon={faQuoteLeft} />
                 </span>
                 <span
@@ -46,7 +41,7 @@ export default function Testimonials() {
                 >
                   {c[2]}
                 </span>
-                <span class="icon">
+                <span className="icon">
                   <FontAwesomeIcon icon={faQuoteRight} />
                 </span>
                 <p style={{ textAlign: "right", width: "100%" }}>
