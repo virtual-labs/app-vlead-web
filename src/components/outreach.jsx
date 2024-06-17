@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Devcontent } from "./Devcontent";
 import Faqs from "./faqs";
@@ -35,11 +35,22 @@ export const OutreachContent = () => {
     const displayDiv = document.getElementById('display-div');
     const galDiv = document.getElementById('GAL');
 
+    function ChangeActiveClass(event) {
+        const activeElements = document.querySelectorAll('.is-active');
+        activeElements.forEach(element => {
+            element.classList.remove('is-active');
+        });
+
+        const clickedLink = event.target;
+        const clickedListItem = clickedLink.closest('li');
+        clickedListItem.classList.add('is-active');
+    }
+
     function handleAnchorClick(event, type) {
         event.preventDefault();
         showMarkdownDisplay();
+        ChangeActiveClass(event);
         const url = event.target.dataset.category;
-        console.log(url);
         displayDiv.innerHTML = '';
         const root = ReactDOM.createRoot(displayDiv);
         root.render(<Content url={url} type={type} />);
@@ -61,6 +72,7 @@ export const OutreachContent = () => {
 
     function showGallery() {
         displayDiv.style.display = 'none';
+        ChangeActiveClass(event);
         galDiv.style.display = 'block';
     }
 

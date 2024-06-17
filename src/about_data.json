@@ -37,5 +37,15 @@
             "years": "2021 - 2026",
             "description": "Development of 16 Labs - Year 1 & 2\n140 experiments across 4 domains\nAutomated Lab Deployment Tool\nEnhanced Cloud Architecture\nCommon Developer Tools\nVirtual Labs Mobile App"
         }
+    ],
+    "initiatives": [
+        "VS Code Web Extension - To streamline and simplify the experiment development process and tasks such as cloning, building, running validations, and deploy locally for testing purposes.",
+        "Question Bank Service - To create a centralized repository of multiple-choice questions that can be accessed and contributed to by authorized users.",
+        "Content Management System - To create a web-based system built over Netlify CMS to facilitate the creation of virtual experiment. A interface that eliminates the need for users to have prior knowledge of Git and Markdown",
+        "Content/Config/Code Validation Tool - To validate code and content while developing the experiments.",
+        "PWA App - To provide a seamless look and feel, a mobile-compatible PWA and a native android app have using MUI Joy in combination with React, which allows users to filter and search for experiments.",
+        "Content Rating Tool - To display each experiment's rating and capture them on Google Analytics.",
+        "Coding Platform - To add a programming interface to experiments. To begin with the interface will allow the users to write basic code in all the Data Structure experiments.",
+        "Offline Functionality -To allow the offline use of mobile application by implementing caching feature."
     ]
 }

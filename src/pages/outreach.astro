@@ -40,7 +40,6 @@ import img29 from "../../public/outreach-images/29.jpg";
 import img30 from "../../public/outreach-images/30.jpg";
 import img31 from "../../public/outreach-images/31.jpg";
 import img32 from "../../public/outreach-images/32.jpg";
-
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"
@@ -59,21 +58,18 @@ import img32 from "../../public/outreach-images/32.jpg";
 
     <div
       class="tabs theme is-boxed is-toggle is-toggle-rounded is-centered is-large"
-      style="overflow:visible;"
     >
-      <ul>
-        <li id="gal" class="link dropdown-trigger">
+      <ul class="tablist">
+        <li id="gal" class="is-active">
           <a id="gallery">Gallery</a>
         </li>
-        <li id="tabWorkshops" class="link">
+        <li id="tabWorkshops">
           <div class="dropdown is-hoverable">
             <div class="dropdown-trigger link" id="w-trigger">
-              <a
-                aria-haspopup="true"
-                aria-controls="dropdown-menu4"
-                id="tab-workshop-link"
-              >
-                <span>Workshops</span>
+              <a aria-haspopup="true" aria-controls="dropdown-menu4">
+                <span id="markdown_display" data-category={data[0].url}
+                  >Workshops</span
+                >
               </a>
             </div>
             <div class="dropdown-menu" id="dropdown-menu4" role="menu">
@@ -102,15 +98,14 @@ import img32 from "../../public/outreach-images/32.jpg";
             </div>
           </div>
         </li>
-        <li id="tabNodalcenters" class="link">
+        <li id="tabNodalcenters">
           <div class="dropdown is-hoverable">
             <div class="dropdown-trigger link" id="w-trigger">
-              <a
-                aria-haspopup="true"
-                aria-controls="dropdown-menu4"
-                id="tab-nodalcenter-link"
-              >
-                <span>Nodal Centers</span>
+              <a aria-haspopup="true" aria-controls="dropdown-menu4">
+                <span
+                  id="markdown_display"
+                  data-category={all.nodalcenters[0].url}>Nodal Centers</span
+                >
               </a>
             </div>
             <div class="dropdown-menu" id="dropdown-menu4" role="menu">
@@ -139,10 +134,12 @@ import img32 from "../../public/outreach-images/32.jpg";
             </div>
           </div>
         </li>
-        <li id="faq" class="link dropdown-trigger"><a id="faq">FAQ</a></li>
-        <li id="tm" class="link dropdown-trigger">
-          <a id="markdown_display"
-            data-category={"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/testimonials/outreach-testimonials.md"}>
+        <li id="faq"><a id="faq">FAQ</a></li>
+        <li id="tm">
+          <a
+            id="markdown_display"
+            data-category={"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/testimonials/outreach-testimonials.md"}
+          >
             Testimonials</a
           >
         </li>
@@ -154,9 +151,7 @@ import img32 from "../../public/outreach-images/32.jpg";
     </div>
 
     <div id="GAL" class="img_box gallery mt-6" style="display: block;">
-      <div
-        class="is-flex is-justify-content-center is-flex-wrap-wrap"
-      >
+      <div class="is-flex is-justify-content-center is-flex-wrap-wrap">
         <Image src={img1} alt={"Image 1"} class="gal-img" />
         <Image src={img2} alt={"Image 2"} class="gal-img" />
         <Image src={img3} alt={"Image 3"} class="gal-img" />

@@ -36,12 +36,12 @@ link.dark {
     padding: 0.8rem;
 }
 
-.tabs .dropdown-trigger a {
+.tablist a {
     color: white;
     font-weight: 500;
 }
 
-.tabs .dropdown-trigger a:hover {
+.tablist a:hover {
     color: black;
 }
 
