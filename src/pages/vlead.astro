@@ -1,47 +1,23 @@
 ---
 import Base from "../layouts/Base.astro";
-import "../css/theme.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+import "../css/vlead.css";
 import data from "../about_data.json";
 import VleadContent from "../components/vlead.jsx";
 ---
 
-<style>
-  .testimonial {
-    background-color: var(--light);
-  }
-  .tabs.is-toggle li.is-active a {
-    background-color: white !important;
-    border-color: white !important;
-    color: black !important;
-  }
-  .tabs a {
-    color: white !important;
-  }
-  .tabs a:hover {
-    color: black !important;
-    background-color: rgba(255, 255, 255, 1) !important;
-  }
-  .tablist a {
-    color: white;
-    font-weight: 500;
-  }
-  .tablist a:hover {
-    color: black;
-  }
-</style>
-
 <Base title="About">
   <div class="py-3" style="color: white;">
-    <div style="background-color: #0D9276; padding: 2rem; margin-top: -25px">
-      <h1 style="font-size: 2.5rem;">
-        <strong style="color: white;">VLEAD</strong>
-      </h1>
-      <h1 style="font-size: 1.5rem;">
-        <strong style="color: white;">{data.vlead.description}</strong>
+    <div class="vlead-container">
+      <img
+        src="/public/about-images/VLEAD.png"
+        class="vlead-logo"
+        alt="VLEAD Logo"
+      />
+      <h1 class="vlead-description">
+        <strong>{data.vlead.description}</strong>
       </h1>
       <br />
-      {data.vlead.content}
+      <div class="vlead-content">{data.vlead.content}</div>
     </div>
     <br />
     <div
@@ -55,7 +31,7 @@ import VleadContent from "../components/vlead.jsx";
         <li><a id="testimonials">Testimonials</a></li>
       </ul>
     </div>
-    <div id="display-div" style="background-color: #0D9276; padding: 2rem;">
+    <div id="display-div" style="background-color: #0D9276; padding: 2rem; display: flex; justify-content: center; align-items: center;">
       <VleadContent client:only />
     </div>
   </div>
