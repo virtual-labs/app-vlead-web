@@ -36,14 +36,14 @@ link.dark {
     padding: 0.8rem;
 }
 
-/* .tablist a {
-    color: white;
+.white-black {
+    color: white !important;
     font-weight: 500;
 }
 
-.tablist a:hover {
-    color: black;
-} */
+.white-black:hover {
+    color: black !important;
+}
 
 .hidden_ {
     display: none;

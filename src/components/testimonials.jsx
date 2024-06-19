@@ -40,11 +40,11 @@ export default function Testimonials() {
   }, []);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % sheetdata.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 4) % sheetdata.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + sheetdata.length) % sheetdata.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 4 + sheetdata.length) % sheetdata.length);
   };
 
   return (
