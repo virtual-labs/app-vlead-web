@@ -116,6 +116,19 @@ The *css* folder contains stylesheets. All the css files are present in this fol
 
 The *public* folder contains the images for the website. 
 
+## Image rendering
+
+To enable seamless page growth without requiring developers to add images, you can store image URLs in a JSON file. Note that images hosted on Google Drive cannot be used directly in HTML tags for rendering.
+
+A suitable alternative is using a service like Imgur. Steps to follow are:
+
+Sign up or log in to Imgur.
+Upload your images and set them to "hidden" for privacy (it will be set to hidden by default).
+Navigate to your images in your Imgur account.
+Click on the desired image to view its details.
+Copy the direct link provided (one of the six available links).
+Finally, include this direct link in the JSON file where you want the image to appear.
+
 ## Future Work
 1. In the Our Team page, for each profile card, add a button in the modal that will copy the profile's shareable link to the clipboard.
 2. In Outreach page Gallery, enlarge images upon click. Fetch the images from the github repo mentioned above at build time. So everytime a new image is added, the website has to be built again. Do this for other github content wherver API limit is causing issues.

@@ -9,13 +9,10 @@ import VleadContent from "../components/vlead.jsx";
   <div class="py-3" style="color: white;">
     <div class="vlead-container">
       <img
-        src="/public/about-images/VLEAD.png"
+        src={data.vlead.url}
         class="vlead-logo"
         alt="VLEAD Logo"
       />
-      <h1 class="vlead-description">
-        <strong>{data.vlead.description}</strong>
-      </h1>
       <br />
       <div class="vlead-content">{data.vlead.content}</div>
     </div>

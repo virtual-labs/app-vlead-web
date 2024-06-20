@@ -50,10 +50,14 @@ const Content = ({ type }) => {
                 {data.initiatives.map((initiative, i) => (
                     <div key={i} className="initiative-card">
                         <div className="initiative-image-container">
-                            <img src={`/public/about-images/${i + 1}.jpeg`} alt={`Initiative ${i + 1}`} className="initiative-image" />
+                            <img
+                                src={initiative.url}
+                                alt={`Initiative ${i + 1}`}
+                                className="initiative-image"
+                            />
                         </div>
                         <div className="initiative-details">
-                            <p className="initiative-description">{initiative}</p>
+                            <p className="initiative-description">{initiative.description}</p>
                         </div>
                     </div>
                 ))}
