@@ -38,38 +38,164 @@
             "description": "Development of 16 Labs - Year 1 & 2\n140 experiments across 4 domains\nAutomated Lab Deployment Tool\nEnhanced Cloud Architecture\nCommon Developer Tools\nVirtual Labs Mobile App"
         }
     ],
-        "initiatives": [
+    "initiatives": {
+        "developers": [
             {
-                "description": "VS Code Web Extension - To streamline and simplify the experiment development process and tasks such as cloning, building, running validations, and deploy locally for testing purposes.",
-                "url": "https://i.imgur.com/sopmNg5.jpg"
+                "description": " A Visual Studio Code extension has been developed to facilitate the authoring of Virtual Labs experiments in a streamlined and user-friendly manner. This extension offers features to manage all common tasks associated with experiment development. Currently, a web version of this extension is in progress.",
+                "url": "https://i.imgur.com/itvHvYA.jpg",
+                "title": "Visual Studio Code Extension -",
+                "readmore": "https://github.com/virtual-labs/tool-vscode-plugin"
             },
             {
-                "description": "Question Bank Service - To create a centralized repository of multiple-choice questions that can be accessed and contributed to by authorized users.",
-                "url": "https://i.imgur.com/AOZ6NQg.jpg"
+                "description": "A Visual Studio Code Web extension is being developed to facilitate the authoring of Virtual Labs experiments in a streamlined and user-friendly manner on the Web. This extension offers features to manage all common tasks associated with experiment development.",
+                "url": "https://i.imgur.com/sopmNg5.jpg",
+                "title": "Visual Studio Code Web Extension -",
+                "readmore": "https://github.com/virtual-labs/tool-web-ext-vscode"
             },
             {
-                "description": "Content Management System - To create a web-based system built over Netlify CMS to facilitate the creation of virtual experiment. A interface that eliminates the need for users to have prior knowledge of Git and Markdown.",
-                "url": "https://i.imgur.com/pF3yyGe.jpg"
+                "description": " is a web-based Content Management System built over Netlify CMS designed to facilitate the creation of virtual experiments. It offers a user-friendly interface that eliminates the need for users to have prior knowledge of Git and Markdown. With this platform, experiment creators can easily build and manage virtual experiments while having the convenience of seamless deployment as it gives an online option to develop experiments which does not require any downloads or local setup.",
+                "url": "https://i.imgur.com/GhHozLJ.jpg",
+                "title": "Content Development Platform -",
+                "readmore": "https://github.com/virtual-labs/app-exp-create-web/blob/master/README.md"
             },
             {
-                "description": "Content/Config/Code Validation Tool - To validate code and content while developing the experiments.",
-                "url": "https://i.imgur.com/u8ZjM3t.jpg"
+                "description": "An application to create a centralized repository of multiple-choice questions that can be accessed and contributed to by authorized users is being built. It aims to facilitate question retrieval based on search terms, tags, and similarity matching.",
+                "url": "https://i.imgur.com/AOZ6NQg.jpg",
+                "title": "Question Bank Service -",
+                "readmore": ""
             },
             {
-                "description": "PWA App - To provide a seamless look and feel, a mobile-compatible PWA and a native android app have using MUI Joy in combination with React, which allows users to filter and search for experiments.",
-                "url": "https://i.imgur.com/itvHvYA.jpg"
+                "description": "A tool that generates performance reports on the experiment code base which include various scores and metrics as well as suggestions for improvement has been built for the content developers. These reports are generated using a lighthouse API.",
+                "url": "https://i.imgur.com/pF3yyGe.jpg",
+                "title": "Performance Tool -",
+                "readmore": "https://github.com/virtual-labs/tool-performance"
             },
             {
-                "description": "Content Rating Tool - To display each experiment's rating and capture them on Google Analytics.",
-                "url": "https://i.imgur.com/GhHozLJ.jpg"
+                "description": "A tool has been implemented to validate code once experiments have been developed. This tool executes ESLint on the JavaScript code, examines HTTP links, and validates the JSON files in the repository against a schema.",
+                "url": "https://i.imgur.com/u8ZjM3t.jpg",
+                "title": "Validation Tool -",
+                "readmore": "https://github.com/virtual-labs/tool-validation"
+            }
+        ],
+        "users": [
+            {
+                "description": "An application that showcases all experiments on the Virtual Labs site, enabling users to filter and search for specific ones. It's a Progressive Web App (PWA), making it mobile-friendly and usable offline. The app is available on the Android Play Store as an APK, offering seamless performance. Powered by MUI Joy and React, it provides a native Android app experience.",
+                "url": "https://i.imgur.com/itvHvYA.jpg",
+                "title": "PWA App - ",
+                "readmore": "https://github.com/virtual-labs/app-vlabs-pwa"
             },
             {
-                "description": "Coding Platform - To add a programming interface to experiments. To begin with the interface will allow the users to write basic code in all the Data Structure experiments.",
-                "url": "https://i.imgur.com/nTdt9sa.jpg"
+                "description": "A web component for Virtual Labs has been developed that showcases ratings for each experiment and logs them on Google Analytics. This component is written and packaged as a customizable Lit component, offering flexibility with its parameters.",
+                "url": "https://i.imgur.com/GhHozLJ.jpg",
+                "title": "Rating Widget - ",
+                "readmore": "https://github.com/virtual-labs/svc-rating/blob/main/README.md"
             },
             {
-                "description": "Offline Functionality -To allow the offline use of mobile application by implementing caching feature.",
-                "url": "https://i.imgur.com/vNu56MS.jpg"
+                "description": "A tool to add a programming interface to experiments is being developed. To begin with the interface will  allow the users to write basic code in all the Data Structure experiments.",
+                "url": "https://i.imgur.com/nTdt9sa.jpg",
+                "title": "Programming Interface -",
+                "readmore": "https://github.com/virtual-labs/comp-code-editor"
+            },
+            {
+                "description": "A tool has been developed to facilitate users of Virtual Labs in logging bugs during experiment sessions. It offers highly extendable features, allowing users to select from preset options based on the page type, share screenshots, and compose detailed reports.",
+                "url": "https://i.imgur.com/vNu56MS.jpg",
+                "title": "Bug Reporting Tool -",
+                "readmore": "https://github.com/virtual-labs/svc-bug-report/blob/main/README.md"
+            },
+            {
+                "description": "VLEAD led the coordination efforts for migrating Virtual Lab analytics from Universal Analytics to GA 4. A streamlined process to facilitate a seamless transition and provide support to consortium developers in migrating their institute's experiments onto the GA 4 platform was established. This development and upgrade not only ensured a uniform UI interface across all labs but, more importantly, provided a comprehensive list distinguishing popular labs from those that are less used or entirely unused.",
+                "url": "https://i.imgur.com/vNu56MS.jpg",
+                "title": "GA4 Analytics Dashboard -",
+                "readmore": ""
+            },
+            {
+                "description": "Completed the first iteration of the Virtual Labs service worker. The service worker will be our agent on the client and will be used for many of the planned tasks, e.g. caching and capturing analytics data stream. Apart from the default service worker functionality, an experiment author can add custom functionality for each experiment. Currently the integration of Service Worker with the build script is being tested.",
+                "url": "https://i.imgur.com/vNu56MS.jpg",
+                "title": "Service Worker - ",
+                "readmore": "https://github.com/virtual-labs/lib-service-worker-vlabs"
+            },
+            {
+                "description": "The VLEAD Team encourages experiment and tool developers to share their learnings and experiences throughout the development lifecycle via tech blogs. These blogs are published on the Medium site to benefit other developers.",
+                "url": "https://i.imgur.com/vNu56MS.jpg",
+                "title": "Tech Blogs -",
+                "readmore": "https://medium.com/vlead-tech"
+            }
+        ],
+        "team": [
+            {
+                "description": "The Document Search Tool for Virtual Labs has been designed to alleviate the challenges associated with navigating vast collections of documents within the virtual labs environment. This tool serves as a powerful solution to efficiently retrieve relevant sections from a plethora of documents, ensuring that users can access the information they need promptly.",
+                "url": "https://i.imgur.com/itvHvYA.jpg",
+                "title": "Document Search Tool -",
+                "readmore": "https://github.com/virtual-labs/tool-doc-search/tree/dev"
+            },
+            {
+                "description": "A tool that simplifies the lab deployment process for hosting engineers, providing a unified, efficient interface for configuring and triggering multiple lab deployments has been developed. Previously, this process was manual and required separate deployment for each lab through GitHub. Due to the manual nature of the deployment process, there was a dependence on the resource",
+                "url": "https://i.imgur.com/GhHozLJ.jpg",
+                "title": "Automated Lab Deployment Tool -",
+                "readmore": "https://github.com/virtual-labs/app-lab-deployment-web/tree/dev"
+            },
+            {
+                "description": "This tool has been developed  to facilitate the storage and management of workshop data for Virtual Labs. It allows admins and nodal coordinators from various institutes to access and maintain workshop information efficiently.",
+                "url": "https://i.imgur.com/nTdt9sa.jpg",
+                "title": "Outreach Workshop Tracker -",
+                "readmore": "https://github.com/virtual-labs/app-outreach-tracker-web/tree/dev"
+            },
+            {
+                "description": "Developing a publishable lab, along with all its experiments, entails significant manual effort that does not directly enhance the lab's value. To address this challenge, the Virtual Labs Static Site Generator automates the creation of the experiment website and allows the content developers to focus on producing content. This Static Site Generator was refactored in order to facilitate its integration with various automation tools.",
+                "url": "https://i.imgur.com/vNu56MS.jpg",
+                "title": "Static Site Generator -",
+                "readmore": "https://github.com/virtual-labs/ph3-lab-mgmt"
             }
         ]
+    },
+    "purpose": {
+        "intro": "The Virtual Labs Engineering, Architecture, and Design (VLEAD) Team at IIIT Hyderabad is a dedicated team responsible for overseeing the central platform engineering operations, engineering, and development coordination. The team's key responsibilities include:",
+        "points": [
+            {
+                "title": "Cloud Infrastructure",
+                "description": "Design, Implementation and Management",
+                "image": "https://i.imgur.com/itvHvYA.jpg"
+            },
+            {
+                "title": "Systems Administration & Monitoring",
+                "description": "DevOps",
+                "image": "https://i.imgur.com/sopmNg5.jpg"
+            },
+            {
+                "title": "Common User Interface",
+                "description": "Design & Implementation",
+                "image": "https://i.imgur.com/GhHozLJ.jpg"
+            },
+            {
+                "title": "Process Control and Pan-institute Coordination",
+                "description": "",
+                "image": "https://i.imgur.com/AOZ6NQg.jpg"
+            },
+            {
+                "title": "Central Analytics",
+                "description": "Collection & Reporting",
+                "image": "https://i.imgur.com/pF3yyGe.jpg"
+            },
+            {
+                "title": "Build Automation",
+                "description": "Scripting and Hosting",
+                "image": "https://i.imgur.com/u8ZjM3t.jpg"
+            },
+            {
+                "title": "Performance & Security Enhancements",
+                "description": "",
+                "image": "https://i.imgur.com/itvHvYA.jpg"
+            },
+            {
+                "title": "Content Authoring Tools Development",
+                "description": "",
+                "image": "https://i.imgur.com/sopmNg5.jpg"
+            },
+            {
+                "title": "Technology Research",
+                "description": "",
+                "image": "https://i.imgur.com/GhHozLJ.jpg"
+            }
+        ]
+    }
 }

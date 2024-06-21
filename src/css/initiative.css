@@ -1,0 +1,126 @@
+.developer-mode-header {
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.developer-mode-icon {
+    height: 20px;
+    margin-right: 8px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+}
+
+.initiatives-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.initiatives-container>* {
+    transition: transform 0.3s ease;
+}
+
+.initiatives-container>*:hover {
+    transform: scale(1.05);
+}
+
+.initiative-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc(20% - 16px);
+    max-width: calc(20% - 16px);
+    box-sizing: border-box;
+}
+
+.initiative-image-container {
+    overflow: hidden;
+    height: 250px;
+}
+
+.initiative-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.initiative-details {
+    padding: 1rem;
+    flex-grow: 1;
+    height: 200px;
+    overflow-y: auto;
+}
+
+.initiative-description {
+    line-height: 1.4;
+    font-size: medium;
+}
+
+.tw-toggle {
+    display: inline-flex;
+    border-radius: 30px;
+    position: relative;
+    border: 2px solid #95A5A6;
+    padding: 3px;
+    background: #95A5A6;
+    width: 300px;
+}
+
+.tw-toggle label {
+    font-family: sans-serif;
+    color: #95A5A6;
+    padding: 5px 10px;
+    font-size: 15px;
+    z-index: 1;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+}
+
+.tw-toggle input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.tw-toggle .slider {
+    position: absolute;
+    top: 3px;
+    height: calc(100% - 6px);
+    width: calc(33.33% - 2px);
+    background: #fff;
+    border-radius: 28px;
+    transition: all 0.3s ease-in-out;
+}
+
+.tw-toggle input[value="users"]:checked~.slider {
+    left: 3px;
+    background: #bd97df;
+}
+
+.tw-toggle input[value="developer"]:checked~.slider {
+    left: calc(33.33% + 1px);
+    background: #0071c5;
+}
+
+.tw-toggle input[value="vlead"]:checked~.slider {
+    left: calc(66.66% - 1px);
+    background: #27ae60;
+}
+
+.tw-toggle input:checked+label {
+    color: #fff;
+}

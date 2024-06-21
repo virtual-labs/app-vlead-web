@@ -26,17 +26,11 @@ export function People_Card_Component_Current () {
     function convert_url(url)
     {
       var id = url.split("/")[5];
-      // return "https://drive.google.com/thumbnail?id=" + id + "&sz=w1000-h1000";
-      // return "https://drive.google.com/file/d/" + id + "/view";
       return "https://drive.google.com/uc?export=view&id=" + id;
     }
-
-    // const months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
     return(
         loaded ? (
           <div className="columns is-multiline is-mobile is-centered">
-            {/* <People_Card UserData={data1} /> */}
             {Object.values(content).map((c,i)=>{
 
                 const associations = [];
@@ -73,7 +67,6 @@ export function People_Card_Component_Current () {
                         about_me: c["About Me"],
                         institute: c["Organisation / Institute"],
                         profile_img: convert_url(c["Image Drive Link URL"]),
-                        // profile_img: "https://picsum.photos/96/96",
                         impact_score: c["Impact Score (For Developers Only)"],
                         linkedin: c["Linkedin Profile Link URL"],
                         email: c["Personal Mail ID"],
@@ -118,7 +111,6 @@ export function People_Card_Component_Past () {
   return(
       loaded ? (
         <div className="columns is-multiline is-mobile is-centered">
-          {/* <People_Card UserData={data1} /> */}
           {Object.values(content).map((c,i)=>{
 
               const associations = [];
@@ -153,7 +145,6 @@ export function People_Card_Component_Past () {
                       about_me: c["About Me"],
                       institute: c["Organisation / Institution"],
                       profile_img: convert_url(c["Image Drive Link URL"]),
-                      // profile_img: "https://picsum.photos/96/96",
                       impact_score: c["Impact Score (For Developers Only)"],
                       linkedin: c["Linkedin Profile Link URL"],
                       email: c["Personal Mail ID"],

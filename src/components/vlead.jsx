@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import "../css/theme.css";
 import "../css/vlead.css";
+import "../css/initiative.css"
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Testimonials from "./testimonials";
 import Timeline from "./timeline";
@@ -10,6 +11,111 @@ import {
     People_Card_Component_Current,
 } from "./people_card";
 import data from "../about_data.json";
+
+function InitiativesContainer() {
+    const [activeToggle, setActiveToggle] = useState('users');
+
+    const handleToggleChange = (event) => {
+        setActiveToggle(event.target.value);
+    };
+
+    return (
+        <div className="main-container">
+            <div className="tw-toggle">
+                <input id="users" type="radio" name="toggle" value="users" checked={activeToggle === 'users'} onChange={handleToggleChange} />
+                <label htmlFor="users" className="toggle toggle-yes">Users</label>
+                <input id="developer" type="radio" name="toggle" value="developer" checked={activeToggle === 'developer'} onChange={handleToggleChange} />
+                <label htmlFor="developer" className="toggle toggle-yes">Developer</label>
+                <input id="vlead" type="radio" name="toggle" value="vlead" checked={activeToggle === 'vlead'} onChange={handleToggleChange} />
+                <label htmlFor="vlead" className="toggle toggle-yes">VLEAD</label>
+                <span className="slider"></span>
+            </div>
+            <br />
+
+            {activeToggle === 'users' && (
+                <div className="initiatives-container">
+                    {data.initiatives.users.map((initiative, i) => (
+                        <div key={i} className="initiative-card" style={{ backgroundColor: '#f5f5f5' }}>
+                            <div className="initiative-image-container">
+                                <img
+                                    src={initiative.url}
+                                    alt={`Initiative ${i + 1}`}
+                                    className="initiative-image"
+                                />
+                            </div>
+                            <div className="initiative-details">
+                                <p className="initiative-description" style={{ color: 'black' }}><strong>{initiative.title}</strong>{initiative.description}</p>
+                                <a href={initiative.readmore}>Read More</a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
+
+            {activeToggle === 'developer' && (
+                <div className="initiatives-container">
+                    {data.initiatives.developers.map((initiative, i) => (
+                        <div key={i} className="initiative-card" style={{ backgroundColor: '#0071c5' }}>
+                            <div className="initiative-image-container">
+                                <img
+                                    src={initiative.url}
+                                    alt={`Initiative ${i + 1}`}
+                                    className="initiative-image"
+                                />
+                            </div>
+                            <div className="initiative-details">
+                                <p className="initiative-description" style={{ color: 'white' }}><strong style={{ color: 'white' }}>{initiative.title}</strong>{initiative.description}</p>
+                                <a href={initiative.readmore} style={{ color: '#D5FFFF' }}>Read More</a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
+
+            {activeToggle === 'vlead' && (
+                <div className="initiatives-container">
+                    {data.initiatives.team.map((initiative, i) => (
+                        <div key={i} className="initiative-card" style={{ backgroundColor: '#27ae60' }}>
+                            <div className="initiative-image-container">
+                                <img
+                                    src={initiative.url}
+                                    alt={`Initiative ${i + 1}`}
+                                    className="initiative-image"
+                                />
+                            </div>
+                            <div className="initiative-details">
+                                <p className="initiative-description" style={{ color: 'white' }}><strong style={{ color: 'white' }}>{initiative.title}</strong>{initiative.description}</p>
+                                <a href={initiative.readmore} style={{ color: '#ADF802' }}>Read More</a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+}
+
+function PurposeContainer() {
+    return (
+        <div className="purpose-card">
+            <h1 className="purpose-title">Our Purpose</h1>
+            <p className="purpose-description">{data.purpose.intro}</p>
+            <div className="grid-container">
+                {data.purpose.points.map((point, i) => (
+                    <div key={i} className="grid-item">
+                        <div className="overlay">
+                            <div className="text">
+                                <h2>{point.title}</h2>
+                                <p>{point.description}</p>
+                            </div>
+                        </div>
+                        <img src={point.image} alt={point.title} />
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+}
 
 const Content = ({ type }) => {
     if (type == "past") {
@@ -45,24 +151,10 @@ const Content = ({ type }) => {
         )
     }
     else if (type == "init") {
-        return (
-            <div className="initiatives-container">
-                {data.initiatives.map((initiative, i) => (
-                    <div key={i} className="initiative-card">
-                        <div className="initiative-image-container">
-                            <img
-                                src={initiative.url}
-                                alt={`Initiative ${i + 1}`}
-                                className="initiative-image"
-                            />
-                        </div>
-                        <div className="initiative-details">
-                            <p className="initiative-description">{initiative.description}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        )
+        return <InitiativesContainer />
+    }
+    else if (type == "purpose") {
+        return <PurposeContainer />
     }
 }
 
@@ -100,10 +192,13 @@ export const VleadContent = () => {
         else if (target.matches('#init')) {
             handleAnchorClick('init');
         }
+        else if (target.matches('#purpose')) {
+            handleAnchorClick('purpose');
+        }
     });
 
     useEffect(() => {
-        handleAnchorClick('init');
+        handleAnchorClick('purpose');
     }, []);
 
 }

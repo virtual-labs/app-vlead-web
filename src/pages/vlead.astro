@@ -1,34 +1,30 @@
 ---
 import Base from "../layouts/Base.astro";
 import "../css/vlead.css";
-import data from "../about_data.json";
 import VleadContent from "../components/vlead.jsx";
 ---
 
 <Base title="About">
   <div class="py-3" style="color: white;">
-    <div class="vlead-container">
-      <img
-        src={data.vlead.url}
-        class="vlead-logo"
-        alt="VLEAD Logo"
-      />
-      <br />
-      <div class="vlead-content">{data.vlead.content}</div>
-    </div>
-    <br />
+    <p class="title has-text-white has-text-centered is-size-2 my-0 py-5">
+      Virtual Labs Engineering Architecture and Design
+    </p>
+      <div
+        class="tabs theme is-boxed is-toggle is-toggle-rounded is-centered is-large"
+      >
+        <ul class="tablist">
+          <li><a id="purpose">Purpose</a></li>
+          <li><a id="init">Initiatives</a></li>
+          <li><a id="timeline">Timeline</a></li>
+          <li><a id="current">Current Team</a></li>
+          <li><a id="past">Past Team</a></li>
+          <li><a id="testimonials">Testimonials</a></li>
+        </ul>
+      </div>
     <div
-      class="tabs theme is-boxed is-toggle is-toggle-rounded is-centered is-large"
+      id="display-div"
+      style="padding: 1rem; display: flex; justify-content: center; align-items: center;"
     >
-      <ul class="tablist">
-        <li><a id="init">Initiatives</a></li>
-        <li><a id="timeline">Timeline</a></li>
-        <li><a id="current">Current Team</a></li>
-        <li><a id="past">Past Team</a></li>
-        <li><a id="testimonials">Testimonials</a></li>
-      </ul>
-    </div>
-    <div id="display-div" style="padding: 2rem; display: flex; justify-content: center; align-items: center;">
       <VleadContent client:only />
     </div>
   </div>
