@@ -1,14 +1,4 @@
 {
-    "vlabs": {
-        "title": "Virtual Labs",
-        "description": "Making Engineering Education Engaging, Enjoyable, Immersive and Online",
-        "content": "The Virtual Labs project, which was established in 2009, represents a significant initiative of the Ministry of Education, Government of India. This innovative program, poised to drive a meaningful change in education and research in India, provides a platform for interactive learning through experiments.\n\nAmong the key groups targeted are students and faculty members of science and engineering colleges, who may lack access to high-quality laboratory facilities and equipment. Additionally, high school students are encouraged to explore their curiosity through the program, potentially inspiring them to pursue further studies in these fields.\n\nThe Virtual Labs project also seeks to create a network of researchers across different institutes, who can collaborate and share resources, thereby promoting the exchange of knowledge and ideas. Importantly, the project's content and teaching resources are designed to benefit engineering colleges and other institutions, making it a highly inclusive and impactful initiative.\n"
-    },
-    "vlead": {
-        "title": "Virtual Labs Engineering and Architecture Design",
-        "content": "Launched in 2019, we are the Virtual Labs Engineering and Architecture Design (VLEAD) project, offering interactive virtual experiments and simulations in engineering and architecture. Our platform enhances practical skills, problem-solving abilities, and fosters collaboration among students, faculty, and researchers.",
-        "url": "https://i.imgur.com/bIeanqZ.png"
-    },
     "stats": {
         "time": "Jan 2020 - Feb 2024",
         "labs": 176,
@@ -197,5 +187,115 @@
                 "image": "https://i.imgur.com/GhHozLJ.jpg"
             }
         ]
-    }
+    },
+    "introduction": [
+        "The Virtual Labs project, which was established in 2009, represents a significant initiative of the Ministry of Education, Government of India. This innovative program poised to drive a meaningful change in education and research in India, provides a platform for interactive learning through experiments.",
+        "Among the key groups targeted are students and faculty members of science and engineering colleges, who may lack access to high-quality laboratory facilities and equipment. Additionally, high school students are encouraged to explore their curiosity through the program, potentially inspiring them to pursue further studies in these fields.",
+        "The Virtual Labs project also seeks to create a network of researchers across different institutes, who can collaborate and share resources, thereby promoting the exchange of knowledge and ideas. Importantly, the project's content and teaching resources are designed to benefit engineering colleges and other institutions, making it a highly inclusive and impactful initiative."
+    ],
+    "objectives": [
+        "To provide remote-access to simulation-based Labs in various disciplines of Science and Engineering.",
+        "To enthuse students to conduct experiments by arousing their curiosity. This would help them in learning basic and advanced concepts through remote experimentation.",
+        "To provide a complete Learning Management System around the Virtual Labs where the students/ teachers can avail the various tools for learning, including additional web-resources, video-lectures, animated demonstrations and self-evaluation."
+    ],
+    "philosophy": {
+        "decsription": "Good lab facilities and updated lab experiments are critical for any engineering college. Paucity of lab facilities often make it difficult to conduct experiments. Also, good teachers are always a scarce resource. The Virtual Labs project addresses this issue of lack of good lab facilities, as well as trained teachers, by providing remote-access to simulation-based Labs in various disciplines of science and engineering. Yet another objective is to arouse the curiosity of the students and permit them to learn at their own pace. This student-centric approach facilitates the absorption of basic and advanced concepts through simulation-based experimentation. Internet-based experimentation further permits use of additional web-resources, video-lectures, animated demonstrations and self-evaluation. Specifically, the Virtual Labs project addresses the following:",
+        "points": [
+            "Access to online labs to those engineering colleges that lack these lab facilities",
+            "Access to online labs as a complementary facility to those colleges that already have labs",
+            "Training and skill-set augmentation through workshops and on-site/ online training"
+        ],
+        "conclusion": "Virtual labs are any place, any pace, any-time, any-type labs. It is a paradigm shift in student-centric, online education."
+    },
+    "virtual_labs_image": "https://i.imgur.com/itvHvYA.jpg",
+    "broad_areas": [
+        "Electronics & Communications",
+        "Computer Science & Engineering",
+        "Electrical Engineering",
+        "Mechanical Engineering",
+        "Chemical Engineering",
+        "Biotechnology and Biomedical Engineering",
+        "Civil Engineering",
+        "Physical Sciences",
+        "Chemical Sciences"
+    ],
+    "institutes": [
+        {
+            "title": "IIT KHARAGPUR",
+            "image": "https://i.imgur.com/itvHvYA.jpg"
+        },
+        {
+            "title": "IIT ROORKEE",
+            "image": "https://i.imgur.com/GhHozLJ.jpg"
+        },
+        {
+            "title": "IIT GUWAHATI",
+            "image": "https://i.imgur.com/AOZ6NQg.jpg"
+        },
+        {
+            "title": "IIT DELHI",
+            "image": "https://i.imgur.com/pF3yyGe.jpg"
+        },
+        {
+            "title": "IIT BOMBAY",
+            "image": "https://i.imgur.com/u8ZjM3t.jpg"
+        },
+        {
+            "title": "IIT KANPUR",
+            "image": "https://i.imgur.com/itvHvYA.jpg"
+        },
+        {
+            "title": "IIIT HYDERABAD",
+            "image": "https://i.imgur.com/sopmNg5.jpg"
+        },
+        {
+            "title": "AMRITA VISHWA VIDYAPEETHAM",
+            "image": "https://i.imgur.com/GhHozLJ.jpg"
+        },
+        {
+            "title": "DAYALBAGH EDUCATIONAL INSTITUTE",
+            "image": "https://i.imgur.com/AOZ6NQg.jpg"
+        },
+        {
+            "title": "NITK SURATHKAL",
+            "image": "https://i.imgur.com/pF3yyGe.jpg"
+        },
+        {
+            "title": "COE PUNE",
+            "image": "https://i.imgur.com/u8ZjM3t.jpg"
+        }
+    ],
+    "overview": {
+        "description": "Virtual Labs project is an initiative of Ministry of Education (MoE), Government of India under the aegis of National Mission on Education through Information and Communication Technology (NMEICT). This project is a consortium activity of twelve participating institutes and IIT Delhi is coordinating institute. It is a paradigm shift in ICT-based education. For the first time, such an initiative has been taken-up in remote-experimentation. Under Virtual Labs project, over 100 Virtual Labs consisting of approximately 700+ web-enabled experiments were designed for remote-operation and viewing.",
+        "beneficiaries": [
+            "All students and Faculty Members of Science and Engineering Colleges who do not have access to good lab-facilities and/or instruments.",
+            "High‐school students, whose inquisitiveness will be triggered, possibly motivating them to take up higher-studies.",
+            "Researchers in different institutes who can collaborate and share resources.",
+            "Different engineering colleges who can benefit from the content and related teaching resources."
+        ],
+        "requirements": "Virtual Labs do not require any additional infrastructural setup for conducting experiments at user premises. The simulations-based experiments can be accessed remotely via internet."
+    },
+    "testimonials": [
+        {
+            "description": "One of the primary advantages associated with the utilization of Virtual Laboratory is the ability for students to engage in self-paced learning. This technology facilitates students in engaging in studying, preparing for, and doing laboratory experiments at their own convenience, regardless of time and location.",
+            "author": "Dr Mohd Zubair Ansari",
+            "inst": "National Institute of Technology Srinagar"
+        },
+        {
+            "description": "Virtual Labs are implemented in USAR, GGSIPU and are useful in understanding the theories and concepts of science or other subjects that cannot be studied alone only by textbooks. It has the great potential to enhance actual laboratory experiences. Furthermore, the best progressive learning and performance for real experiments appears when the virtual laboratory preceded paper-based practical experiments.",
+            "author": "Dr. Khyati Chopra",
+            "inst": "USAR GGSIPU"
+        },
+        {
+            "description": "Virtual Labs is the knowledge seed for the students of the science and technology domain. Such an astonishing platform would enlighten the learning path of the students before they move to the real lab for the experiments. The students may realize the look and feel of the real lab and optimize the efforts, time, and funds involved in performing the real labs. The best part of Virtual Labs is to use it with personal comfort and convenience.",
+            "author": "Dr. Pankaj K. Goswami",
+            "inst": "Amity University Uttar Pradesh, Lucknow"
+        },
+        {
+            "description": "Virtual lab is a platform which provides an opportunity to understand the theoretical concept in very easy way with the help of simulator. Pretest and post-test feature provided make the self-assessment part easy for the students. This platform provides a wide range of experiments covering almost all kind of domain and it is very beneficial for the students. As a Nodal Coordinator of Virtual Lab for Chameli Devi Group of Institution, I am very much satisfied with virtual lab facility as it helps the students to engage more with self-learning path.",
+            "author": "Radheshyam Acholia",
+            "inst": "Chameli Devi Group of Institution, Indore"
+        }
+
+    ]
 }
