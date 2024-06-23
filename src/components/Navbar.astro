@@ -1,16 +1,7 @@
 ---
 import { Icon } from "astro-icon";
 import Roles from "./role";
-// https://docs.google.com/spreadsheets/d/1x12nhpp0QvnsA6x-O1sV4IA9SAbfVsq_wiexWkutOmU/edit#gid=1573630614
-var id = "1x12nhpp0QvnsA6x-O1sV4IA9SAbfVsq_wiexWkutOmU";
-var gid = "1573630614";
-
-var url =
-  "https://docs.google.com/spreadsheets/d/" +
-  id +
-  "/gviz/tq?tqx=out:json&tq&gid=" +
-  gid;
-
+import Stats from "./stats";
 ---
 
 <script>
@@ -85,9 +76,8 @@ var url =
   const search_bar = document.getElementById("search-bar-container")!;
   const search_value = document.getElementById("search_value")!;
   const form = document.getElementById("form")!;
-  if(document.location.href.includes("experiments"))
-  {
-    search_bar.style.display="none"
+  if (document.location.href.includes("experiments")) {
+    search_bar.style.display = "none";
   }
   search_bar.addEventListener("mouseenter", () => {
     search_submit.classList.add("search-open");
@@ -120,7 +110,7 @@ var url =
       icon2.style.display = "block";
     } else {
       document.body.style.backgroundImage =
-      "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
+        "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
       icon2.style.display = "none";
       icon1.style.display = "block";
     }
@@ -133,7 +123,7 @@ var url =
     animate();
   } else {
     document.body.style.backgroundImage =
-    "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
+      "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
     theme = "light";
   }
   const theme_switcher = document.getElementById("theme")!;
@@ -207,7 +197,6 @@ var url =
         loading="lazy"
         style="max-height:70px; background:none"
         class="py-1 px-2"
-        
       />
     </a>
     <div class="navbar-item px-2" id="theme">
@@ -255,25 +244,37 @@ var url =
   <div id="navbarMain" class="navbar-menu is-boxed">
     <div class="navbar-start"></div>
     <div class="navbar-end">
-      <div
-        class="navbar-item px-2 has-dropdown is-hoverable"
-        id="choose-drop"
-      >
+      <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drop">
         <a class="navbar-link is-size-5"> I am</a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item px-2 theme" id="drop-learner" href="/app-vlead-web/experiments/"> Learner</a>
+          <a
+            class="navbar-item px-2 theme"
+            id="drop-learner"
+            href="/app-vlead-web/experiments/"
+          >
+            Learner</a
+          >
           <hr class="navbar-divider" />
-          <a class="navbar-item px-2 theme" id="drop-educator" href="/app-vlead-web/outreach/"> Educator</a>
+          <a
+            class="navbar-item px-2 theme"
+            id="drop-educator"
+            href="/app-vlead-web/outreach/"
+          >
+            Educator</a
+          >
           <hr class="navbar-divider" />
-          <a class="navbar-item px-2 theme" id="drop-creator" href="/app-vlead-web/development/"> Creator</a>
+          <a
+            class="navbar-item px-2 theme"
+            id="drop-creator"
+            href="/app-vlead-web/development/"
+          >
+            Creator</a
+          >
         </div>
       </div>
-      <div
-        class="navbar-item px-2 has-dropdown is-hoverable"
-        id="choose-drops"
-      >
-        <a class="navbar-link is-size-5"> I want to </a>
+      <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drops">
+        <a class="navbar-link is-size-5"> I want to</a>
 
         <div class="navbar-dropdown">
           <a
@@ -301,7 +302,7 @@ var url =
           </a>
         </div>
       </div>
-      
+
       <Roles client:only />
       <a
         class="navbar-item px-2 is-size-5 clickable"
@@ -317,43 +318,37 @@ var url =
       >
         Analytics
       </a>
-      <div
-      class="navbar-item px-2 has-dropdown is-hoverable"
-      id="choose-drops"
-    >
-      <a class="navbar-link is-size-5"> About </a>
+      <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drops">
+        <a class="navbar-link is-size-5"> About</a>
 
-      <div class="navbar-dropdown">
-        <a
-          class="navbar-item px-2"
-          id="create"
-          href="/app-vlead-web/Vlabs/"
-        >
-          Virtual Labs
-        </a>
-        <hr class="navbar-divider" />
-        <a
-          class="navbar-item px-2"
-          id="outreach"
-          href="/app-vlead-web/vlead/"
-        >
-          VLEAD
-        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item px-2" id="create" href="/app-vlead-web/Vlabs/">
+            Virtual Labs
+          </a>
+          <hr class="navbar-divider" />
+          <a
+            class="navbar-item px-2"
+            id="outreach"
+            href="/app-vlead-web/vlead/"
+          >
+            VLEAD
+          </a>
+        </div>
       </div>
-    </div>
+      <Stats client:only/>
     </div>
   </div>
 </nav>
 
 <style>
-  #user-display{
+  #user-display {
     /* background-color: white; */
     color: var(--third);
   }
   #user-display:hover {
     cursor: default;
   }
-  #views-display{
+  #views-display {
     /* color:white; */
     color: var(--third);
   }
