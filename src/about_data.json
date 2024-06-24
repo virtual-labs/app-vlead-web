@@ -34,13 +34,13 @@
                 "description": " A Visual Studio Code extension has been developed to facilitate the authoring of Virtual Labs experiments in a streamlined and user-friendly manner. This extension offers features to manage all common tasks associated with experiment development. Currently, a web version of this extension is in progress.",
                 "url": "https://i.imgur.com/itvHvYA.jpg",
                 "title": "Visual Studio Code Extension -",
-                "readmore": "https://github.com/virtual-labs/tool-vscode-plugin"
+                "readmore": "https://github.com/virtual-labs/tool-vscode-plugin/blob/main/README.md"
             },
             {
                 "description": "A Visual Studio Code Web extension is being developed to facilitate the authoring of Virtual Labs experiments in a streamlined and user-friendly manner on the Web. This extension offers features to manage all common tasks associated with experiment development.",
                 "url": "https://i.imgur.com/sopmNg5.jpg",
                 "title": "Visual Studio Code Web Extension -",
-                "readmore": "https://github.com/virtual-labs/tool-web-ext-vscode"
+                "readmore": "https://github.com/virtual-labs/tool-web-ext-vscode/blob/dev/README.md"
             },
             {
                 "description": " is a web-based Content Management System built over Netlify CMS designed to facilitate the creation of virtual experiments. It offers a user-friendly interface that eliminates the need for users to have prior knowledge of Git and Markdown. With this platform, experiment creators can easily build and manage virtual experiments while having the convenience of seamless deployment as it gives an online option to develop experiments which does not require any downloads or local setup.",
@@ -58,13 +58,13 @@
                 "description": "A tool that generates performance reports on the experiment code base which include various scores and metrics as well as suggestions for improvement has been built for the content developers. These reports are generated using a lighthouse API.",
                 "url": "https://i.imgur.com/pF3yyGe.jpg",
                 "title": "Performance Tool -",
-                "readmore": "https://github.com/virtual-labs/tool-performance"
+                "readmore": "https://github.com/virtual-labs/tool-performance/blob/main/README.md"
             },
             {
                 "description": "A tool has been implemented to validate code once experiments have been developed. This tool executes ESLint on the JavaScript code, examines HTTP links, and validates the JSON files in the repository against a schema.",
                 "url": "https://i.imgur.com/u8ZjM3t.jpg",
                 "title": "Validation Tool -",
-                "readmore": "https://github.com/virtual-labs/tool-validation"
+                "readmore": "https://github.com/virtual-labs/tool-validation/blob/main/README.md"
             }
         ],
         "users": [
@@ -72,7 +72,7 @@
                 "description": "An application that showcases all experiments on the Virtual Labs site, enabling users to filter and search for specific ones. It's a Progressive Web App (PWA), making it mobile-friendly and usable offline. The app is available on the Android Play Store as an APK, offering seamless performance. Powered by MUI Joy and React, it provides a native Android app experience.",
                 "url": "https://i.imgur.com/itvHvYA.jpg",
                 "title": "PWA App - ",
-                "readmore": "https://github.com/virtual-labs/app-vlabs-pwa"
+                "readmore": "https://github.com/virtual-labs/app-vlabs-pwa/blob/main/README.md"
             },
             {
                 "description": "A web component for Virtual Labs has been developed that showcases ratings for each experiment and logs them on Google Analytics. This component is written and packaged as a customizable Lit component, offering flexibility with its parameters.",
@@ -84,7 +84,7 @@
                 "description": "A tool to add a programming interface to experiments is being developed. To begin with the interface will  allow the users to write basic code in all the Data Structure experiments.",
                 "url": "https://i.imgur.com/nTdt9sa.jpg",
                 "title": "Programming Interface -",
-                "readmore": "https://github.com/virtual-labs/comp-code-editor"
+                "readmore": "https://github.com/virtual-labs/comp-code-editor/blob/main/README.md"
             },
             {
                 "description": "A tool has been developed to facilitate users of Virtual Labs in logging bugs during experiment sessions. It offers highly extendable features, allowing users to select from preset options based on the page type, share screenshots, and compose detailed reports.",
@@ -102,7 +102,7 @@
                 "description": "Completed the first iteration of the Virtual Labs service worker. The service worker will be our agent on the client and will be used for many of the planned tasks, e.g. caching and capturing analytics data stream. Apart from the default service worker functionality, an experiment author can add custom functionality for each experiment. Currently the integration of Service Worker with the build script is being tested.",
                 "url": "https://i.imgur.com/vNu56MS.jpg",
                 "title": "Service Worker - ",
-                "readmore": "https://github.com/virtual-labs/lib-service-worker-vlabs"
+                "readmore": "https://github.com/virtual-labs/lib-service-worker-vlabs/blob/main/README.md"
             },
             {
                 "description": "The VLEAD Team encourages experiment and tool developers to share their learnings and experiences throughout the development lifecycle via tech blogs. These blogs are published on the Medium site to benefit other developers.",
@@ -116,25 +116,25 @@
                 "description": "The Document Search Tool for Virtual Labs has been designed to alleviate the challenges associated with navigating vast collections of documents within the virtual labs environment. This tool serves as a powerful solution to efficiently retrieve relevant sections from a plethora of documents, ensuring that users can access the information they need promptly.",
                 "url": "https://i.imgur.com/itvHvYA.jpg",
                 "title": "Document Search Tool -",
-                "readmore": "https://github.com/virtual-labs/tool-doc-search/tree/dev"
+                "readmore": "https://github.com/virtual-labs/tool-doc-search/blob/dev/README.md"
             },
             {
                 "description": "A tool that simplifies the lab deployment process for hosting engineers, providing a unified, efficient interface for configuring and triggering multiple lab deployments has been developed. Previously, this process was manual and required separate deployment for each lab through GitHub. Due to the manual nature of the deployment process, there was a dependence on the resource",
                 "url": "https://i.imgur.com/GhHozLJ.jpg",
                 "title": "Automated Lab Deployment Tool -",
-                "readmore": "https://github.com/virtual-labs/app-lab-deployment-web/tree/dev"
+                "readmore": "https://github.com/virtual-labs/app-lab-deployment-web/blob/dev/README.md"
             },
             {
                 "description": "This tool has been developed  to facilitate the storage and management of workshop data for Virtual Labs. It allows admins and nodal coordinators from various institutes to access and maintain workshop information efficiently.",
                 "url": "https://i.imgur.com/nTdt9sa.jpg",
                 "title": "Outreach Workshop Tracker -",
-                "readmore": "https://github.com/virtual-labs/app-outreach-tracker-web/tree/dev"
+                "readmore": "https://github.com/virtual-labs/app-outreach-tracker-web/blob/dev/README.md"
             },
             {
                 "description": "Developing a publishable lab, along with all its experiments, entails significant manual effort that does not directly enhance the lab's value. To address this challenge, the Virtual Labs Static Site Generator automates the creation of the experiment website and allows the content developers to focus on producing content. This Static Site Generator was refactored in order to facilitate its integration with various automation tools.",
                 "url": "https://i.imgur.com/vNu56MS.jpg",
                 "title": "Static Site Generator -",
-                "readmore": "https://github.com/virtual-labs/ph3-lab-mgmt"
+                "readmore": "https://github.com/virtual-labs/ph3-lab-mgmt/blob/master/README.org"
             }
         ]
     },
