@@ -11,22 +11,25 @@ export default function Testimonials() {
   const [sheetdata, setSheetdata] = useState([]);
   const [loaded, setLoaded] = useState(false);
 
+  const FetchData = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const extractedTestimonials = data.map((row) => {
+      const [associationType, year, testimonial] = row;
+      return { associationType, year, testimonial };
+    });
+
+    setSheetdata(extractedTestimonials);
+    setLoaded(true);
+  };
   useEffect(() => {
-    const FetchData = async () => {
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data);
-
-      const extractedTestimonials = data.map((row) => {
-        const [associationType, year, testimonial] = row;
-        return { associationType, year, testimonial };
-      });
-
-      setSheetdata(extractedTestimonials);
-      setLoaded(true);
-    };
     FetchData();
   }, []);
+  const ViewMore = () => {
+    setLoaded(false);
+    FetchData();
+  };
 
   return (
     <>
@@ -45,6 +48,9 @@ export default function Testimonials() {
                 <p className="testimonial-author">- {data.associationType}, {data.year}</p>
               </div>
             ))}
+          </div>
+          <div className="testimonial-navigation">
+            <button onClick={ViewMore}>View More</button>
           </div>
         </div>
       ) : (

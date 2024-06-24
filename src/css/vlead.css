@@ -113,62 +113,80 @@
     position: relative;
     overflow: hidden;
     border-radius: 8px;
+    background-color: #a9f7e4;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.grid-item img {
+.grid-item .content {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.grid-item .overlay {
+.grid-item h2 {
+    font-size: 20px;
+    color: #ffffff;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.grid-item .description {
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(36, 154, 128, 0.8);
+    color: #fff;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    padding: 10px;
+    clip-path: inset(50% 0 50% 0);
+    transform: scale(1.1);
 }
 
-.grid-item:hover img {
-    animation: closeCenter 1s forwards;
-}
-
-.grid-item:hover .overlay {
+.grid-item:hover .description {
     opacity: 1;
+    animation: openCenter 1s forwards;
 }
 
-.overlay .text {
+.grid-item:hover h2 {
+    opacity: 0;
+}
+
+.description h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
     color: #fff;
+}
+
+.description p {
     text-align: center;
 }
 
-.overlay .text h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.overlay .text p {
-    font-size: 10px;
-}
-
-@keyframes closeCenter {
+@keyframes openCenter {
     0% {
-        clip-path: inset(0 0 0 0);
+        clip-path: inset(50% 0 50% 0);
+        transform: scale(1.1);
     }
 
     50% {
-        clip-path: inset(50% 0 50% 0);
+        clip-path: inset(0 0 0 0);
+        transform: scale(1.1);
     }
 
     100% {
-        clip-path: inset(50% 0 50% 0);
+        clip-path: inset(0 0 0 0);
         transform: scale(1.1);
     }
 }

@@ -14,7 +14,7 @@
 
 .testimonial-card {
     flex: 0 0 300px;
-    background-color: #43b8b4;
+    background-color: #277e8a;
     border-radius: 8px;
     padding: 20px;
     margin: 10px;
@@ -45,7 +45,7 @@
 }
 
 .testimonial-navigation button {
-    background-color: #4CAF50;
+    background-color: #4cacaf;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -60,7 +60,7 @@
 }
 
 .testimonial-navigation button:hover {
-    background-color: #45a049;
+    background-color: #44999c;
 }
 
 @media (max-width: 768px) {

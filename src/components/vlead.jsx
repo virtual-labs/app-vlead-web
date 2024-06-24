@@ -103,13 +103,13 @@ function PurposeContainer() {
             <div className="grid-container">
                 {data.purpose.points.map((point, i) => (
                     <div key={i} className="grid-item">
-                        <div className="overlay">
-                            <div className="text">
-                                <h2>{point.title}</h2>
-                                <p>{point.description}</p>
+                        <div className="content">
+                            <h2>{point.title}</h2>
+                            <div className="description">
+                            <p style={{ fontSize: '20px' }}>{point.title}</p>
+                            <p style={{ fontSize: '14px' }}>{point.description}</p>
                             </div>
                         </div>
-                        <img src={point.image} alt={point.title} />
                     </div>
                 ))}
             </div>
