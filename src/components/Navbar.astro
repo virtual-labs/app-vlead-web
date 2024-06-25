@@ -1,26 +1,7 @@
 ---
 import { Icon } from "astro-icon";
 import Roles from "./role";
-// https://docs.google.com/spreadsheets/d/1x12nhpp0QvnsA6x-O1sV4IA9SAbfVsq_wiexWkutOmU/edit#gid=1573630614
-var id = "1x12nhpp0QvnsA6x-O1sV4IA9SAbfVsq_wiexWkutOmU";
-var gid = "1573630614";
-let users = 0,
-  Views = 0;
-var url =
-  "https://docs.google.com/spreadsheets/d/" +
-  id +
-  "/gviz/tq?tqx=out:json&tq&gid=" +
-  gid;
-
-var url__ = "https://docs.google.com/spreadsheets/d/1x12nhpp0QvnsA6x-O1sV4IA9SAbfVsq_wiexWkutOmU/gviz/tq?tqx=out:json&tq&gid=1573630614";
-try {
-  const res = await fetch(url);
-  const data = await res.text();
-  users = JSON.parse(data.substring(47).slice(0, -2)).table.rows[0].c[2].f;
-  Views = JSON.parse(data.substring(47).slice(0, -2)).table.rows[1].c[2].f;
-} catch (err) {
-  console.log(err);
-}
+import Stats from "./stats";
 ---
 
 <!-- <script src="./../../public/script.js"></script> -->
@@ -354,37 +335,9 @@ try {
         Our Team
       </a>
       <!-- </div> -->
-      <a
-        class="m-auto px-2 is-size-5"
-        id="user-display"
-      >
-        <strong>
-          Users: {users}
-        </strong>
-      </a>
-      <a
-        class="m-auto px-2 is-size-5"
-        id="views-display"
-      >
-        <strong>
-          Views: {Views}
-        </strong>
-      </a>
+      <Stats client:only />
     </div>
   </div>
-  <!-- <div class="buttons-right">
-		<div class="searchBox">
-			<input class="searchText" type="text" placeholder="Search...">
-			<a href="#" class="searchBtn"><Icon name="ic:outline-search" width="35px"/></a>
-		</div> 
-		<button class="navbutton">Create Experiment</button>
-		<button class="navbutton">Teaching</button>
-		<button class="navbutton">Start Learning</button>
-		<button class="navbutton" id="stats">Analytics&nbsp&nbsp</button>
-		<p class="users_display">Users:{users}&nbsp</p>
-		<p class="users_display">Views:{Views}&nbsp</p>
-	</div> -->
-  <!-- </div> -->
 </nav>
 
 <style>

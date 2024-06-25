@@ -1,0 +1,59 @@
+link {
+    color: var(--black);
+}
+
+link.dark {
+    color: var(--white);
+}
+
+.Nodal_Centers {
+    color: black;
+    margin-top: 2%;
+    text-align: center;
+}
+
+.workshops {
+    margin-top: 2%;
+    text-align: center;
+}
+
+.tabs.is-toggle li.is-active a {
+    background-color: var(--white) !important;
+    color: black !important;
+    border-color: #dbdbdb !important;
+}
+
+.dropdown-content {
+    padding-bottom: 0% !important;
+    padding-top: 0% !important;
+}
+
+.dropdown-item {
+    padding: 0%;
+}
+
+.tabs a {
+    padding: 0.8rem;
+}
+
+.white-black {
+    color: white !important;
+    font-weight: 500;
+}
+
+.white-black:hover {
+    color: black !important;
+}
+
+.hidden_ {
+    display: none;
+    background-color: black;
+}
+
+.gal-img {
+    margin: 0.3rem;
+    border: 6px solid #f3f3f3f4;
+    border-radius: 8px;
+    height: auto;
+    width: 450px;
+}
