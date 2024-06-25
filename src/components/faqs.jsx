@@ -99,7 +99,7 @@ export default function Faqs(props) {
               };
             })
           );
-          
+
           setFaqs(mdxFileContents.flat()); // flatten mdx file content array
           setLoaded(true);
         } catch (error) {
@@ -120,31 +120,23 @@ export default function Faqs(props) {
   };
   return loaded ? (
     <>
-      <div className="faq-container theme py-0 px-6 mb-6 content">
-        {faqs.map((c, i) => {
-          return (
-            <div key={i}>
-              <button
-                data-aos="fade-up"
-                style={{ color: "white" }}
-                className="box question is-size-5 mb-0 mt-2 has-text-weight-semibold"
-                onClick={() => toggleCollapse(i)}
-              >
-                <ReactMarkdown
-                  children={c.title}
-                  rehypePlugins={[rehypeRaw]}
-                  remarkPlugins={[
-                    remarkSlug,
-                    remarkHtml,
-                    remarkRehype,
-                    remarkToc,
-                  ]}
-                ></ReactMarkdown>
-              </button>
-              {c.collapsed && (
-                <div className="box answer">
+      <div className="faq-workshops_faq mt-6 mx-auto">  
+        <p class="title has-text-black has-text-centered is-size-2 my-0 py-5">
+          Frequently Asked Questions
+        </p>
+
+        <div className="faq-container theme py-0 px-6 mb-6 content">
+          {faqs.map((c, i) => {
+            return (
+              <div key={i}>
+                <button
+                  data-aos="fade-up"
+                  style={{ color: "white" }}
+                  className="box question is-size-5 mb-0 mt-2 has-text-weight-semibold"
+                  onClick={() => toggleCollapse(i)}
+                >
                   <ReactMarkdown
-                    children={c.content}
+                    children={c.title}
                     rehypePlugins={[rehypeRaw]}
                     remarkPlugins={[
                       remarkSlug,
@@ -153,11 +145,25 @@ export default function Faqs(props) {
                       remarkToc,
                     ]}
                   ></ReactMarkdown>
-                </div>
-              )}
-            </div>
-          );
-        })}
+                </button>
+                {c.collapsed && (
+                  <div className="box answer">
+                    <ReactMarkdown
+                      children={c.content}
+                      rehypePlugins={[rehypeRaw]}
+                      remarkPlugins={[
+                        remarkSlug,
+                        remarkHtml,
+                        remarkRehype,
+                        remarkToc,
+                      ]}
+                    ></ReactMarkdown>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   ) : loaded2 ? (
