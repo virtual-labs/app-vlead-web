@@ -23,11 +23,11 @@ function InitiativesContainer() {
         <div className="main-container">
             <div className="tw-toggle">
                 <input id="users" type="radio" name="toggle" value="users" checked={activeToggle === 'users'} onChange={handleToggleChange} />
-                <label htmlFor="users" className="toggle toggle-yes">Users</label>
+                <label htmlFor="users" className="toggle toggle-yes">User Tools</label>
                 <input id="developer" type="radio" name="toggle" value="developer" checked={activeToggle === 'developer'} onChange={handleToggleChange} />
-                <label htmlFor="developer" className="toggle toggle-yes">Developer</label>
+                <label htmlFor="developer" className="toggle toggle-yes">Developer Tools</label>
                 <input id="vlead" type="radio" name="toggle" value="vlead" checked={activeToggle === 'vlead'} onChange={handleToggleChange} />
-                <label htmlFor="vlead" className="toggle toggle-yes">VLEAD</label>
+                <label htmlFor="vlead" className="toggle toggle-yes">VLEAD Tools</label>
                 <span className="slider"></span>
             </div>
             <br />

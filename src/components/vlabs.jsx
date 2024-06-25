@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import data from "../about_data.json";
+import Faqs from "./faqs.jsx";
+
 
 function Testimonials() {
     return (
@@ -21,7 +23,7 @@ function Testimonials() {
                         <span className="icon">
                             <FontAwesomeIcon icon={faQuoteRight} />
                         </span>
-                        <p className="testimonial-author">- {t.author}<br/>{t.inst}</p>
+                        <p className="testimonial-author">- {t.author}<br />{t.inst}</p>
                     </div>
                 ))}
             </div>
@@ -111,6 +113,11 @@ const Content = ({ type }) => {
     else if (type == "testimonials") {
         return <Testimonials />
     }
+    else if (type == "faq") {
+        return (
+            <Faqs />
+        )
+    }
 }
 
 export const VlabsContent = () => {
@@ -143,6 +150,9 @@ export const VlabsContent = () => {
         }
         else if (target.matches('#testimonials')) {
             handleAnchorClick('testimonials');
+        }
+        else if (target.matches('#faq')) {
+            handleAnchorClick('faq');
         }
     });
 
