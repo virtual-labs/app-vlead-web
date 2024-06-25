@@ -244,6 +244,24 @@ import Stats from "./stats";
   <div id="navbarMain" class="navbar-menu is-boxed">
     <div class="navbar-start"></div>
     <div class="navbar-end">
+      <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drops">
+        <a class="navbar-link is-size-5"> About</a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item px-2" id="create" href="/app-vlead-web/Vlabs/">
+            Virtual Labs
+          </a>
+          <hr class="navbar-divider" />
+          <a
+            class="navbar-item px-2"
+            id="outreach"
+            href="/app-vlead-web/vlead/"
+          >
+            VLEAD
+          </a>
+        </div>
+      </div>
+
       <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drop">
         <a class="navbar-link is-size-5"> I am</a>
 
@@ -287,18 +305,18 @@ import Stats from "./stats";
           <hr class="navbar-divider" />
           <a
             class="navbar-item px-2"
-            id="outreach"
-            href="/app-vlead-web/outreach/"
-          >
-            Outreach
-          </a>
-          <hr class="navbar-divider" />
-          <a
-            class="navbar-item px-2"
             id="learning"
             href="/app-vlead-web/experiments/"
           >
             Start Learning
+          </a>
+          <hr class="navbar-divider" />
+          <a
+            class="navbar-item px-2"
+            id="outreach"
+            href="/app-vlead-web/outreach/"
+          >
+            Outreach
           </a>
           <hr class="navbar-divider" />
           <a
@@ -319,23 +337,6 @@ import Stats from "./stats";
       >
         Analytics
       </a>
-      <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drops">
-        <a class="navbar-link is-size-5"> About</a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item px-2" id="create" href="/app-vlead-web/Vlabs/">
-            Virtual Labs
-          </a>
-          <hr class="navbar-divider" />
-          <a
-            class="navbar-item px-2"
-            id="outreach"
-            href="/app-vlead-web/vlead/"
-          >
-            VLEAD
-          </a>
-        </div>
-      </div>
       <Stats client:only />
     </div>
   </div>

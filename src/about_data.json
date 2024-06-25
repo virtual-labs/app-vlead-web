@@ -277,14 +277,29 @@
         }
     ],
     "overview": {
-        "description": "Virtual Labs project is an initiative of Ministry of Education (MoE), Government of India under the aegis of National Mission on Education through Information and Communication Technology (NMEICT). This project is a consortium activity of twelve participating institutes and IIT Delhi is coordinating institute. It is a paradigm shift in ICT-based education. For the first time, such an initiative has been taken-up in remote-experimentation. Under Virtual Labs project, over 100 Virtual Labs consisting of approximately 700+ web-enabled experiments were designed for remote-operation and viewing.",
-        "beneficiaries": [
-            "All students and Faculty Members of Science and Engineering Colleges who do not have access to good lab-facilities and/or instruments.",
-            "High-school students, whose inquisitiveness will be triggered, possibly motivating them to take up higher-studies.",
-            "Researchers in different institutes who can collaborate and share resources.",
-            "Different engineering colleges who can benefit from the content and related teaching resources."
-        ],
-        "requirements": "Virtual Labs do not require any additional infrastructural setup for conducting experiments at user premises. The simulations-based experiments can be accessed remotely via internet."
+        "description":"The Virtual Labs project, an initiative by India's Ministry of Education under the National Mission on Education through ICT (NMEICT), is coordinated by IIT Delhi and involves twelve institutes. It introduces ICT-based remote experimentation with over 100 Virtual Labs and 700+ web-enabled experiments. These simulations can be accessed via the internet without any additional infrastructure or fees at user premises.",
+        "points":[
+            {
+                "title": "College Students",
+                "description": "All students and Faculty Members of Science and Engineering Colleges who do not have access to good lab-facilities and/or instruments.",
+                "image": "https://i.imgur.com/itvHvYA.jpg"
+            },
+            {
+                "title": "High-School Students",
+                "description": "High-school students, whose inquisitiveness will be triggered, possibly motivating them to take up higher-studies.",
+                "image": "https://i.imgur.com/sopmNg5.jpg"
+            },
+            {
+                "title": "Researchers",
+                "description": "Researchers in different institutes who can collaborate and share resources.",
+                "image": "https://i.imgur.com/GhHozLJ.jpg"
+            },
+            {
+                "title": "Institutes",
+                "description": "Different engineering colleges who can benefit from the content and related teaching resources.",
+                "image": "https://i.imgur.com/AOZ6NQg.jpg"
+            }
+        ]
     },
     "testimonials": [
         {

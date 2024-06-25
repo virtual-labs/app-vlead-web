@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import "../css/vlabs.css";
 import "../css/theme.css";
+import "../css/vlead.css";
 import "../css/testimonials.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
@@ -34,13 +35,13 @@ function Testimonials() {
 function ObjContainer() {
     return (
         <div className="objectives-philosophy">
-            <h1 className="section-title">Objectives</h1>
+            <h1 className="section-title"><strong>Objectives</strong></h1>
             <ul className="list">
                 {data.objectives.map((objective, i) => (
                     <li key={i} className="list-item">{objective}</li>
                 ))}
             </ul>
-            <h1 className="section-title">Philosophy</h1>
+            <h1 className="section-title"><strong>Philosophy</strong></h1>
             <p className="description">{data.philosophy.description}</p>
             <ul className="list">
                 {data.philosophy.points.map((point, i) => (
@@ -77,28 +78,26 @@ function InstContainer() {
 
 function OvwContainer() {
     return (
-        <div className="overview-container">
-            <div className="overview-description">
-                <h2 className="overview-title">Overview</h2>
-                <p className="overview-text">{data.overview.description}</p>
+        <div className="purpose-card">
+            <h1 className="purpose-title">Overview</h1>
+            <p className="purpose-description">{data.overview.description}</p>
+            <h3 className="beneficiaries-title"><strong>Stakeholders</strong></h3>
+            <div className="grid-container">
+                {data.overview.points.map((point, i) => (
+                    <div key={i} className="grid-item">
+                        <div className="content">
+                            {/* <h2 style={{ fontSize: '30px' }}>{point.title}</h2> */}
+                            <div className="description">
+                                <h2 style={{ fontSize: '20px', opacity: '1'}}>{point.title}</h2>
+                                <p style={{ fontSize: '14px' }}>{point.description}</p>
+                            </div>
+                        </div>
+                        <img src={point.image} alt={point.title} className="overview-image" />
+                    </div>
+                ))}
             </div>
-
-            <div className="beneficiaries-section">
-                <h3 className="beneficiaries-title">Beneficiaries</h3>
-                <ul className="beneficiaries-list">
-                    {data.overview.beneficiaries.map((beneficiary, i) => (
-                        <li key={i} className="beneficiary-item">
-                            <span className="beneficiary-icon">✓</span>
-                            {beneficiary}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-
-            <div className="requirements-section">
-                <p className="requirements-text">{data.overview.requirements}</p>
-            </div>
-        </div>)
+        </div>
+    )
 }
 
 const Content = ({ type }) => {
