@@ -90,7 +90,7 @@ In the *Pages* folder, each file is rendered as a page with the file name as par
 - *Index-page* -: (url: /) Home page for the website. Introduction writeup present in two columns. *Typewriter-effect* library has been used for the typewriter effect. The page has three roles to choose from, with descriptions mentioned. The roles can be added/modified from home_data.json file present in src folder.  
     Similarly, domains details list and services details list can be modified in home_data.json.  
     Swiper-library has been used for sliding view of the cards. Its attributes can be changed from the arguments passed to <swiper-container /> The library has been imported using cdn : https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css
-- *Members-page* -: To navigate here, use the Our Team option on the navbar. This page has the profiles of all members of the VLEAD, Vlabs Team. The cards are an external component imported from "yatharth-super-lemon" in components/people_card.jsx. The team member details is fetched from the sheet api: https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec  
+- *VLEAD PAGE* -: To navigate here, use the About option on the navbar. This page has the profiles of all members of the VLEAD, Vlabs Team. The cards are an external component imported from "yatharth-super-lemon" in components/people_card.jsx. The team member details is fetched from the sheet api: https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec  
     For fetching current team members list, add "?q=current" to the end of the url. For past members, add "?q=past". 
     The testimonial details are fetched from the sheet api: https://script.google.com/macros/s/AKfycbzvYgAwebXfLnmcN0PJmK9AqApj_eeCOqL_J-s25nCkhV-5QKXrxOTUMjHJCSnJTSlu/exec
     The api will fetch 4 random testimonials from the sheet. 
@@ -120,16 +120,10 @@ The *public* folder contains the images for the website.
 
 ## Image rendering
 
-To enable seamless page growth without requiring developers to add images, you can store image URLs in a JSON file. Note that images hosted on Google Drive cannot be used directly in HTML tags for rendering.
-
-A suitable alternative is using a service like Imgur. Steps to follow are:
-
-Sign up or log in to Imgur.
-Upload your images and set them to "hidden" for privacy (it will be set to hidden by default).
-Navigate to your images in your Imgur account.
-Click on the desired image to view its details.
-Copy the direct link provided (one of the six available links).
-Finally, include this direct link in the JSON file where you want the image to appear.
+In order to render images on Google drive, the image needs to be made public for anyone to view. The link generated will hae the following structure:
+https://drive.google.com/file/d/0B6wwyazyzml-OGQ3VUo0Z2thdmc/view?usp=sharing
+If the link is converted to have structure as follows:
+https://drive.google.com/thumbnail?id=0B6wwyazyzml-OGQ3VUo0Z2thdmc, a browser will be capable of rendering the image. This is what has been used for rendering images for people cards in the VLEAD about page.
 
 ## Future Work
 1. In the Our Team page, for each profile card, add a button in the modal that will copy the profile's shareable link to the clipboard.

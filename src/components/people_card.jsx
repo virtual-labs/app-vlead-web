@@ -26,7 +26,7 @@ export function People_Card_Component_Current () {
     function convert_url(url)
     {
       var id = url.split("/")[5];
-      return "https://drive.google.com/uc?export=view&id=" + id;
+      return "https://drive.google.com/thumbnail?id=" + id;
     }
     return(
         loaded ? (
@@ -105,7 +105,7 @@ export function People_Card_Component_Past () {
   function convert_url(url)
   {
     var id = url.split("/")[5];
-    return "https://drive.google.com/uc?export=view&id=" + id;
+    return "https://drive.google.com/thumbnail?id=" + id;
   }
 
   return(
