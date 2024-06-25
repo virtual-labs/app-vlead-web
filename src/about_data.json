@@ -222,47 +222,58 @@
     "institutes": [
         {
             "title": "IIT KHARAGPUR",
-            "image": "https://i.imgur.com/itvHvYA.jpg"
+            "image": "https://i.imgur.com/itvHvYA.jpg",
+            "url": "https://www.vlab.co.in/?sub=71&brch=7"
         },
         {
             "title": "IIT ROORKEE",
-            "image": "https://i.imgur.com/GhHozLJ.jpg"
+            "image": "https://i.imgur.com/GhHozLJ.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_43b31nxy0c"
         },
         {
             "title": "IIT GUWAHATI",
-            "image": "https://i.imgur.com/AOZ6NQg.jpg"
+            "image": "https://i.imgur.com/AOZ6NQg.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_gx2abgxy0c"
         },
         {
             "title": "IIT DELHI",
-            "image": "https://i.imgur.com/pF3yyGe.jpg"
+            "image": "https://i.imgur.com/pF3yyGe.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_e13vjdxy0c"
         },
         {
             "title": "IIT BOMBAY",
-            "image": "https://i.imgur.com/u8ZjM3t.jpg"
+            "image": "https://i.imgur.com/u8ZjM3t.jpg",
+            "url": "https://lookerstudio.google.com/embed/u/0/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_kgv1t9wy0c"
         },
         {
             "title": "IIT KANPUR",
-            "image": "https://i.imgur.com/itvHvYA.jpg"
+            "image": "https://i.imgur.com/itvHvYA.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_ifh10ixy0c"
         },
         {
             "title": "IIIT HYDERABAD",
-            "image": "https://i.imgur.com/sopmNg5.jpg"
+            "image": "https://i.imgur.com/sopmNg5.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_vg67w6wy0c"
         },
         {
             "title": "AMRITA VISHWA VIDYAPEETHAM",
-            "image": "https://i.imgur.com/GhHozLJ.jpg"
+            "image": "https://i.imgur.com/GhHozLJ.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/M1UPB"
         },
         {
             "title": "DAYALBAGH EDUCATIONAL INSTITUTE",
-            "image": "https://i.imgur.com/AOZ6NQg.jpg"
+            "image": "https://i.imgur.com/AOZ6NQg.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_hazvfvun0c"
         },
         {
             "title": "NITK SURATHKAL",
-            "image": "https://i.imgur.com/pF3yyGe.jpg"
+            "image": "https://i.imgur.com/pF3yyGe.jpg",
+            "url": "https://www.vlab.co.in/?sub=71&brch=7"
         },
         {
             "title": "COE PUNE",
-            "image": "https://i.imgur.com/u8ZjM3t.jpg"
+            "image": "https://i.imgur.com/u8ZjM3t.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_k1d13trl0c"
         }
     ],
     "overview": {

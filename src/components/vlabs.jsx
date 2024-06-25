@@ -57,16 +57,18 @@ function InstContainer() {
         <div className="institutes-container">
             <div className="institutes-grid">
                 {data.institutes.map((institute, index) => (
-                    <div key={index} className="institute-card">
-                        <img
-                            src={institute.image}
-                            alt={institute.title}
-                            className="institute-image"
-                        />
-                        <div className="institute-info">
-                            <h2 className="institute-title">{institute.title}</h2>
+                    <a href={institute.url} target="_blank">
+                        <div key={index} className="institute-card">
+                            <img
+                                src={institute.image}
+                                alt={institute.title}
+                                className="institute-image"
+                            />
+                            <div className="institute-info">
+                                <h2 className="institute-title">{institute.title}</h2>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 ))}
             </div>
         </div>
@@ -94,7 +96,6 @@ function OvwContainer() {
             </div>
 
             <div className="requirements-section">
-                <h3 className="requirements-title">Requirements</h3>
                 <p className="requirements-text">{data.overview.requirements}</p>
             </div>
         </div>)
