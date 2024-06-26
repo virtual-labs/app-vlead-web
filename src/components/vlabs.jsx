@@ -60,11 +60,9 @@ function InstContainer() {
                 {data.institutes.map((institute, index) => (
                     <a href={institute.url} target="_blank">
                         <div key={index} className="institute-card">
-                            <img
-                                src={institute.image}
-                                alt={institute.title}
-                                className="institute-image"
-                            />
+                            <div className="image-container">
+                                <img src={institute.image} alt={institute.title} className="overview-image" />
+                            </div>
                             <div className="institute-info">
                                 <h2 className="institute-title">{institute.title}</h2>
                             </div>

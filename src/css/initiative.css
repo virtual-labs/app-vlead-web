@@ -108,7 +108,7 @@
 
 .tw-toggle input[value="users"]:checked~.slider {
     left: 3px;
-    background: #bd97df;
+    background: #a53574;
 }
 
 .tw-toggle input[value="developer"]:checked~.slider {
