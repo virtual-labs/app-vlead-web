@@ -85,14 +85,14 @@ function OvwContainer() {
             <div className="grid-container">
                 {data.overview.points.map((point, i) => (
                     <div key={i} className="grid-item">
-                        <div className="content">
-                            {/* <h2 style={{ fontSize: '30px' }}>{point.title}</h2> */}
-                            <div className="description">
-                                <h2 style={{ fontSize: '20px', opacity: '1'}}>{point.title}</h2>
-                                <p style={{ fontSize: '14px' }}>{point.description}</p>
-                            </div>
-                        </div>
                         <img src={point.image} alt={point.title} className="overview-image" />
+                        <div className="content">
+                            <h2 className="title">{point.title}</h2>
+                        </div>
+                        <div className="description">
+                            <p><strong style={{ color: 'white' }}>{point.title}</strong></p>
+                            <p>{point.description}</p>
+                        </div>
                     </div>
                 ))}
             </div>

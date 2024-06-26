@@ -45,7 +45,7 @@ function InitiativesContainer() {
                             </div>
                             <div className="initiative-details">
                                 <p className="initiative-description" style={{ color: 'black' }}><strong>{initiative.title}</strong>{initiative.description}</p>
-                                <a href={initiative.readmore}>Read More</a>
+                                <a target="_blank" href={initiative.readmore}>Read More</a>
                             </div>
                         </div>
                     ))}
@@ -102,13 +102,14 @@ function PurposeContainer() {
             <p className="purpose-description">{data.purpose.intro}</p>
             <div className="grid-container">
                 {data.purpose.points.map((point, i) => (
-                    <div key={i} className="grid-item">
+                    <div className="grid-item">
+                        <img src={point.image} alt={point.title} className="overview-image" />
                         <div className="content">
-                            <h2>{point.title}</h2>
-                            <div className="description">
-                            <p style={{ fontSize: '20px' }}>{point.title}</p>
-                            <p style={{ fontSize: '14px' }}>{point.description}</p>
-                            </div>
+                            <h2 className="title">{point.title}</h2>
+                        </div>
+                        <div className="description">
+                            <p><strong style={{color: 'white'}}>{point.title}</strong></p>
+                            <p>{point.description}</p>
                         </div>
                     </div>
                 ))}
