@@ -5,7 +5,8 @@ import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import Loader from "./loader";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-const url = "https://script.google.com/macros/s/AKfycbzvYgAwebXfLnmcN0PJmK9AqApj_eeCOqL_J-s25nCkhV-5QKXrxOTUMjHJCSnJTSlu/exec";
+// const url = "https://script.google.com/macros/s/AKfycbzvYgAwebXfLnmcN0PJmK9AqApj_eeCOqL_J-s25nCkhV-5QKXrxOTUMjHJCSnJTSlu/exec";
+const url = "https://script.google.com/macros/s/AKfycbzKiPCROmSgWxprnkwrsTVK9NCGyklOhu7j-1zJSSdBZlEz2evLiQZmq1X9IHVM-O0taQ/exec?q=testimonials";
 
 export default function Testimonials() {
   const [sheetdata, setSheetdata] = useState([]);
@@ -13,7 +14,8 @@ export default function Testimonials() {
 
   const FetchData = async () => {
     const response = await fetch(url);
-    const data = await response.json();
+    const responseData = await response.json();
+    const data = responseData.data.data;
 
     const extractedTestimonials = data.map((row) => {
       const [associationType, year, testimonial] = row;
@@ -23,9 +25,11 @@ export default function Testimonials() {
     setSheetdata(extractedTestimonials);
     setLoaded(true);
   };
+
   useEffect(() => {
     FetchData();
   }, []);
+
   const ViewMore = () => {
     setLoaded(false);
     FetchData();

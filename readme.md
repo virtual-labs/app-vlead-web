@@ -92,8 +92,8 @@ In the *Pages* folder, each file is rendered as a page with the file name as par
     Swiper-library has been used for sliding view of the cards. Its attributes can be changed from the arguments passed to <swiper-container /> The library has been imported using cdn : https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css
 - *VLEAD PAGE* -: To navigate here, use the About option on the navbar. This page has the profiles of all members of the VLEAD, Vlabs Team. The cards are an external component imported from "yatharth-super-lemon" in components/people_card.jsx. The team member details is fetched from the sheet api: https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec  
     For fetching current team members list, add "?q=current" to the end of the url. For past members, add "?q=past". 
-    The testimonial details are fetched from the sheet api: https://script.google.com/macros/s/AKfycbzvYgAwebXfLnmcN0PJmK9AqApj_eeCOqL_J-s25nCkhV-5QKXrxOTUMjHJCSnJTSlu/exec
-    The api will fetch 4 random testimonials from the sheet. 
+    The testimonial details are fetched from the sheet api: https://script.google.com/macros/s/AKfycbzKiPCROmSgWxprnkwrsTVK9NCGyklOhu7j-1zJSSdBZlEz2evLiQZmq1X9IHVM-O0taQ/exec?q=testimonials
+    The api will fetch 5 random testimonials from the sheet. 
     The fetch has been performed in people_card.jsx. The details fetched for each member entry in the sheet are passed as parameters to <People_Card/>. The image drive link url is received as a google drive link input and is converted to api format in convert_url function.
     For any modifications or queries regarding the fetched data, please refer to the README provided in the latest version of the Team Details VLEAD google sheet.
     The testimonials are rendered through testimonials.jsx component. The quotes symbols for testimonials have been taken from fontawesome library, imported in components/testimonials.jsx - faQuoteLeft, faQuoteRight. 
