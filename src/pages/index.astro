@@ -6,7 +6,12 @@ import Typewriter from "typewriter-effect";
 import { Icon } from "astro-icon";
 import all from "../home_data.json";
 import "../css/theme.css";
+import "../css/theme.css";
 import { google } from "googleapis";
+import Card1 from '../components/landing-card1-image.jsx'
+import Card2 from '../components/landing-card2.jsx'
+import Card3 from '../components/landing-card3.jsx'
+import Gears from '../components/gears.jsx'
 import Card1 from '../components/landing-card1-image.jsx'
 import Card2 from '../components/landing-card2.jsx'
 import Card3 from '../components/landing-card3.jsx'
@@ -47,6 +52,11 @@ const short_about = all.shorty;
     educator: drop_educator,
     learner: drop_learner,
   };
+  const role_dict = {
+    creator: drop_creator,
+    educator: drop_educator,
+    learner: drop_learner,
+  };
 
   const role = sessionStorage.getItem("role");
   if (role) {
@@ -74,10 +84,16 @@ const short_about = all.shorty;
     bt!.classList.remove("is-hidden");
     bt!.classList.add("active-role");
     bt!.classList.add("flashing");
+    bt!.classList.remove("is-hidden");
+    bt!.classList.add("active-role");
+    bt!.classList.add("flashing");
     bt = role_dict[role_name];
+    bt!.classList.add("active-role");
     bt!.classList.add("active-role");
     sessionStorage.setItem("role", role_name);
     setTimeout(() => {
+      role_box!.classList.add("is-hidden");
+      chevron_cont!.classList.add("is-hidden");
       role_box!.classList.add("is-hidden");
       chevron_cont!.classList.add("is-hidden");
     }, 500);
@@ -92,9 +108,15 @@ const short_about = all.shorty;
   };
 
   dev_button!.addEventListener("click", () => {
+  dev_button!.addEventListener("click", () => {
     rearrange("creator");
     window.location.href = "/app-vlead-web/development/";
+    window.location.href = "/app-vlead-web/development/";
   });
+  teacher_button!.addEventListener("click", () => {
+    rearrange("educator")
+    window.location.href =  "/app-vlead-web/outreach/";
+
   teacher_button!.addEventListener("click", () => {
     rearrange("educator")
     window.location.href =  "/app-vlead-web/outreach/";
@@ -103,8 +125,12 @@ const short_about = all.shorty;
   learner_button!.addEventListener("click", () => {
     rearrange("learner")
     window.location.href =  "/app-vlead-web/experiments/";
+  learner_button!.addEventListener("click", () => {
+    rearrange("learner")
+    window.location.href =  "/app-vlead-web/experiments/";
   });
 
+  chevron!.addEventListener("click", () => {
   chevron!.addEventListener("click", () => {
     scrollTo(chevron_cont);
   });
@@ -112,6 +138,7 @@ const short_about = all.shorty;
   const swiperEl = document.querySelector("swiper-container");
   Object.assign(swiperEl, {
     breakpoints: {
+      0: {
       0: {
         slidesPerView: 3,
       },
@@ -143,6 +170,7 @@ const short_about = all.shorty;
       <Card2 />
       <Card3 />
     </div>
+    
     
   </main>
 </Base>
@@ -200,9 +228,16 @@ const short_about = all.shorty;
   .link-card-grid {
     margin-left: 5rem;
     margin-right: 5rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
     margin-top: 1%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 7rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    /* max-width: 25rem; */
     gap: 2rem;
     padding: 7rem;
     padding-top: 0;
@@ -245,6 +280,8 @@ const short_about = all.shorty;
   .divider {
     display: inline-block;
     width: 2px;
+    height: 30rem;
+    margin-top: 5vh;
     height: 30rem;
     margin-top: 5vh;
     background-image: radial-gradient(var(--dark), transparent);

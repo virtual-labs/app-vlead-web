@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import {PeopleCard} from 'cmp-exp-browser'
+import {PeopleCard} from 'cmp-exp-browser'
 import Loader from "./loader.jsx";
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
@@ -38,12 +39,45 @@ export function People_Card_Component_Current () {
                 c["Associations"].map((a,j)=>{
 
 
+
+
                   const assoc = {
                     name: a["Association Type"],
                     joining: a["Joining(mmm-yy)"],
                     leaving: a["Leaving(mmm-yy)"],
+                    leaving: a["Leaving(mmm-yy)"],
                     projects: []
                   };
+
+                  // if(assoc.joining)
+                  // {
+                  //   if(assoc.joining !== "present")
+                  //   {
+                  //     assoc.joining = a["Joining(mmm-yy)"].slice(0,7);
+                  //     console.log("1: ", assoc.joining);
+                  //     let j = "";
+                  //     j += months[Number(a["Joining(mmm-yy)"].slice(5,7))];
+                  //     j += " ";
+                  //     j += assoc.joining.slice(0,4);
+
+                  //     assoc.joining = j;
+                  //     console.log("2. ", assoc.joining);
+                  //   }
+                  // }
+                  // if(assoc.leaving)
+                  // {
+                  //   if(assoc.leaving !== "present")
+                  //   {
+                  //     assoc.leaving = a["Leaving(mmm-yy)"].slice(0,7);
+                      
+                  //     let l = "";
+                  //     l += months[Number(a["Leaving(mmm-yy)"].slice(5,7))];
+                  //     l += " ";
+                  //     l += assoc.leaving.slice(0,4);
+
+                  //     assoc.leaving = l;
+                  //   }
+                  // }
                   
                   a["Projects"].map((p,k)=>{
                     assoc.projects.push({
@@ -55,9 +89,11 @@ export function People_Card_Component_Current () {
 
                   associations.push(assoc);
                   
+                  
                 })
 
                 return(
+                    <PeopleCard key={i} UserData={{
                     <PeopleCard key={i} UserData={{
                         present: true,
                         display_name: c["Display Name"],
@@ -120,6 +156,7 @@ export function People_Card_Component_Past () {
                   name: a["Association Type"],
                   joining: a["Joining(mmm-yy)"],
                   leaving: a["Leaving(mmm-yy)"],
+                  leaving: a["Leaving(mmm-yy)"],
                   projects: []
                 };
 
@@ -136,6 +173,7 @@ export function People_Card_Component_Past () {
               })
 
               return(
+                  <PeopleCard key={i} UserData={{
                   <PeopleCard key={i} UserData={{
                       present: false,
                       display_name: c["Display Name"],
