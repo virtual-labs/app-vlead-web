@@ -6,7 +6,7 @@ import Loader from "./loader";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 // const url = "https://script.google.com/macros/s/AKfycbzvYgAwebXfLnmcN0PJmK9AqApj_eeCOqL_J-s25nCkhV-5QKXrxOTUMjHJCSnJTSlu/exec";
-const url = "https://script.google.com/macros/s/AKfycbzKiPCROmSgWxprnkwrsTVK9NCGyklOhu7j-1zJSSdBZlEz2evLiQZmq1X9IHVM-O0taQ/exec?q=testimonials";
+const url = "https://script.google.com/macros/s/AKfycbyGnquiCXAdpFSJaJo2mJDB5wDfRPh_p67L98FzCaYboOWzsMYYLiJ0vpeh9FP0nrdMXw/exec?q=testimonials";
 
 export default function Testimonials() {
   const [sheetdata, setSheetdata] = useState([]);
@@ -15,7 +15,7 @@ export default function Testimonials() {
   const FetchData = async () => {
     const response = await fetch(url);
     const responseData = await response.json();
-    const data = responseData.data.data;
+    const data = responseData.data;
 
     const extractedTestimonials = data.map((row) => {
       const [associationType, year, testimonial] = row;

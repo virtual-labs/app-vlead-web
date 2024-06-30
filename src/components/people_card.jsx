@@ -9,13 +9,13 @@ export function People_Card_Component_Current () {
     
     const [content, setContent] = useState({});
     const [loaded, setLoaded] = useState(false);
-    const url ="https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec?q=current";
+    const url ="https://script.google.com/macros/s/AKfycbyGnquiCXAdpFSJaJo2mJDB5wDfRPh_p67L98FzCaYboOWzsMYYLiJ0vpeh9FP0nrdMXw/exec?q=people&status=current";
 
     useEffect(() => {
       const abc = async () => {
         const response = await fetch(url);
         const text = await response.json();
-        const data = text.data.data;
+        const data = text.data;
         console.log("data: ", data);
         setContent(data);
         setLoaded(true);
@@ -88,13 +88,13 @@ export function People_Card_Component_Past () {
   const [content, setContent] = useState({});
   const [loaded, setLoaded] = useState(false);
 
-  const url ="https://script.google.com/macros/s/AKfycbyvD_OVuhxgdgxTxoFMV4Jes40VtmH4SWRradzivUhknlPr-BepBeGp1IzrPcd9G-CftA/exec?q=past";
+  const url ="https://script.google.com/macros/s/AKfycbyGnquiCXAdpFSJaJo2mJDB5wDfRPh_p67L98FzCaYboOWzsMYYLiJ0vpeh9FP0nrdMXw/exec?q=people&status=past";
 
   useEffect(() => {
     const abc = async () => {
       const response = await fetch(url);
       const text = await response.json();
-      const data = text.data.data;
+      const data = text.data;
       console.log(data);
       setContent(data);
       setLoaded(true);

@@ -1,40 +1,47 @@
-import React, { useState } from 'react'; // Import React
+import { useState, useEffect } from 'react';
 import data from "../about_data.json";
 import SmallTimeline from "./smalltimeline";
 import '../css/timeline.css';
 
+
 function Timeline() {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
-  
-  const handleResize = () => {
-    setIsLargeScreen(window.innerWidth > 1000);
-  };
-  
-  React.useEffect(() => {
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 1000);
+    };
+
     window.addEventListener("resize", handleResize);
     handleResize(); // Check initial screen size
-  
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
+  if (!isLargeScreen) {
+    return <SmallTimeline data={data} />;
+  }
+
   return (
-    <>
-      {!isLargeScreen ? (
-        <SmallTimeline data={data} />
-      ) : (
-        <div class="timeline">
+    <div className="timeline-wrapper">
+      <div className="container" id="container">
+        <div className="timeline"></div>
+        <div className="entries" id="entries">
           {data.phases.map((phase, index) => (
-            <div key={index} className="timeline-content">
-              <div className="timeline-period">{phase.years}</div>
-              <div className="timeline-title">{phase.phase}</div>
-              <pre>{phase.description}</pre>
+            <div key={index} className="entry">
+              <div className="dot"></div>
+              <div className="label">
+                <div className="time">{phase.years}</div>
+                <div className="detail">{phase.phase}</div>
+              </div>
+              <div className="timepass"><pre>{phase.description}</pre></div>
             </div>
           ))}
         </div>
-      )}
-    </>
+      </div>
+    </div>
   );
 }
 
