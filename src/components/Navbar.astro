@@ -141,51 +141,46 @@ import Stats from "./stats";
   const role = sessionStorage.getItem("role");
   if (role) {
     document.getElementById("choose-drop")!.classList.remove("is-hidden");
-    role_dict[role].classList.remove("is-hidden");
-    if (role == "creator") {
-      document.getElementById("drop-creator")!.classList.add("active-role");
-    } else if (role == "educator") {
-      document.getElementById("drop-educator")!.classList.add("active-role");
-    } else if (role == "learner") {
-      document.getElementById("drop-learner")!.classList.add("active-role");
-    }
+    sessionStorage.setItem("role", role);
   }
-
   const drop_creator = document.getElementById("drop-creator")!;
   drop_creator.addEventListener("click", () => {
-    document.getElementById("drop-creator")!.classList.add("active-role");
-    document.getElementById("drop-educator")!.classList.remove("active-role");
-    document.getElementById("drop-learner")!.classList.remove("active-role");
     sessionStorage.setItem("role", "creator");
   });
   const drop_educator = document.getElementById("drop-educator")!;
   drop_educator.addEventListener("click", () => {
-    document.getElementById("drop-creator")!.classList.remove("active-role");
-    document.getElementById("drop-educator")!.classList.add("active-role");
-    document.getElementById("drop-learner")!.classList.remove("active-role");
     sessionStorage.setItem("role", "educator");
   });
   const drop_learner = document.getElementById("drop-learner")!;
   drop_learner.addEventListener("click", () => {
-    document.getElementById("drop-creator")!.classList.remove("active-role");
-    document.getElementById("drop-educator")!.classList.remove("active-role");
-    document.getElementById("drop-learner")!.classList.add("active-role");
     sessionStorage.setItem("role", "learner");
   });
 </script>
 
 <script>
-  const clickables = document.querySelectorAll(".clickable");
+  const clickableItems = document.querySelectorAll(".clickable");
+  let lastClickedItem = null;
 
-  clickables.forEach((element) => {
-    element.addEventListener("click", () => {
-      clickables.forEach((e) => {
-        e.classList.remove("is-active");
-        e.classList.remove("has-text-weight-bold");
-      });
-      element.classList.add("is-active");
-      element.classList.add("has-text-weight-bold");
+  clickableItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      if (lastClickedItem) {
+        lastClickedItem.classList.remove("has-text-weight-bold");
+      }
+      item.classList.add("has-text-weight-bold");
+      lastClickedItem = item;
+      sessionStorage.setItem("lastClickedNavItem", item.id);
     });
+  });
+
+  window.addEventListener("load", () => {
+    const lastClickedItemId = sessionStorage.getItem("lastClickedNavItem");
+    if (lastClickedItemId) {
+      const item = document.getElementById(lastClickedItemId);
+      if (item) {
+        item.classList.add("has-text-weight-bold");
+        lastClickedItem = item;
+      }
+    }
   });
 </script>
 
@@ -246,15 +241,18 @@ import Stats from "./stats";
     <div class="navbar-end">
       <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drops">
         <a class="navbar-link is-size-5"> About</a>
-
         <div class="navbar-dropdown">
-          <a class="navbar-item px-2" id="create" href="/app-vlead-web/Vlabs/">
+          <a
+            class="navbar-item px-2 clickable"
+            id="about-virtual-labs"
+            href="/app-vlead-web/Vlabs/"
+          >
             Virtual Labs
           </a>
           <hr class="navbar-divider" />
           <a
-            class="navbar-item px-2"
-            id="outreach"
+            class="navbar-item px-2 clickable"
+            id="about-vlead"
             href="/app-vlead-web/vlead/"
           >
             VLEAD
@@ -264,31 +262,30 @@ import Stats from "./stats";
 
       <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drop">
         <a class="navbar-link is-size-5"> I am</a>
-
         <div class="navbar-dropdown">
           <a
-            class="navbar-item px-2 theme"
+            class="navbar-item px-2 theme clickable"
             id="drop-learner"
             href="/app-vlead-web/experiments/"
           >
-            Learner</a
-          >
+            Learner
+          </a>
           <hr class="navbar-divider" />
           <a
-            class="navbar-item px-2 theme"
+            class="navbar-item px-2 theme clickable"
             id="drop-educator"
             href="/app-vlead-web/outreach/"
           >
-            Educator</a
-          >
+            Educator
+          </a>
           <hr class="navbar-divider" />
           <a
-            class="navbar-item px-2 theme"
+            class="navbar-item px-2 theme clickable"
             id="drop-creator"
             href="/app-vlead-web/development/"
           >
-            Creator</a
-          >
+            Creator
+          </a>
         </div>
       </div>
       <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drops">
@@ -508,14 +505,14 @@ import Stats from "./stats";
     width: 30px;
     padding-top: 0.5vh;
   }
-  .active-role {
+  /* .active-role {
     background-color: var(--primary) !important;
     color: var(--white);
-  }
-  .active-role.dark {
+  } */
+  /* .active-role.dark {
     background-color: var(--primary-dark) !important;
-  }
-  a.navbar-item.is-active {
+  } */
+  /* a.navbar-item.is-active {
     color: var(--background-dark);
-  }
+  } */
 </style>

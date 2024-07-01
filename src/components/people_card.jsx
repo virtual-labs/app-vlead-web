@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import {PeopleCard} from 'cmp-exp-browser'
-import {PeopleCard} from 'cmp-exp-browser'
 import Loader from "./loader.jsx";
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
@@ -94,7 +93,6 @@ export function People_Card_Component_Current () {
 
                 return(
                     <PeopleCard key={i} UserData={{
-                    <PeopleCard key={i} UserData={{
                         present: true,
                         display_name: c["Display Name"],
                         full_name: c["Full Name"],
@@ -173,7 +171,6 @@ export function People_Card_Component_Past () {
               })
 
               return(
-                  <PeopleCard key={i} UserData={{
                   <PeopleCard key={i} UserData={{
                       present: false,
                       display_name: c["Display Name"],

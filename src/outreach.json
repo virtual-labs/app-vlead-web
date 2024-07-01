@@ -8,7 +8,7 @@
         {
             "name": "Report a Workshop",
             "type": "markdown",
-            "url":"https://raw.githubusercontent.com/virtual-labs/app-outreach-tracker-web/main/docs/nc-help-doc.md"
+            "url":"https://raw.githubusercontent.com/virtual-labs/app-outreach-tracker-web/dev/docs/nc-help-doc.md"
         }, 
         {
             "name":"Workshop Data Summary",
