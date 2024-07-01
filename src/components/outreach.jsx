@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Devcontent } from "./Devcontent";
 import Faqs from "./faqs";
@@ -30,6 +30,31 @@ export const OutreachContent = () => {
     const displayDiv = document.getElementById('display-div');
     const galDiv = document.getElementById('GAL');
 
+    function handleInitialHash() {
+        const hash = window.location.hash.slice(1);
+        if (hash) {
+            const correspondingAnchor = document.querySelector(`a[href="#${hash}"]`);
+            if (correspondingAnchor) {
+                const nearestSpan = correspondingAnchor.querySelector('span');
+                if (nearestSpan) {
+                    nearestSpan.click();
+                    console.log(nearestSpan);
+                } else {
+                    correspondingAnchor.click();
+                    console.log(correspondingAnchor);
+                }
+            } else {
+                console.log('No corresponding anchor found');
+            }
+        } else {
+            console.log('No hash in URL');
+        }
+    }
+
+    useEffect(() => {
+        handleInitialHash();
+    }, []);
+
     function ChangeActiveClass(event) {
         const activeElements = document.querySelectorAll('.is-active');
         activeElements.forEach(element => {
@@ -53,6 +78,7 @@ export const OutreachContent = () => {
 
     document.body.addEventListener('click', (event) => {
         const target = event.target;
+        console.log(target);
         if (target.matches('#markdown_display')) {
             handleAnchorClick(event, 'markdown');
         } else if (target.matches('#iframe')) {
