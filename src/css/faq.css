@@ -13,25 +13,11 @@
 }
 
 .answer {
-.answer {
     background-color: var(--docs);
 }
 
 .faq-container {
-
-.faq-container {
     padding-top: 70px;
-}
-
-.faq-workshops_faq {
-    width: 95%;
-    margin: auto;
-    margin-top: 2%;
-    color: black;
-    background-color: #fff;
-    border-radius: 1rem;
-    border-top-right-radius: 0%;
-    border-bottom-right-radius: 0%;
 }
 
 .faq-workshops_faq {

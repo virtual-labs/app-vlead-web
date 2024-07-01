@@ -42,7 +42,7 @@ export const OutreachContent = () => {
     }
 
     function handleAnchorClick(event, type) {
-        event.preventDefault();
+        // event.preventDefault();
         showMarkdownDisplay();
         ChangeActiveClass(event);
         const url = event.target.dataset.category;
