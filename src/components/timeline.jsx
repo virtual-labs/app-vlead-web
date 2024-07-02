@@ -36,7 +36,19 @@ function Timeline() {
                 <div className="time">{phase.years}</div>
                 <div className="detail">{phase.phase}</div>
               </div>
-              <div className="timepass"><pre>{phase.description}</pre></div>
+              <div className="timepass">
+                <ul className="description-preview">
+                  {phase.description.slice(0, 2).map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                  {phase.description.length > 2 && <li>...</li>}
+                </ul>
+                <ul className="description-full">
+                  {phase.description.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

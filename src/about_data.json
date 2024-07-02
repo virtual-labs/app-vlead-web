@@ -3,22 +3,59 @@
         {
             "phase": "Phase-1",
             "years": "2009 - 2013",
-            "description": "Development of 27 Labs\n260 experiments across 4 domains\nOutreach Workshops"
+            "description": [
+                "260 experiments across 4 domains",
+                "Development of 27 Labs",
+                "Outreach Workshops"
+            ]
         },
         {
             "phase": "Phase-2",
             "years": "2014 - 2017",
-            "description": "Virtual Labs Platform on Open edX\nFOSS Conversion Methodology\nCentralized Integration Platform\nLab Hosting on Central Cloud\nPerformance Enhancements\nVersion Control on GitHub\nSecurity Enhancements\nIntegration Workshops\nLab Development Kits\nMaintenance of Labs\nOutreach Portal"
+            "description": [
+                "Virtual Labs Platform on Open edX",
+                "Centralized Integration Platform",
+                "Lab Hosting on Central Cloud",
+                "FOSS Conversion Methodology",
+                "Version Control on GitHub",
+                "Performance Enhancements",
+                "Integration Workshops",
+                "Security Enhancements",
+                "Lab Development Kits",
+                "Maintenance of Labs",
+                "Outreach Portal"
+            ]
         },
         {
             "phase": "Phase-3",
             "years": "2018 - 2020",
-            "description": "Centralized Analytics Reporting\nDevelopment of 2 CS Labs - 23 Data Structures experiments\nFOSS Conversion of 26 Labs\nAutomated Network Clusters\nPerformance Enhancements\nSecurity Enhancements\nPilot Translation of 2 Labs - Translated into Hindi & Telugu\nSummer/Winter/Remote Internships\nUniform UI across labs\nDeveloper Workshops\nMaintenance of Labs"
+            "description": [
+                "Summer/Winter/Remote Internships",
+                "Centralized Analytics Reporting",
+                "Pilot Translation of 2 Labs",
+                "FOSS Conversion of 26 Labs",
+                "Automated Network Clusters",
+                "Development of 2 CS Labs",
+                "Performance Enhancements",
+                "Uniform UI across labs",
+                "Security Enhancements",
+                "Developer Workshops",
+                "Maintenance of Labs"
+            ]
         },
         {
             "phase": "Ext-Phase-3",
             "years": "2021 - 2026",
-            "description": "Development of 16 Labs - Year 1 & 2\n140 experiments across 4 domains\nAutomated Lab Deployment Tool\nEnhanced Cloud Architecture\nCommon Developer Tools\nVirtual Labs Mobile App"
+            "description": [
+                "Creation of an Outreach Tracker Tool",
+                "Development of 16 Labs - Year 1 & 2",
+                "Development of a Centralized Question Bank",
+                "140 experiments across 4 domains",
+                "Automated Lab Deployment Tool",
+                "Enhanced Cloud Architecture",
+                "Virtual Labs Mobile App",
+                "Common Developer Tools"
+            ]
         }
     ],
     "initiatives": {
@@ -285,8 +322,8 @@
         }
     ],
     "overview": {
-        "description":"Virtual Labs, an MHRD project under NMEICT, offers free remote laboratory learning experiences. Workshops and nodal centers support institute partnerships within the Virtual Labs consortium. The project, led by IIT Delhi and involving twelve institutes, provides over 100 Virtual Labs and 700+ web-enabled experiments across various domains using open-source technologies. These simulations are accessible online without any additional infrastructure or fees.",
-        "points":[
+        "description": "Virtual Labs, an MHRD project under NMEICT, offers free remote laboratory learning experiences. Workshops and nodal centers support institute partnerships within the Virtual Labs consortium. The project, led by IIT Delhi and involving twelve institutes, provides over 100 Virtual Labs and 700+ web-enabled experiments across various domains using open-source technologies. These simulations are accessible online without any additional infrastructure or fees.",
+        "points": [
             {
                 "title": "Students",
                 "description": "Gain hands-on practical experience and enhance their learning through interactive and remote experiments.",
@@ -346,7 +383,7 @@
                 "title": "Researchers",
                 "description": "Access versatile simulation tools for conducting experiments and validating theoretical models remotely.",
                 "image": "https://i.imgur.com/otHcS5V.jpg"
-            }            
+            }
         ]
     },
     "testimonials": [
@@ -370,6 +407,5 @@
             "author": "Radheshyam Acholia",
             "inst": "Chameli Devi Group of Institution, Indore"
         }
-
     ]
 }

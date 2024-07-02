@@ -2,14 +2,14 @@
 
 .timeline-wrapper {
     height: 100%;
-    min-height: 500px;
+    min-height: 550px;
     overflow-x: auto;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .container {
     height: 100%;
-    min-height: 500px;
+    min-height: 550px;
     position: relative;
     padding: 2rem 0;
 }
@@ -40,7 +40,7 @@
     width: 200px;
     margin-left: 3rem;
     margin-right: 3.5rem;
-    text-align: center;
+    /* text-align: center; */
     position: relative;
 }
 
@@ -100,17 +100,17 @@
 }
 
 .detail {
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 .timepass {
-    display: none;
+    display: block;
     position: absolute;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 1rem;
     padding: 10px;
-    width: auto;
+    width: 270px;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -121,6 +121,43 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.entry:hover .timepass {
+.description-preview,
+.description-full {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.description-preview li,
+.description-full li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 5px;
+}
+
+.description-preview li:before,
+.description-full li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #5dd0c9;
+}
+
+.description-preview {
+    max-height: 100px;
+    overflow: hidden;
+}
+
+.description-full {
+    display: none;
+    max-height: auto;
+    overflow-y: auto;
+}
+
+.entry:hover .description-preview {
+    display: none;
+}
+
+.entry:hover .description-full {
     display: block;
 }
