@@ -35,10 +35,20 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.institutes {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(115, 240, 234);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .section-title {
     color: #2c3e50;
     border-bottom: 2px solid #3498db;
     padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .list {
@@ -49,15 +59,24 @@
 
 .list-item {
     margin-bottom: 10px;
-    padding: 10px;
-    background-color: #ecf0f1;
+    padding: 5px;
+    background-color: #ffffff;
+    padding-left: 20px;
     border-radius: 5px;
     transition: transform 0.2s ease, background-color 0.2s ease;
+    position: relative;
 }
 
 .list-item:hover {
     transform: translateX(5px);
-    background-color: #e0e6e8;
+    background-color: #e6ecee;
+}
+
+.list-item::before {
+    content: "•";
+    position: absolute;
+    left: 7px;
+    color: #000;
 }
 
 .institutes-container {

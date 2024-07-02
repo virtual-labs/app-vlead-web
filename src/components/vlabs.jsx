@@ -35,7 +35,7 @@ function Testimonials() {
 function ObjContainer() {
     return (
         <div className="objectives-philosophy">
-            <h1 className="section-title"><strong>Objectives</strong></h1>
+            <h1 className="section-title"><strong>Goals</strong></h1>
             <ul className="list">
                 {data.objectives.map((objective, i) => (
                     <li key={i} className="list-item">{objective}</li>
@@ -55,20 +55,22 @@ function ObjContainer() {
 
 function InstContainer() {
     return (
-        <div className="institutes-container">
-            <div className="institutes-grid">
-                {data.institutes.map((institute, index) => (
-                    <a href={institute.url} target="_blank">
-                        <div key={index} className="institute-card">
-                            <div className="image-container">
-                                <img src={institute.image} alt={institute.title} className="overview-image" />
+        <div className="institutes">
+            <div className="institutes-container">
+                <div className="institutes-grid">
+                    {data.institutes.map((institute, index) => (
+                        <a href={institute.url} target="_blank">
+                            <div key={index} className="institute-card">
+                                <div className="image-container">
+                                    <img src={institute.image} alt={institute.title} className="overview-image" />
+                                </div>
+                                <div className="institute-info">
+                                    <h2 className="institute-title">{institute.title}</h2>
+                                </div>
                             </div>
-                            <div className="institute-info">
-                                <h2 className="institute-title">{institute.title}</h2>
-                            </div>
-                        </div>
-                    </a>
-                ))}
+                        </a>
+                    ))}
+                </div>
             </div>
         </div>
     );

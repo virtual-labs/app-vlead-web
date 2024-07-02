@@ -188,6 +188,11 @@
                 "title": "Outreach",
                 "description": "Conducting outreach activities in Andhra Pradesh and Telangana.",
                 "image": "https://i.imgur.com/JpUhvBB.jpg"
+            },
+            {
+                "title": "Digital Content Creation",
+                "description": "Using state of the art digital classroom to create multimedia content and stream video lectures to complement Virtual Lab experiments.",
+                "image": "https://i.imgur.com/rNFcGRJ.jpg"
             }
         ]
     },
@@ -197,16 +202,16 @@
         "The Virtual Labs project also seeks to create a network of researchers across different institutes, who can collaborate and share resources, thereby promoting the exchange of knowledge and ideas. Importantly, the project's content and teaching resources are designed to benefit engineering colleges and other institutions, making it a highly inclusive and impactful initiative."
     ],
     "objectives": [
-        "To provide remote-access to simulation-based Labs in various disciplines of Science and Engineering.",
-        "To enthuse students to conduct experiments by arousing their curiosity. This would help them in learning basic and advanced concepts through remote experimentation.",
-        "To provide a complete Learning Management System around the Virtual Labs where the students/ teachers can avail the various tools for learning, including additional web-resources, video-lectures, animated demonstrations and self-evaluation."
+        "To offer a remote learning experience with simulated experiments in diverse areas of Science and Engineering.",
+        "To engage students by sparking their curiosity, allowing them to learn fundamental and complex concepts through remote experimentation.",
+        "To present a complete Learning Management System around the Virtual Labs, where students and teachers can utilize various tools for learning, including supplemental web-resources, video-lectures, animated demonstrations, and self-evaluation."
     ],
     "philosophy": {
         "decsription": "Good lab facilities and updated lab experiments are critical for any engineering college. Paucity of lab facilities often make it difficult to conduct experiments. Also, good teachers are always a scarce resource. The Virtual Labs project addresses this issue of lack of good lab facilities, as well as trained teachers, by providing remote-access to simulation-based Labs in various disciplines of science and engineering. Yet another objective is to arouse the curiosity of the students and permit them to learn at their own pace. This student-centric approach facilitates the absorption of basic and advanced concepts through simulation-based experimentation. Internet-based experimentation further permits use of additional web-resources, video-lectures, animated demonstrations and self-evaluation. Specifically, the Virtual Labs project addresses the following:",
         "points": [
-            "Access to online labs to those engineering colleges that lack these lab facilities",
-            "Access to online labs as a complementary facility to those colleges that already have labs",
-            "Training and skill-set augmentation through workshops and on-site/ online training"
+            "Bridging the gap for colleges that lack lab facilities: Provide online labs as a substitute for hands-on lab work in engineering colleges that do not have the necessary equipment.",
+            "Enhancing existing labs with online resources: Expand the capabilities of existing labs with online labs to complement and augment the learning experience of engineering students.",
+            "Empowering educators through specialized workshops: Offer workshops on-site or online to enhance the skill set and proficiency of educators in the effective use of online labs in engineering education."
         ],
         "conclusion": "Virtual labs are any place, any pace, any-time, any-type labs. It is a paradigm shift in student-centric, online education."
     },
@@ -224,6 +229,41 @@
     ],
     "institutes": [
         {
+            "title": "AMRITA VISHWA VIDYAPEETHAM",
+            "image": "https://i.imgur.com/gEpkN9H.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/M1UPB"
+        },
+        {
+            "title": "COE PUNE",
+            "image": "https://i.imgur.com/IyKnKHV.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_k1d13trl0c"
+        },
+        {
+            "title": "DAYALBAGH EDUCATIONAL INSTITUTE",
+            "image": "https://i.imgur.com/HHM3L0F.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_hazvfvun0c"
+        },
+        {
+            "title": "IIT BOMBAY",
+            "image": "https://i.imgur.com/FOGjCZJ.png",
+            "url": "https://lookerstudio.google.com/embed/u/0/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_kgv1t9wy0c"
+        },
+        {
+            "title": "IIT DELHI",
+            "image": "https://i.imgur.com/LAIiAGF.png",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_e13vjdxy0c"
+        },
+        {
+            "title": "IIT GUWAHATI",
+            "image": "https://i.imgur.com/oVIlBjA.png",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_gx2abgxy0c"
+        },
+        {
+            "title": "IIT KANPUR",
+            "image": "https://i.imgur.com/FaohxU2.png",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_ifh10ixy0c"
+        },
+        {
             "title": "IIT KHARAGPUR",
             "image": "https://i.imgur.com/f550atE.jpg",
             "url": "https://www.vlab.co.in/?sub=71&brch=7"
@@ -234,74 +274,79 @@
             "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_43b31nxy0c"
         },
         {
-            "title": "IIT GUWAHATI",
-            "image": "https://i.imgur.com/oVIlBjA.png",
-            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_gx2abgxy0c"
-        },
-        {
-            "title": "IIT DELHI",
-            "image": "https://i.imgur.com/LAIiAGF.png",
-            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_e13vjdxy0c"
-        },
-        {
-            "title": "IIT BOMBAY",
-            "image": "https://i.imgur.com/FOGjCZJ.png",
-            "url": "https://lookerstudio.google.com/embed/u/0/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_kgv1t9wy0c"
-        },
-        {
-            "title": "IIT KANPUR",
-            "image": "https://i.imgur.com/FaohxU2.png",
-            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_ifh10ixy0c"
-        },
-        {
             "title": "IIIT HYDERABAD",
             "image": "https://i.imgur.com/CCcZTFi.png",
             "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_vg67w6wy0c"
         },
         {
-            "title": "AMRITA VISHWA VIDYAPEETHAM",
-            "image": "https://i.imgur.com/gEpkN9H.jpg",
-            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/M1UPB"
-        },
-        {
-            "title": "DAYALBAGH EDUCATIONAL INSTITUTE",
-            "image": "https://i.imgur.com/HHM3L0F.jpg",
-            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_hazvfvun0c"
-        },
-        {
             "title": "NITK SURATHKAL",
             "image": "https://i.imgur.com/aPDNXRY.jpg",
             "url": "https://www.vlab.co.in/?sub=71&brch=7"
-        },
-        {
-            "title": "COE PUNE",
-            "image": "https://i.imgur.com/IyKnKHV.jpg",
-            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_k1d13trl0c"
         }
     ],
     "overview": {
-        "description":"The Virtual Labs project, an initiative by India's Ministry of Education under the National Mission on Education through ICT (NMEICT), is coordinated by IIT Delhi and involves twelve institutes. It introduces ICT-based remote experimentation with over 100 Virtual Labs and 700+ web-enabled experiments. These simulations can be accessed via the internet without any additional infrastructure or fees at user premises.",
+        "description":"Virtual Labs, an MHRD project under NMEICT, offers free remote laboratory learning experiences. Workshops and nodal centers support institute partnerships within the Virtual Labs consortium. The project, led by IIT Delhi and involving twelve institutes, provides over 100 Virtual Labs and 700+ web-enabled experiments across various domains using open-source technologies. These simulations are accessible online without any additional infrastructure or fees.",
         "points":[
             {
-                "title": "College Students",
-                "description": "All students and Faculty Members of Science and Engineering Colleges who do not have access to good lab-facilities and/or instruments.",
-                "image": "https://i.imgur.com/itvHvYA.jpg"
+                "title": "Students",
+                "description": "Gain hands-on practical experience and enhance their learning through interactive and remote experiments.",
+                "image": "https://i.imgur.com/GC013IH.jpg"
             },
             {
-                "title": "High-School Students",
-                "description": "High-school students, whose inquisitiveness will be triggered, possibly motivating them to take up higher-studies.",
-                "image": "https://i.imgur.com/sopmNg5.jpg"
+                "title": "Faculty",
+                "description": "Access to diverse and versatile teaching tools that help demonstrate complex concepts easily.",
+                "image": "https://i.imgur.com/yXWcFDw.jpg"
+            },
+            {
+                "title": "Subject Matter Experts",
+                "description": "Share expertise by developing and curating high-quality virtual experiments and resources.",
+                "image": "https://i.imgur.com/pK80vvX.jpg"
+            },
+            {
+                "title": "Developers",
+                "description": "Innovate and create advanced educational tools and simulations that improve teaching methodologies.",
+                "image": "https://i.imgur.com/qN4HDKo.jpg"
+            },
+            {
+                "title": "Nodal Centre Community",
+                "description": "Facilitate the distribution and management of virtual labs, ensuring wider accessibility and support.",
+                "image": "https://i.imgur.com/1Cha6AA.jpg"
+            },
+            {
+                "title": "Participating Institutes",
+                "description": "Provide students with practical lab experiences without the need for extensive physical infrastructure.",
+                "image": "https://i.imgur.com/jq8fpio.jpg"
+            },
+            {
+                "title": "Interns",
+                "description": "Gain valuable experience in developing, testing, and refining virtual lab technologies and content.",
+                "image": "https://i.imgur.com/G6MpW4x.jpg"
+            },
+            {
+                "title": "Ministry of Education",
+                "description": "Enhance educational outreach and quality, promoting digital and interactive learning nationwide.",
+                "image": "https://i.imgur.com/QZx85Wd.jpg"
+            },
+            {
+                "title": "Accreditation Bodies",
+                "description": "Ensure educational institutions meet practical training requirements efficiently through verified virtual labs.",
+                "image": "https://i.imgur.com/ULbQbfH.jpg"
+            },
+            {
+                "title": "Service Providers",
+                "description": "Offer technical support and infrastructure for hosting and maintaining virtual lab platforms.",
+                "image": "https://i.imgur.com/ej6pdTJ.jpg"
+            },
+            {
+                "title": "Universities",
+                "description": "Expand their curriculum and research capabilities by integrating advanced virtual lab resources.",
+                "image": "https://i.imgur.com/nWlWVjc.jpg"
             },
             {
                 "title": "Researchers",
-                "description": "Researchers in different institutes who can collaborate and share resources.",
-                "image": "https://i.imgur.com/GhHozLJ.jpg"
-            },
-            {
-                "title": "Institutes",
-                "description": "Different engineering colleges who can benefit from the content and related teaching resources.",
-                "image": "https://i.imgur.com/AOZ6NQg.jpg"
-            }
+                "description": "Access versatile simulation tools for conducting experiments and validating theoretical models remotely.",
+                "image": "https://i.imgur.com/otHcS5V.jpg"
+            }            
         ]
     },
     "testimonials": [
