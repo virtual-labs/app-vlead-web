@@ -76,7 +76,6 @@ export const OutreachContent = () => {
 
     document.body.addEventListener('click', (event) => {
         const target = event.target;
-        console.log(target);
         if (target.matches('#markdown_display')) {
             handleAnchorClick(event, 'markdown');
         } else if (target.matches('#iframe')) {

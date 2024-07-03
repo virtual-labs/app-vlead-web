@@ -37,9 +37,6 @@ export function People_Card_Component_Current () {
 
                 c["Associations"].map((a,j)=>{
 
-
-
-
                   const assoc = {
                     name: a["Association Type"],
                     joining: a["Joining(mmm-yy)"],
@@ -47,36 +44,6 @@ export function People_Card_Component_Current () {
                     leaving: a["Leaving(mmm-yy)"],
                     projects: []
                   };
-
-                  // if(assoc.joining)
-                  // {
-                  //   if(assoc.joining !== "present")
-                  //   {
-                  //     assoc.joining = a["Joining(mmm-yy)"].slice(0,7);
-                  //     console.log("1: ", assoc.joining);
-                  //     let j = "";
-                  //     j += months[Number(a["Joining(mmm-yy)"].slice(5,7))];
-                  //     j += " ";
-                  //     j += assoc.joining.slice(0,4);
-
-                  //     assoc.joining = j;
-                  //     console.log("2. ", assoc.joining);
-                  //   }
-                  // }
-                  // if(assoc.leaving)
-                  // {
-                  //   if(assoc.leaving !== "present")
-                  //   {
-                  //     assoc.leaving = a["Leaving(mmm-yy)"].slice(0,7);
-                      
-                  //     let l = "";
-                  //     l += months[Number(a["Leaving(mmm-yy)"].slice(5,7))];
-                  //     l += " ";
-                  //     l += assoc.leaving.slice(0,4);
-
-                  //     assoc.leaving = l;
-                  //   }
-                  // }
                   
                   a["Projects"].map((p,k)=>{
                     assoc.projects.push({
