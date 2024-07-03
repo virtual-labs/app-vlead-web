@@ -4,7 +4,8 @@
         "docs": [
             {
                 "title": "User Guide",
-                "url": "https://raw.githubusercontent.com/virtual-labs/app-exp-create-web/master/docs/user-doc.md"
+                "url": "https://raw.githubusercontent.com/virtual-labs/app-exp-create-web/master/docs/user-doc.md",
+                "fragment": "user-guide" 
             }
         ],
         "buttons":[
@@ -19,19 +20,23 @@
         "docs": [
             {
                 "title": "Development Process",
-                "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/dev-process/README.md"
+                "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/dev-process/README.md",
+                "fragment": "development-process"
             },
             {
                 "title": "Authoring Environment",
-                "url": "https://raw.githubusercontent.com/virtual-labs/tool-vscode-plugin/main/README.md"
+                "url": "https://raw.githubusercontent.com/virtual-labs/tool-vscode-plugin/main/README.md",
+                "fragment": "authoring-environment"
             },
             {
                 "title": "Best Practices",
-                "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/best-practices/README.md"
+                "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/best-practices/README.md",
+                "fragment": "best-practices"
             },
             {
                 "title": "Hosting Process",
-                "url": "https://raw.githubusercontent.com/virtual-labs/engineers-forum/master/ph4/services/onboarding-hosting-process.md"
+                "url": "https://raw.githubusercontent.com/virtual-labs/engineers-forum/master/ph4/services/onboarding-hosting-process.md",
+                "fragment": "hosting-process"
             }
         ],
         "buttons":[]
@@ -41,11 +46,13 @@
         "docs": [
             {
                 "title": "User Guide",
-                "url": "https://raw.githubusercontent.com/virtual-labs/app-vlabs-pwa/main/docs/user_manual.md"
+                "url": "https://raw.githubusercontent.com/virtual-labs/app-vlabs-pwa/main/docs/user_manual.md",
+                "fragment": "user-guide-pwa"
             },
             {
                 "title": "Content Creator Guide",
-                "url": "https://raw.githubusercontent.com/virtual-labs/app-vlabs-pwa/main/docs/content_creator_manual.md"
+                "url": "https://raw.githubusercontent.com/virtual-labs/app-vlabs-pwa/main/docs/content_creator_manual.md",
+                "fragment": "content-creator-guide"
             }
         ],
         "buttons":[]
@@ -56,7 +63,8 @@
             
             {
                 "title": "Virtual Box Installation",
-                "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/virtual-box/README.md"
+                "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/virtual-box/README.md",
+                "fragment": "virtual-box-installation"
             }
         ],
         "buttons":[

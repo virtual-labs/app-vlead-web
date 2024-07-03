@@ -38,10 +38,8 @@ export const OutreachContent = () => {
                 const nearestSpan = correspondingAnchor.querySelector('span');
                 if (nearestSpan) {
                     nearestSpan.click();
-                    console.log(nearestSpan);
                 } else {
                     correspondingAnchor.click();
-                    console.log(correspondingAnchor);
                 }
             } else {
                 console.log('No corresponding anchor found');
