@@ -117,8 +117,21 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 15px;
+}
+
+@media screen and (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+/* For desktops (minimum width of 1024px) */
+@media screen and (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for desktops */
+    }
 }
 
 .grid-item {
