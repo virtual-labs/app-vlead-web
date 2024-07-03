@@ -54,7 +54,7 @@ const tab = Astro.params;
                                         index++;
                                         return (
                                             <li>
-                                                <a style="background-color: var(--white); color: var(--black)" id={"page-" + index}>
+                                                <a style="background-color: var(--white); color: var(--black)" id={"page-" + index} href={`#${d.url}`}>
                                                     {d.title}
                                                 </a>
                                             </li>
@@ -186,6 +186,60 @@ const tab = Astro.params;
                 });
         }
     }
+
+    function findPageByHash(hash) {
+    for (let i = 1; i <= total; i++) {
+        const pageLink = document.getElementById("page-" + i);
+        if (pageLink && pageLink.getAttribute('href') === hash) {
+            return i;
+        }
+    }
+    return null;
+}
+
+    let initialPage = 1;
+if (document.location.hash) {
+    const pageNumber = findPageByHash(document.location.hash);
+    if (pageNumber) {
+        initialPage = pageNumber;
+    }
+}
+
+if (initialPage === virtualBoxNumber) {
+    document.getElementById("page-" + virtualBoxNumber).style.backgroundColor = "rgb(218,218,218)";
+    document.getElementById("virtual-box").style.display = "block";
+} else {
+    document.getElementById("page-" + initialPage).style.backgroundColor = "rgb(218,218,218)";
+    document.getElementById("react-dev-content-" + initialPage).style.display = "block";
+}
+
+function showPage(pageNumber) {
+    if (pageNumber === virtualBoxNumber) {
+        document.getElementById("page-" + pageNumber).style.backgroundColor = "rgb(218,218,218)";
+        document.getElementById("virtual-box").style.display = "block";
+    } else {
+        document.getElementById("page-" + pageNumber).style.backgroundColor = "rgb(218,218,218)";
+        document.getElementById("react-dev-content-" + pageNumber).style.display = "block";
+    }
+
+    for (let j = 1; j <= total; j++) {
+        if (j === pageNumber) continue;
+        document.getElementById("page-" + j).style.backgroundColor = "white";
+        if (j === virtualBoxNumber) {
+            document.getElementById("virtual-box").style.display = "none";
+        } else {
+            document.getElementById("react-dev-content-" + j).style.display = "none";
+        }
+    }
+}
+
+for (let i = 1; i <= total; i++) {
+    document.getElementById("page-" + i).addEventListener("click", () => showPage(i));
+}
+
+// Initially show the correct page
+showPage(initialPage);
+
 </script>
 
 <style>
