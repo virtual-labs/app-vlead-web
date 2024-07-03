@@ -1,40 +1,57 @@
-name: Deploy Testing Branch
+name: Deploy Astro Site to GitHub Pages
+
 on:
   push:
-    branches: 
+    branches:
       - testing
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup node
-        uses: actions/setup-node@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: '16'
-          check-latest: true
-      - name: Clone app-vlead-web
-        run: git clone --depth=1 https://github.com/virtual-labs/app-vlead-web
-      - name: Build experiment
-        run: |
-          cd ph3-lab-mgmt
-          npm install
-          npm run build-exp
-      - name: Configure Git
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Prepare for deployment
         run: |
           git config --local user.email "admin@vlabs.ac.in"
           git config --local user.name "vleadadmin"
-      - name: Prepare gh-pages
-        run: |
           git checkout --orphan gh-pages
           git reset
-          git add build/* -f
-          git mv build/* ./ -f
-      - name: Commit changes
-        run: git commit -m "https://virtual-labs.github.io/${{ github.event.repository.name }} click on the link to test your code."
+          git add dist/* -f
+          git mv dist/* ./ -f
+          git commit -m "Deploy to GitHub Pages: https://virtual-labs.github.io/${{ github.repository }}"
+
       - name: Push to gh-pages
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.ORG_OWNER_GITHUB_TOKEN }}
-          force: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
+          force: true
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
