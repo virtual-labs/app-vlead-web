@@ -288,28 +288,28 @@ import Stats from "./stats";
           </a>
         </div>
       </div>
-      <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drops">
-        <a class="navbar-link is-size-5"> I want to</a>
 
+      <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drop">
+        <a class="navbar-link is-size-5"> I want to</a>
         <div class="navbar-dropdown">
           <a
-            class="navbar-item px-2"
-            id="create"
+            class="navbar-item px-2 theme clickable"
+            id="create-experiment"
             href="/app-vlead-web/development/"
           >
             Create Experiment
           </a>
           <hr class="navbar-divider" />
           <a
-            class="navbar-item px-2"
-            id="learning"
+            class="navbar-item px-2 theme clickable"
+            id="start-learning"
             href="/app-vlead-web/experiments/"
           >
             Start Learning
           </a>
           <hr class="navbar-divider" />
           <a
-            class="navbar-item px-2"
+            class="navbar-item px-2 theme clickable"
             id="outreach"
             href="/app-vlead-web/outreach/"
           >
@@ -317,7 +317,7 @@ import Stats from "./stats";
           </a>
           <hr class="navbar-divider" />
           <a
-            class="navbar-item px-2"
+            class="navbar-item px-2 theme clickable"
             id="research"
             href="/app-vlead-web/research/"
           >
@@ -325,15 +325,28 @@ import Stats from "./stats";
           </a>
         </div>
       </div>
-
       <Roles client:only />
-      <a
-        class="navbar-item px-2 is-size-5 clickable"
-        id="analytics"
-        href="/app-vlead-web/analytics/"
-      >
-        Analytics
-      </a>
+      <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drops">
+        <a class="navbar-link is-size-5"> Analytics</a>
+        <div class="navbar-dropdown">
+          <a
+            class="navbar-item px-2 clickable"
+            id="summary"
+            href="/app-vlead-web/summary/"
+          >
+            Summary
+          </a>
+          <hr class="navbar-divider" />
+          <a
+            class="navbar-item px-2 clickable"
+            id="Detailed Analysis"
+            href="/app-vlead-web/detailedAnalysis/"
+          >
+            Detailed Analysis
+          </a>
+        </div>
+      </div>
+
       <Stats client:only />
     </div>
   </div>
