@@ -13,7 +13,7 @@ img {
 .ag-timeline-block {
     width: 90vw;
     padding: 50px 0;
-    background-color: #c4c1c1;
+    background-color: #8ce9f0;
 }
 
 .ag-timeline_title-box {
@@ -23,7 +23,6 @@ img {
 
 .ag-timeline_tagline {
     font-size: 40px;
-    color: rgb(84, 89, 95);
 }
 
 .ag-timeline_title {
@@ -103,8 +102,8 @@ img {
     line-height: 50px;
     width: auto;
     padding: 0 20px;
-    border: 3px solid #FF0;
-    background-color: #1d1d1b;
+    border: 3px solid rgb(136, 252, 236);
+    background-color: #05443c;
 
     text-align: center;
     font-family: 'ESL Legend', sans-serif;
@@ -114,7 +113,7 @@ img {
 
 .js-ag-active .ag-timeline-card_point {
     color: #1d1d1b;
-    background-color: #FF0;
+    background-color: rgb(84, 178, 212);
 }
 
 .ag-timeline-card_meta-box {
@@ -128,16 +127,16 @@ img {
     font-family: 'ESL Legend', sans-serif;
     font-weight: bold;
     font-size: 28px;
-    color: #FF0;
+    color: rgb(0, 149, 255);
 }
 
 .ag-timeline-card_item {
     display: inline-block;
     width: 45%;
     margin: -77px 0 0;
-    background-color: #282828;
+    background-color: #006966;
 
-    opacity: 0;
+    opacity: 0.8;
 
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
@@ -187,7 +186,7 @@ img {
     height: 18px;
     width: 18px;
     margin-top: 20px;
-    background-color: #282828;
+    background-color: #006966;
 
     z-index: -1;
     position: absolute;
