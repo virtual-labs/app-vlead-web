@@ -1,29 +1,17 @@
 {
     "phases": [
         {
-            "phase": "Phase-1",
-            "years": "2009 - 2013",
+            "phase": "Ext-Phase-3",
+            "years": "2021 - 2026",
             "description": [
-                "260 experiments across 4 domains",
-                "Development of 27 Labs",
-                "Outreach Workshops"
-            ]
-        },
-        {
-            "phase": "Phase-2",
-            "years": "2014 - 2017",
-            "description": [
-                "Virtual Labs Platform on Open edX",
-                "Centralized Integration Platform",
-                "Lab Hosting on Central Cloud",
-                "FOSS Conversion Methodology",
-                "Version Control on GitHub",
-                "Performance Enhancements",
-                "Integration Workshops",
-                "Security Enhancements",
-                "Lab Development Kits",
-                "Maintenance of Labs",
-                "Outreach Portal"
+                "Creation of an Outreach Tracker Tool",
+                "Development of 16 Labs - Year 1 & 2",
+                "Development of a Centralized Question Bank",
+                "140 experiments across 4 domains",
+                "Automated Lab Deployment Tool",
+                "Enhanced Cloud Architecture",
+                "Virtual Labs Mobile App",
+                "Common Developer Tools"
             ]
         },
         {
@@ -44,17 +32,29 @@
             ]
         },
         {
-            "phase": "Ext-Phase-3",
-            "years": "2021 - 2026",
+            "phase": "Phase-2",
+            "years": "2014 - 2017",
             "description": [
-                "Creation of an Outreach Tracker Tool",
-                "Development of 16 Labs - Year 1 & 2",
-                "Development of a Centralized Question Bank",
-                "140 experiments across 4 domains",
-                "Automated Lab Deployment Tool",
-                "Enhanced Cloud Architecture",
-                "Virtual Labs Mobile App",
-                "Common Developer Tools"
+                "Virtual Labs Platform on Open edX",
+                "Centralized Integration Platform",
+                "Lab Hosting on Central Cloud",
+                "FOSS Conversion Methodology",
+                "Version Control on GitHub",
+                "Performance Enhancements",
+                "Integration Workshops",
+                "Security Enhancements",
+                "Lab Development Kits",
+                "Maintenance of Labs",
+                "Outreach Portal"
+            ]
+        },
+        {
+            "phase": "Phase-1",
+            "years": "2009 - 2013",
+            "description": [
+                "260 experiments across 4 domains",
+                "Development of 27 Labs",
+                "Outreach Workshops"
             ]
         }
     ],
