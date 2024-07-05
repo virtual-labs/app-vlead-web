@@ -227,7 +227,6 @@ img {
     font-family: 'ESL Legend', sans-serif;
     font-weight: bold;
     font-size: 28px;
-    color: #FF0;
 }
 
 .ag-timeline-card_desc {
@@ -237,22 +236,36 @@ img {
     color: #FFF;
 }
 
-@media only screen and (max-width: 979px) {
+@media only screen and (max-width: 768px) {
     .ag-timeline_line {
         left: 30px;
+    }
+
+    .ag-timeline_item {
+        margin-bottom: 50px;
+    }
+
+    .ag-timeline-card_box,
+    .ag-timeline_item:nth-child(2n) .ag-timeline-card_box {
+        padding: 0 0 20px 60px;
+    }
+
+    .ag-timeline-card_item {
+        width: calc(40% - 60px);
+        margin: 10px 0 0 60px;
     }
 
     .ag-timeline_item:nth-child(2n) {
         text-align: left;
     }
 
-    .ag-timeline-card_box,
-    .ag-timeline_item:nth-child(2n) .ag-timeline-card_box {
-        padding: 0 0 20px;
+    .ag-timeline_item:nth-child(2n) .ag-timeline-card_item {
+        margin-left: 60px;
     }
 
     .ag-timeline-card_meta-box {
-        display: none;
+        display: block;
+        margin-bottom: 10px;
     }
 
     .ag-timeline-card_point-box,
@@ -260,77 +273,16 @@ img {
         margin: 0 0 0 8px;
     }
 
+    .ag-timeline_item:nth-child(2n+1) .ag-timeline-card_arrow,
+    .ag-timeline_item:nth-child(2n) .ag-timeline-card_arrow {
+        display: none;
+    }
+
+    .ag-timeline-card_meta {
+        margin: 0;
+    }
+
     .ag-timeline-card_point {
-        height: 40px;
-        line-height: 40px;
-        width: 40px;
+        margin-top: 10px;
     }
-
-    .ag-timeline-card_item {
-        width: auto;
-        margin: -65px 0 0 75px
-    }
-
-    .ag-timeline_item:nth-child(2n+1) .ag-timeline-card_item,
-    .ag-timeline_item:nth-child(2n) .ag-timeline-card_item {
-        -webkit-transform: translateX(200%);
-        -moz-transform: translateX(200%);
-        -ms-transform: translateX(200%);
-        -o-transform: translateX(200%);
-        transform: translateX(200%);
-    }
-
-    .ag-timeline_item:nth-child(2n+1) .ag-timeline-card_arrow {
-        right: auto;
-        left: 0;
-    }
-
-    .ag-timeline-card_title {
-        display: block;
-    }
-
-    .ag-timeline-card_arrow {
-        margin-top: 12px;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .ag-format-container {
-        width: 96%;
-    }
-
-    .ag-timeline-card_img {
-        height: auto;
-        width: auto;
-    }
-}
-
-@media only screen and (max-width: 639px) {
-    .ag-timeline_title {
-        font-size: 60px;
-    }
-
-    .ag-timeline-card_info {
-        padding: 10px 15px;
-    }
-
-    .ag-timeline-card_desc {
-        font-size: 14px;
-    }
-}
-
-@media only screen and (max-width: 479px) {}
-
-@media (min-width: 768px) and (max-width: 979px) {
-    .ag-format-container {
-        width: 750px;
-    }
-
-}
-
-@media (min-width: 980px) and (max-width: 1161px) {
-    .ag-format-container {
-        width: 960px;
-    }
-
 }
