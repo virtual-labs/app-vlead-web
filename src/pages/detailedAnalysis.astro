@@ -2,9 +2,10 @@
 import Base from "../layouts/Base.astro";
 import "../css/theme.css";
 ---
+
 <script>
-  import all from "../analytics_data.json" // get json data 
-  var data = all.institutes 
+  import all from "../analytics_data.json"; // get json data
+  var data = all.institutes;
 
   // Get the dropdown button and menu
   const dropdownButton = document.getElementById("dropdownButton")!;
@@ -22,15 +23,15 @@ import "../css/theme.css";
       "is-flex-direction-column",
       "has-text-centered",
       "total"
-      );
-      div.style.border = "1px solid black";
-      div.style.borderRadius = "10px";
-      const span = document.createElement("span");
-      span.classList.add("column", "py-0");
-      span.textContent = item.heading;
-      const div1 = document.createElement("div");
-      div1.classList.add("column", "image-container");
-      div1.style.padding = "0%";
+    );
+    div.style.border = "1px solid black";
+    div.style.borderRadius = "10px";
+    const span = document.createElement("span");
+    span.classList.add("column", "py-0");
+    span.textContent = item.heading;
+    const div1 = document.createElement("div");
+    div1.classList.add("column", "image-container");
+    div1.style.padding = "0%";
     const img = document.createElement("img");
     img.src = item.image;
     img.style.height = "100px";
@@ -47,7 +48,6 @@ import "../css/theme.css";
   let selectedCard = listItem[0].querySelector("span")!;
   listItem.forEach(function (item) {
     item.addEventListener("click", function (event) {
-
       const with_span = item.querySelector("span")!;
       if (selectedCard) {
         selectedCard.style.boxShadow = "none";
@@ -63,7 +63,7 @@ import "../css/theme.css";
         }
       });
       const iframe = document.querySelector("iframe")!;
-      const new_path = foundItem!.iframe_src
+      const new_path = foundItem!.iframe_src;
       if (new_path != iframe.src) {
         iframe.src = new_path;
       }
@@ -71,17 +71,17 @@ import "../css/theme.css";
     });
   });
 
-  // mobile-mode 
+  // mobile-mode
   // creating elements from json file
   var div = document.createElement("div");
-  div.classList.add('dropdown-menu')
+  div.classList.add("dropdown-menu");
   var div1 = document.createElement("div");
-  div1.classList.add('dropdown-content')
+  div1.classList.add("dropdown-content");
   data.forEach((item) => {
     var a = document.createElement("a");
-    a.classList.add('dropdown-item')
+    a.classList.add("dropdown-item");
     a.textContent = item.heading;
-    div1.appendChild(a)
+    div1.appendChild(a);
   });
   div.appendChild(div1);
   dropdownMenu.appendChild(div);
@@ -105,7 +105,7 @@ import "../css/theme.css";
         }
       });
       const iframe = document.querySelector("iframe")!;
-      const new_path = foundItem.iframe_src
+      const new_path = foundItem.iframe_src;
       if (new_path != iframe.src) {
         iframe.src = new_path;
       }
@@ -113,7 +113,7 @@ import "../css/theme.css";
       event.preventDefault();
     });
   });
-  
+
   // loading iframe
   var iframe = document.querySelector("iframe")!;
   iframe.onload = function () {
@@ -127,35 +127,40 @@ import "../css/theme.css";
 </script>
 
 <Base title="Analytics">
-  <main style=" margin-bottom:2rem; height:auto">
+  <main style=" margin-bottom:2rem">
     <div class="column">
-      <p class="title has-text-white has-text-centered is-size-2">Detailed Analysis</p>
+      <p class="title has-text-white has-text-centered is-size-2">
+        Detailed Analysis
+      </p>
     </div>
-    <div
-      class="dropdown is-hidden-desktop is hidden-tablet ml-5 mb-5"
-      id="dropdown-menu"
-    >
-      <div class="dropdown-trigger">
-        <button class="button box" id="dropdownButton">Summary &#9660;</button>
-      </div>
-    </div>
-    <div class="columns is-desktop mx-0 my-0">
-      <aside
-        class="menu column has-background-white is-one-fifth is-narrow is-hidden-touch mx-5"
-        style="max-height: 130vh; overflow-y: scroll;"
+    <div style="overflow: auto; height:135vh">
+      <div
+        class="dropdown is-hidden-desktop is hidden-tablet ml-5 mb-5"
+        id="dropdown-menu"
       >
-        <ul
-          class="menu-list columns is-multiline is-centered has-text-black"
-          id="listitems"
+        <div class="dropdown-trigger">
+          <button class="button box" id="dropdownButton">Summary &#9660;</button
+          >
+        </div>
+      </div>
+      <div class="columns is-desktop mx-0 my-0">
+        <aside
+          class="menu column has-background-white is-one-fifth is-narrow is-hidden-touch mx-5"
+          style="max-height: 130vh; overflow-y: scroll;"
         >
-        <!-- added institute cards using javascript -->
-        </ul>
-      </aside>
-      <div class="column py-0">
-        <iframe
-          width="100%"
-          src="https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/5fLPB"
-          allowfullscreen></iframe>
+          <ul
+            class="menu-list columns is-multiline is-centered has-text-black"
+            id="listitems"
+          >
+            <!-- added institute cards using javascript -->
+          </ul>
+        </aside>
+        <div class="column py-0">
+          <iframe
+            width="100%"
+            src="https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/5fLPB"
+            allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </main>
