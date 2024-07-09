@@ -1,17 +1,17 @@
 {
     "phases": [
         {
-            "phase": "Ext-Phase-3",
+            "phase": "Extended Phase-3",
             "years": "2021 - 2026",
             "description": [
+                "Development of a National Question Bank",
                 "Creation of an Outreach Tracker Tool",
                 "Development of 16 Labs - Year 1 & 2",
-                "Development of a Centralized Question Bank",
                 "140 experiments across 4 domains",
                 "Automated Lab Deployment Tool",
                 "Enhanced Cloud Architecture",
-                "Virtual Labs Mobile App",
-                "Common Developer Tools"
+                "Common Developer Tools",
+                "Virtual Labs PWA"
             ],
             "image": "https://i.imgur.com/zK3Q8KL.jpg" 
         },
