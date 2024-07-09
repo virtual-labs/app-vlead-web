@@ -82,9 +82,23 @@
             "body":""
         },
         {
-            "title":"FAQ",
+            "title": "Research",
+            "href": "/app-vlead-web/research/",
+            "img": "cards/research.webp",
+            "body": ""
+        }
+    ],
+    "faqs" : [
+        {
+            "title":"Virtual Labs FAQ",
             "href":"/app-vlead-web/faq_page/",
-            "img":"cards/FAQs.webp",
+            "img":"https://i.imgur.com/ZhFf5SE.jpg",
+            "body":""
+        },
+        {
+            "title":"Workshop FAQ",
+            "href":"/app-vlead-web/outreach/#faq",
+            "img":"https://i.imgur.com/on7M1R7.jpg",
             "body":""
         }
     ],

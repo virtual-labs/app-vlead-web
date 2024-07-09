@@ -88,13 +88,16 @@ function Timeline() {
                     <div className="js-timeline-card_point-box ag-timeline-card_point-box">
                       <div className="ag-timeline-card_point">{phase.years}</div>
                     </div>
-                    <br/>
+                    <br />
                     <div className="ag-timeline-card_meta-box">
                       <div className="ag-timeline-card_meta">{phase.phase}</div>
                     </div>
                   </div>
                   <div className="ag-timeline-card_item">
                     <div className="ag-timeline-card_inner">
+                      <div class="ag-timeline-card_img-box">
+                        <img src={phase.image} class="ag-timeline-card_img" width="640" height="360" />
+                      </div>
                       <div className="ag-timeline-card_info">
                         <div className="ag-timeline-card_title">{phase.phase}</div>
                         <div className="ag-timeline-card_desc">

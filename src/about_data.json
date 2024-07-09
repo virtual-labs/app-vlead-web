@@ -12,7 +12,8 @@
                 "Enhanced Cloud Architecture",
                 "Virtual Labs Mobile App",
                 "Common Developer Tools"
-            ]
+            ],
+            "image": "https://i.imgur.com/zK3Q8KL.jpg" 
         },
         {
             "phase": "Phase-3",
@@ -29,7 +30,8 @@
                 "Security Enhancements",
                 "Developer Workshops",
                 "Maintenance of Labs"
-            ]
+            ],
+            "image": "https://i.imgur.com/aIWtlu9.jpg"
         },
         {
             "phase": "Phase-2",
@@ -46,7 +48,8 @@
                 "Lab Development Kits",
                 "Maintenance of Labs",
                 "Outreach Portal"
-            ]
+            ],
+            "image": "https://i.imgur.com/ezE4kcT.jpg"
         },
         {
             "phase": "Phase-1",
@@ -55,7 +58,8 @@
                 "260 experiments across 4 domains",
                 "Development of 27 Labs",
                 "Outreach Workshops"
-            ]
+            ],
+            "image": "https://i.imgur.com/VNu9RrF.jpg"
         }
     ],
     "initiatives": {
