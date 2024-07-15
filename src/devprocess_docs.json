@@ -24,6 +24,11 @@
                 "fragment": "development-process"
             },
             {
+                "title": "Web Authoring Environment",
+                "url": "https://raw.githubusercontent.com/virtual-labs/tool-web-ext-vscode/dev/docs/USER_README.md",
+                "fragment": "web-authoring-environment"
+            },
+            {
                 "title": "Authoring Environment",
                 "url": "https://raw.githubusercontent.com/virtual-labs/tool-vscode-plugin/main/README.md",
                 "fragment": "authoring-environment"
