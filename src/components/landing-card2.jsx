@@ -7,7 +7,7 @@ const data = all.domains
 
 const fetchLabData = async (disciplineFrag) => {
   try {
-    const url = `https://script.google.com/macros/s/AKfycbyL1gSoDNCqVPEkKqduWqU0FCi4amEtQ4c3LubjfnG9qhdAhqY9Vy2ijV39qht2H27hjg/exec?discipline=${disciplineFrag}`;
+    const url = `https://script.google.com/macros/s/AKfycbyl96rvk7ar9OhqOc-BDM6YcjVdbGUuBaMZQqwDB3x6A87jPiqaIW6sZ9n-vAKqZ3yMjQ/exec?discipline=${disciplineFrag}`;
     const response = await fetch(url);
     const data = await response.json();
     return data;
@@ -15,6 +15,24 @@ const fetchLabData = async (disciplineFrag) => {
     console.error("Error fetching lab data:", error);
     return [];
   }
+};
+
+const StarRating = ({ rating }) => {
+  const fullStars = Math.round(rating);
+
+  return (
+    <div className="star-rating">
+      {rating === 0 ? (
+        <span className="no-rating">No rating</span>
+      ) : (
+        [...Array(5)].map((_, index) => (
+          <span key={index} className={`star ${index < fullStars ? 'full' : 'empty'}`}>
+            ★
+          </span>
+        ))
+      )}
+    </div>
+  );
 };
 
 const Card2 = () => {
@@ -35,6 +53,7 @@ const Card2 = () => {
           try {
             const labs = await fetchLabData(fragment);
             setLabData(labs);
+            console.log(labs)
           } catch (error) {
             console.error("Error in checkUrlFragment:", error);
             setLabData([]);
@@ -114,24 +133,24 @@ const Card2 = () => {
         <div className="popup">
           <div className="popup-content">
             <button className="popup-close" onClick={closePopup}>&times;</button>
-            <h2>{popupContent.title}</h2>
-            <p>{popupContent.description}</p>
-            <h3>Labs:</h3>
+            <h2>{popupContent.title} Labs</h2>
+            <br />
             {isLoading ? (
               <div className="loading">Loading...</div>
             ) : labData.length > 0 ? (
               <ul>
                 {labData.map((lab, index) => (
-                  <li key={index}>
+                  <li key={index} className='justify-space'>
                     <a href="#" onClick={() => openLabLink(lab.hostname)}>
                       {lab.labName}
                     </a>
+                    {' '}<StarRating rating={lab.rating} />
                   </li>
                 ))}
               </ul>
             ) : (
               <p>No labs found for this discipline.</p>
-            )}
+            )}            
           </div>
         </div>
       )}
