@@ -5,35 +5,64 @@ import Card from './Card'
 
 const data = all.domains
 
+const fetchLabData = async (disciplineFrag) => {
+  try {
+    const url = `https://script.google.com/macros/s/AKfycbyL1gSoDNCqVPEkKqduWqU0FCi4amEtQ4c3LubjfnG9qhdAhqY9Vy2ijV39qht2H27hjg/exec?discipline=${disciplineFrag}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching lab data:", error);
+    return [];
+  }
+};
+
 const Card2 = () => {
-  const [showPopup, setShowPopup] = useState(false)
-  const [popupContent, setPopupContent] = useState(null)
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupContent, setPopupContent] = useState(null);
+  const [labData, setLabData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const checkUrlFragment = () => {
-      const fragment = window.location.hash.slice(1)
+    const checkUrlFragment = async () => {
+      const fragment = window.location.hash.slice(1);
       if (fragment) {
-        const matchedDomain = data.find(item => item.frag === fragment)
+        const matchedDomain = data.find(item => item.frag === fragment);
         if (matchedDomain) {
-          setPopupContent(matchedDomain)
-          setShowPopup(true)
+          setPopupContent(matchedDomain);
+          setShowPopup(true);
+          setIsLoading(true);
+          try {
+            const labs = await fetchLabData(fragment);
+            setLabData(labs);
+          } catch (error) {
+            console.error("Error in checkUrlFragment:", error);
+            setLabData([]);
+          } finally {
+            setIsLoading(false);
+          }
         }
       }
-    }
+    };
 
-    checkUrlFragment()
-    window.addEventListener('hashchange', checkUrlFragment)
+    checkUrlFragment();
+    window.addEventListener('hashchange', checkUrlFragment);
 
     return () => {
-      window.removeEventListener('hashchange', checkUrlFragment)
-    }
-  }, [])
+      window.removeEventListener('hashchange', checkUrlFragment);
+    };
+  }, []);
 
   const closePopup = () => {
-    setShowPopup(false)
-    setPopupContent(null)
-    window.history.pushState("", document.title, window.location.pathname + window.location.search)
-  }
+    setShowPopup(false);
+    setPopupContent(null);
+    setLabData([]);
+    window.history.pushState("", document.title, window.location.pathname + window.location.search);
+  };
+
+  const openLabLink = (hostname) => {
+    window.open(`http://${hostname}`, '_blank');
+  };
 
   return (
     <div className='landing-card-2'>
@@ -86,8 +115,23 @@ const Card2 = () => {
           <div className="popup-content">
             <button className="popup-close" onClick={closePopup}>&times;</button>
             <h2>{popupContent.title}</h2>
-            <img src={popupContent.img} alt={popupContent.title} />
             <p>{popupContent.description}</p>
+            <h3>Labs:</h3>
+            {isLoading ? (
+              <div className="loading">Loading...</div>
+            ) : labData.length > 0 ? (
+              <ul>
+                {labData.map((lab, index) => (
+                  <li key={index}>
+                    <a href="#" onClick={() => openLabLink(lab.hostname)}>
+                      {lab.labName}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>No labs found for this discipline.</p>
+            )}
           </div>
         </div>
       )}
