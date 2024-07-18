@@ -95,17 +95,19 @@ function Timeline() {
                   </div>
                   <div className="ag-timeline-card_item">
                     <div className="ag-timeline-card_inner">
-                      <div class="ag-timeline-card_img-box">
-                        <img src={phase.image} class="ag-timeline-card_img" width="640" height="360" />
-                      </div>
-                      <div className="ag-timeline-card_info">
-                        <div className="ag-timeline-card_title">{phase.phase}</div>
-                        <div className="ag-timeline-card_desc">
-                          <ul>
-                            {phase.description.map((point, i) => (
-                              <li key={i}>{point}</li>
-                            ))}
-                          </ul>
+                      <div className="ag-timeline-card_content">
+                        <div className="ag-timeline-card_img-box">
+                          <img src={phase.image} className="ag-timeline-card_img" alt={phase.phase} />
+                        </div>
+                        <div className="ag-timeline-card_info">
+                          <div className="ag-timeline-card_title">{phase.phase}</div>
+                          <div className="ag-timeline-card_desc">
+                            <ul>
+                              {phase.description.map((point, i) => (
+                                <li key={i}>{point}</li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
