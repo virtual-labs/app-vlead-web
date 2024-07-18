@@ -5,17 +5,18 @@ import Card from './Card'
 
 const data = all.domains
 
-const fetchLabData = async (disciplineFrag) => {
-  try {
-    const url = `https://script.google.com/macros/s/AKfycbyl96rvk7ar9OhqOc-BDM6YcjVdbGUuBaMZQqwDB3x6A87jPiqaIW6sZ9n-vAKqZ3yMjQ/exec?discipline=${disciplineFrag}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching lab data:", error);
-    return [];
-  }
+const disciplineMap = {
+  'comp': 'Computer Science and Engineering',
+  'mech': 'Mechanical Engineering',
+  'chem': 'Chemical Engineering',
+  'el-com': 'Electronics and Communication Engineering',
+  'bio-tech': 'Biotechnology and Biomedical Engineering',
+  'elec': 'Electrical Engineering',
+  'chem-sci': 'Chemical Science',
+  'phy': 'Physical Sciences',
+  'civil': 'Civil Engineering'
 };
+
 
 const StarRating = ({ rating }) => {
   const fullStars = Math.round(rating);
@@ -23,7 +24,7 @@ const StarRating = ({ rating }) => {
   return (
     <div className="star-rating">
       {rating === 0 ? (
-        <span className="no-rating">No rating</span>
+        <span className="no-rating">Unrated</span>
       ) : (
         [...Array(5)].map((_, index) => (
           <span key={index} className={`star ${index < fullStars ? 'full' : 'empty'}`}>
@@ -38,28 +39,46 @@ const StarRating = ({ rating }) => {
 const Card2 = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupContent, setPopupContent] = useState(null);
-  const [labData, setLabData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [allLabData, setAllLabData] = useState([]);
+  const [filteredLabData, setFilteredLabData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchAllLabData = async () => {
+    try {
+      const url = 'https://script.google.com/macros/s/AKfycbyjvMe0h-Mr3dC_Yx5muP0rgSlha1akTG5mo_vUSUi2o9DdbGycFTLCq2NKEShN7jZbhw/exec';
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching lab data:", error);
+      return [];
+    }
+  };
 
   useEffect(() => {
-    const checkUrlFragment = async () => {
+    const loadData = async () => {
+      setIsLoading(true);
+      const data = await fetchAllLabData();
+      setAllLabData(data);
+      setIsLoading(false);
+    };
+
+    loadData();
+  }, []);
+
+  useEffect(() => {
+    const checkUrlFragment = () => {
       const fragment = window.location.hash.slice(1);
-      if (fragment) {
+      if (fragment && allLabData.length > 0) {
         const matchedDomain = data.find(item => item.frag === fragment);
         if (matchedDomain) {
           setPopupContent(matchedDomain);
           setShowPopup(true);
-          setIsLoading(true);
-          try {
-            const labs = await fetchLabData(fragment);
-            setLabData(labs);
-            console.log(labs)
-          } catch (error) {
-            console.error("Error in checkUrlFragment:", error);
-            setLabData([]);
-          } finally {
-            setIsLoading(false);
-          }
+          
+          const fullDiscipline = disciplineMap[fragment];
+          const filteredLabs = allLabData.filter(lab => lab.discipline === fullDiscipline);
+          
+          setFilteredLabData(filteredLabs);
         }
       }
     };
@@ -70,12 +89,12 @@ const Card2 = () => {
     return () => {
       window.removeEventListener('hashchange', checkUrlFragment);
     };
-  }, []);
+  }, [allLabData]);
 
   const closePopup = () => {
     setShowPopup(false);
     setPopupContent(null);
-    setLabData([]);
+    setFilteredLabData([]);
     window.history.pushState("", document.title, window.location.pathname + window.location.search);
   };
 
@@ -136,10 +155,10 @@ const Card2 = () => {
             <h2>{popupContent.title} Labs</h2>
             <br />
             {isLoading ? (
-              <div className="loading">Loading...</div>
-            ) : labData.length > 0 ? (
+              <p>Loading labs...</p>
+            ) : filteredLabData.length > 0 ? (
               <ul>
-                {labData.map((lab, index) => (
+                {filteredLabData.map((lab, index) => (
                   <li key={index} className='justify-space'>
                     <a href="#" onClick={() => openLabLink(lab.hostname)}>
                       {lab.labName}
