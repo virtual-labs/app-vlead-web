@@ -1,7 +1,6 @@
 import data from "../about_data.json";
 import '../css/timeline.css';
 import React, { useEffect } from 'react';
-// import $ from 'jquery';
 
 function Timeline() {
   const $ = window.jQuery;
