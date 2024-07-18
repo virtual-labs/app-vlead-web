@@ -88,7 +88,7 @@
             "body": ""
         }
     ],
-    "faqs" : [
+    "explore" : [
         {
             "title":"Virtual Labs FAQ",
             "href":"/app-vlead-web/faq_page/",
@@ -99,6 +99,12 @@
             "title":"Workshop FAQ",
             "href":"/app-vlead-web/outreach/#faq",
             "img":"https://i.imgur.com/on7M1R7.jpg",
+            "body":""
+        },
+        {
+            "title":"Analytics",
+            "href":"http://localhost:3000/app-vlead-web/summary/",
+            "img":"https://i.imgur.com/j0UDVdv.jpg",
             "body":""
         }
     ],
