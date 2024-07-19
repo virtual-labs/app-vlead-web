@@ -12,7 +12,7 @@ const disciplineMap = {
   'el-com': 'Electronics and Communication Engineering',
   'bio-tech': 'Biotechnology and Biomedical Engineering',
   'elec': 'Electrical Engineering',
-  'chem-sci': 'Chemical Science',
+  'chem-sci': 'Chemical Sciences',
   'phy': 'Physical Sciences',
   'civil': 'Civil Engineering'
 };
