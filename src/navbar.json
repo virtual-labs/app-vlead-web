@@ -1,0 +1,77 @@
+[
+    {
+        "name": "About",
+        "dropdowns": [
+            {
+                "name": "Virtual Labs",
+                "url": "/app-vlead-web/Vlabs/",
+                "id": "about-virtual-labs"
+            },
+            {
+                "name": "VLEAD",
+                "url": "/app-vlead-web/vlead/",
+                "id": "about-vlead"
+            }
+        ]
+    },
+    {
+        "name": "I am",
+        "dropdowns": [
+            {
+                "name": "a Learner",
+                "url": "/app-vlead-web/experiments/",
+                "id": "drop-learner"
+            },
+            {
+                "name": "an Educator",
+                "url": "/app-vlead-web/outreach/",
+                "id": "drop-educator"
+            },
+            {
+                "name": "a Creator",
+                "url": "/app-vlead-web/development/",
+                "id": "drop-creator"
+            }
+        ]
+    },
+    {
+        "name": "I want to",
+        "dropdowns": [
+            {
+                "name": "Create Experiment",
+                "url": "/app-vlead-web/development/#development-process",
+                "id": "create-experiment"
+            },
+            {
+                "name": "Start Learning",
+                "url": "/app-vlead-web/experiments/",
+                "id": "start-learning"
+            },
+            {
+                "name": "Host workshop",
+                "url": "/app-vlead-web/outreach/#workshops",
+                "id": "outreach"
+            },
+            {
+                "name": "Explore Research",
+                "url": "/app-vlead-web/research/",
+                "id": "research"
+            }
+        ]
+    },
+    {
+        "name": "Analytics",
+        "dropdowns": [
+            {
+                "name": "Summary",
+                "url": "/app-vlead-web/summary/",
+                "id": "summary"
+            },
+            {
+                "name": "Detailed Analysis",
+                "url": "/app-vlead-web/detailedAnalysis/",
+                "id": "Detailed-Analysis"
+            }
+        ]
+    }
+]

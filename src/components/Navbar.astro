@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon";
 import Roles from "./role";
 import Stats from "./stats";
+import navData from "../navbar.json";
 ---
 
 <script>
@@ -239,114 +240,30 @@ import Stats from "./stats";
   <div id="navbarMain" class="navbar-menu is-boxed">
     <div class="navbar-start"></div>
     <div class="navbar-end">
-      <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drops">
-        <a class="navbar-link is-size-5"> About</a>
-        <div class="navbar-dropdown">
-          <a
-            class="navbar-item px-2 clickable"
-            id="about-virtual-labs"
-            href="/app-vlead-web/Vlabs/"
-          >
-            Virtual Labs
-          </a>
-          <hr class="navbar-divider" />
-          <a
-            class="navbar-item px-2 clickable"
-            id="about-vlead"
-            href="/app-vlead-web/vlead/"
-          >
-            VLEAD
-          </a>
-        </div>
-      </div>
 
-      <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drop">
-        <a class="navbar-link is-size-5"> I am</a>
-        <div class="navbar-dropdown">
-          <a
-            class="navbar-item px-2 theme clickable"
-            id="drop-learner"
-            href="/app-vlead-web/experiments/"
-          >
-            a Learner
-          </a>
-          <hr class="navbar-divider" />
-          <a
-            class="navbar-item px-2 theme clickable"
-            id="drop-educator"
-            href="/app-vlead-web/outreach/"
-          >
-            an Educator
-          </a>
-          <hr class="navbar-divider" />
-          <a
-            class="navbar-item px-2 theme clickable"
-            id="drop-creator"
-            href="/app-vlead-web/development/"
-          >
-            a Creator
-          </a>
-        </div>
+      <div class="navbar-menu">
+        {navData.map((item) => (
+          <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drops">
+            <a class="navbar-link is-size-5">{item.name}</a>
+            <div class="navbar-dropdown">
+              {item.dropdowns.map((dropdown, index) => (
+                <>
+                  <a
+                    class="navbar-item px-2 clickable"
+                    id={dropdown.id}
+                    href={dropdown.url}
+                  >
+                    {dropdown.name}
+                  </a>
+                  {index < item.dropdowns.length - 1 && <hr class="navbar-divider" />}
+                </>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-
-      <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drop">
-        <a class="navbar-link is-size-5"> I want to</a>
-        <div class="navbar-dropdown">
-          <a
-            class="navbar-item px-2 theme clickable"
-            id="create-experiment"
-            href="/app-vlead-web/development/"
-          >
-            Create Experiment
-          </a>
-          <hr class="navbar-divider" />
-          <a
-            class="navbar-item px-2 theme clickable"
-            id="start-learning"
-            href="/app-vlead-web/experiments/"
-          >
-            Start Learning
-          </a>
-          <hr class="navbar-divider" />
-          <a
-            class="navbar-item px-2 theme clickable"
-            id="outreach"
-            href="/app-vlead-web/outreach/"
-          >
-            Host workshop
-          </a>
-          <hr class="navbar-divider" />
-          <a
-            class="navbar-item px-2 theme clickable"
-            id="research"
-            href="/app-vlead-web/research/"
-          >
-            Explore Research
-          </a>
-        </div>
-      </div>
+            
       <Roles client:only />
-      <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drops">
-        <a class="navbar-link is-size-5"> Analytics</a>
-        <div class="navbar-dropdown">
-          <a
-            class="navbar-item px-2 clickable"
-            id="summary"
-            href="/app-vlead-web/summary/"
-          >
-            Summary
-          </a>
-          <hr class="navbar-divider" />
-          <a
-            class="navbar-item px-2 clickable"
-            id="Detailed Analysis"
-            href="/app-vlead-web/detailedAnalysis/"
-          >
-            Detailed Analysis
-          </a>
-        </div>
-      </div>
-
       <Stats client:only />
     </div>
   </div>
