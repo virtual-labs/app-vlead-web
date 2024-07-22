@@ -1,89 +1,70 @@
 import data from "../about_data.json";
 import '../css/timeline.css';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 function Timeline() {
-  const $ = window.jQuery;
+  const [activeItems, setActiveItems] = useState([]);
+  const timelineRef = useRef(null);
+  const progressRef = useRef(null);
+
   useEffect(() => {
-    $(function () {
-      $(window).on('scroll', function () {
-        fnOnScroll();
-      });
+    const handleScroll = () => {
+      const { scrollTop, clientHeight } = document.documentElement;
+      updateProgress(scrollTop, clientHeight);
+      updateActiveItems(scrollTop, clientHeight);
+    };
 
-      $(window).on('resize', function () {
-        fnOnResize();
-      });
-      var agTimeline = $('.js-timeline'),
-        agTimelineLine = $('.js-timeline_line'),
-        agTimelineLineProgress = $('.js-timeline_line-progress'),
-        agTimelinePoint = $('.js-timeline-card_point-box'),
-        agTimelineItem = $('.js-timeline_item'),
-        agOuterHeight = $(window).outerHeight(),
-        agHeight = $(window).height(),
-        f = -1,
-        agFlag = false;
+    const handleResize = () => {
+      handleScroll();
+    };
 
-      function fnOnScroll() {
-        var agPosY = $(window).scrollTop();
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
 
-        fnUpdateFrame();
-      }
-
-      function fnOnResize() {
-        var agPosY = $(window).scrollTop();
-        agHeight = $(window).height();
-
-        fnUpdateFrame();
-      }
-
-      function fnUpdateWindow() {
-        agFlag = false;
-
-        agTimelineLine.css({
-          top: agTimelineItem.first().find(agTimelinePoint).offset().top - agTimelineItem.first().offset().top,
-          bottom: agTimeline.offset().top + agTimeline.outerHeight() - agTimelineItem.last().find(agTimelinePoint).offset().top
-        });
-
-        f !== $(window).scrollTop() && (f = $(window).scrollTop(), agHeight, fnUpdateProgress());
-      }
-
-      function fnUpdateProgress() {
-        var agPosY = $(window).scrollTop();
-        var agTop = agTimelineItem.last().find(agTimelinePoint).offset().top;
-
-        var i = agTop + agPosY - $(window).scrollTop();
-        var a = agTimelineLineProgress.offset().top + agPosY - $(window).scrollTop();
-        var n = agPosY - a + agOuterHeight / 2;
-        i <= agPosY + agOuterHeight / 2 && (n = i - a);
-        agTimelineLineProgress.css({ height: n + "px" });
-
-        agTimelineItem.each(function () {
-          var agTop = $(this).find(agTimelinePoint).offset().top;
-
-          (agTop + agPosY - $(window).scrollTop()) < agPosY + .5 * agOuterHeight ? $(this).addClass('js-ag-active') : $(this).removeClass('js-ag-active');
-        })
-      }
-
-      function fnUpdateFrame() {
-        agFlag || requestAnimationFrame(fnUpdateWindow);
-        agFlag = true;
-      }
-
-      fnOnScroll();
-    });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
+
+  const updateProgress = (scrollTop, clientHeight) => {
+    if (progressRef.current && timelineRef.current) {
+      const timeline = timelineRef.current;
+      const progress = progressRef.current;
+      const timelineRect = timeline.getBoundingClientRect();
+      const progressHeight = Math.min(
+        Math.max(scrollTop + clientHeight / 2 - timelineRect.top, 0),
+        timelineRect.height
+      );
+      progress.style.height = `${progressHeight}px`;
+    }
+  };
+
+  const updateActiveItems = (scrollTop, clientHeight) => {
+    if (timelineRef.current) {
+      const items = timelineRef.current.querySelectorAll('.js-timeline_item');
+      const activeItemsNew = [];
+      items.forEach((item, index) => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top + scrollTop < scrollTop + clientHeight * 0.5) {
+          activeItemsNew.push(index);
+        }
+      });
+      setActiveItems(activeItemsNew);
+    }
+  };
 
   return (
     <div className="ag-timeline-block">
       <section className="ag-section">
         <div className="ag-format-container">
-          <div className="js-timeline ag-timeline">
+          <div ref={timelineRef} className="js-timeline ag-timeline">
             <div className="js-timeline_line ag-timeline_line">
-              <div className="js-timeline_line-progress ag-timeline_line-progress"></div>
+              <div ref={progressRef} className="js-timeline_line-progress ag-timeline_line-progress"></div>
             </div>
             <div className="ag-timeline_list">
               {data.phases.map((phase, index) => (
-                <div key={index} className="js-timeline_item ag-timeline_item">
+                <div key={index} className={`js-timeline_item ag-timeline_item ${activeItems.includes(index) ? 'js-ag-active' : ''}`}>
                   <div className="ag-timeline-card_box">
                     <div className="js-timeline-card_point-box ag-timeline-card_point-box">
                       <div className="ag-timeline-card_point">{phase.years}</div>
