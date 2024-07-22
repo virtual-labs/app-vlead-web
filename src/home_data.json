@@ -103,7 +103,7 @@
         },
         {
             "title":"Analytics",
-            "href":"http://localhost:3000/app-vlead-web/summary/",
+            "href":"/app-vlead-web/summary/",
             "img":"https://i.imgur.com/j0UDVdv.jpg",
             "body":""
         }

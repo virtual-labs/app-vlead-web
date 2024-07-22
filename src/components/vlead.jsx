@@ -202,6 +202,29 @@ export const VleadContent = () => {
         handleAnchorClick('purpose');
     }, []);
 
+    function handleInitialHash() {
+        const hash = window.location.hash.slice(1);
+        if (hash) {
+            const correspondingAnchor = document.querySelector(`a[href="#${hash}"]`);
+            if (correspondingAnchor) {
+                const nearestSpan = correspondingAnchor.querySelector('span');
+                if (nearestSpan) {
+                    nearestSpan.click();
+                } else {
+                    correspondingAnchor.click();
+                }
+            } else {
+                console.log('No corresponding anchor found');
+            }
+        } else {
+            console.log('No hash in URL');
+        }
+    }
+
+    useEffect(() => {
+        handleInitialHash();
+    }, []);
+
 }
 
 export default VleadContent;
