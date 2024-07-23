@@ -134,11 +134,19 @@ https://drive.google.com/thumbnail?id=0B6wwyazyzml-OGQ3VUo0Z2thdmc, a browser wi
 6. Add analytics iframes for other data as well.
 7. Fetch all the md docs (mainly faqs due to rate limit) at the build time using some astro pulgin. 
 8. Add the images to CDN (from the links and files in the repository) and use that to display all the images.
-    
+
+## Deploying the web-app
+
+There are two levels of deployment that happen when a developer wishes to deploy:
+- Once pushed to the testing branch, the deployment-testing.yml workflow in the `.github/workflows` folder deploys the web app onto https://virtual-labs.github.io/app-vlead-web/.
+- Once a release is published, the deployment-release.yml workflow in the `.github/workflows` folder deploys the web app onto https://vlead.vlabs.ac.in/.
+
+
 ## Troubleshooting
 1. If any member card does not show up in the Our Team page, please check the latest Team Member Details sheet. Make sure that all entries are filled, and there are no stray cells filled anywhere.
 2. On slow network, raw github content may not work, i.e., documents might not be displayed.
 3. FAQs will not load if rate limit api is reached which is 60/hr.
+
 ## Appendix
 
 1. Astro framework analysis ![](https://i.imgur.com/C3r8osR.png)
