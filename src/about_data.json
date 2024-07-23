@@ -4,32 +4,37 @@
             "phase": "Extended Phase-3",
             "years": "2021 - 2026",
             "description": [
-                "Development of a National Question Bank",
+                "Automation of Lab Deployment",
+                "Provision of a Validation Tool",
+                "Provision of a Performance Tool",
+                "Development of 16 Labs (Yr 1 & 2)",
+                "Enhancement of Cloud Architecture",
+                "Development of a VS Code Extension",
+                "Provision of Common Developer Tools",
                 "Creation of an Outreach Tracker Tool",
-                "Development of 16 Labs - Year 1 & 2",
-                "140 experiments across 4 domains",
-                "Automated Lab Deployment Tool",
-                "Enhanced Cloud Architecture",
-                "Common Developer Tools",
-                "Virtual Labs PWA"
+                "Implementation of a Bug Reporting Tool",
+                "Inclusion of a Rating Feature to Rate Labs",
+                "Development of a National Question Repository",
+                "Implementation of 140 Experiments Across 4 Domains",
+                "Building of Virtual Labs Progressive Web Application"
             ],
-            "image": "https://i.imgur.com/32JWmdl.jpg" 
+            "image": "https://i.imgur.com/32JWmdl.jpg"
         },
         {
             "phase": "Phase-3",
             "years": "2018 - 2020",
             "description": [
-                "Summer/Winter/Remote Internships",
-                "Centralized Analytics Reporting",
-                "Pilot Translation of 2 Labs",
-                "FOSS Conversion of 26 Labs",
-                "Automated Network Clusters",
+                "Maintenance of Labs",
+                "Developer Workshops",
+                "Uniform UI Across Labs",
+                "Security Enhancements",
                 "Development of 2 CS Labs",
                 "Performance Enhancements",
-                "Uniform UI across labs",
-                "Security Enhancements",
-                "Developer Workshops",
-                "Maintenance of Labs"
+                "FOSS Conversion of 26 Labs",
+                "Automated Network Clusters",
+                "Centralized Analytics Reporting",
+                "Summer/Winter/Remote Internships",
+                "Pilot Translation of 2 Labs ( Hindi and Telugu)"
             ],
             "image": "https://i.imgur.com/en2PcMg.jpg"
         },
@@ -85,7 +90,7 @@
             {
                 "description": "An application to create a centralized repository of multiple-choice questions that can be accessed and contributed to by authorized users is being built. It aims to facilitate question retrieval based on search terms, tags, and similarity matching.",
                 "url": "https://i.imgur.com/AOZ6NQg.jpg",
-                "title": "Question Bank Service -",
+                "title": "National Question Repository -",
                 "readmore": ""
             },
             {

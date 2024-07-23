@@ -45,7 +45,7 @@ const Card2 = () => {
 
   const fetchAllLabData = async () => {
     try {
-      const url = 'https://script.google.com/macros/s/AKfycbxNvHJn7yOoXNIMeMkV-NIyK_WpiAg9_KrO8CnW7r0vpPk0_7JOWprcjUl7jGMiCDLp/exec';
+      const url = 'https://script.google.com/macros/s/AKfycbwuy-ef8_v7pTu03MSnOnh_hLpq8s9PC5hX8OrtNiVAShPwneXey5q_pTs3G9AvruY/exec';
       const response = await fetch(url);
       const data = await response.json();
       return data;
