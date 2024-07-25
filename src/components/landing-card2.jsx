@@ -127,7 +127,7 @@ const Card2 = () => {
           coverflow-effect-modifier="1"
           pagination-dynamic-bullets="true"
           keyboard="true"
-          initial-slide="2"
+          initial-slide="3"
           loop="true"
           id="domains"
         >
