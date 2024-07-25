@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/landing-card3.css'
 import all from '../home_data.json'
-import Card from './Card'
+import Card from './Card_2_3'
 
 const services = all.services
 
@@ -27,12 +27,13 @@ const Card3 = () => {
             {
                 services.map((item, i) => {
                 return (
-                    <div style={{flex: 1, height: '100%'}}>
+                    <div style={{flex: 1}}>
                     <Card
                     img={item.img}
                     href={item.href}
                     body=""
                     title={item.title}
+                    style={{height: '50% !important'}}
                     />
                     </div>
                     

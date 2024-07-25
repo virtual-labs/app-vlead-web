@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/landing-card3.css'
 import all from '../home_data.json'
-import Card from './Card'
+import Card from './Card_2_3'
 
 const services = all.explore
 
