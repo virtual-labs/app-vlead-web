@@ -134,6 +134,7 @@ https://drive.google.com/thumbnail?id=0B6wwyazyzml-OGQ3VUo0Z2thdmc, a browser wi
 6. Add analytics iframes for other data as well.
 7. Fetch all the md docs (mainly faqs due to rate limit) at the build time using some astro pulgin. 
 8. Add the images to CDN (from the links and files in the repository) and use that to display all the images.
+9. The script linked to the spreadsheet used to display the labs on the homepage can be made to have a cache system - where it refreshed every few hours or so.
 
 ## Deploying the web-app
 
