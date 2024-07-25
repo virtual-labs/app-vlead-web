@@ -83,7 +83,7 @@ function Timeline() {
                         <div className="ag-timeline-card_info">
                           <div className="ag-timeline-card_title">{phase.phase}</div>
                           <div className="ag-timeline-card_desc">
-                            <ul>
+                            <ul style={{ listStyleType: 'disc', paddingLeft: '20px', textAlign: 'left'}}>
                               {phase.description.map((point, i) => (
                                 <li key={i}>{point}</li>
                               ))}

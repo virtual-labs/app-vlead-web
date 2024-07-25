@@ -27,6 +27,8 @@
     max-width: 97%;
     margin: auto;
     display: flex;
+    align-items: center;
+    text-align: center;
 }
 .landing-card-1--body span {
     color: white;
