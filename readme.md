@@ -128,13 +128,14 @@ https://drive.google.com/thumbnail?id=0B6wwyazyzml-OGQ3VUo0Z2thdmc, a browser wi
 ## Future Work
 1. In the Our Team page, for each profile card, add a button in the modal that will copy the profile's shareable link to the clipboard.
 2. In Outreach page Gallery, enlarge images upon click. Fetch the images from the github repo mentioned above at build time. So everytime a new image is added, the website has to be built again. Do this for other github content wherver API limit is causing issues.
-3. In Outreach page, make the list of tabs into an editable json file and import it into the webpage code so that the list can be edited easily without effecting the code.
+3. In Outreach page, make the list of tabs into an editable json file and import it into the webpage code so that the list can be edited easily without affecting the code.
 4. Currently the implementation of colour themes is as follows - default is the light mode, and a dark class is defined for every element that changes colour in dark mode. So upon clicking on dark mode, the dark class is added. There is a single theme.css that has both tones defined for every colour. But only two themes can be implemented this way. Condsider implementing a multi-theme extensible system and create a theme.css for each theme, and only change the theme.css file in effect when the theme is changed.
-5. In all pages, background is applied as a circular gradient. Instead, make the gradient section wise. Refer to astro homepage for reference of the idea.
-6. Add analytics iframes for other data as well.
+5. In all pages, background is applied as a circular gradient. Instead, make the gradient section wise. Refer to astro homepage for reference of the idea. (done)
+6. Add analytics iframes for other data as well. (done)
 7. Fetch all the md docs (mainly faqs due to rate limit) at the build time using some astro pulgin. 
-8. Add the images to CDN (from the links and files in the repository) and use that to display all the images.
+8. Add the images to CDN (from the links and files in the repository) and use that to display all the images. Currently, the images are there in the links in the json files.
 9. The script linked to the spreadsheet used to display the labs on the homepage can be made to have a cache system - where it refreshed every few hours or so.
+10. Make the options for gallery and faqs sticky for the outreach page.
 
 ## Deploying the web-app
 
@@ -161,3 +162,5 @@ There are two levels of deployment that happen when a developer wishes to deploy
 * mui (used on experiments page by other team)
 * typewriter-effect
 * font-awesome
+
+## json

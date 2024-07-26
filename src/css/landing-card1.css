@@ -33,6 +33,7 @@
 }
 
 .landing-card-1--body {
+    text-align: justify;
     max-width: 97%;
     padding-left: 1%;
     margin: auto;

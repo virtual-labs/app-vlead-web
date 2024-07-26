@@ -104,6 +104,18 @@
                 "url": "https://i.imgur.com/u8ZjM3t.jpg",
                 "title": "Validation Tool -",
                 "readmore": "https://github.com/virtual-labs/tool-validation/blob/main/README.md"
+            },
+            {
+                "description": "Completed the first iteration of the Virtual Labs service worker. The service worker will be our agent on the client and will be used for many of the planned tasks, e.g. caching and capturing analytics data stream. Apart from the default service worker functionality, an experiment author can add custom functionality for each experiment. Currently the integration of Service Worker with the build script is being tested.",
+                "url": "https://i.imgur.com/DKP2nkb.jpg",
+                "title": "Service Worker - ",
+                "readmore": "https://github.com/virtual-labs/lib-service-worker-vlabs/blob/main/README.md"
+            },
+            {
+                "description": "The VLEAD Team encourages experiment and tool developers to share their learnings and experiences throughout the development lifecycle via tech blogs. These blogs are published on the Medium site to benefit other developers.",
+                "url": "https://i.imgur.com/J1PyKH5.jpg",
+                "title": "Tech Blogs -",
+                "readmore": "https://medium.com/vlead-tech"
             }
         ],
         "users": [
@@ -136,18 +148,6 @@
                 "url": "https://i.imgur.com/W5ATUiN.jpg",
                 "title": "GA4 Analytics Dashboard -",
                 "readmore": ""
-            },
-            {
-                "description": "Completed the first iteration of the Virtual Labs service worker. The service worker will be our agent on the client and will be used for many of the planned tasks, e.g. caching and capturing analytics data stream. Apart from the default service worker functionality, an experiment author can add custom functionality for each experiment. Currently the integration of Service Worker with the build script is being tested.",
-                "url": "https://i.imgur.com/DKP2nkb.jpg",
-                "title": "Service Worker - ",
-                "readmore": "https://github.com/virtual-labs/lib-service-worker-vlabs/blob/main/README.md"
-            },
-            {
-                "description": "The VLEAD Team encourages experiment and tool developers to share their learnings and experiences throughout the development lifecycle via tech blogs. These blogs are published on the Medium site to benefit other developers.",
-                "url": "https://i.imgur.com/J1PyKH5.jpg",
-                "title": "Tech Blogs -",
-                "readmore": "https://medium.com/vlead-tech"
             }
         ],
         "team": [
