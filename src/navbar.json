@@ -49,7 +49,7 @@
             },
             {
                 "name": "Host Workshop",
-                "url": "/app-vlead-web/outreach/#workshops",
+                "url": "http://localhost:3000/app-vlead-web/outreach/#request-a-workshop",
                 "id": "outreach"
             },
             {
