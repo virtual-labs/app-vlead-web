@@ -4,8 +4,8 @@
 
 Welcome to the VLEAD Website Project Documentation. This documentation is divided into two main sections:
 
-1. [Content Developer Documentation](content-developer.md)
-2. [Content Adder Documentation](content-adder.md)
+1. [Developer Documentation](content-developer.md)
+2. [Content Editor Documentation](content-editor.md)
 
 ---
 
