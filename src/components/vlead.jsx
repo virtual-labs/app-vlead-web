@@ -162,7 +162,14 @@ const Content = ({ type }) => {
 export const VleadContent = () => {
     const displayDiv = document.getElementById('display-div');
 
-    function handleAnchorClick(type) {
+    function handleAnchorClick(type, event) {
+        if (event) {
+            event.preventDefault();
+            
+            const newUrl = `${window.location.pathname}#${type}`;
+            history.pushState(null, '', newUrl);
+        }
+
         const activeElements = document.querySelectorAll('.is-active');
         activeElements.forEach(element => {
             element.classList.remove('is-active');
@@ -181,20 +188,17 @@ export const VleadContent = () => {
 
         const target = event.target;
         if (target.matches('#past')) {
-            handleAnchorClick('past');
+            handleAnchorClick('past', event);
         } else if (target.matches('#current')) {
-            handleAnchorClick('current');
+            handleAnchorClick('current', event);
         } else if (target.matches('#timeline')) {
-            handleAnchorClick('timeline');
-        }
-        else if (target.matches('#testimonials')) {
-            handleAnchorClick('testimonials');
-        }
-        else if (target.matches('#init')) {
-            handleAnchorClick('init');
-        }
-        else if (target.matches('#purpose')) {
-            handleAnchorClick('purpose');
+            handleAnchorClick('timeline', event);
+        } else if (target.matches('#testimonials')) {
+            handleAnchorClick('testimonials', event);
+        } else if (target.matches('#init')) {
+            handleAnchorClick('init', event);
+        } else if (target.matches('#purpose')) {
+            handleAnchorClick('purpose', event);
         }
     });
 
@@ -205,17 +209,7 @@ export const VleadContent = () => {
     function handleInitialHash() {
         const hash = window.location.hash.slice(1);
         if (hash) {
-            const correspondingAnchor = document.querySelector(`a[href="#${hash}"]`);
-            if (correspondingAnchor) {
-                const nearestSpan = correspondingAnchor.querySelector('span');
-                if (nearestSpan) {
-                    nearestSpan.click();
-                } else {
-                    correspondingAnchor.click();
-                }
-            } else {
-                console.log('No corresponding anchor found');
-            }
+            handleAnchorClick(hash);
         } else {
             console.log('No hash in URL');
         }

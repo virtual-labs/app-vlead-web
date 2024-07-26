@@ -121,32 +121,16 @@ const Content = ({ type }) => {
 }
 
 export const VlabsContent = () => {
-    function handleInitialHash() {
-        const hash = window.location.hash.slice(1);
-        if (hash) {
-            const correspondingAnchor = document.querySelector(`a[href="#${hash}"]`);
-            if (correspondingAnchor) {
-                const nearestSpan = correspondingAnchor.querySelector('span');
-                if (nearestSpan) {
-                    nearestSpan.click();
-                } else {
-                    correspondingAnchor.click();
-                }
-            } else {
-                console.log('No corresponding anchor found');
-            }
-        } else {
-            console.log('No hash in URL');
-        }
-    }
-
-    useEffect(() => {
-        handleInitialHash();
-    }, []);
-
     const displayDiv = document.getElementById('display-div');
 
-    function handleAnchorClick(type) {
+    function handleAnchorClick(type, event) {
+        if (event) {
+            event.preventDefault();
+
+            const newUrl = `${window.location.pathname}#${type}`;
+            history.pushState(null, '', newUrl);
+        }
+
         const activeElements = document.querySelectorAll('.is-active');
         activeElements.forEach(element => {
             element.classList.remove('is-active');
@@ -161,26 +145,36 @@ export const VlabsContent = () => {
         root.render(<Content type={type} />);
     }
 
-    document.body.addEventListener('click', (event) => {
-
-        const target = event.target;
-        if (target.matches('#obj')) {
-            handleAnchorClick('obj');
-        } else if (target.matches('#inst')) {
-            handleAnchorClick('inst');
-        } else if (target.matches('#ovw')) {
+    function handleInitialHash() {
+        const hash = window.location.hash.slice(1);
+        if (hash) {
+            handleAnchorClick(hash);
+        } else {
+            console.log('No hash in URL');
             handleAnchorClick('ovw');
         }
-        else if (target.matches('#testimonials')) {
-            handleAnchorClick('testimonials');
-        }
-        else if (target.matches('#faq')) {
-            handleAnchorClick('faq');
-        }
-    });
+    }
 
     useEffect(() => {
-        handleAnchorClick('ovw');
+        handleInitialHash();
+
+        const handleClick = (event) => {
+            const target = event.target;
+            const types = ['obj', 'inst', 'ovw', 'testimonials', 'faq'];
+
+            for (const type of types) {
+                if (target.matches(`#${type}`) || target.closest(`#${type}`)) {
+                    handleAnchorClick(type, event);
+                    break;
+                }
+            }
+        };
+
+        document.body.addEventListener('click', handleClick);
+
+        return () => {
+            document.body.removeEventListener('click', handleClick);
+        };
     }, []);
 
 }
