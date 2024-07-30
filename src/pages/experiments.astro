@@ -1,23 +1,21 @@
 ---
-// import JoyOrderDashboardTemplate from "../components/search_filters";
 import Base from "../layouts/Base.astro";
 import "../css/theme.css";
-// import Search_filerts from '../components/search_filters'
-// import ExpComponent from "vlabs-app"
 import Pwa from "../components/exp";
 import ExpComponent from "../components/ExpComponent.jsx"
 import '@fortawesome/fontawesome-free/css/all.min.css'
 ---
+
+<!-- Link for the search icon from Google Icons: Added here and not at the root page-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@30,400,0,200" />
+
 <script>
   document.getElementById("learning")!.classList.add("is-active");
   document.getElementById("learning")!.classList.add("has-text-weight-bold");
 </script>
 
 <Base title="Experiments">
-    <main style="margin-bottom: 10px;">
-      <p class="title has-text-white has-text-centered is-size-1 my-0 py-5">Experiments</p>
-        <Pwa client:only/>
-    </main>
+  <Pwa client:only/>
 </Base>
 
 
