@@ -32,9 +32,7 @@ export default function Navbar(props) {
         <div>
             <nav className="navbar is-hidden-desktop is-light" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
-                    <a className="navbar-item" href=".">
-                        <img src={"https://cdn.vlabs.ac.in/logo/vlead-large.png"} alt="" width="70" height="90"/>
-                    </a>
+                    
                     <b style={{marginTop:"auto",marginBottom:"auto",fontSize:"x-large"}}>Virtual Labs</b>
                     <a href="/" role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={(e)=>{
                         e.preventDefault()

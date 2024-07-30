@@ -53,9 +53,7 @@ function NavbarBigScreen(props) {
     return (
         <div className="columns is-vcentered is-hidden-mobile is-hidden-tablet-only is-2-desktop"
 		style={{ padding: "0px", marginTop: "0", marginBottom: "0", backgroundColor: "#FFFFFF"}}>
-            <div className="column is-1">
-                <img alt="" className="image" style={{ padding: "0px", marginLeft: "30px", marginRight: "30px" }} width="100" src={"https://cdn.vlabs.ac.in/logo/vlead-large.png"} />
-            </div>
+            
             <div className="column" style={{ padding: "0px", marginLeft: "50px", marginRight: "30px" }}>
                 <div className="buttons has-addons">
                     <button id="popular-tab" className='button is-white has-text-black is-normal'
