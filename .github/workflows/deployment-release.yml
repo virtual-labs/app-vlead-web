@@ -1,5 +1,4 @@
-name: Deploy to GitHub Pages
-#Deploy to S3 on Release
+name: Deploy to S3 on Release
 
 on:
   #release:
