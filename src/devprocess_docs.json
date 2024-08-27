@@ -5,11 +5,11 @@
             {
                 "title": "Onboarding Process",
                 "url": "https://raw.githubusercontent.com/virtual-labs/engineers-forum/master/ph4/services/onboarding-process.md",
-                "fragment": "development-process"
+                "fragment": "onboarding-process"
             },
             {
                 "title": "Development Process",
-                "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/dev-process/README.md",
+                "url": "https://raw.githubusercontent.com/virtual-labs/engineers-forum/master/ph4/services/development-process.md",
                 "fragment": "development-process"
             },
             {
