@@ -12,7 +12,6 @@ const { title } = Astro.props;
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <!-- <link rel="stylesheet" href="src/css/theme.css" /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -42,13 +41,24 @@ const { title } = Astro.props;
     min-height: 100vh !important;
     display: block !important;
   }
+  html {
+    min-height: 100vh !important;
+  }
+  body {
+    background: radial-gradient(
+      circle,
+      var(--background-alt) 0%,
+      var(--background) 100%
+    );
+    min-height: 100vh !important;
+    display: block !important;
+  }
   .about_box {
     min-height: 80vh;
     color: var(--dark);
-    /* overflow-y: auto; */
-    /* position: relative; */
   }
   .about_box.dark {
+    color: var(--white);
     color: var(--white);
   }
 </style>

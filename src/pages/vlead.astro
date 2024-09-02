@@ -1,0 +1,31 @@
+---
+import Base from "../layouts/Base.astro";
+import "../css/vlead.css";
+import VleadContent from "../components/vlead.jsx";
+---
+
+<Base title="About">
+  <div class="py-3" style="color: white;">
+    <p class="title has-text-white has-text-centered is-size-2 my-0 py-5">
+      Virtual Labs Engineering Architecture and Design
+    </p>
+    <div
+      class="tabs theme is-boxed is-toggle is-toggle-rounded is-centered is-large"
+    >
+      <ul class="tablist">
+        <li><a id="purpose" href="#purpose">Motivation</a></li>
+        <li><a id="init" href="#init">Initiatives</a></li>
+        <li><a id="timeline" href="#timeline">Timeline</a></li>
+        <li><a id="current" href="#current">Current Team</a></li>
+        <li><a id="past" href="#past">Past Team</a></li>
+        <li><a id="testimonials" href="#testimonials">Testimonials</a></li>
+      </ul>
+    </div>
+    <div
+      id="display-div"
+      style="padding: 1rem; display: flex; justify-content: center; align-items: center;"
+    >
+      <VleadContent client:only />
+    </div>
+  </div>
+</Base>

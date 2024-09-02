@@ -25,47 +25,47 @@
         {
             "title":"Computer Science and Engineering",
             "img":"cards/Comp.png",
-            "href":""
+            "frag":"comp"
         },
         {
             "title":"Mechanical",
             "img":"cards/Mech.png",
-            "href":""
+            "frag":"mech"
         },
         {
             "title":"Chemical Engineering",
             "img":"cards/ChemEngg.png",
-            "href":""
+            "frag":"chem"
         },
         {
             "title":"Electronics and Comm. Engineering",
             "img":"cards/ElCom.png",
-            "href":""
+            "frag":"el-com"
         },
         {
             "title":"Biotechnology",
             "img":"cards/Biotech.png",
-            "href":""
+            "frag":"bio-tech"
         },
         {
             "title":"Electrical Engineering",
             "img":"cards/Elec.png",
-            "href":""
+            "frag":"elec"
         },
         {
             "title":"Chemical Science",
             "img":"cards/Chem.png",
-            "href":""
+            "frag":"chem-sci"
         },
         {
             "title":"Physical Sciences",
             "img":"cards/Phys.png",
-            "href":""
+            "frag":"phy"
         },
         {
             "title":"Civil Engineering",
             "img":"cards/Civil.png",
-            "href":""
+            "frag":"civil"
         }
     ],
     "services":[
@@ -82,9 +82,29 @@
             "body":""
         },
         {
-            "title":"FAQ's",
+            "title": "Research",
+            "href": "/app-vlead-web/research/",
+            "img": "cards/research.webp",
+            "body": ""
+        }
+    ],
+    "explore" : [
+        {
+            "title":"Virtual Labs FAQ",
             "href":"/app-vlead-web/faq_page/",
-            "img":"cards/FAQs.webp",
+            "img":"https://i.imgur.com/ZhFf5SE.jpg",
+            "body":""
+        },
+        {
+            "title":"Workshop FAQ",
+            "href":"/app-vlead-web/outreach/#faq",
+            "img":"https://i.imgur.com/on7M1R7.jpg",
+            "body":""
+        },
+        {
+            "title":"Analytics",
+            "href":"/app-vlead-web/summary/",
+            "img":"https://i.imgur.com/j0UDVdv.jpg",
             "body":""
         }
     ],

@@ -2,9 +2,9 @@
 import { Icon } from "astro-icon";
 import Roles from "./role";
 import Stats from "./stats";
+import navData from "../navbar.json";
 ---
 
-<!-- <script src="./../../public/script.js"></script> -->
 <script>
   function detectMob() {
     const toMatch = [
@@ -56,7 +56,6 @@ import Stats from "./stats";
     // set the dynamic image as the background
     document.body.style.background =
       "transparent url('" + imageDataURL + "') repeat";
-    // document.body.style.background = "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
     setTimeout(animate, 400);
   }
 
@@ -78,9 +77,8 @@ import Stats from "./stats";
   const search_bar = document.getElementById("search-bar-container")!;
   const search_value = document.getElementById("search_value")!;
   const form = document.getElementById("form")!;
-  if(document.location.href.includes("experiments"))
-  {
-    search_bar.style.display="none"
+  if (document.location.href.includes("experiments")) {
+    search_bar.style.display = "none";
   }
   search_bar.addEventListener("mouseenter", () => {
     search_submit.classList.add("search-open");
@@ -113,7 +111,7 @@ import Stats from "./stats";
       icon2.style.display = "block";
     } else {
       document.body.style.backgroundImage =
-      "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
+        "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
       icon2.style.display = "none";
       icon1.style.display = "block";
     }
@@ -126,7 +124,7 @@ import Stats from "./stats";
     animate();
   } else {
     document.body.style.backgroundImage =
-    "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
+      "radial-gradient(circle, var(--background-alt) 0%, var(--background) 100%)";
     theme = "light";
   }
   const theme_switcher = document.getElementById("theme")!;
@@ -144,72 +142,57 @@ import Stats from "./stats";
   const role = sessionStorage.getItem("role");
   if (role) {
     document.getElementById("choose-drop")!.classList.remove("is-hidden");
-    role_dict[role].classList.remove("is-hidden");
-    if (role == "creator") {
-      document.getElementById("drop-creator")!.classList.add("active-role");
-    } else if (role == "educator") {
-      document.getElementById("drop-educator")!.classList.add("active-role");
-    } else if (role == "learner") {
-      document.getElementById("drop-learner")!.classList.add("active-role");
-    }
+    sessionStorage.setItem("role", role);
   }
-
   const drop_creator = document.getElementById("drop-creator")!;
   drop_creator.addEventListener("click", () => {
-    document.getElementById("drop-creator")!.classList.add("active-role");
-    document.getElementById("drop-educator")!.classList.remove("active-role");
-    document.getElementById("drop-learner")!.classList.remove("active-role");
     sessionStorage.setItem("role", "creator");
   });
   const drop_educator = document.getElementById("drop-educator")!;
   drop_educator.addEventListener("click", () => {
-    document.getElementById("drop-creator")!.classList.remove("active-role");
-    document.getElementById("drop-educator")!.classList.add("active-role");
-    document.getElementById("drop-learner")!.classList.remove("active-role");
     sessionStorage.setItem("role", "educator");
   });
   const drop_learner = document.getElementById("drop-learner")!;
   drop_learner.addEventListener("click", () => {
-    document.getElementById("drop-creator")!.classList.remove("active-role");
-    document.getElementById("drop-educator")!.classList.remove("active-role");
-    document.getElementById("drop-learner")!.classList.add("active-role");
     sessionStorage.setItem("role", "learner");
   });
 </script>
 
 <script>
-  const clickables = document.querySelectorAll(".clickable");
+  const clickableItems = document.querySelectorAll(".clickable");
+  let lastClickedItem = null;
 
-  clickables.forEach((element) => {
-    element.addEventListener("click", () => {
-      clickables.forEach((e) => {
-        e.classList.remove("is-active");
-        e.classList.remove("has-text-weight-bold");
-      });
-      element.classList.add("is-active");
-      element.classList.add("has-text-weight-bold");
+  clickableItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      if (lastClickedItem) {
+        lastClickedItem.classList.remove("has-text-weight-bold");
+      }
+      item.classList.add("has-text-weight-bold");
+      lastClickedItem = item;
+      sessionStorage.setItem("lastClickedNavItem", item.id);
     });
+  });
+
+  window.addEventListener("load", () => {
+    const lastClickedItemId = sessionStorage.getItem("lastClickedNavItem");
+    if (lastClickedItemId) {
+      const item = document.getElementById(lastClickedItemId);
+      if (item) {
+        item.classList.add("has-text-weight-bold");
+        lastClickedItem = item;
+      }
+    }
   });
 </script>
 
-<!-- <head>
-	<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-		/>
-</head> -->
 <nav class="navbar theme is-fixed-top px-0" style="max-height:70px;">
   <div class="navbar-brand" style="max-height: inherit;">
-    <!-- <a class="navbar-item py-0 px-0 " href="https://bulma.io">
-		<img	src="https://cdn.vlabs.ac.in/logo/iiit-small.png" style="max-height:70px " class="py-2 px-2"/>
-		</a> -->
     <a class="navbar-item py-0 px-0 ml-2" href="/app-vlead-web/">
       <img
         src="https://cdn.vlabs.ac.in/logo/vlabs-color-large-moe.png"
         loading="lazy"
-        style="max-height:70px; background:none"
+        style="max-height:70px; background:none; display: block !important;"
         class="py-1 px-2"
-        
       />
     </a>
     <div class="navbar-item px-2" id="theme">
@@ -226,13 +209,6 @@ import Stats from "./stats";
     </div>
     <div class="navbar-item px-2">
       <div class="search-bar" id="search-bar-container">
-        <!-- <form>
-				<input type="search" class="input search-input is-rounded">
-				<input type="submit" class="button search-submit" value="" id="search-submit">
-				<span class="icon-search" id="search-button">
-					<Icon name="ic:outline-search"/>
-				</span>
-				</form> -->
         <form id="form">
           <input
             type="search"
@@ -264,100 +240,48 @@ import Stats from "./stats";
   <div id="navbarMain" class="navbar-menu is-boxed">
     <div class="navbar-start"></div>
     <div class="navbar-end">
-      <div
-        class="navbar-item px-2 has-dropdown is-hoverable"
-        id="choose-drop"
-      >
-        <a class="navbar-link is-size-5"> I am</a>
 
-        <div class="navbar-dropdown">
-          <a class="navbar-item px-2 theme" id="drop-learner" href="/app-vlead-web/experiments/"> Learner</a>
-          <hr class="navbar-divider" />
-          <a class="navbar-item px-2 theme" id="drop-educator" href="/app-vlead-web/outreach/"> Educator</a>
-          <hr class="navbar-divider" />
-          <a class="navbar-item px-2 theme" id="drop-creator" href="/app-vlead-web/development/"> Creator</a>
-        </div>
+      <div class="navbar-menu">
+        {navData.map((item) => (
+          <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drops">
+            <a class="navbar-link is-size-5">{item.name}</a>
+            <div class="navbar-dropdown">
+              {item.dropdowns.map((dropdown, index) => (
+                <>
+                  <a
+                    class="navbar-item px-2 clickable"
+                    id={dropdown.id}
+                    href={dropdown.url}
+                  >
+                    {dropdown.name}
+                  </a>
+                  {index < item.dropdowns.length - 1 && <hr class="navbar-divider" />}
+                </>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-      <div
-        class="navbar-item px-2 has-dropdown is-hoverable"
-        id="choose-drops"
-      >
-        <a class="navbar-link is-size-5"> I want to </a>
-
-        <div class="navbar-dropdown">
-          <a
-            class="navbar-item px-2"
-            id="create"
-            href="/app-vlead-web/development/"
-          >
-            Create Experiment
-          </a>
-          <hr class="navbar-divider" />
-          <a
-            class="navbar-item px-2"
-            id="outreach"
-            href="/app-vlead-web/outreach/"
-          >
-            Outreach
-          </a>
-          <hr class="navbar-divider" />
-          <a
-            class="navbar-item px-2"
-            id="learning"
-            href="/app-vlead-web/experiments/"
-          >
-            Start Learning
-          </a>
-        </div>
-      </div>
-      
+            
       <Roles client:only />
-      <!-- <div class="flashing"> -->
-      <a
-        class="navbar-item px-2 is-size-5 clickable"
-        id="research"
-        href="/app-vlead-web/research/"
-      >
-        Research
-      </a>
-      <a
-        class="navbar-item px-2 is-size-5 clickable"
-        id="analytics"
-        href="/app-vlead-web/analytics/"
-      >
-        Analytics
-      </a>
-      <a
-        class="navbar-item px-2 is-size-5 clickable"
-        id="ourteam"
-        href="/app-vlead-web/members/"
-      >
-        Our Team
-      </a>
-      <!-- </div> -->
       <Stats client:only />
     </div>
   </div>
 </nav>
 
 <style>
-  #user-display{
-    /* background-color: white; */
+  #user-display {
     color: var(--third);
   }
   #user-display:hover {
     cursor: default;
   }
-  #views-display{
-    /* color:white; */
+  #views-display {
     color: var(--third);
   }
   #views-display:hover {
     cursor: default;
   }
-  /* .navbar-dropdown{
-		dropdown-item-hover-color: red;
-	} */
   .navbar {
     background-color: var(--secondary);
   }
@@ -442,19 +366,16 @@ import Stats from "./stats";
     background: none;
     border: none;
     color: white;
-    /* color: black; */
     font-size: 25px;
     position: relative;
     vertical-align: auto;
   }
   .navbutton {
     display: inline;
-    /* background-color: rgb(50, 29, 79); */
     background: none;
     border: none;
     color: white;
     font-size: large;
-    /* padding: 5px; */
   }
   .navbutton:hover {
     font-weight: bold;
@@ -512,15 +433,5 @@ import Stats from "./stats";
     margin: auto;
     width: 30px;
     padding-top: 0.5vh;
-  }
-  .active-role {
-    background-color: var(--primary) !important;
-    color: var(--white);
-  }
-  .active-role.dark {
-    background-color: var(--primary-dark) !important;
-  }
-  a.navbar-item.is-active {
-    color: var(--background-dark);
   }
 </style>

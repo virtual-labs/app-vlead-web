@@ -57,3 +57,9 @@ link.dark {
     height: auto;
     width: 450px;
 }
+
+.tabs {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}

@@ -120,7 +120,7 @@ export default function Faqs(props) {
   };
   return loaded ? (
     <>
-      <div className="faq-workshops_faq mt-6 mx-auto">  
+      <div className="faq-workshops_faq mt-6 mx-auto">
         <p class="title has-text-black has-text-centered is-size-2 my-0 py-5">
           Frequently Asked Questions
         </p>

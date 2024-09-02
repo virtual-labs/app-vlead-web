@@ -1,4 +1,4 @@
-name: Deploy to S3 on Release--testing
+name: Deploy to S3 on Release
 
 on:
   
@@ -29,7 +29,11 @@ jobs:
 
       - name: Build Astro site
         run: npm run build
-        
+  
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:

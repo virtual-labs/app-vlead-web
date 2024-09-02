@@ -5,7 +5,7 @@ const Card = ({ title, body, href, img }) => {
   return (
     <li className="link-card theme">
       <a href={href} className="has-text-centered p-1" style={{
-        maxHeight: '50vh',
+        maxHeight: '40vh',
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden'

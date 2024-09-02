@@ -1,0 +1,420 @@
+{
+    "phases": [
+        {
+            "phase": "Extended Phase-3",
+            "years": "2021 - 2026",
+            "description": [
+                "Automation of Lab Deployment",
+                "Provision of a Validation Tool",
+                "Provision of a Performance Tool",
+                "Development of 16 Labs (Yr 1 & 2)",
+                "Enhancement of Cloud Architecture",
+                "Development of a VS Code Extension",
+                "Provision of Common Developer Tools",
+                "Creation of an Outreach Tracker Tool",
+                "Implementation of a Bug Reporting Tool",
+                "Inclusion of a Rating Feature to Rate Labs",
+                "Development of a National Question Repository",
+                "Implementation of 140 Experiments Across 4 Domains",
+                "Building of Virtual Labs Progressive Web Application"
+            ],
+            "image": "https://i.imgur.com/32JWmdl.jpg"
+        },
+        {
+            "phase": "Phase-3",
+            "years": "2018 - 2020",
+            "description": [
+                "Maintenance of Labs",
+                "Developer Workshops",
+                "Uniform UI Across Labs",
+                "Security Enhancements",
+                "Development of 2 CS Labs",
+                "Performance Enhancements",
+                "FOSS Conversion of 26 Labs",
+                "Automated Network Clusters",
+                "Centralized Analytics Reporting",
+                "Summer/Winter/Remote Internships",
+                "Pilot Translation of 2 Labs ( Hindi and Telugu)"
+            ],
+            "image": "https://i.imgur.com/en2PcMg.jpg"
+        },
+        {
+            "phase": "Phase-2",
+            "years": "2014 - 2017",
+            "description": [
+                "Virtual Labs Platform on Open edX",
+                "Centralized Integration Platform",
+                "Lab Hosting on Central Cloud",
+                "FOSS Conversion Methodology",
+                "Version Control on GitHub",
+                "Performance Enhancements",
+                "Integration Workshops",
+                "Security Enhancements",
+                "Lab Development Kits",
+                "Maintenance of Labs",
+                "Outreach Portal"
+            ],
+            "image": "https://i.imgur.com/xjUKea1.jpg"
+        },
+        {
+            "phase": "Phase-1",
+            "years": "2009 - 2013",
+            "description": [
+                "260 experiments across 4 domains",
+                "Development of 27 Labs",
+                "Outreach Workshops"
+            ],
+            "image": "https://i.imgur.com/xPmNbZD.jpg"
+        }
+    ],
+    "initiatives": {
+        "developers": [
+            {
+                "description": " A Visual Studio Code extension has been developed to facilitate the authoring of Virtual Labs experiments in a streamlined and user-friendly manner. This extension offers features to manage all common tasks associated with experiment development. Currently, a web version of this extension is in progress.",
+                "url": "https://i.imgur.com/sopmNg5.jpg",
+                "title": "Visual Studio Code Extension -",
+                "readmore": "https://github.com/virtual-labs/tool-vscode-plugin/blob/main/README.md"
+            },
+            {
+                "description": "A Visual Studio Code Web extension is being developed to facilitate the authoring of Virtual Labs experiments in a streamlined and user-friendly manner on the Web. This extension offers features to manage all common tasks associated with experiment development.",
+                "url": "https://i.imgur.com/c34tuYr.jpg",
+                "title": "Visual Studio Code Web Extension -",
+                "readmore": "https://github.com/virtual-labs/tool-web-ext-vscode/blob/dev/README.md"
+            },
+            {
+                "description": " is a web-based Content Management System built over Netlify CMS designed to facilitate the creation of virtual experiments. It offers a user-friendly interface that eliminates the need for users to have prior knowledge of Git and Markdown. With this platform, experiment creators can easily build and manage virtual experiments while having the convenience of seamless deployment as it gives an online option to develop experiments which does not require any downloads or local setup.",
+                "url": "https://i.imgur.com/x5YRN0R.jpg",
+                "title": "Content Development Platform -",
+                "readmore": "https://github.com/virtual-labs/app-exp-create-web/blob/master/README.md"
+            },
+            {
+                "description": "An application to create a centralized repository of multiple-choice questions that can be accessed and contributed to by authorized users is being built. It aims to facilitate question retrieval based on search terms, tags, and similarity matching.",
+                "url": "https://i.imgur.com/AOZ6NQg.jpg",
+                "title": "National Question Repository -",
+                "readmore": ""
+            },
+            {
+                "description": "A tool that generates performance reports on the experiment code base which include various scores and metrics as well as suggestions for improvement has been built for the content developers. These reports are generated using a lighthouse API.",
+                "url": "https://i.imgur.com/SqSve7O.jpg",
+                "title": "Performance Tool -",
+                "readmore": "https://github.com/virtual-labs/tool-performance/blob/main/README.md"
+            },
+            {
+                "description": "A tool has been implemented to validate code once experiments have been developed. This tool executes ESLint on the JavaScript code, examines HTTP links, and validates the JSON files in the repository against a schema.",
+                "url": "https://i.imgur.com/u8ZjM3t.jpg",
+                "title": "Validation Tool -",
+                "readmore": "https://github.com/virtual-labs/tool-validation/blob/main/README.md"
+            },
+            {
+                "description": "Completed the first iteration of the Virtual Labs service worker. The service worker will be our agent on the client and will be used for many of the planned tasks, e.g. caching and capturing analytics data stream. Apart from the default service worker functionality, an experiment author can add custom functionality for each experiment. Currently the integration of Service Worker with the build script is being tested.",
+                "url": "https://i.imgur.com/DKP2nkb.jpg",
+                "title": "Service Worker - ",
+                "readmore": "https://github.com/virtual-labs/lib-service-worker-vlabs/blob/main/README.md"
+            },
+            {
+                "description": "The VLEAD Team encourages experiment and tool developers to share their learnings and experiences throughout the development lifecycle via tech blogs. These blogs are published on the Medium site to benefit other developers.",
+                "url": "https://i.imgur.com/J1PyKH5.jpg",
+                "title": "Tech Blogs -",
+                "readmore": "https://medium.com/vlead-tech"
+            }
+        ],
+        "users": [
+            {
+                "description": "An application that showcases all experiments on the Virtual Labs site, enabling users to filter and search for specific ones. It's a Progressive Web App (PWA), making it mobile-friendly and usable offline. The app is available on the Android Play Store as an APK, offering seamless performance. Powered by MUI Joy and React, it provides a native Android app experience.",
+                "url": "https://i.imgur.com/itvHvYA.jpg",
+                "title": "PWA App - ",
+                "readmore": "https://github.com/virtual-labs/app-vlabs-pwa/blob/main/README.md"
+            },
+            {
+                "description": "A web component for Virtual Labs has been developed that showcases ratings for each experiment and logs them on Google Analytics. This component is written and packaged as a customizable Lit component, offering flexibility with its parameters.",
+                "url": "https://i.imgur.com/8NfVc88.jpg",
+                "title": "Rating Widget - ",
+                "readmore": "https://github.com/virtual-labs/svc-rating/blob/main/README.md"
+            },
+            {
+                "description": "A tool to add a programming interface to experiments is being developed. To begin with the interface will  allow the users to write basic code in all the Data Structure experiments.",
+                "url": "https://i.imgur.com/nTdt9sa.jpg",
+                "title": "Programming Interface -",
+                "readmore": "https://github.com/virtual-labs/comp-code-editor/blob/main/README.md"
+            },
+            {
+                "description": "A tool has been developed to facilitate users of Virtual Labs in logging bugs during experiment sessions. It offers highly extendable features, allowing users to select from preset options based on the page type, share screenshots, and compose detailed reports.",
+                "url": "https://i.imgur.com/pEX23pE.jpg",
+                "title": "Bug Reporting Tool -",
+                "readmore": "https://github.com/virtual-labs/svc-bug-report/blob/main/README.md"
+            },
+            {
+                "description": "VLEAD led the coordination efforts for migrating Virtual Lab analytics from Universal Analytics to GA 4. A streamlined process to facilitate a seamless transition and provide support to consortium developers in migrating their institute's experiments onto the GA 4 platform was established. This development and upgrade not only ensured a uniform UI interface across all labs but, more importantly, provided a comprehensive list distinguishing popular labs from those that are less used or entirely unused.",
+                "url": "https://i.imgur.com/W5ATUiN.jpg",
+                "title": "GA4 Analytics Dashboard -",
+                "readmore": ""
+            }
+        ],
+        "team": [
+            {
+                "description": "The Document Search Tool for Virtual Labs has been designed to alleviate the challenges associated with navigating vast collections of documents within the virtual labs environment. This tool serves as a powerful solution to efficiently retrieve relevant sections from a plethora of documents, ensuring that users can access the information they need promptly.",
+                "url": "https://i.imgur.com/adZSLHI.jpg",
+                "title": "Document Search Tool -",
+                "readmore": "https://github.com/virtual-labs/tool-doc-search/blob/dev/README.md"
+            },
+            {
+                "description": "A tool that simplifies the lab deployment process for hosting engineers, providing a unified, efficient interface for configuring and triggering multiple lab deployments has been developed. Previously, this process was manual and required separate deployment for each lab through GitHub. Due to the manual nature of the deployment process, there was a dependence on the resource",
+                "url": "https://i.imgur.com/Ibra136.jpg",
+                "title": "Automated Lab Deployment Tool -",
+                "readmore": "https://github.com/virtual-labs/app-lab-deployment-web/blob/dev/README.md"
+            },
+            {
+                "description": "This tool has been developed  to facilitate the storage and management of workshop data for Virtual Labs. It allows admins and nodal coordinators from various institutes to access and maintain workshop information efficiently.",
+                "url": "https://i.imgur.com/x5xtA2Q.jpg",
+                "title": "Outreach Workshop Tracker -",
+                "readmore": "https://github.com/virtual-labs/app-outreach-tracker-web/blob/dev/README.md"
+            },
+            {
+                "description": "Developing a publishable lab, along with all its experiments, entails significant manual effort that does not directly enhance the lab's value. To address this challenge, the Virtual Labs Static Site Generator automates the creation of the experiment website and allows the content developers to focus on producing content. This Static Site Generator was refactored in order to facilitate its integration with various automation tools.",
+                "url": "https://i.imgur.com/xpbue8p.jpg",
+                "title": "Static Site Generator -",
+                "readmore": "https://github.com/virtual-labs/ph3-lab-mgmt/blob/master/README.org"
+            }
+        ]
+    },
+    "purpose": {
+        "intro": "The Virtual Labs Engineering, Architecture, and Design (VLEAD) Team at IIIT Hyderabad is a dedicated team responsible for overseeing the central platform engineering operations, engineering, and development coordination. The team's key responsibilities include:",
+        "points": [
+            {
+                "title": "Cloud Infrastructure",
+                "description": "Designing, implementing, and managing cloud infrastructure.",
+                "image": "https://i.imgur.com/zhQPhD6.jpg"
+            },
+            {
+                "title": "Systems Administration & Monitoring",
+                "description": "Overseeing system administration, monitoring, and ensuring DevOps practices.",
+                "image": "https://i.imgur.com/DCx3hUy.jpg"
+            },
+            {
+                "title": "Common User Interface",
+                "description": "Designing and implementing a common user interface.",
+                "image": "https://i.imgur.com/CLr53uo.jpg"
+            },
+            {
+                "title": "Process Control and Pan-institute Coordination",
+                "description": "Coordinating processes and ensuring pan-institute coordination.",
+                "image": "https://i.imgur.com/wM6MfjA.jpg"
+            },
+            {
+                "title": "Central Analytics",
+                "description": "Collecting and reporting analytics data.",
+                "image": "https://i.imgur.com/YXjjcHn.jpg"
+            },
+            {
+                "title": "Build Automation",
+                "description": "Scripting and hosting for automation of build processes.",
+                "image": "https://i.imgur.com/xIV0Szx.jpg"
+            },
+            {
+                "title": "Performance & Security Enhancements",
+                "description": "Enhancing performance and security measures.",
+                "image": "https://i.imgur.com/IfzxI9Z.jpg"
+            },
+            {
+                "title": "Content Authoring Tools Development",
+                "description": "Developing tools for content authoring.",
+                "image": "https://i.imgur.com/fT7mYs7.jpg"
+            },
+            {
+                "title": "Technology Research",
+                "description": "Engaging in research activities across various technological domains.",
+                "image": "https://i.imgur.com/nGkTY4R.png"
+            },
+            {
+                "title": "New Experiment Development Coordination",
+                "description": "Coordinating the development of new experiments.",
+                "image": "https://i.imgur.com/SHBd7xv.jpg"
+            },
+            {
+                "title": "Outreach",
+                "description": "Conducting outreach activities in Andhra Pradesh and Telangana.",
+                "image": "https://i.imgur.com/JpUhvBB.jpg"
+            },
+            {
+                "title": "Digital Content Creation",
+                "description": "Using state of the art digital classroom to create multimedia content and stream video lectures to complement Virtual Lab experiments.",
+                "image": "https://i.imgur.com/rNFcGRJ.jpg"
+            }
+        ]
+    },
+    "introduction": [
+        "The Virtual Labs project, which was established in 2009, represents a significant initiative of the Ministry of Education, Government of India. This innovative program poised to drive a meaningful change in education and research in India, provides a platform for interactive learning through experiments.",
+        "Among the key groups targeted are students and faculty members of science and engineering colleges, who may lack access to high-quality laboratory facilities and equipment. Additionally, high school students are encouraged to explore their curiosity through the program, potentially inspiring them to pursue further studies in these fields.",
+        "The Virtual Labs project also seeks to create a network of researchers across different institutes, who can collaborate and share resources, thereby promoting the exchange of knowledge and ideas. Importantly, the project's content and teaching resources are designed to benefit engineering colleges and other institutions, making it a highly inclusive and impactful initiative."
+    ],
+    "objectives": [
+        "To offer a remote learning experience with simulated experiments in diverse areas of Science and Engineering.",
+        "To engage students by sparking their curiosity, allowing them to learn fundamental and complex concepts through remote experimentation.",
+        "To present a complete Learning Management System around the Virtual Labs, where students and teachers can utilize various tools for learning, including supplemental web-resources, video-lectures, animated demonstrations, and self-evaluation."
+    ],
+    "philosophy": {
+        "decsription": "Good lab facilities and updated lab experiments are critical for any engineering college. Paucity of lab facilities often make it difficult to conduct experiments. Also, good teachers are always a scarce resource. The Virtual Labs project addresses this issue of lack of good lab facilities, as well as trained teachers, by providing remote-access to simulation-based Labs in various disciplines of science and engineering. Yet another objective is to arouse the curiosity of the students and permit them to learn at their own pace. This student-centric approach facilitates the absorption of basic and advanced concepts through simulation-based experimentation. Internet-based experimentation further permits use of additional web-resources, video-lectures, animated demonstrations and self-evaluation. Specifically, the Virtual Labs project addresses the following:",
+        "points": [
+            "Bridging the gap for colleges that lack lab facilities: Provide online labs as a substitute for hands-on lab work in engineering colleges that do not have the necessary equipment.",
+            "Enhancing existing labs with online resources: Expand the capabilities of existing labs with online labs to complement and augment the learning experience of engineering students.",
+            "Empowering educators through specialized workshops: Offer workshops on-site or online to enhance the skill set and proficiency of educators in the effective use of online labs in engineering education."
+        ],
+        "conclusion": "Virtual labs are any place, any pace, any-time, any-type labs. It is a paradigm shift in student-centric, online education."
+    },
+    "virtual_labs_image": "https://i.imgur.com/itvHvYA.jpg",
+    "broad_areas": [
+        "Electronics & Communications",
+        "Computer Science & Engineering",
+        "Electrical Engineering",
+        "Mechanical Engineering",
+        "Chemical Engineering",
+        "Biotechnology and Biomedical Engineering",
+        "Civil Engineering",
+        "Physical Sciences",
+        "Chemical Sciences"
+    ],
+    "institutes": [
+        {
+            "title": "AMRITA VISHWA VIDYAPEETHAM",
+            "image": "https://i.imgur.com/gEpkN9H.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/M1UPB"
+        },
+        {
+            "title": "COE PUNE",
+            "image": "https://i.imgur.com/IyKnKHV.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_k1d13trl0c"
+        },
+        {
+            "title": "DAYALBAGH EDUCATIONAL INSTITUTE",
+            "image": "https://i.imgur.com/HHM3L0F.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_hazvfvun0c"
+        },
+        {
+            "title": "IIT BOMBAY",
+            "image": "https://i.imgur.com/FOGjCZJ.png",
+            "url": "https://lookerstudio.google.com/embed/u/0/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_kgv1t9wy0c"
+        },
+        {
+            "title": "IIT DELHI",
+            "image": "https://i.imgur.com/LAIiAGF.png",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_e13vjdxy0c"
+        },
+        {
+            "title": "IIT GUWAHATI",
+            "image": "https://i.imgur.com/oVIlBjA.png",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_gx2abgxy0c"
+        },
+        {
+            "title": "IIT KANPUR",
+            "image": "https://i.imgur.com/FaohxU2.png",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_ifh10ixy0c"
+        },
+        {
+            "title": "IIT KHARAGPUR",
+            "image": "https://i.imgur.com/f550atE.jpg",
+            "url": "https://www.vlab.co.in/?sub=71&brch=7"
+        },
+        {
+            "title": "IIT ROORKEE",
+            "image": "https://i.imgur.com/I5LJzKz.jpg",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_43b31nxy0c"
+        },
+        {
+            "title": "IIIT HYDERABAD",
+            "image": "https://i.imgur.com/CCcZTFi.png",
+            "url": "https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/p_vg67w6wy0c"
+        },
+        {
+            "title": "NITK SURATHKAL",
+            "image": "https://i.imgur.com/aPDNXRY.jpg",
+            "url": "https://www.vlab.co.in/?sub=71&brch=7"
+        }
+    ],
+    "overview": {
+        "description": "Virtual Labs, an MHRD project under NMEICT, offers free remote laboratory learning experiences. Workshops and nodal centers support institute partnerships within the Virtual Labs consortium. The project, led by IIT Delhi and involving twelve institutes, provides over 100 Virtual Labs and 700+ web-enabled experiments across various domains using open-source technologies. These simulations are accessible online without any additional infrastructure or fees.",
+        "points": [
+            {
+                "title": "Students",
+                "description": "Gain hands-on practical experience and enhance their learning through interactive and remote experiments.",
+                "image": "https://i.imgur.com/GC013IH.jpg"
+            },
+            {
+                "title": "Faculty",
+                "description": "Access to diverse and versatile teaching tools that help demonstrate complex concepts easily.",
+                "image": "https://i.imgur.com/yXWcFDw.jpg"
+            },
+            {
+                "title": "Subject Matter Experts",
+                "description": "Share expertise by developing and curating high-quality virtual experiments and resources.",
+                "image": "https://i.imgur.com/pK80vvX.jpg"
+            },
+            {
+                "title": "Developers",
+                "description": "Innovate and create advanced educational tools and simulations that improve teaching methodologies.",
+                "image": "https://i.imgur.com/qN4HDKo.jpg"
+            },
+            {
+                "title": "Nodal Centre Community",
+                "description": "Facilitate the distribution and management of virtual labs, ensuring wider accessibility and support.",
+                "image": "https://i.imgur.com/1Cha6AA.jpg"
+            },
+            {
+                "title": "Participating Institutes",
+                "description": "Provide students with practical lab experiences without the need for extensive physical infrastructure.",
+                "image": "https://i.imgur.com/jq8fpio.jpg"
+            },
+            {
+                "title": "Interns",
+                "description": "Gain valuable experience in developing, testing, and refining virtual lab technologies and content.",
+                "image": "https://i.imgur.com/G6MpW4x.jpg"
+            },
+            {
+                "title": "Ministry of Education",
+                "description": "Enhance educational outreach and quality, promoting digital and interactive learning nationwide.",
+                "image": "https://i.imgur.com/QZx85Wd.jpg"
+            },
+            {
+                "title": "Accreditation Bodies",
+                "description": "Ensure educational institutions meet practical training requirements efficiently through verified virtual labs.",
+                "image": "https://i.imgur.com/ULbQbfH.jpg"
+            },
+            {
+                "title": "Service Providers",
+                "description": "Offer technical support and infrastructure for hosting and maintaining virtual lab platforms.",
+                "image": "https://i.imgur.com/ej6pdTJ.jpg"
+            },
+            {
+                "title": "Universities",
+                "description": "Expand their curriculum and research capabilities by integrating advanced virtual lab resources.",
+                "image": "https://i.imgur.com/nWlWVjc.jpg"
+            },
+            {
+                "title": "Researchers",
+                "description": "Access versatile simulation tools for conducting experiments and validating theoretical models remotely.",
+                "image": "https://i.imgur.com/otHcS5V.jpg"
+            }
+        ]
+    },
+    "testimonials": [
+        {
+            "description": "One of the primary advantages associated with the utilization of Virtual Laboratory is the ability for students to engage in self-paced learning. This technology facilitates students in engaging in studying, preparing for, and doing laboratory experiments at their own convenience, regardless of time and location.",
+            "author": "Dr Mohd Zubair Ansari",
+            "inst": "National Institute of Technology Srinagar"
+        },
+        {
+            "description": "Virtual Labs are implemented in USAR, GGSIPU and are useful in understanding the theories and concepts of science or other subjects that cannot be studied alone only by textbooks. It has the great potential to enhance actual laboratory experiences. Furthermore, the best progressive learning and performance for real experiments appears when the virtual laboratory preceded paper-based practical experiments.",
+            "author": "Dr. Khyati Chopra",
+            "inst": "USAR GGSIPU"
+        },
+        {
+            "description": "Virtual Labs is the knowledge seed for the students of the science and technology domain. Such an astonishing platform would enlighten the learning path of the students before they move to the real lab for the experiments. The students may realize the look and feel of the real lab and optimize the efforts, time, and funds involved in performing the real labs. The best part of Virtual Labs is to use it with personal comfort and convenience.",
+            "author": "Dr. Pankaj K. Goswami",
+            "inst": "Amity University Uttar Pradesh, Lucknow"
+        },
+        {
+            "description": "Virtual lab is a platform which provides an opportunity to understand the theoretical concept in very easy way with the help of simulator. Pretest and post-test feature provided make the self-assessment part easy for the students. This platform provides a wide range of experiments covering almost all kind of domain and it is very beneficial for the students. As a Nodal Coordinator of Virtual Lab for Chameli Devi Group of Institution, I am very much satisfied with virtual lab facility as it helps the students to engage more with self-learning path.",
+            "author": "Radheshyam Acholia",
+            "inst": "Chameli Devi Group of Institution, Indore"
+        }
+    ]
+}

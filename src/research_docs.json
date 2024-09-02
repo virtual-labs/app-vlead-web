@@ -4,28 +4,18 @@
         "docs": [
             {
                 "title": "Open Problems",
-                "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-research-docs/main/docs/open-problems.md"
+                "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-research-docs/main/docs/open-problems.md",
+                "fragment": "open-problems"
             },
             {
                 "title": "Publications",
-                "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-research-docs/main/docs/publications.md"
+                "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-research-docs/main/docs/publications.md",
+                "fragment": "publications"
             },
             {
                 "title": "Talks",
-                "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-research-docs/main/docs/talks.md"
-            }
-        ]
-    },
-    {
-        "heading": "About Us",
-        "docs": [
-            {
-                "title": "Virtual Labs",
-                "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-research-docs/main/docs/virtual-labs.md"
-            },
-            {
-                "title": "VLEAD",
-                "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-research-docs/main/docs/vlead.md"
+                "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-research-docs/main/docs/talks.md",
+                "fragment": "talks"
             }
         ]
     }

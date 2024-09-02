@@ -3,34 +3,47 @@
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
-    background-image: linear-gradient(247.23deg,#4af2c8 0%,#2f4cb3 100%);
+    background-image: linear-gradient(247.23deg, #4af2c8 0%, #2f4cb3 100%);
     padding: 15px;
     width: 80%;
     margin: auto;
     border-radius: 10px;
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
+
 .landing-card-1--header {
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
 }
+
+.landing-card-1--header svg {
+    align-self: flex-start;
+    top: 0; /* Override the top-6 class */
+}
+
 .landing-card-1--heading {
     color: white;
-    align-self: flex-end;
-    font-family: MDIO,md-io-fallback,monospace;
+    font-family: MDIO, md-io-fallback, monospace;
     font-weight: bold;
     font-size: 3rem;
     animation: drop-in 1s ease 200ms backwards;
-    margin-left: 1rem;
+    padding-left: 2%;
+    margin: 0;
 }
+
 .landing-card-1--body {
+    text-align: justify;
     max-width: 97%;
+    padding-left: 1%;
     margin: auto;
     display: flex;
+    align-items: center;
 }
+
 .landing-card-1--body span {
     color: white;
-    font-family: MDIO,md-io-fallback,monospace;
+    font-family: MDIO, md-io-fallback, monospace;
     font-weight: 250;
     animation: drop-in 1200ms ease 500ms backwards;
     text-wrap: wrap;
@@ -40,26 +53,24 @@
     width: 65%;
     margin: auto;
     padding: 5px;
-    background: linear-gradient(
-        60deg,
-        hsl(224, 85%, 66%),
-        hsl(269, 85%, 66%),
-        hsl(314, 85%, 66%),
-        hsl(359, 85%, 66%),
-        hsl(44, 85%, 66%),
-        hsl(89, 85%, 66%),
-        hsl(134, 85%, 66%),
-        hsl(179, 85%, 66%)
-    );
+    background: linear-gradient(60deg,
+            hsl(224, 85%, 66%),
+            hsl(269, 85%, 66%),
+            hsl(314, 85%, 66%),
+            hsl(359, 85%, 66%),
+            hsl(44, 85%, 66%),
+            hsl(89, 85%, 66%),
+            hsl(134, 85%, 66%),
+            hsl(179, 85%, 66%));
     background-size: 300% 300%;
     background-position: 0 50%;
     border-radius: 20px;
     animation: moveGradient 4s alternate infinite, drop-in 1s ease;
 }
-    
+
 @keyframes moveGradient {
     50% {
-    background-position: 100% 50%;
+        background-position: 100% 50%;
     }
 }
 
@@ -68,9 +79,9 @@
         opacity: 0;
         transform: translateY(-100px);
     }
+
     to {
         opacity: 1;
         transform: translate(0px);
     }
 }
-   

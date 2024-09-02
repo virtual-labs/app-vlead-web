@@ -31,6 +31,8 @@
 		"font-awesome": "^4.7.0",
 		"fuse.js": "^6.6.2",
 		"googleapis": "^118.0.0",
+		"jquery": "npm:jQuery@^1.7.4",
+		"jQuery": "^1.7.4",
 		"pwa-vlabs": "^1.0.6",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
