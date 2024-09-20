@@ -71,19 +71,19 @@
     "services":[
         {
             "title":"Development and Hosting",
-            "href":"development/",
+            "href":"/app-vlead-web/development/",
             "img":"cards/development.webp",
             "body":""
         },
         {
             "title":"Outreach",
-            "href":"outreach/",
+            "href":"/app-vlead-web/outreach/",
             "img":"cards/outreach_2.jpg",
             "body":""
         },
         {
             "title": "Research",
-            "href": "research/",
+            "href": "/app-vlead-web/research/",
             "img": "cards/research.webp",
             "body": ""
         }
@@ -91,19 +91,19 @@
     "explore" : [
         {
             "title":"Virtual Labs FAQ",
-            "href":"faq_page/",
+            "href":"/app-vlead-web/faq_page/",
             "img":"https://i.imgur.com/ZhFf5SE.jpg",
             "body":""
         },
         {
             "title":"Workshop FAQ",
-            "href":"outreach/#faq",
+            "href":"/app-vlead-web/outreach/#faq",
             "img":"https://i.imgur.com/on7M1R7.jpg",
             "body":""
         },
         {
             "title":"Analytics",
-            "href":"summary/",
+            "href":"/app-vlead-web/summary/",
             "img":"https://i.imgur.com/j0UDVdv.jpg",
             "body":""
         }
