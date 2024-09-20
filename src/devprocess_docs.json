@@ -18,6 +18,11 @@
                 "fragment": "hosting-process"
             },
             {
+                "title": "Lab & Experiment Lifecyle",
+                "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/dev-process/README.md",
+                "fragment": "lab-experiment-lifecycle"
+            },
+            {
                 "title": "Best Practices",
                 "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/best-practices/README.md",
                 "fragment": "best-practices"
