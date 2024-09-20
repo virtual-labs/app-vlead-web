@@ -6,11 +6,11 @@ import image from "@astrojs/image";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(),
-    image({
-      serviceEntryPoint: '@astrojs/image/sharp',
-    }),],
+  image({
+    serviceEntryPoint: '@astrojs/image/sharp',
+  }),],
   site: "https://virtual-labs.github.io",
-  base: "/app-vlead-web/",
+  // base: "/app-vlead-web/",
   // output: 'static',
   // outDir: './docs',
   build: {
