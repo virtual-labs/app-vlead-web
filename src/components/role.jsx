@@ -17,7 +17,7 @@ let Role = {creator:"is-hidden",learner:"is-hidden",teacher:"is-hidden"}
     <>
       <a
         className={`navbar-item is-size-5 ${Role.creator}`}
-        href="/app-vlead-web/create/"
+        href="/create/"
         id="create"
       >
         Create Experiment
