@@ -29,7 +29,7 @@ const Card1 = () => {
             </div>
             <div style={{flex: 1, position: 'relative'}} >
               <div className='landing-card-1--body-image-container'>
-                <img src='/cards/landing-card-1.png' className='landing-card-1--body-image' style={{
+                <img src='/app-vlead-web/cards/landing-card-1.png' className='landing-card-1--body-image' style={{
                   borderRadius: '10px',
                   objectFit: 'fill',
                 }}/>

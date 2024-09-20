@@ -4,12 +4,12 @@
         "dropdowns": [
             {
                 "name": "Virtual Labs",
-                "url": "/Vlabs/",
+                "url": "/app-vlead-web/Vlabs/",
                 "id": "about-virtual-labs"
             },
             {
                 "name": "VLEAD",
-                "url": "/vlead/",
+                "url": "/app-vlead-web/vlead/",
                 "id": "about-vlead"
             }
         ]
@@ -19,17 +19,17 @@
         "dropdowns": [
             {
                 "name": "a Learner",
-                "url": "/experiments/",
+                "url": "/app-vlead-web/experiments/",
                 "id": "drop-learner"
             },
             {
                 "name": "a Facilitator",
-                "url": "/outreach/",
+                "url": "/app-vlead-web/outreach/",
                 "id": "drop-educator"
             },
             {
                 "name": "a Creator",
-                "url": "/development/",
+                "url": "/app-vlead-web/development/",
                 "id": "drop-creator"
             }
         ]
@@ -39,22 +39,22 @@
         "dropdowns": [
             {
                 "name": "Create Experiment",
-                "url": "/development/#development-process",
+                "url": "/app-vlead-web/development/#development-process",
                 "id": "create-experiment"
             },
             {
                 "name": "Start Learning",
-                "url": "/experiments/",
+                "url": "/app-vlead-web/experiments/",
                 "id": "start-learning"
             },
             {
                 "name": "Host Workshop",
-                "url": "/outreach/#request-a-workshop",
+                "url": "/app-vlead-web/outreach/#request-a-workshop",
                 "id": "outreach"
             },
             {
                 "name": "Explore Research",
-                "url": "/research/",
+                "url": "/app-vlead-web/research/",
                 "id": "research"
             }
         ]
@@ -64,12 +64,12 @@
         "dropdowns": [
             {
                 "name": "Summary",
-                "url": "/summary/",
+                "url": "/app-vlead-web/summary/",
                 "id": "summary"
             },
             {
                 "name": "Detailed Analysis",
-                "url": "/detailedAnalysis/",
+                "url": "/app-vlead-web/detailedAnalysis/",
                 "id": "Detailed-Analysis"
             }
         ]
