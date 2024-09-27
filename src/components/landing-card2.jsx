@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../css/landing-card2.css'
-import all from '../home_data.json'
+import all from '../home_data.js'
 import Card from './Card'
 
 const data = all.domains
