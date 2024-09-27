@@ -5,6 +5,9 @@ on:
     types: [published]
     # Only run this workflow when a release is published (not when a draft is created)
 
+env:
+  VLABS_BUILD_ENV: PROD
+
 permissions:
   contents: read
 
