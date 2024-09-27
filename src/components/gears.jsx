@@ -5,11 +5,11 @@ function Gears () {
   return (
     <div id="wrapper">
 
-    <div class="gears" id="two-gears">
+    <div className="gears" id="two-gears">
       
-      <div class="gears-container">
-        <div class="gear-rotate"></div>
-        <div class="gear-rotate-left"></div>
+      <div className="gears-container">
+        <div className="gear-rotate"></div>
+        <div className="gear-rotate-left"></div>
       </div>
     </div>
   

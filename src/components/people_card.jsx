@@ -41,7 +41,7 @@ export function People_Card_Component_Current () {
                     name: a["Association Type"],
                     joining: a["Joining(mmm-yy)"],
                     leaving: a["Leaving(mmm-yy)"],
-                    leaving: a["Leaving(mmm-yy)"],
+                    // leaving: a["Leaving(mmm-yy)"],
                     projects: []
                   };
                   

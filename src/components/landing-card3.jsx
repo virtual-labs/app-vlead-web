@@ -1,6 +1,6 @@
 import React from 'react'
 import '../css/landing-card3.css'
-import all from '../home_data.json'
+import all from '../home_data.js'
 import Card from './Card_2_3'
 
 const services = all.services

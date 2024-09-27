@@ -4,7 +4,7 @@ import Card from "../components/Card.astro";
 import Role from "../components/Role.astro";
 import Typewriter from "typewriter-effect";
 import { Icon } from "astro-icon";
-import all from "../home_data.json";
+import all from "../home_data.js";
 import "../css/theme.css";
 import { google } from "googleapis";
 import Card1 from '../components/landing-card1-image.jsx'
@@ -91,19 +91,21 @@ const short_about = all.shorty;
       top: element.offsetTop + 100,
     });
   };
+  
+  const baseURL = import.meta.env.BASE_URL.replace(/\/+$/, "");
 
   dev_button!.addEventListener("click", () => {
     rearrange("creator");
-    window.location.href = "/app-vlead-web/development/";
+    window.location.href = `${baseURL}/development/`;
   });
   teacher_button!.addEventListener("click", () => {
     rearrange("educator")
-    window.location.href =  "/app-vlead-web/outreach/";
+    window.location.href =  `${baseURL}/outreach/`;
 
   });
   learner_button!.addEventListener("click", () => {
     rearrange("learner")
-    window.location.href =  "/app-vlead-web/experiments/";
+    window.location.href =  `${baseURL}/experiments/`;
   });
 
   chevron!.addEventListener("click", () => {
