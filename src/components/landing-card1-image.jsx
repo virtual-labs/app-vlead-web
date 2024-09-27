@@ -29,7 +29,7 @@ const Card1 = () => {
             </div>
             <div style={{flex: 1, position: 'relative'}} >
               <div className='landing-card-1--body-image-container'>
-                <img src={`${import.meta.env.BASE_URL}/cards/landing-card-1.png`} className='landing-card-1--body-image' style={{
+                <img src={`${import.meta.env.BASE_URL.replace(/\/+$/, "")}/cards/landing-card-1.png`} className='landing-card-1--body-image' style={{
                   borderRadius: '10px',
                   objectFit: 'fill',
                 }}/>

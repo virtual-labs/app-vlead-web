@@ -73,19 +73,19 @@ export default {
     "services": [
         {
             "title": "Development and Hosting",
-            "href": "${baseURL}/development/",
+            "href": `${baseURL}/development/`,
             "img": "cards/development.webp",
             "body": ""
         },
         {
             "title": "Outreach",
-            "href": "${baseURL}/outreach/",
+            "href": `${baseURL}/outreach/`,
             "img": "cards/outreach_2.jpg",
             "body": ""
         },
         {
             "title": "Research",
-            "href": "${baseURL}/research/",
+            "href": `${baseURL}/research/`,
             "img": "cards/research.webp",
             "body": ""
         }
@@ -93,19 +93,19 @@ export default {
     "explore": [
         {
             "title": "Virtual Labs FAQ",
-            "href": "${baseURL}/faq_page/",
+            "href": `${baseURL}/faq_page/`,
             "img": "https://i.imgur.com/ZhFf5SE.jpg",
             "body": ""
         },
         {
             "title": "Workshop FAQ",
-            "href": "${baseURL}/outreach/#faq",
+            "href": `${baseURL}/outreach/#faq`,
             "img": "https://i.imgur.com/on7M1R7.jpg",
             "body": ""
         },
         {
             "title": "Analytics",
-            "href": "${baseURL}/summary/",
+            "href": `${baseURL}/summary/`,
             "img": "https://i.imgur.com/j0UDVdv.jpg",
             "body": ""
         }
