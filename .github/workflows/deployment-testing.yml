@@ -1,0 +1,46 @@
+name: Deploy Astro Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - testing
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Prepare for deployment
+        run: |
+          git config --local user.email "admin@vlabs.ac.in"
+          git config --local user.name "vleadadmin"
+          git checkout --orphan gh-pages
+          git reset
+          git add dist/* -f
+          git mv dist/* ./ -f
+          git commit -m "Deploy to GitHub Pages: https://virtual-labs.github.io/${{ github.repository }}"
+
+      - name: Push to gh-pages
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          force: true

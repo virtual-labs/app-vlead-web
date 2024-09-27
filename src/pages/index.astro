@@ -4,12 +4,13 @@ import Card from "../components/Card.astro";
 import Role from "../components/Role.astro";
 import Typewriter from "typewriter-effect";
 import { Icon } from "astro-icon";
-import all from "../home_data.json";
+import all from "../home_data.js";
 import "../css/theme.css";
 import { google } from "googleapis";
 import Card1 from '../components/landing-card1-image.jsx'
 import Card2 from '../components/landing-card2.jsx'
 import Card3 from '../components/landing-card3.jsx'
+import Card4 from "../components/landing-card4.jsx"
 import Gears from '../components/gears.jsx'
 
 const sheets = google.sheets("v4");
@@ -55,10 +56,6 @@ const short_about = all.shorty;
     divider!.classList.add("is-hidden");
     typewriter!.classList.add("typewriter-focused");
     short_abt!.classList.add("is-hidden");
-    // explore.style.height = "20vh";
-    // explore.style.paddingBottom = "0vh";
-    // explore.style.paddingTop = "0vh";
-    // explore.style.marginTop = "0vh";
   }
 
   let rearrange = (role_name) => {
@@ -69,13 +66,7 @@ const short_about = all.shorty;
     divider!.classList.add("is-hidden");
     typewriter!.classList.add("typewriter-focused");
     chevron_cont!.classList.add("fade-out");
-    // type_cont.style.marginTop = "0vh";
-    // type_cont.style.paddingBottom = "8vh";
     short_abt!.classList.add("is-hidden");
-    // explore.style.height = "20vh";
-    // explore.style.paddingBottom = "0vh";
-    // explore.style.paddingTop = "0vh";
-    // explore.style.marginTop = "0vh";
     drop_creator!.classList.remove("active-role");
     drop_educator!.classList.remove("active-role");
     drop_learner!.classList.remove("active-role");
@@ -100,19 +91,21 @@ const short_about = all.shorty;
       top: element.offsetTop + 100,
     });
   };
+  
+  const baseURL = import.meta.env.BASE_URL.replace(/\/+$/, "");
 
   dev_button!.addEventListener("click", () => {
     rearrange("creator");
-    window.location.href = "/app-vlead-web/development/";
+    window.location.href = `${baseURL}/development/`;
   });
   teacher_button!.addEventListener("click", () => {
     rearrange("educator")
-    window.location.href =  "/app-vlead-web/outreach/";
+    window.location.href =  `${baseURL}/outreach/`;
 
   });
   learner_button!.addEventListener("click", () => {
     rearrange("learner")
-    window.location.href =  "/app-vlead-web/experiments/";
+    window.location.href =  `${baseURL}/experiments/`;
   });
 
   chevron!.addEventListener("click", () => {
@@ -143,45 +136,6 @@ const short_about = all.shorty;
 
 <Base title="Home">
   <main style="margin-bottom: 2rem;">
-    <!-- <div class="explore-container columns is-desktop pb-0" id="typewrite-container">
-      <div class="explore column rows" id="explore">
-        <p class="typewriter row text theme is-full level" id="typewriter">
-          <Typewriter
-            options={{
-              strings: ["EXPLORE", "EXPERIMENT", "DISCOVER"],
-              autoStart: true,
-              loop: true,
-            }}
-            client:only
-          />
-        </p>
-        <div class = "row text theme is-full" id="short-about">
-          {short_about}
-        </div>
-      </div>
-    </div> -->
-    <!-- <div class="columns is-desktop" style="padding-top: 40px;">
-      <div class="column explore" id="explore">
-        <div class="level mb-0 mt-4 role-level-heading">
-          <div class="level-item role-title mb-5 mx-auto">
-            <h1 class="typewriter row  has-text-weight-semibold text theme is-full level" id="typewriter">
-              <Typewriter
-                options={{
-                  strings: ["EXPLORE", "EXPERIMENT", "DISCOVER"],
-                  autoStart: true,
-                  loop: true,
-                }}
-                client:only
-              />
-            </h1>
-          </div>
-        </div>
-        <div id="short-about" class="px-6 is-size-5 mx-auto" style="text-align: justify; max-width: 85vw; font-weight: 500;">
-          {short_about}
-        </div>
-      </div>
-      <div id="divider" class="divider is-hidden-touch theme"></div>
-    </div> -->
     <div class="landing-cards-container"
       style="display: flex; 
       flex-direction: column;
@@ -189,8 +143,9 @@ const short_about = all.shorty;
       padding-top: 5rem"
     >
       <Card1 />
-      <Card2 />
+      <Card2 client:only />
       <Card3 />
+      <Card4 />
     </div>
     
   </main>
@@ -279,59 +234,8 @@ const short_about = all.shorty;
   .mySwiper {
     padding-top: 1rem;
   }
-  /* .explore {
-    font-size: 10vmin;
-    font-family: "Fira Code", monospace;
-    font-weight: bold;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 14vh;
-  }
-  @media screen and (max-width: 1023px) {
-    .explore-container {
-      padding-top: 6%;
-    }
-    .explore {
-      margin: auto;
-      height: 33vh;
-    }
-  }
-  .rows{
-    display: flex;
-    flex-direction: column;
-  }
-  #typewrite-container{
-    padding-bottom: 10vh;
-  }
-  #short-about {
-    font-size: 1.3rem;
-    padding-top: 10vh;
-    padding-left: 6vh;
-    padding-right: 6vh;
-    font-family: "Fira Sans";
-    text-align: "justify";
-    font-weight: 500 !important;
-    line-height: 1.5 !important;
-  }
-  #role{
-    padding-top: 14vh;
-  }
-
-  .landing-cards-container {
-    display: flex
-  }
-  
-  
-  .reveal {
-    padding: 20px 20px 60px;
-    margin: 0 auto;
-  } */
   .typewriter-focused {
     margin: auto;
-    /* height: 38vh; */
-    /* padding-top: 7.5vh; */
     transition: margin 0.5s ease-out;
   }
   .typewriter {
@@ -340,7 +244,6 @@ const short_about = all.shorty;
     align-items: center;
     font-size: 70px;
     height: 7rem;
-    /* font-family: "Fira Code", monospace; */
     font-family: "auto";
   }
   .divider {
@@ -353,13 +256,6 @@ const short_about = all.shorty;
   .divider.dark {
     background-image: radial-gradient(var(--white), transparent);
   }
-  /* h1 {
-    margin: 0;
-    text-align: center;
-    font-size: 200px;
-    overflow: hidden;
-    line-height: 1;
-  } */
   h1 span {
     display: block;
     animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s;
@@ -423,10 +319,3 @@ const short_about = all.shorty;
     --swiper-theme-color: var(--highlight);
   }
 </style>
-
-<!-- {
-  "title":"Virtual Box",
-  "href":"/virtual_box",
-  "img":"cards/virtualbox.webp",
-  "body":""
-}, -->

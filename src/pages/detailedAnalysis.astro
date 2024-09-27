@@ -1,0 +1,47 @@
+---
+import Base from "../layouts/Base.astro";
+import "../css/theme.css";
+---
+
+<script>
+  
+  import { initializeAnalytics } from '../components/detailedAnalysis';
+  document.addEventListener('DOMContentLoaded', (event) => {
+    initializeAnalytics();
+    document.getElementById("analytics").classList.add("is-active");
+    document.getElementById("analytics").classList.add("has-text-weight-bold");
+  });
+</script>
+
+<Base title="Analytics">
+  <main style="margin-bottom:2rem;">
+      <p class="title has-text-white has-text-centered is-size-2">Virtual Labs Analytics - Detailed Analysis</p>
+    </div>
+    <div
+      class="dropdown is-hidden-desktop is hidden-tablet ml-5 mb-5"
+      id="dropdown-menu"
+    >
+      <div class="dropdown-trigger">
+        <button class="button box" id="dropdownButton">Summary &#9660;</button>
+      </div>
+    </div>
+    <div class="columns is-desktop mx-0 my-0">
+      <aside
+        class="menu column has-background-white is-one-fifth is-narrow is-hidden-touch mx-5"
+        style="max-height: 130vh; overflow-y: scroll;"
+      >
+        <ul
+          class="menu-list columns is-multiline is-centered has-text-black"
+          id="listitems"
+        >
+        </ul>
+      </aside>
+      <div class="column py-0">
+        <iframe
+          width="100%"
+          src="https://lookerstudio.google.com/embed/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/5fLPB"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </main>
+</Base>
