@@ -52,7 +52,7 @@
 }
 
 .list {
-    list-style-type: none;
+    list-style: disc inside;
     padding-left: 0;
     color: #34495e;
 }
@@ -70,13 +70,6 @@
 .list-item:hover {
     transform: translateX(5px);
     background-color: #e6ecee;
-}
-
-.list-item::before {
-    content: "•";
-    position: absolute;
-    left: 7px;
-    color: #000;
 }
 
 .institutes-container {
