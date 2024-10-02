@@ -243,7 +243,6 @@ import navData from "../navbar.js";
     <div class="navbar-start"></div>
     <div class="navbar-end">
 
-      <div class="navbar-menu">
         {navData.map((item) => (
           <div class="navbar-item px-2 has-dropdown is-hoverable" id="choose-drops">
             <a class="navbar-link is-size-5">{item.name}</a>
@@ -263,7 +262,6 @@ import navData from "../navbar.js";
             </div>
           </div>
         ))}
-      </div>
             
       <Roles client:only />
       <Stats client:only />
