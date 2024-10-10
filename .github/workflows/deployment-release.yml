@@ -7,6 +7,8 @@ on:
 
 env:
   VLABS_BUILD_ENV: PROD
+    # VLABS_BUIL_ENV differentiates between a build for the testing branch (deployed on 
+    #  Github pages and one for main branch (deployed on AWS). Defaults to TEST
 
 permissions:
   contents: read
@@ -41,3 +43,8 @@ jobs:
         run: |
           aws s3 sync ./dist s3://vlead.vlabs.ac.in --delete
         # astro builds to ./dist by default
+
+      - name: invalidate cloudfront cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id EB6SJZ5JVYU6T --paths  "/*" "/"
+
