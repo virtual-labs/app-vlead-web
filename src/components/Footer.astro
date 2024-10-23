@@ -29,12 +29,7 @@ import all from "../footer_data.json";
         all.Follow.map((item) => {
           return (
             <a href={item.link}>
-              <img
-                height="50px"
-                width="50px"
-                src={item.logo}
-                alt={item.social}
-              />
+              <i className={`fab fa-${item.social.toLowerCase()}`} style={{ fontSize: '50px' }}></i>
             </a>
           );
         })
