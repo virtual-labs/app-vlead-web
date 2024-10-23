@@ -1,5 +1,6 @@
 ---
 import all from "../footer_data.json";
+import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensuring the fontawesome import
 ---
 
 <!-- <hr class="mb-1" /> -->
@@ -27,8 +28,14 @@ import all from "../footer_data.json";
     <div class="is-flex is-justify-content-space-evenly py-5">
       {
         all.Follow.map((item) => {
+          const backgroundColors = {
+            twitter: '#55acee',
+            facebook: '#3b5998',
+            youtube: '#e52d27',
+            linkedin: '#2867B2'
+          };
           return (
-            <a href={item.link}>
+            <a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style={{ background: backgroundColors[item.social.toLowerCase()] }} href={item.link}>
               <i className={`fab fa-${item.social.toLowerCase()}`} style={{ fontSize: '50px' }}></i>
             </a>
           );
