@@ -36,8 +36,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensuring the fontawes
             instagram: '#E1306C'
           };
           return (
-            <a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style={{ background: backgroundColors[item.social.toLowerCase()], borderRadius: '50%', width: '40px', height: '40px' }} href={item.link}>
-              <i className={`fab fa-${item.social.toLowerCase()} fa-lg`} style={{ color: 'white' }}></i> <!-- Adjusted size using Font Awesome size class -->
+            <a class="social-icon" style={{ background: backgroundColors[item.social.toLowerCase()] }} href={item.link}>
+              <i class={`fab fa-${item.social.toLowerCase()} fa-lg`}></i> <!-- Adjusted size using Font Awesome size class -->
             </a>
           );
         })
@@ -74,5 +74,18 @@ import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensuring the fontawes
     background-color: var(--footer);
     color: var(--white);
     /* margin: 0rem; */
+  }
+    .social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    text-decoration: none;
+  }
+  .social-icon i {
+    color: white;
   }
 </style>
