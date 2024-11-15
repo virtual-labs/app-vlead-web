@@ -1,5 +1,5 @@
 {
-    "address":"Engineering and Architecture Division : Room No:B6-204, Vindhya C6, VLEAD, IIIT-H, Gachibowli, Hyderabad - 500032",
+    "address":"Engineering and Architecture Division : Room No:B5-203, Vindhya C6, VLEAD, IIIT-H, Gachibowli, Hyderabad - 500032",
     "contact":{
         "General_Information":"011-64674687",
         "DevelopmentandOutreach" : "+91-9177792945",
@@ -9,7 +9,7 @@
         {
             "social":"facebook",
             "logo":"https://vlead.vlabs.ac.in/static/8f5ce27564945d2c9a10ef827549a78c/d689f/facebook.webp",
-            "link":"https://www.facebook.com/VLabsIITDelhi/"
+            "link":"https://www.facebook.com/vlead.iiithyd"
         },
         {
             "social":"twitter",
@@ -17,14 +17,19 @@
             "link":"https://twitter.com/TheVirtualLabs"
         },
         {
-            "social":"YT",
+            "social":"YouTube",
             "logo":"https://vlead.vlabs.ac.in/static/636a36cd46f7b4e5de659e7cb8ccf5a2/416c3/youtube.webp",
-            "link":"https://www.youtube.com/watch?v=asxRaOgk6a0"
+            "link":"https://www.youtube.com/@virtual-lab-experiments-ii4780"
         },
         {
             "social":"LinkedIn",
             "logo":"https://vlead.vlabs.ac.in/static/fd0d5546fdbdc85c76c4372a0d51f1bc/d689f/linkedin.webp",
             "link":"https://www.linkedin.com/in/virtual-labs-008ba9136"
+        },
+        {
+            "social":"Instagram",
+            "logo":"https://vlead.vlabs.ac.in/static/8f5ce27564945d2c9a10ef827549a78c/d689f/instagram.webp",
+            "link":"https://www.instagram.com/thevirtuallabs?igsh=dWdsdWl0aHczNTkx"
         }
     ],
     "aboutus":"Virtual Labs, a mission mode MHRD project under NMEICT, provides free, laboratory learning experience to students through remote experimentation. Free Workshops, are conducted and nodal centers are setup to partner with institutes of the Virtual Labs consortium for the adoption of Virtual Labs. To keep in pace with growing needs of students, experiments across domains are conceptualized, aligned and built using cutting-edge open source technologies. State of the art digital classroom is available for streaming video lectures to complement Virtual Lab experiments."

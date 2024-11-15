@@ -1,5 +1,6 @@
 ---
 import all from "../footer_data.json";
+import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensuring the fontawesome import
 ---
 
 <!-- <hr class="mb-1" /> -->
@@ -27,14 +28,16 @@ import all from "../footer_data.json";
     <div class="is-flex is-justify-content-space-evenly py-5">
       {
         all.Follow.map((item) => {
+          const backgroundColors = {
+            twitter: '#55acee',
+            facebook: '#3b5998',
+            youtube: '#e52d27',
+            linkedin: '#2867B2',
+            instagram: '#E1306C'
+          };
           return (
-            <a href={item.link}>
-              <img
-                height="50px"
-                width="50px"
-                src={item.logo}
-                alt={item.social}
-              />
+            <a class="social-icon" style={{ background: backgroundColors[item.social.toLowerCase()] }} href={item.link}>
+              <i class={`fab fa-${item.social.toLowerCase()} fa-lg`}></i> <!-- Adjusted size using Font Awesome size class -->
             </a>
           );
         })
@@ -71,5 +74,18 @@ import all from "../footer_data.json";
     background-color: var(--footer);
     color: var(--white);
     /* margin: 0rem; */
+  }
+    .social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    text-decoration: none;
+  }
+  .social-icon i {
+    color: white;
   }
 </style>
