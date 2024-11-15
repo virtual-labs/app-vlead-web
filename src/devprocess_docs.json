@@ -40,7 +40,7 @@
             },            
             {
                 "title": "Code Assessment Tool",
-                "url": "https://github.com/virtual-labs/comp-code-editor/blob/main/docs/user-doc.md",
+                "url": "https://raw.githubusercontent.com/virtual-labs/comp-code-editor/main/docs/user-doc.md",
                 "fragment": "code-assessment"
             },
             {
