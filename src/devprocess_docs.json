@@ -34,14 +34,14 @@
         "heading": "Developer Tools",
         "docs": [
             {
-                "title": "Web Authoring Environment",
-                "url": "https://raw.githubusercontent.com/virtual-labs/tool-web-ext-vscode/dev/docs/USER_README.md",
-                "fragment": "web-authoring-environment"
-            },
-            {
                 "title": "VS Code Authoring Environment",
                 "url": "https://raw.githubusercontent.com/virtual-labs/tool-vscode-plugin/main/README.md",
                 "fragment": "authoring-environment"
+            },            
+            {
+                "title": "Code Assessment Tool",
+                "url": "https://github.com/virtual-labs/comp-code-editor/blob/main/docs/user-doc.md",
+                "fragment": "code-assessment"
             },
             {
                 "title": "Create Experiment Online",
