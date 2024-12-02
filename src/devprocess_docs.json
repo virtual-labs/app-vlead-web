@@ -23,6 +23,16 @@
                 "fragment": "lab-experiment-lifecycle"
             },
             {
+                "title": "Bug Management Process",
+                "url": "https://raw.githubusercontent.com/virtual-labs/engineers-forum/refs/heads/master/ph4/services/bug-processing-guide.md",
+                "fragment": "bug-processing-guide"
+            },
+            {
+                "title": "Troubleshooting guide",
+                "url": "https://raw.githubusercontent.com/virtual-labs/engineers-forum/refs/heads/master/ph4/services/troubleshooting-guide.md",
+                "fragment": "troubleshooting-guide"
+            },
+            {
                 "title": "Best Practices",
                 "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/best-practices/README.md",
                 "fragment": "best-practices"
