@@ -18,9 +18,19 @@
                 "fragment": "hosting-process"
             },
             {
-                "title": "Lab & Experiment Lifecyle",
+                "title": "Lab & Experiment Lifecycle",
                 "url": "https://raw.githubusercontent.com/virtual-labs/ph3-exp-dev-process/main/dev-process/README.md",
                 "fragment": "lab-experiment-lifecycle"
+            },
+            {
+                "title": "Bug Management Process",
+                "url": "https://raw.githubusercontent.com/virtual-labs/engineers-forum/refs/heads/master/ph4/services/bug-processing-guide.md",
+                "fragment": "bug-processing-guide"
+            },
+            {
+                "title": "Troubleshooting Guide",
+                "url": "https://raw.githubusercontent.com/virtual-labs/engineers-forum/refs/heads/master/ph4/services/troubleshooting-guide.md",
+                "fragment": "troubleshooting-guide"
             },
             {
                 "title": "Best Practices",
