@@ -1,0 +1,1 @@
+import"./index.8365acb2.js";/* empty css                             */import{j as s}from"./jsx-runtime.7d759e48.js";function a(i){return s.jsx("div",{className:"inline",children:s.jsx("p",{className:"spinner",id:"spinner",children:s.jsx("i",{className:"fa fa-spinner fa-5x"})})})}export{a as L};
