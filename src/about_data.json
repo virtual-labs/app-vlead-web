@@ -106,6 +106,12 @@
                 "readmore": "https://github.com/virtual-labs/tool-validation/blob/main/README.md"
             },
             {
+                "description": "This tool is designed to provide experiment developers with an efficient way to integrate code assessment exercises into their experiments. With a simple JSON file containing problem statements, inputs, and expected outputs, this tool offers a JavaScript-based code IDE where learners can code their solutions for the respective problems and simultaneously check for the outputs. The tool also enables the developers to add multiple problem exercises and for learners to seamlessly navigate between problems, making their learning experience fruitful and joyous.",
+                "url": "https://i.imgur.com/c34tuYr.jpg",
+                "title": "Code Assessment Tool -",
+                "readmore": "https://github.com/virtual-labs/comp-code-editor/blob/main/README.md"
+            },
+            {
                 "description": "Completed the first iteration of the Virtual Labs service worker. The service worker will be our agent on the client and will be used for many of the planned tasks, e.g. caching and capturing analytics data stream. Apart from the default service worker functionality, an experiment author can add custom functionality for each experiment. Currently the integration of Service Worker with the build script is being tested.",
                 "url": "https://i.imgur.com/DKP2nkb.jpg",
                 "title": "Service Worker - ",
