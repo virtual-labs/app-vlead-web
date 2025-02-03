@@ -107,7 +107,7 @@
             },
             {
                 "description": "This tool is designed to provide experiment developers with an efficient way to integrate code assessment exercises into their experiments. With a simple JSON file containing problem statements, inputs, and expected outputs, this tool offers a JavaScript-based code IDE where learners can code their solutions for the respective problems and simultaneously check for the outputs. The tool also enables the developers to add multiple problem exercises and for learners to seamlessly navigate between problems, making their learning experience fruitful and joyous.",
-                "url": "https://i.imgur.com/c34tuYr.jpg",
+                "url": "https://i.imgur.com/nTdt9sa.jpg",
                 "title": "Code Assessment Tool -",
                 "readmore": "https://github.com/virtual-labs/comp-code-editor/blob/main/README.md"
             },
@@ -136,12 +136,6 @@
                 "url": "https://i.imgur.com/8NfVc88.jpg",
                 "title": "Rating Widget - ",
                 "readmore": "https://github.com/virtual-labs/svc-rating/blob/main/README.md"
-            },
-            {
-                "description": "A tool to add a programming interface to experiments is being developed. To begin with the interface will  allow the users to write basic code in all the Data Structure experiments.",
-                "url": "https://i.imgur.com/nTdt9sa.jpg",
-                "title": "Programming Interface -",
-                "readmore": "https://github.com/virtual-labs/comp-code-editor/blob/main/README.md"
             },
             {
                 "description": "A tool has been developed to facilitate users of Virtual Labs in logging bugs during experiment sessions. It offers highly extendable features, allowing users to select from preset options based on the page type, share screenshots, and compose detailed reports.",
