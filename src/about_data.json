@@ -174,6 +174,12 @@
                 "url": "https://i.imgur.com/xpbue8p.jpg",
                 "title": "Static Site Generator -",
                 "readmore": "https://github.com/virtual-labs/ph3-lab-mgmt/blob/master/README.org"
+            },
+            {
+                "description": "Virtual Labs Prompt Repository is a tool designed for VLEAD team to generate various types of content, such as blogs and documentation, using large language models (LLMs). The repository contains predefined prompt templates, allowing users to input specific information to generate content efficiently.",
+                "url": "https://i.imgur.com/c34tuYr.jpg",
+                "title": "Document Generator -",
+                "readmore": "https://github.com/virtual-labs/app-text-generator/blob/main/README.md"
             }
         ]
     },
