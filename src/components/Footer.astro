@@ -4,54 +4,56 @@ import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensuring the fontawes
 ---
 
 <!-- <hr class="mb-1" /> -->
-<div class=" footer-class has-text-white has-background-black" >
-<div class="columns is-mobile ">
-  <div class="column px-5">
-    <p class="is-size-4 has-text-centered py-0">Address</p>
-    <hr class="my-1 m-auto" style="width: 75%; " />
-    <p class="is-size-6 py-3 has-text-centered">
-      {all.address}
-    </p>
-  </div>
-  <div class="column px-5">
-    <p class="is-size-4 has-text-centered py-0">Contact</p>
-    <hr class="my-1 m-auto" style="width: 75%; " />
-    <p class="is-size-6 py-3 has-text-centered">
-      General Information : {all.contact.General_Information}<br />
-      Development/Outreach : {all.contact.DevelopmentandOutreach}<br />
-      Email: {all.contact.Email}
-    </p>
-  </div>
-  <div class="column px-5">
-    <p class="is-size-4 has-text-centered py-0">Follow Us</p>
-    <hr class="my-1 m-auto" style="width: 75%; " />
-    <div class="is-flex is-justify-content-space-evenly py-5">
-      {
-        all.Follow.map((item) => {
-          const backgroundColors = {
-            twitter: '#55acee',
-            facebook: '#3b5998',
-            youtube: '#e52d27',
-            linkedin: '#2867B2',
-            instagram: '#E1306C'
-          };
-          return (
-            <a class="social-icon" style={{ background: backgroundColors[item.social.toLowerCase()] }} href={item.link}>
-              <i class={`fab fa-${item.social.toLowerCase()} fa-lg`}></i> <!-- Adjusted size using Font Awesome size class -->
-            </a>
-          );
-        })
-      }
+<div class="footer-class has-text-white has-background-black">
+  <div class="columns is-mobile">
+    <div class="column px-5">
+      <p class="is-size-4 has-text-centered py-0">Address</p>
+      <hr class="my-1 m-auto" style="width: 75%;" />
+      <p class="is-size-6 py-3 has-text-centered">
+        {all.address}
+      </p>
+    </div>
+    <div class="column px-5">
+      <p class="is-size-4 has-text-centered py-0">Contact</p>
+      <hr class="my-1 m-auto" style="width: 75%;" />
+      <p class="is-size-6 py-3 has-text-centered">
+        General Information : {all.contact.General_Information}<br />
+        Development/Outreach : {all.contact.DevelopmentandOutreach}<br />
+        Email: {all.contact.Email}
+      </p>
+    </div>
+    <div class="column px-5">
+      <p class="is-size-4 has-text-centered py-0">Follow Us</p>
+      <hr class="my-1 m-auto" style="width: 75%;" />
+      <div class="is-flex is-justify-content-space-evenly py-5">
+        {
+          all.Follow.map((item) => {
+            const backgroundColors = {
+              twitter: '#55acee',
+              facebook: '#3b5998',
+              youtube: '#e52d27',
+              linkedin: '#2867B2',
+              instagram: '#E1306C'
+            };
+            return (
+              <a class="social-icon" style={{ background: backgroundColors[item.social.toLowerCase()] }} href={item.link}>
+                <i class={`fab fa-${item.social.toLowerCase()} fa-lg`}></i> <!-- Adjusted size using Font Awesome size class -->
+              </a>
+            );
+          })
+        }
+      </div>
     </div>
   </div>
-</div>
-<!-- <div class="column px-5">
-  <p class="is-size-4 has-text-centered py-0">About Us</p>
-  <hr class="my-1 m-auto" style="width: 75%; " />
-  <p class="is-size-6 py-3 has-text-centered">
-    {all.aboutus}
-  </p>
-</div> -->
+ <div class="columns is-mobile">
+    <div class="column is-full text-center" style="font-family: 'Open Sans', sans-serif; background:#212121;">      
+      <p class="is-size-6 has-text-centered">      
+        <a class="text-primary font-weight-bold" href="https://www.gnu.org/licenses/agpl-3.0.en.html"> AGPL 3.0 </a>
+        &nbsp;&amp;&nbsp;
+        <a class="text-primary font-weight-bold" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> Creative Commons (CC BY-NC-SA 4.0) </a>
+      </p>      
+    </div>
+  </div>
 </div>
 <style>
   h3 {
@@ -75,7 +77,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensuring the fontawes
     color: var(--white);
     /* margin: 0rem; */
   }
-    .social-icon {
+  .social-icon {
     display: inline-flex;
     justify-content: center;
     align-items: center;
