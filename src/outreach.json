@@ -19,6 +19,12 @@
             "fragment": "workshop-data-summary"
         },
         {
+            "name":"Workshop Data 2025",
+            "type": "iframe",
+            "url":"https://lookerstudio.google.com/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_l1je3q50rd",
+            "fragment": "workshop-data-2025"
+        },
+        {
             "name":"Workshop Data 2024",
             "type": "iframe",
             "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_0eol3lwhgd",
