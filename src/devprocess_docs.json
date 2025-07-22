@@ -59,7 +59,7 @@
                 "fragment": "create-experiment-online" 
             },
             {
-                "title": "AI-Enhanced Virtual Experiment Creation Process",
+                "title": "Create Experiments using AI",
                 "url": "https://raw.githubusercontent.com/virtual-labs/app-vlabs-pwa/main/docs/ai_enhanced_virtual_experiment_creation_process.md",
                 "fragment": "ai-enhanced-virtual-experiment-creation-process" 
             }
