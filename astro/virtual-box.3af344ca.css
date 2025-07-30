@@ -1,0 +1,1 @@
+.toc-entry-level-2{margin-left:1%}.toc-entry-level-3{margin-left:5%}.toc-entry-level-4{margin-left:12%}#spinner{animation:spin 1s linear infinite;color:var(--background)}@keyframes spin{to{transform:rotate(360deg)}}.inline{display:flex;justify-content:center;align-items:center;height:100vh}.spinner i{margin-top:30px;margin-left:30px}#placeholder:where(.astro-UBZ7XTC7){height:7vh}
