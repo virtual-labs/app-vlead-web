@@ -1,6 +1,6 @@
 {
 	"name": "app-vlead-web",
-	"version": "0.0.1",
+	"version": "1.1.4",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",

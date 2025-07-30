@@ -57,7 +57,13 @@
                 "title": "Create Experiment Online",
                 "url": "https://raw.githubusercontent.com/virtual-labs/app-exp-create-web/master/docs/user-doc.md",
                 "fragment": "create-experiment-online" 
+            },
+            {
+                "title": "Create Experiments using AI",
+                "url": "https://raw.githubusercontent.com/virtual-labs/app-vlabs-pwa/main/docs/ai_enhanced_virtual_experiment_creation_process.md",
+                "fragment": "ai-enhanced-virtual-experiment-creation-process" 
             }
+            
         ],
         "buttons":[
             {

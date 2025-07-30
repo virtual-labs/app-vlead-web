@@ -91,7 +91,7 @@
                 "description": "An application to create a centralized repository of multiple-choice questions that can be accessed and contributed to by authorized users is being built. It aims to facilitate question retrieval based on search terms, tags, and similarity matching.",
                 "url": "https://i.imgur.com/AOZ6NQg.jpg",
                 "title": "National Question Repository -",
-                "readmore": ""
+                "readmore": "https://github.com/virtual-labs/app-question-bank-web/blob/main/README.md"
             },
             {
                 "description": "A tool that generates performance reports on the experiment code base which include various scores and metrics as well as suggestions for improvement has been built for the content developers. These reports are generated using a lighthouse API.",
@@ -104,6 +104,12 @@
                 "url": "https://i.imgur.com/u8ZjM3t.jpg",
                 "title": "Validation Tool -",
                 "readmore": "https://github.com/virtual-labs/tool-validation/blob/main/README.md"
+            },
+            {
+                "description": "This tool is designed to provide experiment developers with an efficient way to integrate code assessment exercises into their experiments. With a simple JSON file containing problem statements, inputs, and expected outputs, this tool offers a JavaScript-based code IDE where learners can code their solutions for the respective problems and simultaneously check for the outputs. The tool also enables the developers to add multiple problem exercises and for learners to seamlessly navigate between problems, making their learning experience fruitful and joyous.",
+                "url": "https://i.imgur.com/nTdt9sa.jpg",
+                "title": "Code Assessment Tool -",
+                "readmore": "https://github.com/virtual-labs/comp-code-editor/blob/main/README.md"
             },
             {
                 "description": "Completed the first iteration of the Virtual Labs service worker. The service worker will be our agent on the client and will be used for many of the planned tasks, e.g. caching and capturing analytics data stream. Apart from the default service worker functionality, an experiment author can add custom functionality for each experiment. Currently the integration of Service Worker with the build script is being tested.",
@@ -132,12 +138,6 @@
                 "readmore": "https://github.com/virtual-labs/svc-rating/blob/main/README.md"
             },
             {
-                "description": "A tool to add a programming interface to experiments is being developed. To begin with the interface will  allow the users to write basic code in all the Data Structure experiments.",
-                "url": "https://i.imgur.com/nTdt9sa.jpg",
-                "title": "Programming Interface -",
-                "readmore": "https://github.com/virtual-labs/comp-code-editor/blob/main/README.md"
-            },
-            {
                 "description": "A tool has been developed to facilitate users of Virtual Labs in logging bugs during experiment sessions. It offers highly extendable features, allowing users to select from preset options based on the page type, share screenshots, and compose detailed reports.",
                 "url": "https://i.imgur.com/pEX23pE.jpg",
                 "title": "Bug Reporting Tool -",
@@ -147,7 +147,7 @@
                 "description": "VLEAD led the coordination efforts for migrating Virtual Lab analytics from Universal Analytics to GA 4. A streamlined process to facilitate a seamless transition and provide support to consortium developers in migrating their institute's experiments onto the GA 4 platform was established. This development and upgrade not only ensured a uniform UI interface across all labs but, more importantly, provided a comprehensive list distinguishing popular labs from those that are less used or entirely unused.",
                 "url": "https://i.imgur.com/W5ATUiN.jpg",
                 "title": "GA4 Analytics Dashboard -",
-                "readmore": ""
+                "readmore": "https://lookerstudio.google.com/u/2/reporting/b40ac724-41f1-4b46-ba1b-c83f65284092/page/5fLPB"
             }
         ],
         "team": [
@@ -174,6 +174,12 @@
                 "url": "https://i.imgur.com/xpbue8p.jpg",
                 "title": "Static Site Generator -",
                 "readmore": "https://github.com/virtual-labs/ph3-lab-mgmt/blob/master/README.org"
+            },
+            {
+                "description": "Virtual Labs Prompt Repository is a tool designed for VLEAD team to generate various types of content, such as blogs and documentation, using large language models (LLMs). The repository contains predefined prompt templates, allowing users to input specific information to generate content efficiently.",
+                "url": "https://i.imgur.com/c34tuYr.jpg",
+                "title": "Document Generator -",
+                "readmore": "https://github.com/virtual-labs/app-text-generator/blob/main/README.md"
             }
         ]
     },
@@ -331,7 +337,7 @@
         }
     ],
     "overview": {
-        "description": "Virtual Labs, an MHRD project under NMEICT, offers free remote laboratory learning experiences. Workshops and nodal centers support institute partnerships within the Virtual Labs consortium. The project, led by IIT Delhi and involving twelve institutes, provides over 100 Virtual Labs and 700+ web-enabled experiments across various domains using open-source technologies. These simulations are accessible online without any additional infrastructure or fees.",
+        "description": "Virtual Labs, an Ministry of Education project under NMEICT, offers free remote laboratory learning experiences. Workshops and nodal centers support institute partnerships within the Virtual Labs consortium. The project, led by IIT Delhi and involving eleven institutes, provides over 190 Virtual Labs and 1600+ web-enabled experiments across various domains using open-source technologies. These simulations are accessible online without any additional infrastructure or fees.",
         "points": [
             {
                 "title": "Students",
