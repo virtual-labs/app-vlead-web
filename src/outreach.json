@@ -98,19 +98,19 @@
             "name":"How to become Virtual Labs Nodal Center",
             "type": "markdown",
             "url":"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/videos/vlabs-nodal-centre.md",
-            "fragment": "How to become Virtual Labs Nodal Center"
+            "fragment": "How to become Virtual Labs Nodal Center?"
         },
         {
             "name":"Submit Feedback Form",
             "type": "markdown",
             "url":"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/videos/feedback-submit.md",
-            "fragment": "Submit Feedback Form"
+            "fragment": "How to Submit Feedback Form?"
         },
         {
             "name":"Workshop Tracker",
             "type": "markdown",
             "url":"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/videos/workshop-tracker.md",
-            "fragment": "Workshop Tracker"
+            "fragment": "How to use Workshop Tracker?"
         }
     ]
 }
