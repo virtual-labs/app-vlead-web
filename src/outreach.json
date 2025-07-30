@@ -86,5 +86,31 @@
             "url":"https://lookerstudio.google.com/embed/reporting/fe857f7b-f2b6-43a3-8709-243280ca1448/page/p_xxalppi75c",
             "fragment": "nodal-center-data-2014-2023"
         }
+    ],
+    "videos":[
+        {
+            "name": "What are Virtual Labs?",
+            "type": "markdown",
+            "url":"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/videos/vlabs-intro.md",
+            "fragment": "What are Virtual Labs?"
+        },
+        {
+            "name":"How to become Virtual Labs Nodal Center",
+            "type": "markdown",
+            "url":"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/videos/vlabs-nodal-centre.md",
+            "fragment": "How to become Virtual Labs Nodal Center"
+        },
+        {
+            "name":"Submit Feedback Form",
+            "type": "markdown",
+            "url":"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/videos/feedback-submit.md",
+            "fragment": "Submit Feedback Form"
+        },
+        {
+            "name":"Workshop Tracker",
+            "type": "markdown",
+            "url":"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/videos/workshop-tracker.md",
+            "fragment": "Workshop Tracker"
+        }
     ]
 }

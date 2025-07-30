@@ -145,14 +145,41 @@ import img32 from "../../public/outreach-images/32.jpg";
             Testimonials</a
           >
         </li>
-        <li id="tm">
-          <a class="white-black" 
-            id="markdown_display"
-            href="#videos"
-            data-category={"https://raw.githubusercontent.com/virtual-labs/outreach-web-pages-iiith/main/videos/videos.md"}
-          >
-            Videos</a
-          >
+        <li id="tabvideos">
+          <div class="dropdown is-hoverable">
+            <div class="dropdown-trigger link" id="w-trigger">
+              <a class="white-black" aria-haspopup="true" href="#videos" aria-controls="dropdown-menu4">
+                <span
+                  id="markdown_display"
+                  data-category={all.videos[0].url}>How to Videos</span
+                >
+              </a>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+              <div class="dropdown-content" style="">
+                {
+                  all.videos.map((c, i) => {
+                    if (c.type == "markdown") {
+                      return (
+                        <div class="dropdown-item">
+                          <a id="markdown_display" data-category={c.url} href={`#${c.fragment}`}>
+                            {c.name}
+                          </a>
+                        </div>
+                      );
+                    }
+                    return (
+                      <div class="dropdown-item">
+                        <a id="iframe" data-category={c.url} href={`#${c.fragment}`}>
+                          {c.name}
+                        </a>
+                      </div>
+                    );
+                  })
+                }
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
