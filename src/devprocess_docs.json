@@ -60,7 +60,7 @@
             },
             {
                 "title": "Create Experiments using AI",
-                "url": "https://raw.githubusercontent.com/virtual-labs/app-vlabs-pwa/main/docs/ai_enhanced_virtual_experiment_creation_process.md",
+                "url": "https://raw.githubusercontent.com/virtual-labs/ctnt-ai-exp-template/main/ai-enhanced-virtual-experiment-creation-process.md",
                 "fragment": "ai-enhanced-virtual-experiment-creation-process" 
             }
             
